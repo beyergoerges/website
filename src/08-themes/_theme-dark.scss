@@ -1,0 +1,22 @@
+.jd-theme--dark {
+
+  h1, h2,
+  .jd-heading--page,
+  .jd-heading--title {
+    color: #FDC8B3 !important;
+  }
+
+  .jd-heading,
+  p {
+    color: rgba(white, .94);
+  }
+
+  .jd-header {
+    background-color: black;
+  }
+
+  .jd-content {
+    border-color: black;
+    background-color: #1B1B20;
+  }
+}

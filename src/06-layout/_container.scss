@@ -1,0 +1,13 @@
+.jd-container {
+  position: relative;
+  max-width: $grid-container;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: spacing(xs);
+  padding-right: spacing(xs);
+
+  @include break(tablet) {
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+  }
+}

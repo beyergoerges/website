@@ -1,0 +1,62 @@
+// BREAKPOINTS
+// ----------------------------------------------------------------------------
+
+$breakpoints: (
+  "phone":          (max-width: 479px),
+  "phablet":        (min-width: 480px),
+  "phablet-only":   (min-width: 480px) and (max-width: 767px),
+  "tablet":         (min-width: 768px),
+  "tablet-only":    (min-width: 768px) and (max-width: 1023px),
+  "mobile-only":    (max-width: 1023px),
+  "desktop-s":      (min-width: 1024px),
+  "desktop-s-only": (min-width: 1024px) and (max-width: 1279px),
+  "desktop-m":      (min-width: 1280px),
+  "desktop-m-only": (min-width: 1280px) and (max-width: 1599px),
+  "desktop-l":      (min-width: 1600px),
+  "desktop-l-only": (min-width: 1600px) and (max-width: 1920px),
+  "desktop-xl":     (min-width: 1921px)
+);
+
+@mixin break($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @error "No value found for `#{$breakpoint}` in `$breakpoints` map.";
+  }
+}
+
+@mixin show($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @include break($breakpoint) {
+      display: block;
+    }
+  } @else {
+    @error "No value found for `#{$breakpoint}` in `$breakpoints` map.";
+  }
+}
+
+@mixin hide($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @include break($breakpoint) {
+      display: none;
+    }
+  } @else {
+    @error "No value found for `#{$breakpoint}` in `$breakpoints` map.";
+  }
+}
+
+@mixin ie11() {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+    @content;
+  }
+}
+
+@mixin webkitTouch() {
+  @supports (-webkit-text-size-adjust:none) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)) {
+    @include break(mobile-only) {
+      @content;
+    };
+  }
+}

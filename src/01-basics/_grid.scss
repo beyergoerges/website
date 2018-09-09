@@ -1,0 +1,219 @@
+// One grid to rule them all
+@mixin grid(
+  $items: false,
+  $direction: false,
+  $gutter: 1,
+  $gutter-y: false,
+  $flush: true,
+  $multiline: true,
+  $x: false,
+  $y: false,
+  $baseline: false,
+  $reverse: false,
+  $break: false
+){
+
+  @if $break == false {
+    display: flex;
+  }
+
+  // Single-line vs. multiline
+  @if $multiline {
+    flex-wrap: wrap;
+  } @else if $reverse {
+    flex-wrap: wrap-reverse;
+  } @else if $multiline == false {
+    flex-wrap: nowrap;
+  }
+
+  // Grid direction
+  @if $direction == "row" {
+    flex-direction: row;
+  } @else if $direction == "row-reverse" {
+    flex-direction: row-reverse;
+  } @else if $direction == "column" {
+    flex-direction: column;
+  } @else if $direction == "column-reverse" {
+    flex-direction: column-reverse;
+  }
+
+  $x-axis: "justify";
+  $y-axis: "align";
+
+  @if $direction == "column" or $direction == "column-reverse" {
+    $x-axis: "align";
+    $y-axis: "justify";
+  }
+
+  // Horizontal alignment
+  @if $x == "left" {
+    #{$x-axis}-content: flex-start;
+  } @else if $x == "center" {
+    #{$x-axis}-content: center;
+  } @else if $x == "right" {
+    #{$x-axis}-content: flex-end;
+  } @else if $x == "between" {
+    #{$x-axis}-content: space-between;
+  } @else if $x == "around" {
+    #{$x-axis}-content: space-around;
+  }
+
+  // Vertical alignment (single-line)
+  @if $direction == "row" and $multiline == false {
+    @if $y == "top" {
+      align-items: flex-start;
+    } @else if $y == "middle" {
+      align-items: center;
+    } @else if $y == "bottom" {
+      align-items: flex-end;
+    } @else if $y == "fill" {
+      align-items: stretch;
+    }
+  }
+
+  // Vertical alignment (baseline)
+  @if $direction == "row" and $baseline {
+    align-items: baseline;
+  }
+
+  // Vertical alignment (multiline)
+  @if $multiline {
+    @if $y == "top" {
+      #{$y-axis}-content: flex-start;
+    } @else if $y == "middle" {
+      #{$y-axis}-content: center;
+    } @else if $y == "bottom" {
+      #{$y-axis}-content: flex-end;
+    } @else if $y == "between" {
+      #{$y-axis}-content: space-between;
+    } @else if $y == "around" {
+      #{$y-axis}-content: space-around;
+    } @else if $y == "fill" {
+      #{$y-axis}-content: stretch;
+    }
+  }
+
+  // Flexible gutters
+  $margin-helper: 1;
+  $padding-helper: 1;
+
+  // Descriptive gutter values (optional)
+  @if $gutter == "default" {
+    $gutter: 1;
+  } @else if $gutter == "half" {
+    $gutter: 0.5;
+  } @else if $gutter == "double" {
+    $gutter: 2;
+  }
+
+  @if type-of($gutter) == number {
+    $margin-helper: $margin-helper * $gutter;
+    $padding-helper: $padding-helper * $gutter;
+  }
+
+  @if $flush {
+    $margin-helper: $margin-helper * -1;
+  }
+
+  $margin: $grid-gutter * $margin-helper;
+  $padding: $grid-gutter * $padding-helper;
+
+  @if $gutter {
+    margin: 0 ($margin / 2);
+  }
+
+  // Grid items
+  $items-count: length($items);
+
+  @if $items and $items-count == 1 {
+    > *:nth-child(1n + 1) {
+      @if unitless($items) {
+        flex-basis: percentage(1 / $items);
+      } @else {
+        flex-basis: $items;
+      }
+    }
+  } @else if $items-count > 1 {
+    @for $i from 1 through $items-count {
+      $item: nth($items, $i);
+
+      > *:nth-child(#{$items-count}n + #{$i}) {
+        flex-basis: percentage($item / sum($items));
+      }
+    }
+  }
+
+  @if $gutter {
+    > * {
+      padding-left: ($padding / 2);
+      padding-right: ($padding / 2);
+      padding-bottom: $padding;
+
+      @if $gutter-y == false {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+@mixin grid-item(
+  $width: false,
+  $align: false,
+  $fill: false,
+  $order: false,
+  $offset-left: false,
+  $offset-right: false
+){
+
+  @if $fill {
+    flex-grow: 1;
+  }
+
+  @if $width {
+    @if $width == "auto" {
+      flex-basis: auto;
+    } @else if unitless($width) {
+      flex-basis: 100% / $width;
+    } @else {
+      flex-basis: $width;
+    }
+  }
+
+  @if $align == "top" {
+    align-self: flex-start;
+  } @else if $align == "middle" {
+    align-self: center;
+  } @else if $align == "bottom" {
+    align-self: flex-end;
+  } @else if $align == "baseline" {
+    align-self: baseline;
+  } @else if $align == "fill" {
+    align-self: stretch;
+  }
+
+  @if $order == "first" {
+    $order-helper: -1;
+  } @else if $order == "last" {
+    $order-helper: 1;
+  }
+
+  @if type-of($order) == number {
+    order: $order-helper;
+  }
+
+  @if $offset-left {
+    @if unitless($offset-left) {
+      margin-left: 100% / $offset-left;
+    } @else {
+      margin-left: $offset-left;
+    }
+  }
+
+  @if $offset-right {
+    @if unitless($offset-right) {
+      margin-left: 100% / $offset-right;
+    } @else {
+      margin-left: $offset-right;
+    }
+  }
+}

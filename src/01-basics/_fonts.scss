@@ -1,0 +1,125 @@
+// FONT STACKS
+// ----------------------------------------------------------------------------
+
+// Fallback fonts
+$font__fallback--sans: sans-serif;
+$font__fallback--serif: ("Georgia", "Garamond", "Baskerville", serif);
+$font__fallback--monospace: ("Courier New", "Lucida Sans Typewriter", "Lucida Console", monospace);
+
+// Helper variables for all font types
+$font__types: (
+  "thin":              ("weight": 100, "style": normal),
+  "thin-italic":       ("weight": 100, "style": italic),
+  "extralight":        ("weight": 200, "style": normal),
+  "extralight-italic": ("weight": 200, "style": italic),
+  "light":             ("weight": 300, "style": normal),
+  "light-italic":      ("weight": 300, "style": italic),
+  "regular":           ("weight": 400, "style": normal),
+  "regular-italic":    ("weight": 400, "style": italic),
+  "medium":            ("weight": 500, "style": normal),
+  "medium-italic":     ("weight": 500, "style": italic),
+  "semibold":          ("weight": 600, "style": normal),
+  "semibold-italic":   ("weight": 600, "style": italic),
+  "bold":              ("weight": 700, "style": normal),
+  "bold-italic":       ("weight": 700, "style": italic),
+  "extrabold":         ("weight": 800, "style": normal),
+  "extrabold-italic":  ("weight": 800, "style": italic),
+  "black":             ("weight": 900, "style": normal),
+  "black-italic":      ("weight": 900, "style": italic)
+);
+
+// // Primary font stack
+// $font--primary: (
+//   "family": "TTCommons", // IMPORTANT: No spaces if font-face
+//   "fallback": ($font__fallback--sans),
+//   "types": (
+//     "light",
+//     "light-italic",
+//     "regular",
+//     "regular-italic",
+//     "medium",
+//     "medium-italic",
+//     "semibold",
+//     "semibold-italic",
+//     "bold",
+//     "bold-italic"
+//   ) // Only required for font-face
+// );
+
+// // Code font stack
+// $font--display: (
+//   "family": "GTSuper", // IMPORTANT: No spaces if font-face
+//   "fallback": ($font__fallback--serif)
+// );
+
+// Generate font-face for primary font stack
+
+// Import Google or Typekit fonts here
+@import url("https://use.typekit.net/ukk2uqe.css");
+
+// Use fonts anywhere
+@function font($font) {
+  @return map-get($font, "family"), map-get($font, "fallback");
+}
+
+
+// FONT SCALE
+// ----------------------------------------------------------------------------
+
+$font-scale: (
+  "s":   ("phone": rem(15.75), "lh-phone": rem(24), "ls-phone": "normal",
+          "tablet": rem(18.375), "lh-tablet": rem(28), "ls-tablet": "normal",
+          "desktop": rem(21), "lh-desktop": rem(32), "ls-desktop": "normal"
+         ),
+  "m":   ("phone": rem(23.625), "lh-phone": rem(30), "ls-phone": "-.00625em",
+          "tablet": rem(27.5625), "lh-tablet": rem(28), "ls-tablet": "-.0075em",
+          "desktop": rem(42), "lh-desktop": rem(48), "ls-desktop": "-.01em",
+         ),
+  "l":   ("phone": rem(35.4375), "lh-phone": rem(36), "ls-phone": "-.0125em",
+          "tablet": rem(41.34375), "lh-tablet": rem(42), "ls-tablet": "-.015em",
+          "desktop": rem(84), "lh-desktop": rem(80), "ls-desktop": "-.02em",
+         ),
+  "xl": ("phone": rem(70.875), "lh-phone": rem(60), "ls-phone": "-.025em",
+          "tablet": rem(124.03125), "lh-tablet": rem(112), "ls-tablet": "-.03em",
+          "desktop": rem(252), "lh-desktop": rem(240), "ls-desktop": "-.04em",
+         )
+);
+
+@mixin font-scale($key) {
+  @if map-has-key($font-scale, $key) {
+    font-size: #{inspect(map-get-deep($font-scale, $key, "phone"))};
+    line-height: #{inspect(map-get-deep($font-scale, $key, "lh-phone"))};
+    letter-spacing: #{inspect(map-get-deep($font-scale, $key, "ls-phone"))};
+
+    @include break(tablet) {
+      font-size: #{inspect(map-get-deep($font-scale, $key, "tablet"))};
+      line-height: #{inspect(map-get-deep($font-scale, $key, "lh-tablet"))};
+      letter-spacing: #{inspect(map-get-deep($font-scale, $key, "ls-tablet"))};
+    }
+
+    @include break(desktop-m) {
+      font-size: #{inspect(map-get-deep($font-scale, $key, "desktop"))};
+      line-height: #{inspect(map-get-deep($font-scale, $key, "lh-desktop"))};
+      letter-spacing: #{inspect(map-get-deep($font-scale, $key, "ls-desktop"))};
+    }
+  } @else {
+    @error "No value found for `#{$key}` in `$font-scale` map.";
+  }
+}
+
+// BASE TYPOGRAPHY STYLES
+// ----------------------------------------------------------------------------
+
+html {
+  font-size: $rem-base / 16 * 100%;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: normal;
+  color: $grayscale--darkest;
+}

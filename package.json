@@ -1,0 +1,57 @@
+{
+  "name": "@beyergoerges/website",
+  "version": "0.0.1",
+  "description": "Beyer Görges – a multidisciplinary digital agency",
+  "license": "UNLICENSED",
+  "homepage": "https://www.beyergoerges.com",
+  "scripts": {
+    "prestart": "npm install",
+    "build": "npm run prestart && gulp",
+    "start": "gulp --dev",
+    "gulp": "gulp",
+    "test": "npm run build"
+  },
+  "author": "Joshua Beyer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beyergoerges/website.git"
+  },
+  "engines": {
+    "node": ">=4.0",
+    "npm": ">=2.7.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "browser-sync": "^2.13.0",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.12.1",
+    "gulp-util": "^3.0.7",
+    "imports-loader": "^0.6.5",
+    "run-sequence": "^1.2.1",
+    "script-loader": "^0.7.0",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "jquery-easing": "0.0.1",
+    "reset-css": "^3.0.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    }
+  }
+}

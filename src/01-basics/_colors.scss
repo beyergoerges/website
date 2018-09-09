@@ -1,0 +1,37 @@
+// Flat colors
+$color--bon-jour: #DFDDDF;
+
+// Brand colors
+$color--primary: #4882F3;
+
+// Status colors
+$color--success: #42CE8A;
+$color--info: #4EC8DD;
+$color--warning: #FFBF5F;
+$color--alert: #E65867;
+
+// Tints & shades
+$color--primary-tint: lighten($color--primary, 9%);
+$color--primary-shade: darken($color--primary, 9%);
+$color--success-tint: lighten($color--success, 9%);
+$color--success-shade: darken($color--success, 9%);
+$color--info-tint: lighten($color--info, 9%);
+$color--info-shade: darken($color--info, 9%);
+$color--warning-tint: lighten($color--warning, 9%);
+$color--warning-shade: darken($color--warning, 9%);
+$color--alert-tint: lighten($color--alert, 9%);
+$color--alert-shade: darken($color--alert, 9%);
+
+// Grayscale
+$grayscale--white: #FFF;
+$grayscale--lightest: #F5F6F7;
+$grayscale--lighter: #EFEFEF;
+$grayscale--light: #E2E2E2;
+$grayscale--medium: #C0C0C0;
+$grayscale--dark: #999;
+$grayscale--darker: #444;
+$grayscale--darkest: #111;
+
+// Light theme colors
+$theme--light__back: $color--bon-jour;
+$theme--light__front: $grayscale--white;

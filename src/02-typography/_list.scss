@@ -1,0 +1,49 @@
+.jd-list {
+  @include max-width;
+
+  li,
+  &__item {
+    position: relative;
+    margin-bottom: spacing(xxs);
+    padding-left: spacing(xl);
+    color: $grayscale--darker;
+
+    @include font-scale(s);
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: spacing(l);
+      color: $color--primary;
+      font-weight: 400;
+      text-align: right;
+    }
+  }
+
+  &--numbered {
+
+    &__item {
+      counter-increment: ol-counter;
+    }
+
+    &__item:before {
+      content: counter(ol-counter);
+    }
+  }
+
+  &--bulleted {
+
+    &__item:before {
+      content: "•";
+    }
+  }
+}
+
+ol {
+  @extend .jd-list;
+
+  > li {
+    @extend .jd-list--numbered__item;
+  }
+}

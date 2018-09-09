@@ -1,0 +1,222 @@
+// ----------------------------------------------------------------------------
+// FUNCTIONS
+// ----------------------------------------------------------------------------
+
+// VARIABLES
+// ----------------------------------------------------------------------------
+
+// Get sum of numeric list
+@function sum($list, $force: false) {
+  $result: 0;
+
+  @each $item in $list {
+    @if type-of($item) == number {
+      @if $force and unit($item) {
+        $item: $item / ($item * 0 + 1);
+      }
+      @if unitless($item) {
+        $result: $result + $item;
+      }
+    }
+  }
+
+  @return $result;
+}
+
+// URL encoded color
+@function url-encoded-color($color) {
+  @return "%23" + str-slice("#{$color}", 2, -1)
+}
+
+// MAPS
+// ----------------------------------------------------------------------------
+
+// Get nested variables in map
+@function map-get-deep($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// Check if map has several keys
+@function map-has-keys($map, $keys...) {
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @return false;
+    }
+  }
+  @return true;
+}
+
+// Check if map has nested key
+@function map-has-key-deep($map, $keys...) {
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @return false;
+    }
+    $map: map-get($map, $key);
+  }
+  @return true;
+}
+
+// COLORS
+// ----------------------------------------------------------------------------
+
+// Lighten color by adding percentage of white
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Darken color by adding percentage of black
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// ----------------------------------------------------------------------------
+// MIXINS
+// ----------------------------------------------------------------------------
+
+// Check if list contains item
+@mixin contains($list, $item) {
+  @if index($list, $item) != null {
+    @content;
+  }
+}
+
+// FONTS
+// ----------------------------------------------------------------------------
+
+// Font-face
+@mixin load-font-face($family, $weight, $style, $path: "fonts/#{$family}/") {
+  @font-face {
+
+    $styles: "-#{$style}";
+
+    @if $style == normal {
+      $styles: null;
+    }
+
+    font-family: "#{$family}";
+    src: url("#{$path}#{$family}-#{$weight}#{$styles}.eot");
+    src: url("#{$path}#{$family}-#{$weight}#{$styles}.woff") format("woff"),
+         url("#{$path}#{$family}-#{$weight}#{$styles}.woff2") format("woff2"),
+         url("#{$path}#{$family}-#{$weight}#{$styles}.ttf") format("truetype");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+// Create font-face for each type specified in font map
+@mixin font-face($font) {
+  @each $type in map-get($font, "types") {
+    @include load-font-face(
+      $family: map-get($font, "family"),
+      $weight: map-get-deep($font__types, $type, "weight"),
+      $style: map-get-deep($font__types, $type, "style")
+    );
+  }
+}
+
+// POSITIONING
+// ----------------------------------------------------------------------------
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin fill($position: absolute) {
+  position: $position;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// CENTERING
+// ----------------------------------------------------------------------------
+
+// Horizontal
+@mixin center-x($position: relative) {
+  position: $position;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Vertical
+@mixin center-y($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Horizontal absolute
+@mixin center-x-abs($width) {
+  position: absolute;
+  left: 50%;
+  margin-left: (-$width / 2);
+}
+
+// Vertical absolute
+@mixin center-y-abs($height) {
+  position: absolute;
+  top: 50%;
+  margin-top: (-$height / 2);
+}
+
+// MISC.
+// ----------------------------------------------------------------------------
+
+// Hardware acceleration
+@mixin accelerate {
+  transform: translate3d(0, 0, 0);
+}
+
+// Forms
+@mixin placeholder($class: null) {
+  #{$class}::-webkit-input-placeholder {
+    @content;
+  }
+
+  #{$class}:-moz-placeholder { /* Firefox 18- */
+     @content;
+  }
+
+  #{$class}::-moz-placeholder {  /* Firefox 19+ */
+     @content;
+  }
+
+  #{$class}:-ms-input-placeholder {
+     @content;
+  }
+}
+
+// Clearfix: keep the mixin for use within media queries.
+@mixin clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Use the placeholder for everything else
+%clearfix {
+  @include clearfix;
+}
+
+// Hide text
+@mixin hide-text {
+  font-size: 0;
+  text-indent: -9999px;
+}

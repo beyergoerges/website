@@ -1,0 +1,125 @@
+// REM SIZING
+// ----------------------------------------------------------------------------
+
+$rem-base: 16;
+
+@function rem($px) {
+  @return $px / $rem-base * 1rem;
+}
+
+// Z-INDEX
+// ----------------------------------------------------------------------------
+
+// Highest to lowest
+$z-indexed-items:
+  ""
+;
+
+$z-index-map: ();
+$counter: length($z-indexed-items) + 99;
+
+@each $item in $z-indexed-items {
+  $z-index-map: map-merge($z-index-map, ($item: $counter));
+  $counter: $counter - 1;
+}
+
+@function z($key) {
+  @if map-has-key($z-index-map, $key) {
+    @return map-get($z-index-map, $key);
+  } @else {
+    @error "No layer found for `#{$key}` in `$z-index-map`.";
+  }
+}
+
+// MAX-WIDTH
+// ----------------------------------------------------------------------------
+
+$max-width: 720px;
+$max-width--l: 960px;
+
+@mixin max-width($size: m) {
+
+  @if $size == "m" {
+    max-width: $max-width;
+  }
+
+  @if $size == "l" {
+    max-width: $max-width--l;
+  }
+}
+
+// TRANSITIONS
+// ----------------------------------------------------------------------------
+
+$duration-default: .3s;
+$duration-slower: .5s;
+$duration-slowest: 1s;
+$duration-faster: .2s;
+
+$ease-default: ease-in-out;
+
+$ease-in-quad: cubic-bezier(0.550, 0.085, 0.680, 0.530);
+$ease-in-cubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$ease-in-quart: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+$ease-in-quint: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+$ease-in-sine: cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$ease-in-expo: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$ease-in-circ: cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$ease-in-back: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+
+$ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$ease-out-quart: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$ease-out-quint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$ease-out-sine: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$ease-out-expo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$ease-out-circ: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+$ease-out-back: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+$ease-in-out-quad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$ease-in-out-quart: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+$ease-in-out-quint: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+$ease-in-out-sine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+$ease-in-out-expo: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+$ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+$ease-in-out-back: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+@mixin transition($duration: $duration-default, $property: all, $easing: $ease-default, $delay: null) {
+  transition: $property $duration $easing $delay;
+}
+
+// SHADOWS
+// ----------------------------------------------------------------------------
+
+$text-shadow: 0 rem(4) rem(16) rgba(0, 0, 0, .1);
+$text-shadow--heavy: 0 rem(4) rem(16) rgba(0, 0, 0, .4);
+$drop-shadow: rgba(0, 0, 0, 0.1) 0 rem(4) rem(16) 0;
+$drop-shadow--heavy: rgba(0, 0, 0, 0.2) 0 rem(6) rem(24) 0;
+$drop-shadow--diffuse: rgba(0, 0, 0, 0.06) 0 0 rem(34) 0;
+$drop-shadow--diffuse-hover: rgba(0, 0, 0, 0.12) 0 0 rem(42) 0;
+
+@mixin drop-shadow($position: relative) {
+  position: $position;
+
+  &:before {
+    content: "";
+    z-index: -1;
+    box-shadow: $drop-shadow--diffuse;
+
+    @include position(absolute, spacing(m), spacing(s), 0, spacing(s));
+  }
+}
+
+@mixin hover-shadow() {
+
+  @include drop-shadow;
+
+  &:before {
+    @include transition;
+  }
+
+  &:hover:before {
+    box-shadow: $drop-shadow--diffuse-hover;
+  }
+}

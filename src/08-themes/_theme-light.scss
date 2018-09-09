@@ -1,0 +1,12 @@
+.jd-theme--light {
+
+  h1, h3,
+  .jd-heading--page,
+  .jd-heading--section {
+    color: $theme--light__front;
+  }
+
+  .jd-content {
+    background-color: $theme--light__back;
+  }
+}

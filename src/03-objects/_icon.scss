@@ -1,0 +1,24 @@
+.esf-icon {
+
+  &--primary { color: $color--primary; }
+  &--success { color: $color--success; }
+  &--info { color: $color--info; }
+  &--warning { color: $color--warning; }
+  &--alert { color: $color--alert; }
+  &--white { color: $grayscale--white; }
+  &--lightest { color: $grayscale--lightest; }
+  &--lighter { color: $grayscale--lighter; }
+  &--light { color: $grayscale--light; }
+  &--medium { color: $grayscale--medium; }
+  &--dark { color: $grayscale--dark; }
+  &--darker { color: $grayscale--darker; }
+  &--darkest { color: $grayscale--darkest; }
+
+  &--has-text {
+    margin-right: spacing(xs);
+  }
+
+  &--has-text-before {
+    margin-left: spacing(xs);
+  }
+}
