@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5, h6,
-.jd-heading {
+.jd-heading:not(.jd-heading--low-level) {
   font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: 600;
 }
@@ -9,7 +9,6 @@ h1,
   @include font-scale(xl);
 
   letter-spacing: -3em !important;
-  line-height: 204px !important;
   animation: in 3s cubic-bezier(.75,-0.5,0,1.125) forwards;
   animation-delay: 1s;
 }
@@ -27,7 +26,7 @@ h1,
 }
 
 h2,
-.jd-heading--title {
+.jd-heading--high-level {
   margin-bottom: rem(32);
 
   @include font-scale(l);
@@ -37,4 +36,9 @@ h3,
 .jd-heading--section {
   margin-bottom: rem(16);
   @include font-scale(m);
+}
+
+h4,
+.jd-heading--low-level {
+  @include font-scale(s);
 }

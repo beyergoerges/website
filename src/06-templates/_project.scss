@@ -1,0 +1,57 @@
+.jd-project {
+  display: grid;
+  grid-column-gap: spacing(1);
+  margin-bottom: spacing(3);
+
+  &--featured {
+    grid-template-columns: spacing(2) repeat(12, 1fr) spacing(2);
+    grid-column: 1 / -1;
+  }
+
+  &--standard {
+    grid-column: span 7;
+
+    &:nth-child(even) {
+      grid-template-columns: spacing(2) repeat(6, 1fr);
+    }
+
+    &:nth-child(odd) {
+      grid-template-columns: repeat(6, 1fr) spacing(2);
+    }
+  }
+
+  &__thumbnail {
+    grid-column: 1 / -1;
+    margin-bottom: spacing(1);
+  }
+
+  &__title {
+
+    .jd-project--featured & {
+      grid-column: 2 / 6;
+    }
+
+    .jd-project--standard:nth-child(even) & {
+      grid-column: 2 / 6;
+    }
+
+    .jd-project--standard:nth-child(odd) & {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__description {
+
+    .jd-project--featured & {
+      grid-column: 8 / 12;
+    }
+
+    .jd-project--standard:nth-child(even) & {
+      grid-column: 2 / 6;
+    }
+
+    .jd-project--standard:nth-child(odd) & {
+      grid-column: 1 / 5;
+    }
+  }
+}

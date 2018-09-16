@@ -1,28 +1,32 @@
-$spacing-unit: rem(16);
+$spacing-unit: calc(#{rem(8)} + .5vw);
 
-$spacing: (
-  "xxs": calc((#{$spacing-unit} + 1vw) / 8),
-  "xs": calc((#{$spacing-unit} + 1vw) / 4),
-  "s": calc((#{$spacing-unit} + 1vw) / 2),
-  "m": calc((#{$spacing-unit} + 1vw) / 1.5),
-  "l": calc(#{$spacing-unit} + 1vw),
-  "xl": calc((#{$spacing-unit} + 1vw) * 1.5),
-  "xxl": calc((#{$spacing-unit} + 1vw) * 2)
-);
+// $spacing: (
+//   "xxs": calc((#{$spacing-unit} + 1vw) / 8),
+//   "xs": calc((#{$spacing-unit} + 1vw) / 4),
+//   "s": calc((#{$spacing-unit} + 1vw) / 2),
+//   "m": calc((#{$spacing-unit} + 1vw) / 1.5),
+//   "l": calc(#{$spacing-unit} + 1vw),
+//   "xl": calc((#{$spacing-unit} + 1vw) * 1.5),
+//   "xxl": calc((#{$spacing-unit} + 1vw) * 2)
+// );
 
-@function r-spacing($value) {
-  @return calc((4px + .2vw) * #{$value});
+@function spacing($value) {
+  @return calc(#{$spacing-unit} * #{$value});
 }
 
-@function spacing($key) {
-  @if map-has-key($spacing, $key) {
-    @return map-get($spacing, $key)
-  } @else {
-    @error "No value found for `#{$key}` in `$spacing` map.";
-  }
-}
+// @function r-spacing($value) {
+//   @return calc((4px + .2vw) * #{$value});
+// }
+//
+// @function spacing($key) {
+//   @if map-has-key($spacing, $key) {
+//     @return map-get($spacing, $key)
+//   } @else {
+//     @error "No value found for `#{$key}` in `$spacing` map.";
+//   }
+// }
 
-$grid-container: rem(1140);
+$grid-container: rem(1600);
 $grid-gutter: rem(32);
 $grid-unit: ($grid-container - $grid-gutter) / 12 - $grid-gutter;
 

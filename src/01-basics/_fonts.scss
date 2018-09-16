@@ -62,26 +62,27 @@ $font__types: (
   @return map-get($font, "family"), map-get($font, "fallback");
 }
 
+$font-size--l: 4vw;
 
 // FONT SCALE
 // ----------------------------------------------------------------------------
 
 $font-scale: (
-  "s":   ("phone": rem(15.75), "lh-phone": rem(24), "ls-phone": "normal",
-          "tablet": rem(18.375), "lh-tablet": rem(28), "ls-tablet": "normal",
-          "desktop": rem(21), "lh-desktop": rem(32), "ls-desktop": "normal"
+  "s":   ("phone": calc(#{rem(14)} + .5vw), "lh-phone": 1.5, "ls-phone": "normal",
+          "tablet": calc(#{rem(14)} + .5vw), "lh-tablet": 1.5, "ls-tablet": "normal",
+          "desktop": calc(#{rem(14)} + .5vw), "lh-desktop": 1.5, "ls-desktop": "normal"
          ),
-  "m":   ("phone": rem(23.625), "lh-phone": rem(30), "ls-phone": "-.00625em",
-          "tablet": rem(27.5625), "lh-tablet": rem(28), "ls-tablet": "-.0075em",
-          "desktop": rem(42), "lh-desktop": rem(48), "ls-desktop": "-.01em",
+  "m":   ("phone": calc(#{rem(19)} + 1.625vw), "lh-phone": 1.2, "ls-phone": "-.00625em",
+          "tablet": calc(#{rem(19)} + 1.625vw), "lh-tablet": 1.1, "ls-tablet": "-.0075em",
+          "desktop": 2.478188vw, "lh-desktop": 1, "ls-desktop": "-.01em",
          ),
-  "l":   ("phone": rem(35.4375), "lh-phone": rem(36), "ls-phone": "-.0125em",
-          "tablet": rem(41.34375), "lh-tablet": rem(42), "ls-tablet": "-.015em",
-          "desktop": rem(84), "lh-desktop": rem(80), "ls-desktop": "-.02em",
+  "l":   ("phone": calc(#{rem(24)} + 3vw), "lh-phone": 1.2, "ls-phone": "-.0125em",
+          "tablet": calc(#{rem(24)} + 3vw), "lh-tablet": 1.1, "ls-tablet": "-.015em",
+          "desktop": $font-size--l, "lh-desktop": 1, "ls-desktop": "-.02em",
          ),
   "xl": ("phone": rem(70.875), "lh-phone": rem(60), "ls-phone": "-.025em",
           "tablet": rem(124.03125), "lh-tablet": rem(112), "ls-tablet": "-.03em",
-          "desktop": rem(252), "lh-desktop": rem(240), "ls-desktop": "-.04em",
+          "desktop": rem(224), "lh-desktop": rem(184), "ls-desktop": "-.04em",
          )
 );
 
@@ -97,7 +98,7 @@ $font-scale: (
       letter-spacing: #{inspect(map-get-deep($font-scale, $key, "ls-tablet"))};
     }
 
-    @include break(desktop-m) {
+    @include break(desktop-s) {
       font-size: #{inspect(map-get-deep($font-scale, $key, "desktop"))};
       line-height: #{inspect(map-get-deep($font-scale, $key, "lh-desktop"))};
       letter-spacing: #{inspect(map-get-deep($font-scale, $key, "ls-desktop"))};

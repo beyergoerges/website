@@ -1,0 +1,13 @@
+.--theme-light {
+
+  &.jd-block--intro,
+  &.jd-block--solid {
+    background-color: $theme--light__back;
+  }
+
+  h1, h3,
+  .jd-heading--page,
+  .jd-heading--section {
+    color: $theme--light__front;
+  }
+}

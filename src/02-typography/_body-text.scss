@@ -18,6 +18,11 @@
 p,
 .jd-paragraph {
   @include font-scale(s);
+
+  + p,
+  + .jd-paragraph {
+    text-indent: 2em;
+  }
 }
 
 strong,
