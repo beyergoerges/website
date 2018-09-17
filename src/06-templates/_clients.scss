@@ -1,40 +1,70 @@
 .jd-clients {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-column: 1 / -1;
+  margin-bottom: spacing(3);
   padding-right: spacing(2.5);
   padding-left: spacing(2.5);
+
+  @include break(tablet) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include break(desktop-s) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 .jd-client {
-  position: relative;
+  padding: 15%;
 
-  &:nth-child(n+2):nth-child(-n+6),
-  &:nth-child(n+8):nth-child(-n+12) {
+  @include break(desktop-s) {
+    padding: 20%;
+  }
+
+  &:nth-child(even) {
     border-left: 2px solid white;
   }
 
-  &:nth-child(n+1):nth-child(-n+6) {
+  &:nth-child(n+1):nth-child(-n+10) {
     border-bottom: 2px solid white;
   }
 
-  &:before {
-    content: "";
-    display: inline-block;
-    position: relative;
-    width: 1px;
-    height: 0;
-    padding-top: 100%;
+  @include break(tablet) {
+
+    &:nth-child(n+1):nth-child(-n+12) {
+      border: none;
+    }
+
+    &:nth-child(n+2):nth-child(-n+4),
+    &:nth-child(n+6):nth-child(-n+8),
+    &:nth-child(n+10):nth-child(-n+12) {
+      border-left: 2px solid white;
+    }
+
+    &:nth-child(n+1):nth-child(-n+8) {
+      border-bottom: 2px solid white;
+    }
+  }
+
+  @include break(desktop-s) {
+
+    &:nth-child(n+1):nth-child(-n+12) {
+      border: none;
+    }
+
+    &:nth-child(n+2):nth-child(-n+6),
+    &:nth-child(n+8):nth-child(-n+12) {
+      border-left: 2px solid white;
+    }
+
+    &:nth-child(n+1):nth-child(-n+6) {
+      border-bottom: 2px solid white;
+    }
   }
 
   &__logo {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
     width: 100%;
+    height: auto;
   }
 }

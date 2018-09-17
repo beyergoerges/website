@@ -1,25 +1,45 @@
 .jd-craft {
+  margin-bottom: spacing(8);
 
-  &__number {
-    grid-column: 2 / 4;
-  }
-
-  &__name {
-    grid-column: 4 / 14;
-  }
-
-  &__title {
-    grid-column: 4 / 9;
+  &__heading {
+    grid-column: 2 / 6;
     grid-row: 2;
+
+    @include break(tablet) {
+      grid-column: 3 / 6;
+    }
+
+    @include break(desktop-s) {
+      grid-column: 4 / 9;
+    }
   }
 
   &__description {
-    grid-column: 4 / 9;
+    grid-column: 2 / 6;
     grid-row: 3;
+    margin-bottom: spacing(3);
+
+    @include break(tablet) {
+      grid-column: 3 / 6;
+    }
+
+    @include break(desktop-s) {
+      grid-column: 4 / 9;
+      margin-bottom: 0;
+    }
   }
 
   &__list {
-    grid-column: 11 / 14;
-    grid-row: 2 / 4;
+    grid-column: 2 / 6;
+    grid-row: 4;
+
+    @include break(tablet) {
+      grid-column: 3 / 6;
+    }
+
+    @include break(desktop-s) {
+      grid-column: 11 / 14;
+      grid-row: 2 / 4;
+    }
   }
 }

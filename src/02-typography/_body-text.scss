@@ -17,11 +17,13 @@
 
 p,
 .jd-paragraph {
+  color: rgba(0, 0, 0, .8);
+
   @include font-scale(s);
 
   + p,
   + .jd-paragraph {
-    text-indent: 2em;
+    text-indent: 1.618em;
   }
 }
 

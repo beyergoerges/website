@@ -1,0 +1,10 @@
+@mixin grid() {
+  display: grid;
+  grid-column-gap: spacing(1);
+
+  grid-template-columns: spacing(2) repeat(4, 1fr) spacing(2);
+
+  @include break(desktop-s) {
+    grid-template-columns: spacing(2) repeat(12, 1fr) spacing(2);
+  }
+}
