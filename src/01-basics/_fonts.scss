@@ -68,9 +68,13 @@ $font-size--l: 4vw;
 // ----------------------------------------------------------------------------
 
 $font-scale: (
-  "s":   ("phone": calc(#{rem(14)} + .5vw), "lh-phone": 1.5, "ls-phone": "normal",
-          "tablet": calc(#{rem(14)} + .5vw), "lh-tablet": 1.5, "ls-tablet": "normal",
-          "desktop": calc(#{rem(14)} + .5vw), "lh-desktop": 1.5, "ls-desktop": "normal"
+  "xs":   ("phone": calc(#{rem(12)} + .375vw), "lh-phone": 1.5, "ls-phone": "normal",
+          "tablet": calc(#{rem(12)} + .375vw), "lh-tablet": 1.5, "ls-tablet": "normal",
+          "desktop": calc(#{rem(12)} + .375vw), "lh-desktop": 1.5, "ls-desktop": "normal"
+         ),
+  "s":   ("phone": calc(#{rem(14)} + .375vw), "lh-phone": 1.5, "ls-phone": "normal",
+          "tablet": calc(#{rem(14)} + .375vw), "lh-tablet": 1.5, "ls-tablet": "normal",
+          "desktop": calc(#{rem(14)} + .375vw), "lh-desktop": 1.5, "ls-desktop": "normal"
          ),
   "m":   ("phone": calc(#{rem(19)} + 1.625vw), "lh-phone": 1.2, "ls-phone": "-.00625em",
           "tablet": calc(#{rem(19)} + 1.625vw), "lh-tablet": 1.1, "ls-tablet": "-.0075em",

@@ -7,4 +7,8 @@
     grid-template-columns: auto auto auto;
     justify-self: end;
   }
+
+  &__item {
+    @include font-scale(s);
+  }
 }
