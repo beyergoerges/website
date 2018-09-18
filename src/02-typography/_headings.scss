@@ -7,23 +7,23 @@ h1, h2, h3, h4, h5, h6,
 h1,
 .jd-heading--page {
   @include font-scale(xl);
-
-  letter-spacing: -3em !important;
-  animation: in 3s cubic-bezier(.75,-0.5,0,1.125) forwards;
-  animation-delay: 1s;
+  //
+  // letter-spacing: -3em !important;
+  // animation: in 3s cubic-bezier(.75,-0.5,0,1.125) forwards;
+  // animation-delay: 1s;
 }
 
-@keyframes in {
-  0%{
-    letter-spacing: -3em;
-  }
-  30%{
-    letter-spacing: -.05em;
-  }
-  100%{
-    letter-spacing: -.05em;
-  }
-}
+// @keyframes in {
+//   0%{
+//     letter-spacing: -3em;
+//   }
+//   30%{
+//     letter-spacing: -.05em;
+//   }
+//   100%{
+//     letter-spacing: -.05em;
+//   }
+// }
 
 h2,
 .jd-heading--high-level {

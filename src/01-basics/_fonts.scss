@@ -80,13 +80,13 @@ $font-scale: (
           "tablet": calc(#{rem(19)} + 1.625vw), "lh-tablet": 1.1, "ls-tablet": "-.0075em",
           "desktop": 2.478188vw, "lh-desktop": 1, "ls-desktop": "-.01em",
          ),
-  "l":   ("phone": calc(#{rem(24)} + 3vw), "lh-phone": 1.2, "ls-phone": "-.0125em",
-          "tablet": calc(#{rem(24)} + 3vw), "lh-tablet": 1.1, "ls-tablet": "-.015em",
-          "desktop": $font-size--l, "lh-desktop": 1, "ls-desktop": "-.02em",
+  "l":   ("phone": calc(#{rem(24)} + 3vw), "lh-phone": 1.2, "ls-phone": "-.01em",
+          "tablet": calc(#{rem(24)} + 3vw), "lh-tablet": 1.1, "ls-tablet": "-.01em",
+          "desktop": $font-size--l, "lh-desktop": 1, "ls-desktop": "-.01em",
          ),
-  "xl": ("phone": rem(70.875), "lh-phone": rem(60), "ls-phone": "-.025em",
-          "tablet": rem(124.03125), "lh-tablet": rem(112), "ls-tablet": "-.03em",
-          "desktop": rem(224), "lh-desktop": rem(184), "ls-desktop": "-.04em",
+  "xl": ("phone": rem(70.875), "lh-phone": rem(60), "ls-phone": "-.015em",
+          "tablet": rem(124.03125), "lh-tablet": rem(112), "ls-tablet": "-.015em",
+          "desktop": rem(224), "lh-desktop": rem(184), "ls-desktop": "-.015em",
          )
 );
 
