@@ -1,0 +1,59 @@
+@mixin press-logo($name, $width, $height) {
+  &--#{$name} {
+    width: $width * 1px * .6;
+    height: $height * 1px * .6;
+
+    @include break(tablet) {
+      width: $width * 1px * .8;
+      height: $height * 1px * .8;
+    }
+
+    @include break(desktop-s) {
+      width: $width * 1px * .9;
+      height: $height * 1px * .9;
+    }
+  }
+}
+
+.jd-press {
+  margin-bottom: spacing(8);
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    grid-column: 2 / 6;
+    margin: spacing(-1.5);
+
+    @include break(desktop-s) {
+      grid-column: 2 / 14;
+    }
+
+    // &:after {
+    //   content: "";
+    //   flex: auto;
+    // }
+  }
+
+  &__item {
+    padding: spacing(1.5);
+    opacity: .5;
+
+    @include transition($property: opacity);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__logo {
+    @include press-logo(sz, 208.3, 24);
+    @include press-logo(wired, 136.93, 28);
+    @include press-logo(sponsors, 138.97, 20);
+    @include press-logo(faz, 189.18, 26);
+    @include press-logo(11freunde, 128, 32);
+    @include press-logo(rn, 160.89, 18);
+    @include press-logo(handelsblatt, 140.87, 20);
+    @include press-logo(techcrunch, 64, 32);
+  }
+}
