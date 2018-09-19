@@ -55,5 +55,10 @@
     @include press-logo(rn, 160.89, 18);
     @include press-logo(handelsblatt, 140.87, 20);
     @include press-logo(techcrunch, 64, 32);
+    @include press-logo(republica, 128, 28.31);
+    @include press-logo(faz-forum, 242, 39.5);
+    @include press-logo(campus, 96, 67);
+    @include press-logo(omk, 72, 28.5);
+    @include press-logo(netandwork, 131, 32);
   }
 }
