@@ -68,7 +68,11 @@ $font-size--l: 4vw;
 // ----------------------------------------------------------------------------
 
 $font-scale: (
-  "xs":   ("phone": calc(#{rem(12)} + .375vw), "lh-phone": 1.5, "ls-phone": "normal",
+  "xxs": ("phone": calc(#{rem(10)} + .25vw), "lh-phone": 1.5, "ls-phone": ".1em",
+          "tablet": calc(#{rem(10)} + .25vw), "lh-tablet": 1.5, "ls-tablet": ".1em",
+          "desktop": calc(#{rem(10)} + .25vw), "lh-desktop": 1.5, "ls-desktop": ".1em"
+         ),
+  "xs":  ("phone": calc(#{rem(12)} + .375vw), "lh-phone": 1.5, "ls-phone": "normal",
           "tablet": calc(#{rem(12)} + .375vw), "lh-tablet": 1.5, "ls-tablet": "normal",
           "desktop": calc(#{rem(12)} + .375vw), "lh-desktop": 1.5, "ls-desktop": "normal"
          ),
@@ -84,7 +88,7 @@ $font-scale: (
           "tablet": calc(#{rem(24)} + 3vw), "lh-tablet": 1.1, "ls-tablet": "-.01em",
           "desktop": $font-size--l, "lh-desktop": 1, "ls-desktop": "-.01em",
          ),
-  "xl": ("phone": rem(70.875), "lh-phone": rem(60), "ls-phone": "-.015em",
+  "xl":  ("phone": rem(70.875), "lh-phone": rem(60), "ls-phone": "-.015em",
           "tablet": rem(124.03125), "lh-tablet": rem(112), "ls-tablet": "-.015em",
           "desktop": rem(224), "lh-desktop": rem(184), "ls-desktop": "-.015em",
          )

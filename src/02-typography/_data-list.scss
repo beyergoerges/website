@@ -1,0 +1,18 @@
+.jd-data-list {
+
+  &__item {
+    padding-top: .75em;
+    padding-bottom: .75em;
+    text-transform: uppercase;
+
+    @include font-scale(xxs);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid white;
+
+      @include break(desktop-s) {
+        border-width: 2px;
+      }
+    }
+  }
+}
