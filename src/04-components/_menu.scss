@@ -1,14 +1,54 @@
 .jd-menu {
-  display: none;
+  justify-self: end;
 
-  @include break(tablet) {
-    display: grid;
-    grid-column-gap: spacing(2);
-    grid-template-columns: auto auto auto;
-    justify-self: end;
+  &__trigger {
+
+    @include break(tablet) {
+      display: none;
+    }
+  }
+
+  &__items {
+
+    @include break(tablet, max) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: absolute;
+      top: 0;
+      right: spacing(4);
+      left: spacing(4);
+      z-index: -1;
+      height: 100vh;
+      padding-bottom: spacing(5);
+      opacity: 0;
+
+      @include transition($property: opacity);
+    }
+
+    @include break(tablet) {
+      display: grid;
+      grid-column-gap: spacing(2);
+      grid-template-columns: auto auto auto;
+    }
+
+    &.--is-open {
+      opacity: 1;
+    }
   }
 
   &__item {
-    @include font-scale(xs);
+
+    @include break(tablet, max) {
+      display: block;
+      margin-bottom: spacing(3);
+      font-family: "neue-haas-grotesk-display", sans-serif;
+
+      @include font-scale(xl);
+    }
+
+    @include break(tablet) {
+      @include font-scale(xs);
+    }
   }
 }
