@@ -53,14 +53,15 @@
 	  const jd_menuItems = document.querySelectorAll(".jd-menu__items")[0];
 	  const jd_container = document.querySelectorAll(".jd-container")[0];
 	
+	  console.log(event.target);
+	
 	  // If the clicked element doesn't have the right selector, bail
-	  if (!event.target.matches(".jd-menu__trigger-icon")) return;
+	  if (!event.target.matches(".jd-menu__trigger, .jd-menu__trigger *")) return;
 	
 	  // Don't follow the link
 	  event.preventDefault();
 	
 	  // Log the clicked element in the console
-	  console.log(event.target);
 	  console.log(jd_menuItems);
 	
 	  if (jd_menuItems.classList.contains("--is-open")) {
