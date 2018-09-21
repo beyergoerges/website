@@ -3,7 +3,6 @@ export default class JD_Menu {
     this.init();
 	}
 	init() {
-    const menuTrigger = document.getElementsByClassName("jd-menu__trigger");
     const menuItems = document.getElementsByClassName("jd-menu__items");
 
     document.addEventListener("click", function(event) {
