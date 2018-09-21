@@ -1,22 +1,50 @@
 .jd-theme--dark {
 
-  h1, h2,
-  .jd-heading--page,
-  .jd-heading--title {
-    color: #FDC8B3 !important;
+  .jd-block--color-1 {
+    background-color: $theme--dark__back;
+
+    h1, h3,
+    .jd-heading--page,
+    .jd-heading--section {
+      color: $theme--dark__front;
+    }
+
+    .jd-section__title-line {
+      background-color: $theme--dark__front;
+    }
+
+    .jd-contact__heading {
+      color: black;
+    }
   }
 
-  .jd-heading,
-  p {
-    color: rgba(white, .94);
-  }
+  .jd-block--color-2 {
+    background-color: #141414;
 
-  .jd-header {
-    background-color: black;
-  }
+    h1, h2, h3,
+    .jd-heading--page,
+    .jd-heading--high-level,
+    .jd-heading--section,
+    .jd-paragraph,
+    .jd-data-list__item {
+      color: $theme--light__front;
+    }
 
-  .jd-content {
-    border-color: black;
-    background-color: #1B1B20;
+    h2,
+    .jd-heading--high-level {
+      color: #FDC8B3;
+    }
+
+    .jd-data-list__item {
+      border-color: $theme--light__front;
+    }
+
+    .jd-section__title-line {
+      background-color: $theme--light__front;
+    }
+
+    .jd-contact__heading {
+      color: black;
+    }
   }
 }

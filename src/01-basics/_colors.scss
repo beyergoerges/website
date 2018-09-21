@@ -30,8 +30,12 @@ $grayscale--light: #E2E2E2;
 $grayscale--medium: #C0C0C0;
 $grayscale--dark: #999;
 $grayscale--darker: #444;
-$grayscale--darkest: #111;
+$grayscale--darkest: #141414;
 
 // Light theme colors
 $theme--light__back: $color--bon-jour;
 $theme--light__front: $grayscale--white;
+
+// Dark theme colors
+$theme--dark__back: $grayscale--darkest;
+$theme--dark__front: $grayscale--white;

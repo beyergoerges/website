@@ -1,14 +1,17 @@
 .jd-container {
   position: relative;
   z-index: 1;
-  margin-right: spacing(1);
-  margin-left: spacing(1);
 
   @include break(tablet, max) {
-    @include transition($duration-slower, $easing: $ease-in-out-cubic);
+    @include transition($duration-slower, $property: transform, $easing: $ease-in-out-cubic);
 
     &.--is-pushed {
       transform: translateY(100vh);
     }
+  }
+
+  @include break(tablet) {
+    // margin-right: spacing(1);
+    // margin-left: spacing(1);
   }
 }
