@@ -1,9 +1,12 @@
 .jd-container {
   margin-right: spacing(1);
   margin-left: spacing(1);
-  @include transition($duration-slower, $easing: $ease-in-out-cubic);
 
-  &.--is-pushed {
-    transform: translateY(100vh);
+  @include break(tablet, max) {
+    @include transition($duration-slower, $easing: $ease-in-out-cubic);
+
+    &.--is-pushed {
+      transform: translateY(100vh);
+    }
   }
 }

@@ -21,7 +21,7 @@
       z-index: -1;
       height: 100vh;
       min-height: 420px;
-      padding-bottom: spacing(8);
+      padding-bottom: spacing(10);
       opacity: 0;
 
       @include transition($property: opacity);
@@ -39,17 +39,27 @@
   }
 
   &__item {
+    opacity: .4;
+
+    @include transition($property: opacity);
 
     @include break(tablet, max) {
       display: block;
-      margin-bottom: spacing(3);
+      margin-bottom: spacing(2);
       font-family: "neue-haas-grotesk-display", sans-serif;
-
-      @include font-scale(xl);
+      font-size: 12vw;
     }
 
     @include break(tablet) {
       @include font-scale(xs);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.--is-current {
+      opacity: 1;
     }
   }
 }

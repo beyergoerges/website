@@ -81,11 +81,11 @@ $font-scale: (
           "tablet": calc(#{rem(14)} + .375vw), "lh-tablet": 1.5, "ls-tablet": "normal",
           "desktop": calc(#{rem(14)} + .375vw), "lh-desktop": 1.5, "ls-desktop": "normal"
          ),
-  "m":   ("phone": calc(#{rem(19)} + 1.625vw), "lh-phone": 1.2, "ls-phone": "-.00625em",
+  "m":   ("phone": calc(#{rem(16)} + 1.625vw), "lh-phone": 1.2, "ls-phone": "-.00625em",
           "tablet": calc(#{rem(19)} + 1.625vw), "lh-tablet": 1.1, "ls-tablet": "-.0075em",
           "desktop": 2.478188vw, "lh-desktop": 1, "ls-desktop": "-.01em",
          ),
-  "l":   ("phone": calc(#{rem(24)} + 3vw), "lh-phone": 1.2, "ls-phone": "-.01em",
+  "l":   ("phone": calc(#{rem(18)} + 2.5vw), "lh-phone": 1.2, "ls-phone": "-.01em",
           "tablet": calc(#{rem(24)} + 3vw), "lh-tablet": 1.1, "ls-tablet": "-.01em",
           "desktop": $font-size--l, "lh-desktop": 1, "ls-desktop": "-.01em",
          ),
