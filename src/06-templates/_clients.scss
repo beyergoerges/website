@@ -16,55 +16,94 @@
 }
 
 .jd-client {
+  position: relative;
   padding: 15%;
+  overflow: hidden;
 
   @include break(desktop-s) {
     padding: 20%;
   }
 
-  &:nth-child(even) {
-    border-left: 1px solid white;
+  &__line-x,
+  &__line-y {
+    display: none;
+    position: absolute;
+    background-color: white;
   }
 
-  &:nth-child(n+1):nth-child(-n+10) {
-    border-bottom: 1px solid white;
+  &__line-x {
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+
+    @include break(desktop-s) {
+      height: 2px;
+    }
+  }
+
+  &__line-y {
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+
+    @include break(desktop-s) {
+      width: 2px;
+    }
+  }
+
+  &:nth-child(even) .jd-client__line-y {
+    display: block;
+  }
+
+  &:nth-child(n+1):nth-child(-n+10) .jd-client__line-x {
+    display: block;
   }
 
   @include break(tablet) {
 
     &:nth-child(n+1):nth-child(-n+12) {
-      border: none;
+      .jd-client__line-x,
+      .jd-client__line-y {
+        display: none;
+      }
     }
 
-    &:nth-child(n+2):nth-child(-n+4),
-    &:nth-child(n+6):nth-child(-n+8),
-    &:nth-child(n+10):nth-child(-n+12) {
-      border-left: 1px solid white;
+    &:nth-child(n+2):nth-child(-n+4) .jd-client__line-y,
+    &:nth-child(n+6):nth-child(-n+8) .jd-client__line-y,
+    &:nth-child(n+10):nth-child(-n+12) .jd-client__line-y {
+      display: block;
     }
 
-    &:nth-child(n+1):nth-child(-n+8) {
-      border-bottom: 1px solid white;
+    &:nth-child(n+1):nth-child(-n+8) .jd-client__line-x {
+      display: block;
     }
   }
 
   @include break(desktop-s) {
 
     &:nth-child(n+1):nth-child(-n+12) {
-      border: none;
+      .jd-client__line-x,
+      .jd-client__line-y {
+        display: none;
+      }
     }
 
-    &:nth-child(n+2):nth-child(-n+6),
-    &:nth-child(n+8):nth-child(-n+12) {
-      border-left: 2px solid white;
+    &:nth-child(n+2):nth-child(-n+6) .jd-client__line-y,
+    &:nth-child(n+8):nth-child(-n+12) .jd-client__line-y {
+      display: block;
     }
 
-    &:nth-child(n+1):nth-child(-n+6) {
-      border-bottom: 2px solid white;
+    &:nth-child(n+1):nth-child(-n+6) .jd-client__line-x {
+      display: block;
     }
   }
 
   &__logo {
     width: 100%;
     height: auto;
+    opacity: 0;
+    transform: scale(.8);
   }
 }

@@ -66,6 +66,7 @@
   &__description {
     grid-column: 2 / 6;
     margin-bottom: spacing(4);
+    opacity: 0;
 
     @include break(tablet) {
       grid-column: 3 / 6;

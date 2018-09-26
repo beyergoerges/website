@@ -1,5 +1,5 @@
 let jd_craftScene = name => {
-  jd_scene("#jd-craft-" + name).offset("-100").reverse(false).on("enter", event => {
+  jd_scene("#" + name).offset("-100").reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     // jd_tl.fromTo(
     //   "#jd-craft-" + name + " .jd-section__title-number",
@@ -12,13 +12,13 @@ let jd_craftScene = name => {
     jd_tl.staggerFromTo(
       [
         // "#jd-craft-" + name + " .jd-section__title-text",
-        "#jd-craft-" + name + " .jd-craft__heading",
-        "#jd-craft-" + name + " .jd-craft__description"
+        "#" + name + " .jd-craft__heading",
+        "#" + name + " .jd-craft__description"
       ],
       .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2, .6
     );
     jd_tl.staggerFromTo(
-      "#jd-craft-" + name + " .jd-data-list__item",
+      "#" + name + " .jd-data-list__item",
       .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, 1
     );
   });

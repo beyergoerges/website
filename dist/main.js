@@ -4,6 +4,7 @@
 //@prepros-append 05-layout/_meta.js
 //@prepros-append 06-templates/_craft.js
 //@prepros-append 06-templates/_joda.js
+//@prepros-append 06-templates/_clients.js
 
 let jd_scrollController = new ScrollMagic.Controller();
 
@@ -52,21 +53,21 @@ const jd_toggleMenu = event => {
 document.addEventListener("click", jd_toggleMenu, false);
 
 let jd_sectionTitleScene = name => {
-  jd_scene("#jd-section-title-" + name).offset("-200").reverse(false).on("enter", event => {
+  jd_scene("#" + name + " .jd-section__title").offset("-200").reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     jd_tl.fromTo(
-      "#jd-section-title-" + name + " .jd-section__title-number",
+      "#" + name + " .jd-section__title-number",
       .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}
     );
     jd_tl.to(
-      "#jd-section-title-" + name + " .jd-section__title-line", .4, {scaleX: 1, ease: Power2.easeOut}
+      "#" + name + " .jd-section__title-line", .4, {scaleX: 1, ease: Power2.easeOut}
     );
     jd_tl.fromTo(
-      "#jd-section-title-" + name + " .jd-section__title-text",
+      "#" + name + " .jd-section__title-text",
       .4, {opacity: 0}, {opacity: 1}, .6
     );
     jd_tl.fromTo(
-      "#jd-section-title-" + name + " .jd-section__title-text",
+      "#" + name + " .jd-section__title-text",
       .4, {x: "-16px"}, {x: 0, ease: Power2.easeOut}, .6
     );
   });
@@ -82,6 +83,18 @@ jd_sectionTitleScene("speaker");
 
 jd_sectionTitleScene("email");
 jd_sectionTitleScene("phone");
+
+let jd_sectionDescriptionScene = name => {
+  jd_scene("#" + name + " .jd-section__description").offset("-100").reverse(false).on("enter", event => {
+    let jd_tl = new TimelineLite();
+    jd_tl.fromTo(
+      "#" + name + " .jd-section__description",
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .8
+    );
+  });
+}
+
+jd_sectionDescriptionScene("projects");
 
 const jd_openMeta = event => {
 
@@ -106,7 +119,7 @@ const jd_openMeta = event => {
 document.addEventListener("click", jd_openMeta, false);
 
 let jd_craftScene = name => {
-  jd_scene("#jd-craft-" + name).offset("-100").reverse(false).on("enter", event => {
+  jd_scene("#" + name).offset("-100").reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     // jd_tl.fromTo(
     //   "#jd-craft-" + name + " .jd-section__title-number",
@@ -119,13 +132,13 @@ let jd_craftScene = name => {
     jd_tl.staggerFromTo(
       [
         // "#jd-craft-" + name + " .jd-section__title-text",
-        "#jd-craft-" + name + " .jd-craft__heading",
-        "#jd-craft-" + name + " .jd-craft__description"
+        "#" + name + " .jd-craft__heading",
+        "#" + name + " .jd-craft__description"
       ],
       .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2, .6
     );
     jd_tl.staggerFromTo(
-      "#jd-craft-" + name + " .jd-data-list__item",
+      "#" + name + " .jd-data-list__item",
       .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, 1
     );
   });
@@ -142,6 +155,19 @@ jd_scene("#jd-joda-photo").offset("-200").reverse(false).on("enter", event => {
   );
   jd_tl.to(
     "#jd-joda-photo .jd-image__img", 0, {opacity: 1}, .5
+  );
+});
+
+jd_scene(".jd-clients").offset("-100").reverse(false).on("enter", event => {
+  let jd_tl = new TimelineLite();
+  jd_tl.staggerTo(
+    ".jd-client__line-x", .1, {right: 0}, .1, .4
+  );
+  jd_tl.staggerTo(
+    ".jd-client__line-y", .1, {top: 0}, .1, .8
+  );
+  jd_tl.staggerTo(
+    ".jd-client__logo", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .6
   );
 });
 

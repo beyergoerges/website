@@ -4,3 +4,4 @@
 //@prepros-append 05-layout/_meta.js
 //@prepros-append 06-templates/_craft.js
 //@prepros-append 06-templates/_joda.js
+//@prepros-append 06-templates/_clients.js
