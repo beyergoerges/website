@@ -1,7 +1,9 @@
 //@prepros-append 01-basics/_animation.js
 //@prepros-append 04-components/_menu.js
-//@prepros-append 05-layout/_scroll-reveal.js
+//@prepros-append 05-layout/_section.js
 //@prepros-append 05-layout/_meta.js
+//@prepros-append 06-templates/_craft.js
+//@prepros-append 06-templates/_joda.js
 
 let jd_scrollController = new ScrollMagic.Controller();
 
@@ -81,46 +83,6 @@ jd_sectionTitleScene("speaker");
 jd_sectionTitleScene("email");
 jd_sectionTitleScene("phone");
 
-let jd_craftScene = name => {
-  jd_scene("#jd-craft-" + name).offset("-100").reverse(false).on("enter", event => {
-    let jd_tl = new TimelineLite();
-    // jd_tl.fromTo(
-    //   "#jd-craft-" + name + " .jd-section__title-number",
-    //   .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}
-    // );
-    // jd_tl.to(
-    //   "#jd-craft-" + name + " .jd-section__title-line",
-    //   .4, {scaleX: 1, ease:Power2.easeOut}
-    // );
-    jd_tl.staggerFromTo(
-      [
-        // "#jd-craft-" + name + " .jd-section__title-text",
-        "#jd-craft-" + name + " .jd-craft__heading",
-        "#jd-craft-" + name + " .jd-craft__description"
-      ],
-      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .4
-    );
-    jd_tl.staggerFromTo(
-      "#jd-craft-" + name + " .jd-data-list__item",
-      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, .8
-    );
-  });
-}
-
-jd_craftScene("strategy");
-jd_craftScene("design");
-jd_craftScene("technology");
-
-jd_scene("#jd-joda-photo").offset("-200").reverse(false).on("enter", event => {
-  let jd_tl = new TimelineLite();
-  jd_tl.to(
-    "#jd-joda-photo .jd-image__revealer", 2, {x: "200%", ease: SlowMo.easeIn}
-  );
-  jd_tl.to(
-    "#jd-joda-photo .jd-image__img", 0, {opacity: 1}, .5
-  );
-});
-
 const jd_openMeta = event => {
 
   const jd_meta = document.querySelectorAll(".jd-meta")[0];
@@ -142,6 +104,46 @@ const jd_openMeta = event => {
 }
 
 document.addEventListener("click", jd_openMeta, false);
+
+let jd_craftScene = name => {
+  jd_scene("#jd-craft-" + name).offset("-100").reverse(false).on("enter", event => {
+    let jd_tl = new TimelineLite();
+    // jd_tl.fromTo(
+    //   "#jd-craft-" + name + " .jd-section__title-number",
+    //   .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}
+    // );
+    // jd_tl.to(
+    //   "#jd-craft-" + name + " .jd-section__title-line",
+    //   .4, {scaleX: 1, ease:Power2.easeOut}
+    // );
+    jd_tl.staggerFromTo(
+      [
+        // "#jd-craft-" + name + " .jd-section__title-text",
+        "#jd-craft-" + name + " .jd-craft__heading",
+        "#jd-craft-" + name + " .jd-craft__description"
+      ],
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2, .6
+    );
+    jd_tl.staggerFromTo(
+      "#jd-craft-" + name + " .jd-data-list__item",
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, 1
+    );
+  });
+}
+
+jd_craftScene("strategy");
+jd_craftScene("design");
+jd_craftScene("technology");
+
+jd_scene("#jd-joda-photo").offset("-200").reverse(false).on("enter", event => {
+  let jd_tl = new TimelineLite();
+  jd_tl.to(
+    "#jd-joda-photo .jd-image__revealer", 2, {x: "200%", ease: SlowMo.easeIn}
+  );
+  jd_tl.to(
+    "#jd-joda-photo .jd-image__img", 0, {opacity: 1}, .5
+  );
+});
 
 
 //# sourceMappingURL=main.js.map
