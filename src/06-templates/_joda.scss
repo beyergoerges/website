@@ -6,6 +6,20 @@
     margin-bottom: spacing(4);
   }
 
+  &__heading {
+    grid-column: 2 / 6;
+    grid-row: 2;
+    //opacity: 0;
+
+    @include break(tablet) {
+      grid-column: 3 / 6;
+    }
+
+    @include break(desktop-s) {
+      grid-column: 4 / 9;
+    }
+  }
+
   &__text--part1 {
     grid-column: 2 / 6;
 
