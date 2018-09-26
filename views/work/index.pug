@@ -1,0 +1,135 @@
+extends ../default.pug
+
+block svg 
+  include ../includes/svg/clients.pug
+  include ../includes/svg/press.pug
+
+block content
+  header.jd-block.jd-block--intro
+    h1.jd-heading.jd-heading--page Portfolio
+  .jd-block.jd-block--solid.jd-block--color-1
+    section.jd-section
+      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-text
+        span.jd-section__title-number
+          span 01
+          span.jd-section__title-line
+        span.jd-section__title-text Projekte
+      p.jd-paragraph.jd-section__description
+        | Der Weg zu einer gemeinsamen Agentur führte über eine Vielzahl digitaler Projekte mit großartigen Menschen und Marken.
+      ul.jd-clients
+        li.jd-client
+          svg.jd-client__logo(width="160" height="160")
+            use(href="#logo-eventim" xlink:href="#logo-eventim")
+        li.jd-client
+          svg.jd-client__logo(width="160" height="160")
+            use(href="#logo-bvb" xlink:href="#logo-bvb")
+        li.jd-client
+          svg.jd-client__logo(width="160" height="160")
+            use(href="#logo-montblanc" xlink:href="#logo-montblanc")
+        li.jd-client
+          svg.jd-client__logo(width="160" height="160")
+            use(href="#logo-fc" xlink:href="#logo-fc")
+        li.jd-client
+          svg.jd-client__logo(width="160" height="160")
+            use(href="#logo-dfa" xlink:href="#logo-dfa")
+        li.jd-client
+          img.jd-client__logo(width="160" height="160" src="../images/clients/tsukuyumi.png" alt="Tsukuyumi – Full Moon Down")
+        li.jd-client
+          svg.jd-client__logo(width="160" height="160")
+            use(href="#logo-rosenthal" xlink:href="#logo-rosenthal")
+        li.jd-client
+          img.jd-client__logo(width="160" height="160" src="../images/clients/lichtblick.png" alt="Lichtblick")
+        li.jd-client
+          svg.jd-client__logo(width="160" height="160")
+            use(href="#logo-sgf" xlink:href="#logo-sgf")
+        li.jd-client
+          svg.jd-client__logo(width="160" height="160")
+            use(href="#logo-konami" xlink:href="#logo-konami")
+        li.jd-client
+          img.jd-client__logo(width="160" height="160" src="../images/clients/lagardere.png" alt="Lagardère Sports")
+        li.jd-client
+          svg.jd-client__logo(width="160" height="160")
+            use(href="#logo-hertha" xlink:href="#logo-hertha")
+  .jd-block.jd-block--hollow
+    section.jd-section.jd-projects
+      article.jd-project.jd-project--featured
+        img.jd-project__thumbnail(src="../images/projects/eventim-sports_ticketshop.jpg" alt="")
+        h4.jd-heading.jd-heading--low-level.jd-project__title Eventim Sports Ticketshop
+        .jd-project__description
+          p.jd-paragraph.jd-project__description Einer für alle – neuer Shop für den Marktführer im Sport-Ticketing
+      article.jd-project.jd-project--standard
+        img.jd-project__thumbnail(src="../images/projects/tsukuyumi.jpg" alt="")
+        h4.jd-heading.jd-heading--low-level.jd-project__title Tsukuyumi – Full Moon Down
+        .jd-project__description
+          p.jd-paragraph.jd-project__description Hammock subway tile vexillologist, chartreuse tofu paleo keffiyeh vape banjo
+      article.jd-project.jd-project--standard
+        img.jd-project__thumbnail(src="../images/projects/a-day-in-may.jpg" alt="")
+        h4.jd-heading.jd-heading--low-level.jd-project__title Ein Tag im Mai
+        .jd-project__description
+          p.jd-paragraph.jd-project__description
+            | Menschen im Freudentaumel – filmische Portraits nach dem Dortmunder Pokalsieg 2018
+      article.jd-project.jd-project--standard
+        img.jd-project__thumbnail(src="../images/projects/bvb-kidsclub.jpg" alt="")
+        h4.jd-heading.jd-heading--low-level.jd-project__title BVB-KidsClub
+        .jd-project__description
+          p.jd-paragraph.jd-project__description Website-Relaunch: ein neues interaktives Zuhause für die kleinen BVB-Fans
+      article.jd-project.jd-project--standard
+        img.jd-project__thumbnail(src="../images/projects/24.jpg" alt="")
+        h4.jd-heading.jd-heading--low-level.jd-project__title 24 – Das Wissensportal der Deutschen Filmakademie
+        .jd-project__description
+          p.jd-paragraph.jd-project__description Website-Relaunch: Filmbildung neu gedacht
+      article.jd-project.jd-project--standard
+        img.jd-project__thumbnail(src="../images/projects/40-jahre-heimat.jpg" alt="")
+        h4.jd-heading.jd-heading--low-level.jd-project__title 40 Jahre Heimat
+        .jd-project__description
+          p.jd-paragraph.jd-project__description Ein Stadion und seine bewegte Geschichte als filmisches Erlebnis
+  .jd-block.jd-block--solid.jd-block--color-1
+    section.jd-section.jd-press
+      h3.jd-heading.jd-heading--section.jd-section__title
+        span.jd-section__title-number
+          span 02
+          span.jd-section__title-line
+        span.jd-section__title-text Presse
+      .jd-press__items
+        a.jd-press__item(href="")
+          svg.jd-press__logo.jd-press__logo--sz
+            use(href="#logo-sz" xlink:href="#logo-sz")
+        a.jd-press__item(href="")
+          svg.jd-press__logo.jd-press__logo--wired
+            use(href="#logo-wired" xlink:href="#logo-wired")
+        a.jd-press__item(href="")
+          svg.jd-press__logo.jd-press__logo--sponsors
+            use(href="#logo-sponsors" xlink:href="#logo-sponsors")
+        a.jd-press__item(href="")
+          svg.jd-press__logo.jd-press__logo--faz
+            use(href="#logo-faz" xlink:href="#logo-faz")
+        a.jd-press__item(href="")
+          svg.jd-press__logo.jd-press__logo--11freunde
+            use(href="#logo-11freunde" xlink:href="#logo-11freunde")
+        a.jd-press__item(href="")
+          svg.jd-press__logo.jd-press__logo--rn
+            use(href="#logo-rn" xlink:href="#logo-rn")
+        a.jd-press__item(href="")
+          svg.jd-press__logo.jd-press__logo--handelsblatt
+            use(href="#logo-handelsblatt" xlink:href="#logo-handelsblatt")
+        a.jd-press__item(href="")
+          svg.jd-press__logo.jd-press__logo--techcrunch
+            use(href="#logo-techcrunch" xlink:href="#logo-techcrunch")
+    section.jd-section.jd-press
+      h3.jd-heading.jd-heading--section.jd-section__title
+        span.jd-section__title-number
+          span 03
+          span.jd-section__title-line
+        span.jd-section__title-text Vorträge
+      .jd-press__items
+        a.jd-press__item(href="")
+          svg.jd-press__logo.jd-press__logo--republica
+            use(href="#logo-republica" xlink:href="#logo-republica")
+        a.jd-press__item(href="")
+          img.jd-press__logo.jd-press__logo--campus(src="../images/press/campus.png" alt="Campus Symposium")
+        a.jd-press__item(href="")
+          img.jd-press__logo.jd-press__logo--faz-forum(src="../images/press/faz-forum.png" alt="Frankfurter Allgemeine Forum")
+        a.jd-press__item(href="")
+          img.jd-press__logo.jd-press__logo--omk(src="../images/press/omk.png" alt="OMK")
+        a.jd-press__item(href="")
+          img.jd-press__logo.jd-press__logo--netandwork(src="../images/press/netandwork.png" alt="Net&Work")

@@ -13,10 +13,16 @@ const runSequence = require("run-sequence");
 const sass = require("gulp-sass");
 const sourcemaps = require("gulp-sourcemaps");
 const webpack = require("webpack");
+const pug = require("gulp-pug");
 
 // Configuration
 const config = {
   dev: gutil.env.dev,
+  views: {
+    src: "views/**/!(_)*.pug",
+    dest: "dist",
+    watch: "views/**/*.pug"
+  },
   styles: {
     browsers: "> 1%",
     vendor: {
@@ -34,12 +40,12 @@ const config = {
     vendor: {
       src: "./src/vendor/vendor.js",
       dest: "dist",
-      watch: "src/vendor/**/*",
+      watch: "./src/vendor/**/*",
     },
     main: {
       src: "./src/main.js",
       dest: "dist",
-      watch: "src/**/*",
+      watch: "./src/**/*",
     },
   },
   fonts: {
@@ -58,6 +64,17 @@ const config = {
 
 // Clean
 gulp.task("clean", del.bind(null, [config.dest]));
+
+
+// Templates
+gulp.task("pug", () => {
+  gulp.src(config.views.src)
+    .pipe(pug({
+      locals: {},
+      pretty: true
+    }))
+    .pipe(gulp.dest(config.views.dest))
+});
 
 
 // Styles
@@ -97,20 +114,20 @@ gulp.task("styles", ["styles:vendor", "styles:main"]);
 // Scripts
 const webpackConfig = require("./webpack.config")(config);
 
-gulp.task("scripts", (done) => {
-  webpack(webpackConfig, (err, stats) => {
-    if (err) {
-      gutil.log(gutil.colors.red(err()));
-    }
-    const result = stats.toJson();
-    if (result.errors.length) {
-      result.errors.forEach((error) => {
-        gutil.log(gutil.colors.red(error));
-      });
-    }
-    done();
-  });
-});
+// gulp.task("scripts", (done) => {
+//   webpack(webpackConfig, (err, stats) => {
+//     if (err) {
+//       gutil.log(gutil.colors.red(err()));
+//     }
+//     const result = stats.toJson();
+//     if (result.errors.length) {
+//       result.errors.forEach((error) => {
+//         gutil.log(gutil.colors.red(error));
+//       });
+//     }
+//     done();
+//   });
+// });
 
 
 // Fonts
@@ -143,11 +160,14 @@ gulp.task("serve", () => {
     notify: false,
   });
 
+  gulp.task("pug:watch", ["pug"], reload);
+  gulp.watch(config.views.watch, ["pug:watch"]);
+
   gulp.task("styles:watch", ["styles"], reload);
   gulp.watch([config.styles.vendor.watch, config.styles.main.watch], ["styles:watch"]);
 
-  gulp.task("scripts:watch", ["scripts"], reload);
-  gulp.watch([config.scripts.vendor.watch, config.scripts.main.watch], ["scripts:watch"]);
+  // gulp.task("scripts:watch", ["scripts"], reload);
+  // gulp.watch([config.scripts.vendor.watch, config.scripts.main.watch], ["scripts:watch"]);
 
   gulp.task("images:watch", ["images"], reload);
   gulp.watch(config.images.watch, ["images:watch"]);
@@ -160,8 +180,9 @@ gulp.task("default", ["clean"], () => {
 
   // define build tasks
   const tasks = [
+    "pug",
     "styles",
-    //"scripts",
+    // "scripts",
     "fonts",
     "images",
   ];

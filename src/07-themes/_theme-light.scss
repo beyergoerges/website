@@ -5,20 +5,11 @@
   //   color: $theme--light__back;
   // }
 
-  .--color-1 {
-    color: #FDC8B3 !important;
-  }
-
-  .--color-2 {
-    color: #FDE9B3 !important;
-  }
-
-  .--color-3 {
-    color: #F4F7BA !important;
-  }
-
   .jd-block--color-1 {
-    background-color: $theme--light__back;
+
+    &:before {
+      background-color: $theme--light__back;
+    }
 
     h1, h3,
     .jd-heading--page,
@@ -37,6 +28,18 @@
 
   .jd-block--color-2 {
     background-color: #141414;
+
+    .--color-1 {
+      color: #FDC8B3 !important;
+    }
+
+    .--color-2 {
+      color: #FDE9B3 !important;
+    }
+
+    .--color-3 {
+      color: #F4F7BA !important;
+    }
 
     h1, h2, h3,
     .jd-heading--page,

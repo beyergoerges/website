@@ -1,2 +1,1 @@
-//import "./vendor/jquery-global";
-//import jqueryEasing from "jquery-easing";
+//@prepros-append ../../node_modules/barba.js/dist/barba.min.js

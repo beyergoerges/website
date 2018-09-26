@@ -23,9 +23,8 @@
       height: 100vh;
       min-height: 420px;
       padding-bottom: spacing(10);
-      opacity: 0;
 
-      @include transition($property: opacity);
+      //@include transition($property: opacity);
     }
 
     @include break(tablet) {
@@ -34,19 +33,20 @@
       grid-template-columns: auto auto auto;
     }
 
-    &.--is-open {
-      opacity: 1;
-    }
+    // &.--is-open {
+    //   opacity: 1;
+    // }
   }
 
   &__item {
-    opacity: .4;
+    position: relative;
 
-    @include transition($property: opacity);
+    //@include transition($property: opacity);
 
     @include break(tablet, max) {
       display: block;
       margin-bottom: spacing(2);
+      opacity: 0;
       font-family: "neue-haas-grotesk-display", sans-serif;
       font-size: 12vw;
     }
@@ -55,8 +55,20 @@
       @include font-scale(xs);
     }
 
-    &:hover {
-      opacity: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 100%;
+      height: 2px;
+      background-color: $grayscale--darkest;
+
+      @include transition($property: right);
+    }
+
+    &:hover:after {
+      right: 0;
     }
 
     &.--is-current {

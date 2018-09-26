@@ -19,7 +19,34 @@
 
   &--solid {
     grid-column-gap: spacing(1);
+    position: relative;
     margin-bottom: spacing(1);
     padding-top: spacing(8);
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      z-index: -1;
+      animation: block-solid .4s $ease-in-cubic forwards .4s;
+      transform: translateX(-101%);
+
+      @include break(tablet) {
+        animation-duration: .7s;
+      }
+
+      @include break(desktop-s) {
+        animation-duration: 1s;
+      }
+
+      @include fill;
+    }
+  }
+}
+
+@keyframes block-solid {
+  0% {
+    transform: translateX(-101%);
+  } 100% {
+    transform: translateX(0);
   }
 }

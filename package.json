@@ -17,8 +17,8 @@
     "url": "https://github.com/beyergoerges/website.git"
   },
   "engines": {
-    "node": ">=4.0",
-    "npm": ">=2.7.0"
+    "node": ">=8.12.0",
+    "npm": ">=6.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
@@ -28,25 +28,29 @@
     "babel-preset-stage-2": "^6.5.0",
     "browser-sync": "^2.13.0",
     "del": "^2.2.1",
+    "express": "^4.16.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^7.0.1",
     "gulp-csso": "^2.0.0",
     "gulp-if": "^2.0.1",
     "gulp-imagemin": "^3.0.1",
+    "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.12.1",
     "gulp-util": "^3.0.7",
     "imports-loader": "^0.6.5",
+    "pug": "^2.0.3",
     "run-sequence": "^1.2.1",
     "script-loader": "^0.7.0",
     "webpack": "^1.13.1"
   },
   "dependencies": {
+    "reset-css": "^4.0.1",
     "jquery": "^3.3.1",
     "jquery-easing": "0.0.1",
-    "reset-css": "^3.0.0"
+    "barba.js": "^1.0.0"
   },
   "eslintConfig": {
     "parserOptions": {

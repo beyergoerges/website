@@ -1,5 +1,7 @@
-h1, h2, h3, h4, h5, h6,
-.jd-heading:not(.jd-heading--low-level) {
+h1, h2, h3,
+.jd-heading--page,
+.jd-heading--high-level,
+.jd-heading--section {
   font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: 600;
 }
@@ -11,20 +13,27 @@ h1,
 
 h2,
 .jd-heading--high-level {
-  margin-bottom: rem(32);
+  margin-bottom: .5em;
 
   @include font-scale(l);
 }
 
 h3,
 .jd-heading--section {
-  margin-bottom: rem(16);
+  margin-bottom: 1em;
+
   @include font-scale(m);
 }
 
 h4,
 .jd-heading--low-level {
+  font-weight: 700;
+
   @include font-scale(s);
+
+  .jd-text-block > & {
+    padding-top: 1.5em;
+  }
 }
 
 .jd-heading {

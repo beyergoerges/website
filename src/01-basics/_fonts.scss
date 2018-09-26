@@ -71,27 +71,33 @@ $font-size--xl: 12vw;
 $font-scale: (
   "xxs": ("phone": calc(#{rem(10)} + .25vw), "lh-phone": 1.5, "ls-phone": ".1em",
           "tablet": calc(#{rem(10)} + .25vw), "lh-tablet": 1.5, "ls-tablet": ".1em",
-          "desktop": calc(#{rem(10)} + .25vw), "lh-desktop": 1.5, "ls-desktop": ".1em"
+          "desktop": calc(#{rem(10)} + .25vw), "lh-desktop": 1.5, "ls-desktop": ".1em",
+          "desktop-xl": .885067vw, "lh-desktop-xl": 1.5, "ls-desktop-xl": ".1em"
          ),
   "xs":  ("phone": calc(#{rem(12)} + .375vw), "lh-phone": 1.5, "ls-phone": "normal",
           "tablet": calc(#{rem(12)} + .375vw), "lh-tablet": 1.5, "ls-tablet": "normal",
-          "desktop": calc(#{rem(12)} + .375vw), "lh-desktop": 1.5, "ls-desktop": "normal"
+          "desktop": calc(#{rem(12)} + .375vw), "lh-desktop": 1.5, "ls-desktop": "normal",
+          "desktop-xl": 1.06208vw, "lh-desktop-xl": 1.5, "ls-desktop-xl": "normal"
          ),
   "s":   ("phone": calc(#{rem(14)} + .375vw), "lh-phone": 1.5, "ls-phone": "normal",
           "tablet": calc(#{rem(14)} + .375vw), "lh-tablet": 1.5, "ls-tablet": "normal",
-          "desktop": calc(#{rem(14)} + .375vw), "lh-desktop": 1.5, "ls-desktop": "normal"
+          "desktop": calc(#{rem(14)} + .375vw), "lh-desktop": 1.5, "ls-desktop": "normal",
+          "desktop-xl": 1.239094vw, "lh-desktop-xl": 1.5, "ls-desktop-xl": "normal"
          ),
   "m":   ("phone": calc(#{rem(16)} + 1.625vw), "lh-phone": 1.2, "ls-phone": "-.00625em",
           "tablet": calc(#{rem(19)} + 1.625vw), "lh-tablet": 1.1, "ls-tablet": "-.0075em",
           "desktop": 2.478188vw, "lh-desktop": 1, "ls-desktop": "-.01em",
+          "desktop-xl": 2.478188vw, "lh-desktop-xl": 1, "ls-desktop-xl": "-.01em"
          ),
   "l":   ("phone": calc(#{rem(19)} + 3.25vw), "lh-phone": 1.2, "ls-phone": "-.01em",
           "tablet": calc(#{rem(24)} + 3.25vw), "lh-tablet": 1.1, "ls-tablet": "-.01em",
           "desktop": $font-size--l, "lh-desktop": 1, "ls-desktop": "-.01em",
+          "desktop-xl": $font-size--l, "lh-desktop-xl": 1, "ls-desktop-xl": "-.01em"
          ),
   "xl":  ("phone": calc(#{rem(36)} + 9vw), "lh-phone": .9, "ls-phone": "-.015em",
           "tablet": calc(#{rem(36)} + 9vw), "lh-tablet": .9, "ls-tablet": "-.015em",
           "desktop": $font-size--xl, "lh-desktop": .9, "ls-desktop": "-.015em",
+          "desktop-xl": $font-size--xl, "lh-desktop-xl": .9, "ls-desktop-xl": "-.015em"
          )
 );
 
@@ -111,6 +117,12 @@ $font-scale: (
       font-size: #{inspect(map-get-deep($font-scale, $key, "desktop"))};
       line-height: #{inspect(map-get-deep($font-scale, $key, "lh-desktop"))};
       letter-spacing: #{inspect(map-get-deep($font-scale, $key, "ls-desktop"))};
+    }
+
+    @include break(desktop-xl) {
+      font-size: #{inspect(map-get-deep($font-scale, $key, "desktop-xl"))};
+      line-height: #{inspect(map-get-deep($font-scale, $key, "lh-desktop-xl"))};
+      letter-spacing: #{inspect(map-get-deep($font-scale, $key, "ls-desktop-xl"))};
     }
   } @else {
     @error "No value found for `#{$key}` in `$font-scale` map.";

@@ -12,4 +12,9 @@
     width: 144px;
     height: 23px;
   }
+
+  @include break(desktop-xl) {
+    width: 7.5vw;
+    height: 1.1979vw;
+  }
 }
