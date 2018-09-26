@@ -10,6 +10,10 @@
 
     .jd-heading--page {
       grid-column: 2;
+
+      @include break(desktop-m) {
+        max-width: 61.8vw;
+      }
     }
   }
 

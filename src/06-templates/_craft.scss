@@ -1,9 +1,9 @@
 .jd-craft {
   margin-bottom: spacing(8);
 
-  &__heading {
+  &__heading,
+  &__description {
     grid-column: 2 / 6;
-    grid-row: 2;
     opacity: 0;
 
     @include break(tablet) {
@@ -12,22 +12,17 @@
 
     @include break(desktop-s) {
       grid-column: 4 / 9;
+    }
+
+    @include break(desktop-m) {
+      grid-column: 4 / 8;
     }
   }
 
   &__description {
-    grid-column: 2 / 6;
-    grid-row: 3;
-    margin-bottom: spacing(3);
-    opacity: 0;
 
-    @include break(tablet) {
-      grid-column: 3 / 6;
-    }
-
-    @include break(desktop-s) {
-      grid-column: 4 / 9;
-      margin-bottom: 0;
+    @include break(desktop-s, max) {
+      margin-bottom: spacing(3);
     }
   }
 

@@ -62,8 +62,8 @@ $font__types: (
   @return map-get($font, "family"), map-get($font, "fallback");
 }
 
-$font-size--l: 4vw;
-$font-size--xl: 12vw;
+$font-size--l: 3.236vw;
+$font-size--xl: 9vw;
 
 // FONT SCALE
 // ----------------------------------------------------------------------------
@@ -71,7 +71,7 @@ $font-size--xl: 12vw;
 $font-scale: (
   "xxs": ("phone": calc(#{rem(10)} + .25vw), "lh-phone": 1.5, "ls-phone": ".1em",
           "tablet": calc(#{rem(10)} + .25vw), "lh-tablet": 1.5, "ls-tablet": ".1em",
-          "desktop": calc(#{rem(10)} + .25vw), "lh-desktop": 1.5, "ls-desktop": ".1em",
+          "desktop": calc(#{rem(10)} + .175vw), "lh-desktop": 1.5, "ls-desktop": ".1em",
           "desktop-xl": .885067vw, "lh-desktop-xl": 1.5, "ls-desktop-xl": ".1em"
          ),
   "xs":  ("phone": calc(#{rem(12)} + .375vw), "lh-phone": 1.5, "ls-phone": "normal",
@@ -81,17 +81,17 @@ $font-scale: (
          ),
   "s":   ("phone": calc(#{rem(14)} + .375vw), "lh-phone": 1.5, "ls-phone": "normal",
           "tablet": calc(#{rem(14)} + .375vw), "lh-tablet": 1.5, "ls-tablet": "normal",
-          "desktop": calc(#{rem(14)} + .375vw), "lh-desktop": 1.5, "ls-desktop": "normal",
-          "desktop-xl": 1.239094vw, "lh-desktop-xl": 1.5, "ls-desktop-xl": "normal"
+          "desktop": calc(#{rem(14)} + .25vw), "lh-desktop": 1.5, "ls-desktop": "normal",
+          "desktop-xl": 1vw, "lh-desktop-xl": 1.5, "ls-desktop-xl": "normal"
          ),
   "m":   ("phone": calc(#{rem(16)} + 1.625vw), "lh-phone": 1.2, "ls-phone": "-.00625em",
-          "tablet": calc(#{rem(19)} + 1.625vw), "lh-tablet": 1.1, "ls-tablet": "-.0075em",
-          "desktop": 2.478188vw, "lh-desktop": 1, "ls-desktop": "-.01em",
-          "desktop-xl": 2.478188vw, "lh-desktop-xl": 1, "ls-desktop-xl": "-.01em"
+          "tablet": calc(#{rem(16)} + 1.625vw), "lh-tablet": 1.1, "ls-tablet": "-.0075em",
+          "desktop": 2vw, "lh-desktop": 1, "ls-desktop": "-.01em",
+          "desktop-xl": 2vw, "lh-desktop-xl": 1, "ls-desktop-xl": "-.01em"
          ),
   "l":   ("phone": calc(#{rem(19)} + 3.25vw), "lh-phone": 1.2, "ls-phone": "-.01em",
-          "tablet": calc(#{rem(24)} + 3.25vw), "lh-tablet": 1.1, "ls-tablet": "-.01em",
-          "desktop": $font-size--l, "lh-desktop": 1, "ls-desktop": "-.01em",
+          "tablet": calc(#{rem(21)} + 3.25vw), "lh-tablet": 1.1, "ls-tablet": "-.01em",
+          "desktop": calc(#{rem(21)} + 2vw), "lh-desktop": 1, "ls-desktop": "-.01em",
           "desktop-xl": $font-size--l, "lh-desktop-xl": 1, "ls-desktop-xl": "-.01em"
          ),
   "xl":  ("phone": calc(#{rem(36)} + 9vw), "lh-phone": .9, "ls-phone": "-.015em",

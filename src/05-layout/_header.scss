@@ -5,9 +5,19 @@
   align-items: center;
   padding-top: spacing(2);
   padding-bottom: spacing(1);
+  opacity: 0;
+  transform: translateY(#{spacing(-1)});
+  animation: header-fade-in .7s $ease-out-cubic forwards 1.2s;
 
   @include break(tablet) {
     margin-right: spacing(1);
     margin-left: spacing(1);
+  }
+}
+
+@keyframes header-fade-in {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

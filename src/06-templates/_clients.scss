@@ -90,9 +90,14 @@
       }
     }
 
-    &:nth-child(n+2):nth-child(-n+6) .jd-client__line-y,
+    &:nth-child(n+2):nth-child(-n+6) .jd-client__line-y {
+      display: block;
+    }
+
     &:nth-child(n+8):nth-child(-n+12) .jd-client__line-y {
       display: block;
+      top: 0;
+      bottom: 100%;
     }
 
     &:nth-child(n+1):nth-child(-n+6) .jd-client__line-x {
