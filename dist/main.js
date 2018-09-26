@@ -1,10 +1,13 @@
 //@prepros-append 01-basics/_animation.js
+//@prepros-append 03-objects/_media.js
 //@prepros-append 04-components/_menu.js
 //@prepros-append 05-layout/_section.js
 //@prepros-append 05-layout/_meta.js
 //@prepros-append 06-templates/_craft.js
 //@prepros-append 06-templates/_joda.js
 //@prepros-append 06-templates/_clients.js
+//@prepros-append 06-templates/_project.js
+//@prepros-append 06-templates/_press.js
 
 let jd_scrollController = new ScrollMagic.Controller();
 
@@ -12,6 +15,27 @@ let jd_scene = element => new ScrollMagic.Scene({
   triggerElement: element
 })
 .addTo(jd_scrollController);
+
+let jd_mediaScene = (name, delay) => {
+  jd_scene("#" + name).offset("-200").reverse(false).on("enter", event => {
+    let jd_tl = new TimelineLite();
+    jd_tl.to(
+      "#" + name + " .jd-media__revealer", 2, {x: "200%", ease: SlowMo.easeIn}, delay
+    );
+    jd_tl.to(
+      "#" + name + " .jd-media__item", 0, {opacity: 1}, (.4 + delay)
+    );
+  });
+}
+
+jd_mediaScene("joda-photo");
+
+jd_mediaScene("eventim-shop");
+jd_mediaScene("tsukuyumi", .15);
+jd_mediaScene("day-in-may", .3);
+jd_mediaScene("kidsclub", .45);
+jd_mediaScene("dfa", .6);
+jd_mediaScene("heimat", .75);
 
 const jd_toggleMenu = event => {
 
@@ -148,15 +172,6 @@ jd_craftScene("strategy");
 jd_craftScene("design");
 jd_craftScene("technology");
 
-jd_scene("#jd-joda-photo").offset("-200").reverse(false).on("enter", event => {
-  let jd_tl = new TimelineLite();
-  jd_tl.to(
-    "#jd-joda-photo .jd-image__revealer", 2, {x: "200%", ease: SlowMo.easeIn}
-  );
-  jd_tl.to(
-    "#jd-joda-photo .jd-image__img", 0, {opacity: 1}, .4
-  );
-});
 
 jd_scene(".jd-clients").offset("-100").reverse(false).on("enter", event => {
   let jd_tl = new TimelineLite();
@@ -173,6 +188,38 @@ jd_scene(".jd-clients").offset("-100").reverse(false).on("enter", event => {
     ".jd-client__logo", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .6
   );
 });
+
+let jd_projectScene = (name, delay) => {
+  jd_scene("#" + name + " .jd-project__title").offset("-400").reverse(false).on("enter", event => {
+    let jd_tl = new TimelineLite();
+    jd_tl.fromTo(
+      [
+        "#" + name + " .jd-project__title",
+        "#" + name + " .jd-project__description"
+      ],
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, delay
+    );
+  });
+}
+
+jd_projectScene("eventim-shop");
+jd_projectScene("tsukuyumi", .15);
+jd_projectScene("day-in-may", .3);
+jd_projectScene("kidsclub", .45);
+jd_projectScene("dfa", .6);
+jd_projectScene("heimat", .75);
+
+let jd_pressScene = name => {
+  jd_scene("#" + name).offset("-100").reverse(false).on("enter", event => {
+    let jd_tl = new TimelineLite();
+    jd_tl.staggerTo(
+      "#" + name + " .jd-press__item", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .8
+    );
+  });
+}
+
+jd_pressScene("press");
+jd_pressScene("speaker");
 
 
 //# sourceMappingURL=main.js.map

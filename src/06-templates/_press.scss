@@ -42,16 +42,20 @@
 
   &__item {
     padding: spacing(1.5);
-    opacity: .5;
+    opacity: 0;
+    transform: scale(.8);
 
-    @include transition($property: opacity);
-
-    &:hover {
-      opacity: 1;
+    &:hover .jd-press__logo {
+      opacity: .8;
     }
   }
 
   &__logo {
+    opacity: .4;
+    color: black;
+
+    @include transition($property: opacity);
+
     @include press-logo(sz, 208.3, 24);
     @include press-logo(wired, 136.93, 28);
     @include press-logo(sponsors, 138.97, 20);
