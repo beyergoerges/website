@@ -23,7 +23,7 @@ let jd_mediaScene = (name, delay) => {
       "#" + name + " .jd-media__revealer", 2, {x: "200%", ease: SlowMo.easeIn}, delay
     );
     jd_tl.to(
-      "#" + name + " .jd-media__item", 0, {opacity: 1}, (.4 + delay)
+      "#" + name + " .jd-media__item", 0, {opacity: 1}, (.5 + delay)
     );
   });
 }
