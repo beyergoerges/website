@@ -1,3 +1,14 @@
+jd_scene(".jd-footer").triggerHook(.99).reverse(false).on("start", event => {
+  console.log("footer!");
+  let jd_tl = new TimelineLite();
+  jd_tl.staggerFromTo([
+      ".jd-meta",
+      ".jd-footer"
+    ],
+    2, {y: 64}, {y: "0", ease: Elastic.easeOut}, .1, .4
+  );
+});
+
 const jd_openMeta = event => {
 
   const jd_meta = document.querySelectorAll(".jd-meta")[0];
