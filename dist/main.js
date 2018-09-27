@@ -183,6 +183,17 @@ jd_craftScene("strategy");
 jd_craftScene("design");
 jd_craftScene("technology");
 
+jd_scene(".jd-joda__heading").offset("-300").reverse(false).on("enter", event => {
+  let jd_tl = new TimelineLite();
+  jd_tl.fromTo(
+    ".jd-joda__heading",
+    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2
+  );
+  jd_tl.staggerFromTo(
+    ".jd-joda__text .jd-paragraph",
+    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2, .4
+  );
+});
 
 jd_scene(".jd-clients").offset("-100").reverse(false).on("enter", event => {
   let jd_tl = new TimelineLite();
