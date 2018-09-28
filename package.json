@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "barba.js": "^1.0.0",
+    "blazy": "^1.8.2",
     "enquire.js": "^2.1.6",
     "jquery": "^3.3.1",
     "jquery-easing": "0.0.1",

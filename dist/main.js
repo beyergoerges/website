@@ -1,4 +1,5 @@
 //@prepros-append 01-basics/_responsive.js
+//@prepros-append 01-basics/_lazyload.js
 //@prepros-append 01-basics/_animation.js
 //@prepros-append 03-objects/_media.js
 //@prepros-append 04-components/_menu.js
@@ -42,6 +43,12 @@ const jd_breakMax = name => {
 //
 //     deferSetup: true
 // });
+
+document.addEventListener("DOMContentLoaded", event => {
+  let bLazy = new Blazy({
+    selector: ".jd-media__item"
+  });
+});
 
 let jd_scrollController = new ScrollMagic.Controller();
 

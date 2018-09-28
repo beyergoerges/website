@@ -1,4 +1,5 @@
 //@prepros-append 01-basics/_responsive.js
+//@prepros-append 01-basics/_lazyload.js
 //@prepros-append 01-basics/_animation.js
 //@prepros-append 03-objects/_media.js
 //@prepros-append 04-components/_menu.js
