@@ -123,11 +123,11 @@ jd_sectionDescriptionScene("projects");
 jd_scene(".jd-footer").triggerHook(.99).reverse(false).on("start", event => {
   console.log("footer!");
   let jd_tl = new TimelineLite();
-  jd_tl.staggerFromTo([
+  jd_tl.fromTo([
       ".jd-meta",
       ".jd-footer"
     ],
-    2, {y: 64}, {y: "0", ease: Elastic.easeOut}, .1, .4
+    .9, {y: 64}, {y: "0", ease: Power2.easeInOut}, .1, .4
   );
 });
 

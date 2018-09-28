@@ -62,7 +62,7 @@
       height: 12px;
       margin-left: -6px;
       background-color: #2E2C34;
-      transform: translateY(32px) rotate(45deg);
+      transform: translateY(12px) rotate(45deg);
 
       @include transition($property: transform);
     }
