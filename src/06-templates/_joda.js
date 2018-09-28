@@ -5,7 +5,7 @@ jd_scene(".jd-joda__heading").offset("-300").reverse(false).on("enter", event =>
     .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2
   );
   jd_tl.staggerFromTo(
-    ".jd-joda__text .jd-paragraph",
+    ".jd-joda__text",
     .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2, .4
   );
 });

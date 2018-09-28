@@ -36,6 +36,10 @@ const jd_openMeta = event => {
   jd_tl.to(
     ".jd-meta__close", 1, {scale: 1, ease:Elastic.easeInOut}, .1
   );
+  jd_tl.staggerFromTo(
+    ".jd-legal-notice > *",
+    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, .7
+  );
 }
 
 document.addEventListener("click", jd_openMeta, false);
