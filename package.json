@@ -47,10 +47,11 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
-    "reset-css": "^4.0.1",
+    "barba.js": "^1.0.0",
+    "enquire.js": "^2.1.6",
     "jquery": "^3.3.1",
     "jquery-easing": "0.0.1",
-    "barba.js": "^1.0.0"
+    "reset-css": "^4.0.1"
   },
   "eslintConfig": {
     "parserOptions": {

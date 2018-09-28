@@ -65,6 +65,10 @@
       grid-column: 2 / 6;
     }
 
+    .jd-paragraph {
+      margin-bottom: spacing(1);
+    }
+
     .jd-project--featured & {
 
       @include break(desktop-s) {
@@ -77,6 +81,56 @@
       @include break(desktop-s) {
         grid-column: 1 / 5;
       }
+    }
+  }
+
+  &__links {
+    text-transform: uppercase;
+
+    @include font-scale(xxs);
+  }
+
+  &__links-text {
+    display: inline-block;
+    margin-right: spacing(1);
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    padding-left: 24px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    line-height: 2;
+    font-weight: 700;
+
+    + .jd-project__link {
+      margin-left: spacing(1);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 100%;
+      bottom: spacing(-.15);
+      left: 0;
+      height: 2px;
+      background-color: $grayscale--darkest;
+
+      @include transition($property: right);
+    }
+
+    &:hover:after {
+      right: 0;
+    }
+
+    &--web {
+      background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' width='16' height='16' xmlns='http://www.w3.org/2000/svg'><g fill='currentColor'><path d='M9,7H1C0.4,7,0,7.4,0,8v0c0,0.6,0.4,1,1,1h8v5l7-6L9,2V7z'></path></g></svg>");
+    }
+
+    &--video {
+      background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' width='16' height='16' xmlns='http://www.w3.org/2000/svg'><g fill='currentColor'><path d='M15,1H1C0.4,1,0,1.4,0,2v12c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1V2C16,1.4,15.6,1,15,1z M14,13H2V3h12V13z'></path><polygon points='6,5 6,11 10,8'></polygon></g></svg>");
     }
   }
 }

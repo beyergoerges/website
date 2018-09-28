@@ -23,8 +23,6 @@
       height: 100vh;
       min-height: 420px;
       padding-bottom: spacing(10);
-
-      //@include transition($property: opacity);
     }
 
     @include break(tablet) {
@@ -32,16 +30,10 @@
       grid-column-gap: spacing(2);
       grid-template-columns: auto auto auto;
     }
-
-    // &.--is-open {
-    //   opacity: 1;
-    // }
   }
 
   &__item {
     position: relative;
-
-    //@include transition($property: opacity);
 
     @include break(tablet, max) {
       display: block;
@@ -52,15 +44,15 @@
     }
 
     @include break(tablet) {
-      @include font-scale(xs);
+      @include font-scale(s);
     }
 
     &:after {
       content: "";
       position: absolute;
-      top: 100%;
-      left: 0;
       right: 100%;
+      bottom: spacing(-.3);
+      left: 0;
       height: 2px;
       background-color: $grayscale--darkest;
 

@@ -157,12 +157,12 @@ const jd_openMeta = event => {
     window,
     .7, {scrollTo: "#jd-footer", ease:Power2.easeOut}
   );
-  jd_tl.to(
-    ".jd-meta__close", 1, {scale: 1, ease:Elastic.easeInOut}, .1
-  );
   jd_tl.staggerFromTo(
     ".jd-legal-notice > *",
-    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, .7
+    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, .4
+  );
+  jd_tl.to(
+    ".jd-meta__close", 1, {scale: 1, ease:Elastic.easeInOut}, .7
   );
 }
 
