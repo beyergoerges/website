@@ -43,8 +43,8 @@
   }
 
   &__line-y {
-    top: 100%;
-    bottom: 0;
+    top: 0;
+    bottom: 100%;
     left: 0;
     width: 1px;
 
@@ -92,12 +92,12 @@
 
     &:nth-child(n+2):nth-child(-n+6) .jd-client__line-y {
       display: block;
+      top: 100%;
+      bottom: 0;
     }
 
     &:nth-child(n+8):nth-child(-n+12) .jd-client__line-y {
       display: block;
-      top: 0;
-      bottom: 100%;
     }
 
     &:nth-child(n+1):nth-child(-n+6) .jd-client__line-x {

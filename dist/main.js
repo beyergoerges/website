@@ -1,3 +1,4 @@
+//@prepros-append 01-basics/_responsive.js
 //@prepros-append 01-basics/_animation.js
 //@prepros-append 03-objects/_media.js
 //@prepros-append 04-components/_menu.js
@@ -9,6 +10,38 @@
 //@prepros-append 06-templates/_clients.js
 //@prepros-append 06-templates/_project.js
 //@prepros-append 06-templates/_press.js
+
+const jd_breakpoint = {
+  "phablet":        480,
+  "tablet":         600,
+  "desktop-s":      990,
+  "desktop-m":      1440,
+  "desktop-l":      1680,
+  "desktop-xl":     1921
+};
+
+const jd_breakMin = name => {
+  let value = jd_breakpoint[name];
+  return "(min-width: " + value + "px)";
+}
+
+const jd_breakMax = name => {
+  let value = jd_breakpoint[name] - 1;
+  return "(max-width: " + value + "px)";
+}
+
+// enquire.register(jd_breakMin("desktop-s"), {
+//
+//     match: () => { console.log("matched!") },
+//
+//     unmatch: () => {},
+//
+//     setup: () => {},
+//
+//     destroy: () => {},
+//
+//     deferSetup: true
+// });
 
 let jd_scrollController = new ScrollMagic.Controller();
 
@@ -245,19 +278,75 @@ jd_scene(".jd-joda__heading").offset("-300").reverse(false).on("enter", event =>
 });
 
 jd_scene(".jd-clients").offset("-100").reverse(false).on("enter", event => {
-  let jd_tl = new TimelineLite();
-  jd_tl.staggerTo(
-    ".jd-client__line-x", .1, {right: 0}, .1, .4
-  );
-  jd_tl.staggerTo(
-    ".jd-client:nth-child(n+2):nth-child(-n+6) .jd-client__line-y", .1, {top: 0}, .1, .8
-  );
-  jd_tl.staggerTo(
-    ".jd-client:nth-child(n+8):nth-child(-n+12) .jd-client__line-y", .1, {bottom: 0}, .1, .8
-  );
-  jd_tl.staggerTo(
-    ".jd-client__logo", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .6
-  );
+
+  enquire.register(jd_breakMax("tablet"), {
+
+      match: () => {
+
+        let jd_tl = new TimelineLite();
+        jd_tl.staggerTo(
+          ".jd-client__line-x", .1, {right: 0}, .1, .4
+        );
+        jd_tl.staggerTo(
+          ".jd-client:nth-child(even) .jd-client__line-y", .1, {bottom: 0}, .1, .8
+        );
+        jd_tl.staggerTo(
+          ".jd-client__logo", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .6
+        );
+      },
+
+      deferSetup: true
+  });
+
+  enquire.register(jd_breakMin("tablet"), {
+
+      match: () => {
+
+        let jd_tl = new TimelineLite();
+        jd_tl.staggerTo(
+          ".jd-client__line-x", .1, {right: 0}, .1, .4
+        );
+        jd_tl.staggerTo([
+          ".jd-client:nth-child(2) .jd-client__line-y",
+          ".jd-client:nth-child(6) .jd-client__line-y",
+          ".jd-client:nth-child(10) .jd-client__line-y",
+          ".jd-client:nth-child(3) .jd-client__line-y",
+          ".jd-client:nth-child(7) .jd-client__line-y",
+          ".jd-client:nth-child(11) .jd-client__line-y",
+          ".jd-client:nth-child(4) .jd-client__line-y",
+          ".jd-client:nth-child(8) .jd-client__line-y",
+          ".jd-client:nth-child(12) .jd-client__line-y"
+        ], .1, {bottom: 0}, .1, .8
+        );
+        jd_tl.staggerTo(
+          ".jd-client__logo", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .6
+        );
+      },
+
+      deferSetup: true
+  });
+
+  enquire.register(jd_breakMin("desktop-s"), {
+
+      match: () => {
+
+        let jd_tl = new TimelineLite();
+        jd_tl.staggerTo(
+          ".jd-client__line-x", .1, {right: 0}, .1, .4
+        );
+        jd_tl.staggerTo(
+          ".jd-client:nth-child(n+2):nth-child(-n+6) .jd-client__line-y", .1, {top: 0}, .1, .8
+        );
+        jd_tl.staggerTo(
+          ".jd-client:nth-child(n+8):nth-child(-n+12) .jd-client__line-y", .1, {bottom: 0}, .1, .8
+        );
+        jd_tl.staggerTo(
+          ".jd-client__logo", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .6
+        );
+      },
+
+      deferSetup: true
+  });
 });
 
 let jd_projectScene = (name, delay) => {
