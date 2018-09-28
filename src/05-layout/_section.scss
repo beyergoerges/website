@@ -73,6 +73,10 @@
     }
 
     @include break(desktop-s) {
+      grid-column: 8 / 13;
+    }
+
+    @include break(desktop-m) {
       grid-column: 8 / 12;
     }
   }

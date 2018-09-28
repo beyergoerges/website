@@ -30,29 +30,10 @@
 
   &__thumbnail {
     grid-column: 1 / -1;
-    margin-bottom: spacing(1);
+    margin-bottom: spacing(2);
   }
 
-  &__title {
-    grid-column: 2 / 6;
-    opacity: 0;
-
-    @include break(tablet) {
-      grid-column: 2 / 5;
-    }
-
-    @include break(desktop-s) {
-      grid-column: 2 / 6;
-    }
-
-    .jd-project--standard:nth-child(odd) & {
-
-      @include break(desktop-s) {
-        grid-column: 1 / 5;
-      }
-    }
-  }
-
+  &__title,
   &__description {
     grid-column: 2 / 6;
     opacity: 0;
@@ -62,8 +43,41 @@
     }
 
     @include break(desktop-s) {
+      grid-column: 2 / 7;
+    }
+
+    @include break(desktop-m) {
       grid-column: 2 / 6;
     }
+
+    .jd-project--standard:nth-child(odd) & {
+
+      @include break(desktop-s) {
+        grid-column: 1 / 6;
+      }
+
+      @include break(desktop-m) {
+        grid-column: 1 / 5;
+      }
+    }
+
+    .jd-project--standard:nth-child(odd) & {
+
+      @include break(desktop-s) {
+        grid-column: 1 / 6;
+      }
+
+      @include break(desktop-m) {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+  &__title {
+    //margin-bottom: spacing(2);
+  }
+
+  &__description {
 
     .jd-paragraph {
       margin-bottom: spacing(1);
@@ -72,14 +86,11 @@
     .jd-project--featured & {
 
       @include break(desktop-s) {
-        grid-column: 8 / 12;
+        grid-column: 8 / 13;
       }
-    }
 
-    .jd-project--standard:nth-child(odd) & {
-
-      @include break(desktop-s) {
-        grid-column: 1 / 5;
+      @include break(desktop-m) {
+        grid-column: 8 / 12;
       }
     }
   }
@@ -91,19 +102,33 @@
   }
 
   &__links-text {
-    display: inline-block;
-    margin-right: spacing(1);
+    display: block;
+
+    @include break(tablet) {
+      display: inline-block;
+      margin-right: spacing(1);
+    }
   }
 
   &__link {
     display: inline-block;
     position: relative;
-    padding-left: 24px;
+    padding-left: 18px;
     background-position: left center;
     background-repeat: no-repeat;
-    background-size: 16px;
+    background-size: 12px;
     line-height: 2;
     font-weight: 700;
+
+    @include break(desktop-s) {
+      padding-left: 20px;
+      background-size: 14px;
+    }
+
+    @include break(desktop-m) {
+      padding-left: 22px;
+      background-size: 16px;
+    }
 
     + .jd-project__link {
       margin-left: spacing(1);
