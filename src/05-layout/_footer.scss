@@ -37,7 +37,6 @@
   }
 
   &__item {
-    padding-bottom: spacing(1);
     opacity: .4;
 
     @include font-scale(xs);
@@ -46,13 +45,15 @@
 
   &__link {
     position: relative;
+    padding-bottom: spacing(1);
 
     &:hover,
     &.--is-current {
       opacity: 1;
     }
 
-    &:after {
+    &--legal-notice:after,
+    &--privacy:after {
       content: "";
       position: absolute;
       top: 100%;
@@ -61,7 +62,7 @@
       height: 12px;
       margin-left: -6px;
       background-color: #2E2C34;
-      transform: translateY(16px) rotate(45deg);
+      transform: translateY(32px) rotate(45deg);
 
       @include transition($property: transform);
     }
