@@ -4,7 +4,7 @@
   grid-template-columns: spacing(2) 2fr 1fr spacing(2);
   align-items: baseline;
   padding-top: spacing(2);
-  padding-bottom: spacing(1);
+  transform: translateY(64px);
 
   @include break(tablet) {
     margin-right: spacing(1);
@@ -37,6 +37,7 @@
   }
 
   &__item {
+    padding-bottom: spacing(1);
     opacity: .4;
 
     @include font-scale(xs);
@@ -44,9 +45,29 @@
   }
 
   &__link {
+    position: relative;
 
-    &:hover {
+    &:hover,
+    &.--is-current {
       opacity: 1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      margin-left: -6px;
+      background-color: #2E2C34;
+      transform: translateY(16px) rotate(45deg);
+
+      @include transition($property: transform);
+    }
+
+    &.--is-current:after {
+      transform: translateY(-6px) rotate(45deg);
     }
   }
 }

@@ -1,14 +1,44 @@
 .jd-meta {
-  height: spacing(4);
+  position: relative;
+  height: 64px;
   background-color: #2E2C34;
+  transform: translateY(64px);
 
   @include break(tablet) {
     margin-right: spacing(1);
     margin-left: spacing(1);
   }
 
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 64px;
+    background-color: #2E2C34;
+  }
+
   &.--is-open {
     height: auto;
+  }
+
+  &__close {
+    position: absolute;
+    top: spacing(1);
+    right: spacing(1);
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    //opacity: 0;
+    cursor: pointer;
+    transform: scale(0);
+  }
+
+  &__close-icon {
+    pointer-events: none;
+    color: white;
   }
 
   &__content {

@@ -9,6 +9,7 @@ html(lang="de" dir="ltr")
   body.jd-theme--light
     svg(xmlns="http://www.w3.org/2000/svg" style="display: none;")
       include includes/svg/logo.pug
+      include includes/svg/icons.pug
       block svg
     .jd-wrapper
       include includes/header.pug
@@ -16,6 +17,9 @@ html(lang="de" dir="ltr")
         block content
       include includes/footer.pug
       .jd-meta
+        .jd-meta__close
+          svg.jd-meta__close-icon(width="24" height="24")
+            use(href="#jd-icon-x" xlink:href="#jd-icon-x")
         include includes/meta/legal-notice.pug
     script(src="../vendor.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js")
