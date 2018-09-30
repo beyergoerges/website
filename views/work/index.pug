@@ -80,7 +80,10 @@ block content
     section.jd-section.jd-projects
       article.jd-project.jd-project--featured#eventim-shop
         .jd-media.jd-project__thumbnail
-          img.jd-media__item(src="../images/projects/eventim-sports_ticketshop.jpg" alt="")
+          //img.jd-media__item(src="../images/projects/eventim-sports_ticketshop.jpg" alt="")
+          video.jd-media__item(width="960" height="540" autoplay loop muted)
+            source(data-src="../videos/projects/eventim-sports-ticketshop.webm" type="video/webm")
+            source(data-src="../videos/projects/eventim-sports-ticketshop.mp4" type="video/mp4")
           span.jd-media__revealer
         h3.jd-heading.jd-heading--high-level.jd-project__title Eventim Sports Ticketshop
         .jd-project__description
@@ -133,7 +136,7 @@ block content
       article.jd-project.jd-project--standard#heimat
         .jd-media.jd-project__thumbnail
           //img.jd-media__item(src="../images/projects/40-jahre-heimat.jpg" alt="")
-          video.jd-media__item(width="960" height="540" autoplay loop muted)
+          video.jd-media__item(width="960" height="540" autoplay loop muted poster="../images/projects/40-jahre-heimat.jpg")
             source(data-src="../videos/projects/40-jahre-heimat.webm" type="video/webm")
             source(data-src="../videos/projects/40-jahre-heimat.mp4" type="video/mp4")
           span.jd-media__revealer
