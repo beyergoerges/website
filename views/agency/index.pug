@@ -2,9 +2,7 @@ extends ../default.pug
 
 block content
   header.jd-block.jd-block--intro
-    h1.jd-heading.jd-heading--page 01.10.
-      br
-      | Digital-Agentur
+    h1.jd-heading.jd-heading--page Digitales Handwerk
   .jd-block.jd-block--solid.jd-block--color-1
     section.jd-section.jd-craft#strategy
       h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading
@@ -32,7 +30,7 @@ block content
       p.jd-paragraph.jd-craft__description
         | Die Interaktion zwischen Menschen und digitalen Produkten findet auf vielen verschiedenen Ebenen gleichzeitig statt. Im Design-Prozess setzen wir diese zu einem schönen und schlüssigen Gesamterlebnis zusammen.
       ul.jd-data-list.jd-craft__list
-        li.jd-data-list__item User Experience
+        li.jd-data-list__item User Experience (UX)
         li.jd-data-list__item Visuelles Design
         li.jd-data-list__item Design-Systeme
         li.jd-data-list__item Videoproduktion
@@ -56,7 +54,10 @@ block content
   .jd-block.jd-block--hollow
     section.jd-section.jd-joda
       .jd-media.jd-joda__photo#joda-photo
-        img.jd-media__item(src="../images/joda/joda.jpg" alt="")
+        //img.jd-media__item(src="../images/joda/joda.jpg" alt="")
+        video.jd-media__item(width="1920" height="1080" autoplay loop muted)
+          source(data-src="../videos/joda/joda.webm" type="video/webm")
+          source(data-src="../videos/joda/joda.mp4" type="video/mp4")
         span.jd-media__revealer
       h2.jd-heading.jd-heading--high-level.jd-joda__heading David & Joshua
       .jd-joda__text.jd-joda__text--part1
@@ -65,8 +66,10 @@ block content
         p.jd-paragraph
           | Zuvor erlebten sie Digital-Branche aus zwei sehr unterschiedlichen Perspektiven: David als Digital-Chef beim BVB auf der Unternehmensseite und Joshua als Freelancer mit dem Blick von außen. Diese Erfahrungen bringen sie nun in einer gemeinsamen Agentur zusammen.
         p.jd-paragraph
-          | Ihre Wege kreuzten sich erstmals 2011, als David nach der Meisterschaft von Borussia Dortmund ein Video von Joshua gesehen hat, das die Geschichte der Freude in der Stadt noch einmal ganz anders erzählte. Es entstand eine langjährige Zusammenarbeit in allen digitalen Bereichen. Ob Web, App, Video oder Animation – viele BVB-Produkte wurden gemeinsam erstellt. Darüber hinaus entstanden zahlreiche Kooperationen mit BVB-Partnern wie LichtBlick oder Eventim, die bis heute fortbestehen.
+          | Ihre Wege kreuzten sich erstmals 2011, als David nach der Meisterschaft von Borussia Dortmund ein Video von Joshua gesehen hat, das die Geschichte der Freude in der Stadt noch einmal ganz anders erzählte. Es entstand eine langjährige Zusammenarbeit in allen digitalen Bereichen.
       .jd-joda__text.jd-joda__text--part2
+        p.jd-paragraph
+          | Ob Web, App, Video oder Animation – viele BVB-Produkte wurden gemeinsam erstellt. Darüber hinaus entstanden zahlreiche Kooperationen mit BVB-Partnern wie LichtBlick oder Eventim, die bis heute fortbestehen.
         p.jd-paragraph
           | Im Jahr 2018 erwuchs die Idee einer eigenen Agentur. David und Joshua glauben an das Schöne und Sinnstiftende im Digitalen und sehen in der auf vielen Ebenen stattfindenden Liberalisierung von Themen eine große Chance.
         p.jd-paragraph

@@ -18,6 +18,10 @@
     @include break(desktop-s) {
       grid-column: 4 / 9;
     }
+
+    @include break(desktop-m) {
+      grid-column: 4 / 8;
+    }
   }
 
   &__text {
@@ -34,6 +38,10 @@
     @include break(desktop-s) {
       grid-column: 4 / 9;
     }
+
+    @include break(desktop-m) {
+      grid-column: 4 / 8;
+    }
   }
 
   &__text--part2 {
@@ -45,6 +53,10 @@
 
     @include break(desktop-s) {
       grid-column: 9 / 14;
+    }
+
+    @include break(desktop-m) {
+      grid-column: 9 / 13;
     }
   }
 

@@ -58,6 +58,11 @@ const config = {
     dest: "dist/images",
     watch: "src/images/**/*",
   },
+  videos: {
+    src: "src/videos/**/*",
+    dest: "dist/videos",
+    watch: "src/videos/**/*",
+  },
   dest: "dist",
 };
 
@@ -150,6 +155,13 @@ gulp.task("favicon", () => {
 });
 
 
+// Videos
+gulp.task("videos", () => {
+  return gulp.src(config.videos.src)
+    .pipe(gulp.dest(config.videos.dest));
+});
+
+
 // Server
 gulp.task("serve", () => {
 
@@ -172,6 +184,9 @@ gulp.task("serve", () => {
   gulp.task("images:watch", ["images"], reload);
   gulp.watch(config.images.watch, ["images:watch"]);
 
+  gulp.task("videos:watch", ["videos"], reload);
+  gulp.watch(config.videos.watch, ["videos:watch"]);
+
 });
 
 
@@ -185,6 +200,7 @@ gulp.task("default", ["clean"], () => {
     // "scripts",
     "fonts",
     "images",
+    "videos"
   ];
 
   // run build
