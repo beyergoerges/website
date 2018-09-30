@@ -455,7 +455,13 @@
               </div>
             </article>
             <article class="jd-project jd-project--standard" id="tsukuyumi">
-              <div class="jd-media jd-project__thumbnail"><img class="jd-media__item" src="../images/projects/tsukuyumi.jpg" alt=""><span class="jd-media__revealer"></span></div>
+              <div class="jd-media jd-project__thumbnail">
+                <!--img.jd-media__item(src="../images/projects/tsukuyumi.jpg" alt="")-->
+                <video class="jd-media__item" width="960" height="540" autoplay loop muted>
+                  <source data-src="../videos/projects/tsukuyumi.webm" type="video/webm">
+                  <source data-src="../videos/projects/tsukuyumi.mp4" type="video/mp4">
+                </video><span class="jd-media__revealer"></span>
+              </div>
               <h3 class="jd-heading jd-heading--high-level jd-project__title">Tsukuyumi</h3>
               <div class="jd-project__description">
                 <p class="jd-paragraph">Design und Entwicklung einer multimedialen Website für den Crowdfunding-Erfolg „Tsukuyumi – Full Moon Down“: ein Strategiespiel eingebettet in eine opulente Science-Fiction-Storyworld.</p>
