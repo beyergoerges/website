@@ -3,7 +3,6 @@
 //@prepros-append 01-basics/_animation.js
 //@prepros-append 03-objects/_media.js
 //@prepros-append 04-components/_menu.js
-//@prepros-append 05-layout/_block.js
 //@prepros-append 05-layout/_section.js
 //@prepros-append 05-layout/_meta.js
 //@prepros-append 06-templates/_craft.js
@@ -53,39 +52,36 @@ document.addEventListener("DOMContentLoaded", event => {
 
 let jd_scrollController = new ScrollMagic.Controller();
 
-let jd_scene = element => new ScrollMagic.Scene({
-  triggerElement: element
+let jd_scene = (trigger, hook = .8) => new ScrollMagic.Scene({
+  triggerElement: trigger,
+  triggerHook: hook
 })
 .addTo(jd_scrollController);
 
-let jd_mediaScene = (name, delay) => {
-  jd_scene("#" + name).offset("-200").reverse(false).on("enter", event => {
+let jd_mediaScene = (trigger, hook = .8) => {
+  jd_scene(trigger, hook).reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     jd_tl.to(
-      "#" + name + " .jd-media__revealer", 2, {x: "200%", ease: SlowMo.easeIn}, delay
+      trigger + " .jd-media__revealer", 2, {x: "200%", ease: SlowMo.easeIn}
     );
     jd_tl.to(
-      "#" + name + " .jd-media__item", 0, {opacity: 1}, (.5 + delay)
+      trigger + " .jd-media__item", 0, {opacity: 1}, .5
     );
   });
 }
 
-jd_mediaScene("joda-photo");
+jd_mediaScene("#joda-photo");
 
-jd_mediaScene("eventim-shop");
-jd_mediaScene("tsukuyumi", .15);
-jd_mediaScene("day-in-may", .3);
-jd_mediaScene("kidsclub", .45);
-jd_mediaScene("dfa", .6);
-jd_mediaScene("heimat", .75);
+jd_mediaScene("#eventim-shop");
+jd_mediaScene("#tsukuyumi");
+jd_mediaScene("#day-in-may", .6);
+jd_mediaScene("#kidsclub");
+jd_mediaScene("#dfa", .6);
+jd_mediaScene("#heimat");
 
 const jd_toggleMenu = event => {
 
   const jd_menuItems = document.querySelectorAll(".jd-menu__items")[0];
-  const jd_menuItem = document.querySelectorAll(".jd-menu__items");
-  const jd_container = document.querySelectorAll(".jd-container")[0];
-
-  console.log(event.target);
 
   // If the clicked element doesn't have the right selector, bail
   if (!event.target.matches(".jd-menu__trigger, .jd-menu__trigger *")) return;
@@ -94,7 +90,7 @@ const jd_toggleMenu = event => {
   event.preventDefault();
 
   // Log the clicked element in the console
-  console.log(jd_menuItems);
+  //console.log(jd_menuItems);
 
   if (jd_menuItems.classList.contains("--is-open")) {
     let jd_tl = new TimelineLite();
@@ -107,63 +103,55 @@ const jd_toggleMenu = event => {
     jd_tl.staggerFromTo(".jd-menu__item", .4, {opacity: 0, x: "-10vw"}, {opacity: 1, x: 0, ease:Power2.easeOut}, .1, .7);
     jd_menuItems.classList.add("--is-open");
   }
-
-  // if (jd_container.classList.contains("--is-pushed")) {
-  //   jd_container.classList.remove("--is-pushed");
-  // } else {
-  //   jd_container.classList.add("--is-pushed");
-  // }
-
 }
 
 document.addEventListener("click", jd_toggleMenu, false);
 
-
-let jd_sectionTitleScene = name => {
-  jd_scene("#" + name + " .jd-section__title").offset("-200").reverse(false).on("enter", event => {
+let jd_sectionTitleScene = trigger => {
+  jd_scene(trigger + " .jd-section__title").reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     jd_tl.fromTo(
-      "#" + name + " .jd-section__title-number",
+      trigger + " .jd-section__title-number",
       .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}
     );
     jd_tl.to(
-      "#" + name + " .jd-section__title-line", .4, {scaleX: 1, ease: Power2.easeOut}
+      trigger + " .jd-section__title-line", .4, {scaleX: 1, ease: Power2.easeOut}
     );
     jd_tl.fromTo(
-      "#" + name + " .jd-section__title-text",
+      trigger + " .jd-section__title-text",
       .4, {opacity: 0}, {opacity: 1}, .6
     );
     jd_tl.fromTo(
-      "#" + name + " .jd-section__title-text",
+      trigger + " .jd-section__title-text",
       .4, {x: "-16px"}, {x: 0, ease: Power2.easeOut}, .6
     );
   });
 }
 
-jd_sectionTitleScene("strategy");
-jd_sectionTitleScene("design");
-jd_sectionTitleScene("technology");
+jd_sectionTitleScene("#strategy");
+jd_sectionTitleScene("#design");
+jd_sectionTitleScene("#technology");
 
-jd_sectionTitleScene("projects");
-jd_sectionTitleScene("press");
-jd_sectionTitleScene("speaker");
+jd_sectionTitleScene("#projects");
+jd_sectionTitleScene("#press");
+jd_sectionTitleScene("#speaker");
 
-jd_sectionTitleScene("email");
-jd_sectionTitleScene("phone");
+jd_sectionTitleScene("#email");
+jd_sectionTitleScene("#phone");
 
-let jd_sectionDescriptionScene = name => {
-  jd_scene("#" + name + " .jd-section__description").offset("-100").reverse(false).on("enter", event => {
+let jd_sectionDescriptionScene = trigger => {
+  jd_scene(trigger + " .jd-section__description").reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     jd_tl.fromTo(
-      "#" + name + " .jd-section__description",
-      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .8
+      trigger + " .jd-section__description",
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .4
     );
   });
 }
 
-jd_sectionDescriptionScene("projects");
+jd_sectionDescriptionScene("#projects");
 
-jd_scene(".jd-footer").triggerHook(.99).reverse(false).on("start", event => {
+jd_scene(".jd-footer", .99).reverse(false).on("start", event => {
   let jd_tl = new TimelineLite();
   jd_tl.fromTo([
       ".jd-meta",
@@ -173,12 +161,11 @@ jd_scene(".jd-footer").triggerHook(.99).reverse(false).on("start", event => {
   );
 });
 
-const jd_legalLink = document.querySelectorAll(".jd-footer__link--legal-notice")[0];
-const jd_privacyLink = document.querySelectorAll(".jd-footer__link--privacy")[0];
-const jd_meta = document.querySelectorAll(".jd-meta")[0];
-const jd_metaContent = document.querySelectorAll(".jd-meta__content")[0];
-const jd_legal = document.querySelectorAll(".jd-legal-notice")[0];
-const jd_privacy = document.querySelectorAll(".jd-privacy")[0];
+const jd_legalLink = document.querySelector(".jd-footer__link--legal-notice");
+const jd_privacyLink = document.querySelector(".jd-footer__link--privacy");
+const jd_meta = document.querySelector(".jd-meta");
+const jd_legal = document.querySelector(".jd-legal-notice");
+const jd_privacy = document.querySelector(".jd-privacy");
 
 const jd_openMeta = event => {
 
@@ -286,49 +273,44 @@ const jd_closeMeta = event => {
 
 document.addEventListener("click", jd_closeMeta, false);
 
-let jd_craftScene = name => {
-  jd_scene("#" + name).offset("-100").reverse(false).on("enter", event => {
+let jd_craftScene = trigger => {
+  jd_scene(trigger).reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
-    // jd_tl.fromTo(
-    //   "#jd-craft-" + name + " .jd-section__title-number",
-    //   .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}
-    // );
-    // jd_tl.to(
-    //   "#jd-craft-" + name + " .jd-section__title-line",
-    //   .4, {scaleX: 1, ease:Power2.easeOut}
-    // );
+
     jd_tl.staggerFromTo(
       [
-        // "#jd-craft-" + name + " .jd-section__title-text",
-        "#" + name + " .jd-craft__heading",
-        "#" + name + " .jd-craft__description"
+        trigger + " .jd-craft__heading",
+        trigger + " .jd-craft__description"
       ],
-      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2, .6
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2, .7
     );
     jd_tl.staggerFromTo(
-      "#" + name + " .jd-data-list__item",
-      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, 1
+      trigger + " .jd-data-list__item",
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, 1.1
     );
   });
 }
 
-jd_craftScene("strategy");
-jd_craftScene("design");
-jd_craftScene("technology");
+jd_craftScene("#strategy");
+jd_craftScene("#design");
+jd_craftScene("#technology");
 
-jd_scene(".jd-joda__heading").offset("-300").reverse(false).on("enter", event => {
+jd_scene(".jd-joda__heading").reverse(false).on("enter", event => {
+
   let jd_tl = new TimelineLite();
+
   jd_tl.fromTo(
     ".jd-joda__heading",
-    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2
+    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}
   );
   jd_tl.staggerFromTo(
     ".jd-joda__text",
-    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2, .4
+    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2
   );
+
 });
 
-jd_scene(".jd-clients").offset("-100").reverse(false).on("enter", event => {
+jd_scene(".jd-clients").reverse(false).on("enter", event => {
 
   enquire.register(jd_breakMax("tablet"), {
 
@@ -400,50 +382,50 @@ jd_scene(".jd-clients").offset("-100").reverse(false).on("enter", event => {
   });
 });
 
-let jd_projectScene = (name, delay) => {
-  jd_scene("#" + name + " .jd-project__title").offset("-400").reverse(false).on("enter", event => {
+let jd_projectScene = (trigger, hook = .8) => {
+  jd_scene(trigger + " .jd-project__title", hook).reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
-    jd_tl.fromTo(
+    jd_tl.staggerFromTo(
       [
-        "#" + name + " .jd-project__title",
-        "#" + name + " .jd-project__description"
+        trigger + " .jd-project__title",
+        trigger + " .jd-project__description"
       ],
-      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, delay
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2
     );
   });
 }
 
-jd_projectScene("eventim-shop");
-jd_projectScene("tsukuyumi", .15);
-jd_projectScene("day-in-may", .3);
-jd_projectScene("kidsclub", .45);
-jd_projectScene("dfa", .6);
-jd_projectScene("heimat", .75);
+jd_projectScene("#eventim-shop");
+jd_projectScene("#tsukuyumi");
+jd_projectScene("#day-in-may", .6);
+jd_projectScene("#kidsclub");
+jd_projectScene("#dfa", .6);
+jd_projectScene("#heimat");
 
-let jd_pressScene = name => {
-  jd_scene("#" + name).offset("-300").reverse(false).on("enter", event => {
+let jd_pressScene = trigger => {
+  jd_scene(trigger).reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     jd_tl.staggerTo(
-      "#" + name + " .jd-press__item", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .8
+      trigger + " .jd-press__item", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .8
     );
   });
 }
 
-jd_pressScene("press");
-jd_pressScene("speaker");
+jd_pressScene("#press");
+jd_pressScene("#speaker");
 
-let jd_contactScene = name => {
-  jd_scene("#" + name).offset("-100").reverse(false).on("enter", event => {
+let jd_contactScene = trigger => {
+  jd_scene(trigger).reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     jd_tl.fromTo(
-      "#" + name + " .jd-contact__heading",
-      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .6
+      trigger + " .jd-contact__heading",
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .7
     );
   });
 }
 
-jd_contactScene("email");
-jd_contactScene("phone");
+jd_contactScene("#email");
+jd_contactScene("#phone");
 
 
 //# sourceMappingURL=main.js.map

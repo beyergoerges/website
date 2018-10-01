@@ -1,4 +1,4 @@
-jd_scene(".jd-footer").triggerHook(.99).reverse(false).on("start", event => {
+jd_scene(".jd-footer", .99).reverse(false).on("start", event => {
   let jd_tl = new TimelineLite();
   jd_tl.fromTo([
       ".jd-meta",
@@ -8,12 +8,11 @@ jd_scene(".jd-footer").triggerHook(.99).reverse(false).on("start", event => {
   );
 });
 
-const jd_legalLink = document.querySelectorAll(".jd-footer__link--legal-notice")[0];
-const jd_privacyLink = document.querySelectorAll(".jd-footer__link--privacy")[0];
-const jd_meta = document.querySelectorAll(".jd-meta")[0];
-const jd_metaContent = document.querySelectorAll(".jd-meta__content")[0];
-const jd_legal = document.querySelectorAll(".jd-legal-notice")[0];
-const jd_privacy = document.querySelectorAll(".jd-privacy")[0];
+const jd_legalLink = document.querySelector(".jd-footer__link--legal-notice");
+const jd_privacyLink = document.querySelector(".jd-footer__link--privacy");
+const jd_meta = document.querySelector(".jd-meta");
+const jd_legal = document.querySelector(".jd-legal-notice");
+const jd_privacy = document.querySelector(".jd-privacy");
 
 const jd_openMeta = event => {
 

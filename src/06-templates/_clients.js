@@ -1,4 +1,4 @@
-jd_scene(".jd-clients").offset("-100").reverse(false).on("enter", event => {
+jd_scene(".jd-clients").reverse(false).on("enter", event => {
 
   enquire.register(jd_breakMax("tablet"), {
 
