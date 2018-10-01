@@ -94,7 +94,7 @@ $font-scale: (
           "desktop": calc(#{rem(21)} + 2vw), "lh-desktop": 1, "ls-desktop": "-.01em",
           "desktop-xl": $font-size--l, "lh-desktop-xl": 1, "ls-desktop-xl": "-.01em"
          ),
-  "xl":  ("phone": calc(#{rem(36)} + 9vw), "lh-phone": .9, "ls-phone": "-.015em",
+  "xl":  ("phone": calc(#{rem(24)} + 9vw), "lh-phone": .9, "ls-phone": "-.015em",
           "tablet": calc(#{rem(36)} + 9vw), "lh-tablet": .9, "ls-tablet": "-.015em",
           "desktop": $font-size--xl, "lh-desktop": .9, "ls-desktop": "-.015em",
           "desktop-xl": $font-size--xl, "lh-desktop-xl": .9, "ls-desktop-xl": "-.015em"

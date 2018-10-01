@@ -163,7 +163,6 @@ let jd_sectionDescriptionScene = name => {
 jd_sectionDescriptionScene("projects");
 
 jd_scene(".jd-footer").triggerHook(.99).reverse(false).on("start", event => {
-  console.log("footer!");
   let jd_tl = new TimelineLite();
   jd_tl.fromTo([
       ".jd-meta",
@@ -173,37 +172,79 @@ jd_scene(".jd-footer").triggerHook(.99).reverse(false).on("start", event => {
   );
 });
 
-const jd_footerLink = document.querySelectorAll(".jd-footer__link--legal-notice")[0];
+const jd_legalLink = document.querySelectorAll(".jd-footer__link--legal-notice")[0];
+const jd_privacyLink = document.querySelectorAll(".jd-footer__link--privacy")[0];
 const jd_meta = document.querySelectorAll(".jd-meta")[0];
+const jd_metaContent = document.querySelectorAll(".jd-meta__content")[0];
 const jd_legal = document.querySelectorAll(".jd-legal-notice")[0];
+const jd_privacy = document.querySelectorAll(".jd-privacy")[0];
 
 const jd_openMeta = event => {
 
   // If the clicked element doesn't have the right selector, bail
-  if (!event.target.matches(".jd-footer__link--legal-notice")) return;
+  if (event.target.matches(".jd-footer__link--legal-notice")) {
 
-  // Don't follow the link
-  event.preventDefault();
+    jd_legalLink.classList.remove("--is-current");
+    jd_privacyLink.classList.remove("--is-current");
+    jd_meta.classList.remove("--is-open");
+    jd_metaContent.classList.remove("--is-open");
 
-  // Log the clicked element in the console
-  console.log(event.target);
+    // Don't follow the link
+    event.preventDefault();
 
-  jd_footerLink.classList.add("--is-current");
-  jd_meta.classList.add("--is-open");
-  jd_legal.classList.add("--is-open");
+    // Log the clicked element in the console
+    console.log(event.target);
 
-  let jd_tl = new TimelineLite();
-  jd_tl.to(
-    window,
-    .7, {scrollTo: "#jd-footer", ease:Power2.easeOut}
-  );
-  jd_tl.staggerFromTo(
-    ".jd-legal-notice > *",
-    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, .4
-  );
-  jd_tl.to(
-    ".jd-meta__close", 1, {scale: 1, ease:Elastic.easeInOut}, .7
-  );
+    jd_legalLink.classList.add("--is-current");
+    jd_meta.classList.add("--is-open");
+    jd_legal.classList.add("--is-open");
+
+    let jd_tl = new TimelineLite();
+    jd_tl.to(
+      window,
+      .7, {scrollTo: "#jd-footer", ease:Power2.easeOut}
+    );
+    jd_tl.staggerFromTo(
+      ".jd-legal-notice > *",
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, .4
+    );
+    jd_tl.to(
+      ".jd-meta__close", 1, {scale: 1, ease:Elastic.easeInOut}, .7
+    );
+
+  } else if (event.target.matches(".jd-footer__link--privacy")) {
+
+    jd_legalLink.classList.remove("--is-current");
+    jd_privacyLink.classList.remove("--is-current");
+    jd_meta.classList.remove("--is-open");
+    jd_metaContent.classList.remove("--is-open");
+
+    // Don't follow the link
+    event.preventDefault();
+
+    // Log the clicked element in the console
+    console.log(event.target);
+
+    jd_privacyLink.classList.add("--is-current");
+    jd_meta.classList.add("--is-open");
+    jd_privacy.classList.add("--is-open");
+
+    let jd_tl = new TimelineLite();
+    jd_tl.to(
+      window,
+      .7, {scrollTo: "#jd-footer", ease:Power2.easeOut}
+    );
+    jd_tl.staggerFromTo(
+      ".jd-privacy > *",
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .1, .4
+    );
+    jd_tl.to(
+      ".jd-meta__close", 1, {scale: 1, ease:Elastic.easeInOut}, .7
+    );
+
+  } else {
+    return;
+  }
 }
 
 document.addEventListener("click", jd_openMeta, false);
@@ -232,11 +273,13 @@ const jd_closeMeta = event => {
     .7, {scrollTo: endScrollPos, ease:Power2.easeInOut}, .1
   );
 
-  jd_footerLink.classList.remove("--is-current");
+  jd_legalLink.classList.remove("--is-current");
+  jd_privacyLink.classList.remove("--is-current");
 
   setTimeout( () => {
     jd_meta.classList.remove("--is-open");
     jd_legal.classList.remove("--is-open");
+    jd_privacy.classList.remove("--is-open");
   }, 1100);
 }
 
@@ -377,7 +420,7 @@ jd_projectScene("dfa", .6);
 jd_projectScene("heimat", .75);
 
 let jd_pressScene = name => {
-  jd_scene("#" + name).offset("-100").reverse(false).on("enter", event => {
+  jd_scene("#" + name).offset("-300").reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     jd_tl.staggerTo(
       "#" + name + " .jd-press__item", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .8
