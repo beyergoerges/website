@@ -4,6 +4,7 @@
   &__heading {
     grid-column: 2 / 6;
     grid-row: 2;
+    opacity: 0;
     white-space: nowrap;
 
     @include break(tablet) {

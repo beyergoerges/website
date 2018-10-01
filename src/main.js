@@ -11,3 +11,4 @@
 //@prepros-append 06-templates/_clients.js
 //@prepros-append 06-templates/_project.js
 //@prepros-append 06-templates/_press.js
+//@prepros-append 06-templates/_contact.js

@@ -23,7 +23,7 @@ const jd_openMeta = event => {
     jd_legalLink.classList.remove("--is-current");
     jd_privacyLink.classList.remove("--is-current");
     jd_meta.classList.remove("--is-open");
-    jd_metaContent.classList.remove("--is-open");
+    jd_privacy.classList.remove("--is-open");
 
     // Don't follow the link
     event.preventDefault();
@@ -53,7 +53,7 @@ const jd_openMeta = event => {
     jd_legalLink.classList.remove("--is-current");
     jd_privacyLink.classList.remove("--is-current");
     jd_meta.classList.remove("--is-open");
-    jd_metaContent.classList.remove("--is-open");
+    jd_legal.classList.remove("--is-open");
 
     // Don't follow the link
     event.preventDefault();
