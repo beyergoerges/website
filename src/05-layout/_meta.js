@@ -28,7 +28,7 @@ const jd_openMeta = event => {
     event.preventDefault();
 
     // Log the clicked element in the console
-    console.log(event.target);
+    //console.log(event.target);
 
     jd_legalLink.classList.add("--is-current");
     jd_meta.classList.add("--is-open");
@@ -58,7 +58,7 @@ const jd_openMeta = event => {
     event.preventDefault();
 
     // Log the clicked element in the console
-    console.log(event.target);
+    //console.log(event.target);
 
     jd_privacyLink.classList.add("--is-current");
     jd_meta.classList.add("--is-open");
@@ -86,13 +86,13 @@ document.addEventListener("click", jd_openMeta, false);
 
 const jd_closeMeta = event => {
 
-  const jd_container = document.querySelectorAll(".jd-wrapper")[0];
+  const jd_container = document.querySelector(".jd-wrapper");
 
   // If the clicked element doesn't have the right selector, bail
   if (!event.target.matches(".jd-meta__close")) return;
 
   // Log the clicked element in the console
-  console.log(event.target);
+  //console.log(event.target);
 
   let pageHeight = document.body.scrollHeight;
   let viewportHeight = window.innerHeight;
