@@ -1,6 +1,13 @@
 doctype html
 html(lang="de" dir="ltr")
   head
+    // Global site tag (gtag.js) - Google Analytics
+    script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-126828707-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-126828707-1');
     meta(charset="utf-8")
     title Beyer Görges – Digital-Agentur
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")

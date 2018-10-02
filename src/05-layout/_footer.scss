@@ -12,21 +12,22 @@
   }
 
   &__items {
-    display: grid;
+    //display: grid;
+
+    // @include break(tablet) {
+    //   grid-column-gap: spacing(2);
+    //   grid-template-columns: repeat(auto-fit, auto);
+    // }
 
     &--start {
       grid-column: 2 / 4;
 
       @include break(tablet) {
-        grid-column-gap: spacing(2);
-        grid-template-columns: auto 1fr;
         grid-column: 2;
       }
     }
 
     &--end {
-      grid-column-gap: spacing(2);
-      grid-template-columns: auto 1fr;
       grid-column: 2 / 4;
 
       @include break(tablet) {
@@ -37,6 +38,7 @@
   }
 
   &__item {
+    display: inline-block;
     opacity: .4;
 
     @include font-scale(xs);
@@ -50,6 +52,17 @@
     &:hover,
     &.--is-current {
       opacity: 1;
+    }
+
+    &--email {
+
+      @include break(tablet) {
+        margin-left: spacing(2);
+      }
+    }
+
+    &--privacy {
+      margin-left: spacing(2);
     }
 
     &--legal-notice:after,
