@@ -1,8 +1,10 @@
+//@prepros-append 01-basics/_js-wrapper-start.js
 //@prepros-append 01-basics/_responsive.js
 //@prepros-append 01-basics/_lazyload.js
 //@prepros-append 01-basics/_animation.js
 //@prepros-append 03-objects/_media.js
 //@prepros-append 04-components/_menu.js
+//@prepros-append 05-layout/_page-transitions.js
 //@prepros-append 05-layout/_section.js
 //@prepros-append 05-layout/_meta.js
 //@prepros-append 06-templates/_craft.js
@@ -11,6 +13,11 @@
 //@prepros-append 06-templates/_project.js
 //@prepros-append 06-templates/_press.js
 //@prepros-append 06-templates/_contact.js
+//@prepros-append 07-themes/_themes.js
+//@prepros-append 01-basics/_js-wrapper-end.js
+
+const jd_scripts = () => {
+  document.addEventListener("DOMContentLoaded", () => {
 
 const jd_breakpoint = {
   "phablet":        480,
@@ -44,10 +51,8 @@ const jd_breakMax = name => {
 //     deferSetup: true
 // });
 
-document.addEventListener("DOMContentLoaded", event => {
-  let bLazy = new Blazy({
-    selector: ".jd-media__item"
-  });
+let bLazy = new Blazy({
+  selector: ".jd-media__item"
 });
 
 let jd_scrollController = new ScrollMagic.Controller();
@@ -107,6 +112,10 @@ const jd_toggleMenu = event => {
 
 document.addEventListener("click", jd_toggleMenu, false);
 
+document.addEventListener("DOMContentLoaded", () => {
+  Barba.Pjax.start();
+});
+
 let jd_sectionTitleScene = trigger => {
   jd_scene(trigger + " .jd-section__title").reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
@@ -151,15 +160,15 @@ let jd_sectionDescriptionScene = trigger => {
 
 jd_sectionDescriptionScene("#projects");
 
-jd_scene(".jd-footer", .99).reverse(false).on("start", event => {
-  let jd_tl = new TimelineLite();
-  jd_tl.fromTo([
-      ".jd-meta",
-      ".jd-footer"
-    ],
-    .9, {y: 64}, {y: "0", ease: Power2.easeInOut}, .1, .4
-  );
-});
+// jd_scene(".jd-footer", .99).reverse(false).on("start", event => {
+//   let jd_tl = new TimelineLite();
+//   jd_tl.fromTo([
+//       ".jd-meta",
+//       ".jd-footer"
+//     ],
+//     .9, {y: 64}, {y: "0", ease: Power2.easeInOut}, .1, .4
+//   );
+// });
 
 const jd_legalLink = document.querySelector(".jd-footer__link--legal-notice");
 const jd_privacyLink = document.querySelector(".jd-footer__link--privacy");
@@ -426,6 +435,34 @@ let jd_contactScene = trigger => {
 
 jd_contactScene("#email");
 jd_contactScene("#phone");
+
+const jd_location = {
+  latitude: 51.5055232,
+  longitude: 7.4686858
+}
+
+let jd_currentDate = new Date();
+let jd_sunrise = new Date().sunrise(jd_location.latitude, jd_location.longitude);
+let jd_sunset = new Date().sunset(jd_location.latitude, jd_location.longitude);
+
+let jd_currentTime = jd_currentDate.getTime();
+let jd_sunriseTime = jd_sunrise.getTime();
+let jd_sunsetTime = jd_sunset.getTime();
+
+const jd_body = document.body;
+
+if (jd_currentDate >= jd_sunrise && jd_currentDate < jd_sunset) {
+  jd_body.classList.remove("jd-theme--night");
+  jd_body.classList.add("jd-theme--day");
+} else {
+  jd_body.classList.remove("jd-theme--day");
+  jd_body.classList.add("jd-theme--night");
+}
+
+  });
+};
+
+jd_scripts();
 
 
 //# sourceMappingURL=main.js.map

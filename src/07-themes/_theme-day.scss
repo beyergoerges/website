@@ -1,9 +1,11 @@
-.jd-theme--light {
+.jd-theme--day {
 
-  // h1,
-  // .jd-heading--page {
-  //   color: $theme--light__back;
-  // }
+  .jd-media {
+
+    &__revealer {
+      background-color: white;
+    }
+  }
 
   .jd-block--color-1 {
 

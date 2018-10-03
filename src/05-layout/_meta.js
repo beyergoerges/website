@@ -1,12 +1,12 @@
-jd_scene(".jd-footer", .99).reverse(false).on("start", event => {
-  let jd_tl = new TimelineLite();
-  jd_tl.fromTo([
-      ".jd-meta",
-      ".jd-footer"
-    ],
-    .9, {y: 64}, {y: "0", ease: Power2.easeInOut}, .1, .4
-  );
-});
+// jd_scene(".jd-footer", .99).reverse(false).on("start", event => {
+//   let jd_tl = new TimelineLite();
+//   jd_tl.fromTo([
+//       ".jd-meta",
+//       ".jd-footer"
+//     ],
+//     .9, {y: 64}, {y: "0", ease: Power2.easeInOut}, .1, .4
+//   );
+// });
 
 const jd_legalLink = document.querySelector(".jd-footer__link--legal-notice");
 const jd_privacyLink = document.querySelector(".jd-footer__link--privacy");

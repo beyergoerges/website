@@ -11,7 +11,7 @@
     .jd-heading--page {
       grid-column: 2;
 
-      @include break(desktop-m) {
+      @include break(desktop-s) {
         max-width: 61.8vw;
       }
     }

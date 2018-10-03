@@ -1,6 +1,7 @@
 //@prepros-append ../../node_modules/enquire.js/dist/enquire.min.js
 //@prepros-append ../../node_modules/barba.js/dist/barba.min.js
 //@prepros-append ../../node_modules/blazy/blazy.min.js
+//@prepros-append _sun.js
 
 /*!
  * enquire.js v2.1.6 - Awesome Media Queries in JavaScript
@@ -15,3 +16,152 @@
   (c) Bjoern Klinggaard - @bklinggaard - http://dinbror.dk/blazy
 */
   (function(q,m){"function"===typeof define&&define.amd?define(m):"object"===typeof exports?module.exports=m():q.Blazy=m()})(this,function(){function q(b){var c=b._util;c.elements=E(b.options);c.count=c.elements.length;c.destroyed&&(c.destroyed=!1,b.options.container&&l(b.options.container,function(a){n(a,"scroll",c.validateT)}),n(window,"resize",c.saveViewportOffsetT),n(window,"resize",c.validateT),n(window,"scroll",c.validateT));m(b)}function m(b){for(var c=b._util,a=0;a<c.count;a++){var d=c.elements[a],e;a:{var g=d;e=b.options;var p=g.getBoundingClientRect();if(e.container&&y&&(g=g.closest(e.containerClass))){g=g.getBoundingClientRect();e=r(g,f)?r(p,{top:g.top-e.offset,right:g.right+e.offset,bottom:g.bottom+e.offset,left:g.left-e.offset}):!1;break a}e=r(p,f)}if(e||t(d,b.options.successClass))b.load(d),c.elements.splice(a,1),c.count--,a--}0===c.count&&b.destroy()}function r(b,c){return b.right>=c.left&&b.bottom>=c.top&&b.left<=c.right&&b.top<=c.bottom}function z(b,c,a){if(!t(b,a.successClass)&&(c||a.loadInvisible||0<b.offsetWidth&&0<b.offsetHeight))if(c=b.getAttribute(u)||b.getAttribute(a.src)){c=c.split(a.separator);var d=c[A&&1<c.length?1:0],e=b.getAttribute(a.srcset),g="img"===b.nodeName.toLowerCase(),p=(c=b.parentNode)&&"picture"===c.nodeName.toLowerCase();if(g||void 0===b.src){var h=new Image,w=function(){a.error&&a.error(b,"invalid");v(b,a.errorClass);k(h,"error",w);k(h,"load",f)},f=function(){g?p||B(b,d,e):b.style.backgroundImage='url("'+d+'")';x(b,a);k(h,"load",f);k(h,"error",w)};p&&(h=b,l(c.getElementsByTagName("source"),function(b){var c=a.srcset,e=b.getAttribute(c);e&&(b.setAttribute("srcset",e),b.removeAttribute(c))}));n(h,"error",w);n(h,"load",f);B(h,d,e)}else b.src=d,x(b,a)}else"video"===b.nodeName.toLowerCase()?(l(b.getElementsByTagName("source"),function(b){var c=a.src,e=b.getAttribute(c);e&&(b.setAttribute("src",e),b.removeAttribute(c))}),b.load(),x(b,a)):(a.error&&a.error(b,"missing"),v(b,a.errorClass))}function x(b,c){v(b,c.successClass);c.success&&c.success(b);b.removeAttribute(c.src);b.removeAttribute(c.srcset);l(c.breakpoints,function(a){b.removeAttribute(a.src)})}function B(b,c,a){a&&b.setAttribute("srcset",a);b.src=c}function t(b,c){return-1!==(" "+b.className+" ").indexOf(" "+c+" ")}function v(b,c){t(b,c)||(b.className+=" "+c)}function E(b){var c=[];b=b.root.querySelectorAll(b.selector);for(var a=b.length;a--;c.unshift(b[a]));return c}function C(b){f.bottom=(window.innerHeight||document.documentElement.clientHeight)+b;f.right=(window.innerWidth||document.documentElement.clientWidth)+b}function n(b,c,a){b.attachEvent?b.attachEvent&&b.attachEvent("on"+c,a):b.addEventListener(c,a,{capture:!1,passive:!0})}function k(b,c,a){b.detachEvent?b.detachEvent&&b.detachEvent("on"+c,a):b.removeEventListener(c,a,{capture:!1,passive:!0})}function l(b,c){if(b&&c)for(var a=b.length,d=0;d<a&&!1!==c(b[d],d);d++);}function D(b,c,a){var d=0;return function(){var e=+new Date;e-d<c||(d=e,b.apply(a,arguments))}}var u,f,A,y;return function(b){if(!document.querySelectorAll){var c=document.createStyleSheet();document.querySelectorAll=function(a,b,d,h,f){f=document.all;b=[];a=a.replace(/\[for\b/gi,"[htmlFor").split(",");for(d=a.length;d--;){c.addRule(a[d],"k:v");for(h=f.length;h--;)f[h].currentStyle.k&&b.push(f[h]);c.removeRule(0)}return b}}var a=this,d=a._util={};d.elements=[];d.destroyed=!0;a.options=b||{};a.options.error=a.options.error||!1;a.options.offset=a.options.offset||100;a.options.root=a.options.root||document;a.options.success=a.options.success||!1;a.options.selector=a.options.selector||".b-lazy";a.options.separator=a.options.separator||"|";a.options.containerClass=a.options.container;a.options.container=a.options.containerClass?document.querySelectorAll(a.options.containerClass):!1;a.options.errorClass=a.options.errorClass||"b-error";a.options.breakpoints=a.options.breakpoints||!1;a.options.loadInvisible=a.options.loadInvisible||!1;a.options.successClass=a.options.successClass||"b-loaded";a.options.validateDelay=a.options.validateDelay||25;a.options.saveViewportOffsetDelay=a.options.saveViewportOffsetDelay||50;a.options.srcset=a.options.srcset||"data-srcset";a.options.src=u=a.options.src||"data-src";y=Element.prototype.closest;A=1<window.devicePixelRatio;f={};f.top=0-a.options.offset;f.left=0-a.options.offset;a.revalidate=function(){q(a)};a.load=function(a,b){var c=this.options;void 0===a.length?z(a,b,c):l(a,function(a){z(a,b,c)})};a.destroy=function(){var a=this._util;this.options.container&&l(this.options.container,function(b){k(b,"scroll",a.validateT)});k(window,"scroll",a.validateT);k(window,"resize",a.validateT);k(window,"resize",a.saveViewportOffsetT);a.count=0;a.elements.length=0;a.destroyed=!0};d.validateT=D(function(){m(a)},a.options.validateDelay,a);d.saveViewportOffsetT=D(function(){C(a.options.offset)},a.options.saveViewportOffsetDelay,a);C(a.options.offset);l(a.options.breakpoints,function(a){if(a.width>=window.screen.width)return u=a.src,!1});setTimeout(function(){q(a)})}});
+/**
+ *	Sunrise/sunset script. By Matt Kane.
+ *
+ *  Based loosely and indirectly on Kevin Boone's SunTimes Java implementation
+ *  of the US Naval Observatory's algorithm.
+ *
+ *  Copyright © 2012 Triggertrap Ltd. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General
+ * Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful,but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+ * details.
+ * You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to
+ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA,
+ * or connect to: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+ */
+
+
+Date.prototype.sunrise = function(latitude, longitude, zenith) {
+	return this.sunriseSet(latitude, longitude, true, zenith);
+}
+
+Date.prototype.sunset = function(latitude, longitude, zenith) {
+	return this.sunriseSet(latitude, longitude, false, zenith);
+}
+
+Date.prototype.sunriseSet = function(latitude, longitude, sunrise, zenith) {
+	if(!zenith) {
+		zenith = 90.8333;
+	}
+
+
+	var hoursFromMeridian = longitude / Date.DEGREES_PER_HOUR,
+		dayOfYear = this.getDayOfYear(),
+		approxTimeOfEventInDays,
+		sunMeanAnomaly,
+		sunTrueLongitude,
+		ascension,
+		rightAscension,
+		lQuadrant,
+		raQuadrant,
+		sinDec,
+		cosDec,
+		localHourAngle,
+		localHour,
+		localMeanTime,
+		time;
+
+	if (sunrise) {
+        approxTimeOfEventInDays = dayOfYear + ((6 - hoursFromMeridian) / 24);
+    } else {
+        approxTimeOfEventInDays = dayOfYear + ((18.0 - hoursFromMeridian) / 24);
+    }
+
+	sunMeanAnomaly = (0.9856 * approxTimeOfEventInDays) - 3.289;
+
+	sunTrueLongitude = sunMeanAnomaly + (1.916 * Math.sinDeg(sunMeanAnomaly)) + (0.020 * Math.sinDeg(2 * sunMeanAnomaly)) + 282.634;
+	sunTrueLongitude =  Math.mod(sunTrueLongitude, 360);
+
+	ascension = 0.91764 * Math.tanDeg(sunTrueLongitude);
+    rightAscension = 360 / (2 * Math.PI) * Math.atan(ascension);
+    rightAscension = Math.mod(rightAscension, 360);
+
+    lQuadrant = Math.floor(sunTrueLongitude / 90) * 90;
+    raQuadrant = Math.floor(rightAscension / 90) * 90;
+    rightAscension = rightAscension + (lQuadrant - raQuadrant);
+    rightAscension /= Date.DEGREES_PER_HOUR;
+
+    sinDec = 0.39782 * Math.sinDeg(sunTrueLongitude);
+	cosDec = Math.cosDeg(Math.asinDeg(sinDec));
+	cosLocalHourAngle = ((Math.cosDeg(zenith)) - (sinDec * (Math.sinDeg(latitude)))) / (cosDec * (Math.cosDeg(latitude)));
+
+	localHourAngle = Math.acosDeg(cosLocalHourAngle)
+
+	if (sunrise) {
+		localHourAngle = 360 - localHourAngle;
+	}
+
+	localHour = localHourAngle / Date.DEGREES_PER_HOUR;
+
+	localMeanTime = localHour + rightAscension - (0.06571 * approxTimeOfEventInDays) - 6.622;
+
+	time = localMeanTime - (longitude / Date.DEGREES_PER_HOUR);
+	time = Math.mod(time, 24);
+
+	var midnight = new Date(0);
+		midnight.setUTCFullYear(this.getUTCFullYear());
+		midnight.setUTCMonth(this.getUTCMonth());
+		midnight.setUTCDate(this.getUTCDate());
+
+
+
+	var milli = midnight.getTime() + (time * 60 *60 * 1000);
+
+
+	return new Date(milli);
+}
+
+Date.DEGREES_PER_HOUR = 360 / 24;
+
+
+// Utility functions
+
+Date.prototype.getDayOfYear = function() {
+	var onejan = new Date(this.getFullYear(),0,1);
+	return Math.ceil((this - onejan) / 86400000);
+}
+
+Math.degToRad = function(num) {
+	return num * Math.PI / 180;
+}
+
+Math.radToDeg = function(radians){
+    return radians * 180.0 / Math.PI;
+}
+
+Math.sinDeg = function(deg) {
+    return Math.sin(deg * 2.0 * Math.PI / 360.0);
+}
+
+
+Math.acosDeg = function(x) {
+    return Math.acos(x) * 360.0 / (2 * Math.PI);
+}
+
+Math.asinDeg = function(x) {
+    return Math.asin(x) * 360.0 / (2 * Math.PI);
+}
+
+
+Math.tanDeg = function(deg) {
+    return Math.tan(deg * 2.0 * Math.PI / 360.0);
+}
+
+Math.cosDeg = function(deg) {
+    return Math.cos(deg * 2.0 * Math.PI / 360.0);
+}
+
+Math.mod = function(a, b) {
+	var result = a % b;
+	if(result < 0) {
+		result += b;
+	}
+	return result;
+}
+

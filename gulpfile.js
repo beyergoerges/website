@@ -63,6 +63,11 @@ const config = {
     dest: "dist/videos",
     watch: "src/videos/**/*",
   },
+  htaccess: {
+    src: "src/.htaccess",
+    dest: "dist",
+    watch: "src/.htaccess",
+  },
   dest: "dist",
 };
 
@@ -162,6 +167,13 @@ gulp.task("videos", () => {
 });
 
 
+// htaccess
+gulp.task("htaccess", () => {
+  return gulp.src(config.htaccess.src)
+    .pipe(gulp.dest(config.htaccess.dest));
+});
+
+
 // Server
 gulp.task("serve", () => {
 
@@ -187,6 +199,9 @@ gulp.task("serve", () => {
   gulp.task("videos:watch", ["videos"], reload);
   gulp.watch(config.videos.watch, ["videos:watch"]);
 
+  gulp.task("htaccess:watch", ["htaccess"], reload);
+  gulp.watch(config.htaccess.watch, ["htaccess:watch"]);
+
 });
 
 
@@ -200,7 +215,8 @@ gulp.task("default", ["clean"], () => {
     // "scripts",
     "fonts",
     "images",
-    "videos"
+    "videos",
+    "htaccess"
   ];
 
   // run build

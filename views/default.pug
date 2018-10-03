@@ -14,15 +14,16 @@ html(lang="de" dir="ltr")
     link(rel="icon" href="../favicon.ico?v=1.1")
     link(rel="stylesheet" href="../vendor.min.css")
     link(rel="stylesheet" href="../main.min.css")
-  body.jd-theme--light
+  body
     svg(xmlns="http://www.w3.org/2000/svg" style="display: none;")
       include includes/svg/logo.pug
       include includes/svg/icons.pug
       block svg
     .jd-wrapper
       include includes/header.pug
-      main.jd-container
-        block content
+      main.jd-container#barba-wrapper
+        .barba-container
+          block content
       include includes/footer.pug
       .jd-meta
         .jd-meta__close

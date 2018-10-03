@@ -2,9 +2,7 @@ extends default.pug
 
 block content
   header.jd-block.jd-block--intro
-    h1.jd-heading.jd-heading--page Digitales
-      br
-      | Handwerk
+    h1.jd-heading.jd-heading--page Werte in einer digitalen Welt.
   .jd-block.jd-block--solid.jd-block--color-1
     section.jd-section.jd-craft#strategy
       h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading
@@ -12,9 +10,10 @@ block content
           span.jd-section__title-number 01
           span.jd-section__title-line
         span.jd-section__title-text Strategie
-      h2.jd-heading.jd-heading--high-level.jd-craft__heading.--color-1 Wir haben das große Ganze im Blick
-      p.jd-paragraph.jd-craft__description
-        | Wir wollen unsere Kunden verstehen. Für welche Werte stehen sie? Was treibt sie an? Wo wollen sie hin? Auf dieser Basis entwickeln wir eine gemeinsame Strategie, die den weiteren Weg ebnet – inhaltlich, gestalterisch und technisch.
+      .jd-craft__text
+        h2.jd-heading.jd-heading--high-level.jd-craft__heading.--color-1 Das große Ganze
+        p.jd-paragraph.jd-craft__description
+          | In unserer schnelllebigen Zeit ist es verführerisch, stets den neuesten Trends zu folgen um kurzfristig erfolgreich zu sein. Wir helfen die Dinge einzuordnen und entwickeln gemeinsam digitale Strategien mit Weitblick.
       ul.jd-data-list.jd-craft__list
         li.jd-data-list__item Beratung
         li.jd-data-list__item Digitale Transformation
@@ -28,9 +27,10 @@ block content
           span.jd-section__title-number 02
           span.jd-section__title-line
         span.jd-section__title-text Design
-      h2.jd-heading.jd-heading--high-level.jd-craft__heading.--color-1 Wir gestalten digitale Erlebnisse
-      p.jd-paragraph.jd-craft__description
-        | Die Interaktion zwischen Menschen und digitalen Produkten findet auf vielen verschiedenen Ebenen gleichzeitig statt. Im Design-Prozess setzen wir diese zu einem schönen und schlüssigen Gesamterlebnis zusammen.
+      .jd-craft__text
+        h2.jd-heading.jd-heading--high-level.jd-craft__heading.--color-1 Interaktive Erlebnisse
+        p.jd-paragraph.jd-craft__description
+          | Die Interaktion zwischen Menschen und digitalen Produkten findet auf vielen verschiedenen Ebenen gleichzeitig statt. Im Design-Prozess setzen wir diese zu einem schönen und schlüssigen Gesamterlebnis zusammen.
       ul.jd-data-list.jd-craft__list
         li.jd-data-list__item User Experience (UX)
         li.jd-data-list__item Visuelles Design
@@ -43,9 +43,10 @@ block content
           span.jd-section__title-number 03
           span.jd-section__title-line
         span.jd-section__title-text Technologie
-      h2.jd-heading.jd-heading--high-level.jd-craft__heading.--color-1 Wir entwickeln für die Zukunft
-      p.jd-paragraph.jd-craft__description
-        | Im Zuge des rasanten technischen Fortschritts überprüfen wir ständig unsere eigenen Methoden und bleiben neuen Technologien und Plattformen gegenüber offen und neugierig. So gelingen nachhaltig tragfähige Ergebnisse.
+      .jd-craft__text
+        h2.jd-heading.jd-heading--high-level.jd-craft__heading.--color-1 Für die Zukunft
+        p.jd-paragraph.jd-craft__description
+          | Die Qualität der Umsetzung entscheidet darüber, ob aus Anspruch Wirklichkeit wird. Deshalb legen wir technisch den gleichen hohen Maßstab an wie in der Kreation und setzen auf moderne, zukunftsfähige Technologien.
       ul.jd-data-list.jd-craft__list
         li.jd-data-list__item Prototyping
         li.jd-data-list__item Web & Mobile Apps
@@ -57,7 +58,7 @@ block content
     section.jd-section.jd-joda
       .jd-media.jd-joda__photo#joda-photo
         //img.jd-media__item(src="../images/joda/joda.jpg" alt="")
-        video.jd-media__item(width="1920" height="1080" autoplay loop muted)
+        video.jd-media__item(width="1920" height="1080" autoplay loop muted poster="../images/joda/joda.jpg")
           source(data-src="../videos/joda/joda.webm" type="video/webm")
           source(data-src="../videos/joda/joda.mp4" type="video/mp4")
         span.jd-media__revealer
@@ -68,10 +69,8 @@ block content
         p.jd-paragraph
           | Zuvor erlebten sie Digital-Branche aus zwei sehr unterschiedlichen Perspektiven: David als Digital-Chef beim BVB auf der Unternehmensseite und Joshua als Freelancer mit dem Blick von außen. Diese Erfahrungen bringen sie nun in einer gemeinsamen Agentur zusammen.
         p.jd-paragraph
-          | Ihre Wege kreuzten sich erstmals 2011, als David nach der Meisterschaft von Borussia Dortmund ein Video von Joshua gesehen hat, das die Geschichte der Freude in der Stadt noch einmal ganz anders erzählte. Es entstand eine langjährige Zusammenarbeit in allen digitalen Bereichen.
+          | Ihre Wege kreuzten sich erstmals 2011. Es entstand eine langjährige Zusammenarbeit in allen digitalen Bereichen. Ob Web, App, Video oder Animation – viele BVB-Produkte wurden gemeinsam erstellt. Darüber hinaus entstanden zahlreiche Kooperationen mit BVB-Partnern wie LichtBlick oder Eventim, die bis heute fortbestehen.
       .jd-joda__text.jd-joda__text--part2
-        p.jd-paragraph
-          | Ob Web, App, Video oder Animation – viele BVB-Produkte wurden gemeinsam erstellt. Darüber hinaus entstanden zahlreiche Kooperationen mit BVB-Partnern wie LichtBlick oder Eventim, die bis heute fortbestehen.
         p.jd-paragraph
           | Im Jahr 2018 erwuchs die Idee einer eigenen Agentur. David und Joshua glauben an das Schöne und Sinnstiftende im Digitalen und sehen in der auf vielen Ebenen stattfindenden Liberalisierung von Themen eine große Chance.
         p.jd-paragraph

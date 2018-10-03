@@ -1,10 +1,8 @@
 .jd-craft {
   margin-bottom: spacing(8);
 
-  &__heading,
-  &__description {
+  &__text {
     grid-column: 2 / 6;
-    opacity: 0;
 
     @include break(tablet) {
       grid-column: 3 / 6;
@@ -17,6 +15,11 @@
     @include break(desktop-m) {
       grid-column: 4 / 8;
     }
+  }
+
+  &__heading,
+  &__description {
+    opacity: 0;
   }
 
   &__description {
