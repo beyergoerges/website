@@ -112,9 +112,7 @@ const jd_toggleMenu = event => {
 
 document.addEventListener("click", jd_toggleMenu, false);
 
-document.addEventListener("DOMContentLoaded", () => {
-  Barba.Pjax.start();
-});
+Barba.Pjax.start();
 
 let jd_sectionTitleScene = trigger => {
   jd_scene(trigger + " .jd-section__title").reverse(false).on("enter", event => {

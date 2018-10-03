@@ -1,3 +1,1 @@
-document.addEventListener("DOMContentLoaded", () => {
-  Barba.Pjax.start();
-});
+Barba.Pjax.start();
