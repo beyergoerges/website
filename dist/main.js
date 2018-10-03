@@ -16,8 +16,7 @@
 //@prepros-append 07-themes/_themes.js
 //@prepros-append 01-basics/_js-wrapper-end.js
 
-const jd_scripts = () => {
-  document.addEventListener("DOMContentLoaded", () => {
+const jd_scripts = () => {    
 
 const jd_breakpoint = {
   "phablet":        480,
@@ -111,7 +110,6 @@ const jd_toggleMenu = event => {
 }
 
 document.addEventListener("click", jd_toggleMenu, false);
-
 
 
 let jd_sectionTitleScene = trigger => {
@@ -457,10 +455,19 @@ if (jd_currentDate >= jd_sunrise && jd_currentDate < jd_sunset) {
   jd_body.classList.add("jd-theme--night");
 }
 
-  });
 };
 
-jd_scripts();
+document.addEventListener("DOMContentLoaded", () => {
+
+  jd_scripts();
+
+  Barba.Pjax.start();
+
+  Barba.Dispatcher.on("newPageReady", () => {
+    jd_scripts();
+  });
+
+});
 
 
 //# sourceMappingURL=main.js.map

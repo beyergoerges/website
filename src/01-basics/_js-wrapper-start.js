@@ -1,2 +1,1 @@
-const jd_scripts = () => {
-  document.addEventListener("DOMContentLoaded", () => {
+const jd_scripts = () => {    

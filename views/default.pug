@@ -15,14 +15,14 @@ html(lang="de" dir="ltr")
     link(rel="stylesheet" href="../vendor.min.css")
     link(rel="stylesheet" href="../main.min.css")
   body
-    svg(xmlns="http://www.w3.org/2000/svg" style="display: none;")
-      include includes/svg/logo.pug
-      include includes/svg/icons.pug
-      block svg
     .jd-wrapper
       include includes/header.pug
       main.jd-container#barba-wrapper
         .barba-container
+          svg(xmlns="http://www.w3.org/2000/svg" style="display: none;")
+            include includes/svg/logo.pug
+            include includes/svg/icons.pug
+            block svg
           block content
       include includes/footer.pug
       .jd-meta
@@ -38,12 +38,4 @@ html(lang="de" dir="ltr")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js")
     script(src="../main.js")
-    //- script.
-    //-   document.addEventListener("DOMContentLoaded", () => {
-    //-     Barba.Pjax.start();
-    //-     Barba.Dispatcher.on("transitionCompleted", () => {
-    //-       jd_scripts();
-    //-       console.log("barba!");
-    //-     });
-    //-   });
   
