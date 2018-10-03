@@ -1,6 +1,6 @@
-const jd_toggleMenu = event => {
+const jd_menuItems = document.querySelectorAll(".jd-menu__items")[0];
 
-  const jd_menuItems = document.querySelectorAll(".jd-menu__items")[0];
+const jd_toggleMenu = event => {
 
   // If the clicked element doesn't have the right selector, bail
   if (!event.target.matches(".jd-menu__trigger, .jd-menu__trigger *")) return;

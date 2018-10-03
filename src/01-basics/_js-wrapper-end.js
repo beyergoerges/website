@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   Barba.Pjax.start();
 
   Barba.Dispatcher.on("newPageReady", () => {
+
     jd_scripts();
+
   });
 
 });

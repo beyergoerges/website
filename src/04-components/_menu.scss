@@ -45,22 +45,22 @@
 
     @include break(tablet) {
       @include font-scale(s);
-    }
 
-    &:after {
-      content: "";
-      position: absolute;
-      right: 100%;
-      bottom: spacing(-.3);
-      left: 0;
-      height: 2px;
-      background-color: $grayscale--darkest;
+      &:after {
+        content: "";
+        position: absolute;
+        right: 100%;
+        bottom: spacing(-.3);
+        left: 0;
+        height: 2px;
+        background-color: $grayscale--darkest;
 
-      @include transition($property: right);
-    }
+        @include transition($property: right);
+      }
 
-    &:hover:after {
-      right: 0;
+      &:hover:after {
+        right: 0;
+      }
     }
   }
 }
