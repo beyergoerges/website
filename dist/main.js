@@ -91,7 +91,7 @@ const jd_toggleMenu = event => {
   if (!event.target.matches(".jd-menu__trigger, .jd-menu__trigger *")) return;
 
   // Don't follow the link
-  event.preventDefault();
+  //event.preventDefault();
 
   // Log the clicked element in the console
   //console.log(jd_menuItems);
@@ -461,12 +461,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   jd_scripts();
 
-  Barba.Pjax.start();
+  enquire.register("(min-width: 1024px)", {
 
-  Barba.Dispatcher.on("newPageReady", () => {
+      match: () => {
 
-    jd_scripts();
+        Barba.Pjax.start();
 
+        Barba.Dispatcher.on("transitionCompleted", () => {
+
+          jd_scripts();
+
+        });
+      },
+
+      deferSetup: true
   });
 
 });
