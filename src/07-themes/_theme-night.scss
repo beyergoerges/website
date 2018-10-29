@@ -87,12 +87,13 @@
 
     &--legal-notice:after,
     &--privacy:after {
-      display: none;
+      background-color: rgba(34, 34, 34, 1);
     }
   }
 
-  .jd-meta {
-    background-color: rgba(20, 20, 20, 1);
+  .jd-meta,
+  .jd-meta:before {
+    background-color: rgba(34, 34, 34, 1);
   }
 
   // .jd-container {
