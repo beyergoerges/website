@@ -35,8 +35,15 @@ $grayscale--darker: #2D2D30;
 $grayscale--darkest: #141414;
 $grayscale--darkest: rgba(black, .8);
 
+// Day theme colors
+$theme--day__portfolio: #DFDDDF;
+$theme--day__about: #D6D6D4;
+$theme--day__contact: #C9D0DA;
+
 // Light theme colors
-$theme--light__back: #C9D0DA;
+$theme--light__back: #E4E0E1;
+//#EDEDED
+//#C9D0DA
 $theme--light__front: $grayscale--white;
 
 // Dark theme colors

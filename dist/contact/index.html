@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../vendor.min.css">
     <link rel="stylesheet" href="../main.min.css">
   </head>
-  <body class="jd-theme--day">
+  <body class="jd-contact">
     <div class="jd-wrapper">
       <header class="jd-header"><a class="jd-logo" href="/">
           <svg width="144" height="23">
@@ -32,7 +32,7 @@
                 <script>!function(){function t(i){var e=i.parentNode;if("svg"!==e.tagName)e=t(e);return e;}function i(t,i,e,n){return 1>(t/=n/2)?e/2*t*t*t*t+i:-e/2*((t-=2)*t*t*t-2)+i}function e(t){this.element=t,this.topLine=this.element.getElementsByTagName("path")[0],this.bottomLine=this.element.getElementsByTagName("path")[1],this.time={start:null,total:250},this.status={interacted:!1,animating:!1},this.init()}if(!window.requestAnimationFrame){var n=null;window.requestAnimationFrame=function(t,i){var e=(new Date).getTime();n||(n=e);var a=Math.max(0,16-(e-n)),s=window.setTimeout(function(){t(e+a)},a);return n=e+a,s}}e.prototype.init=function(){var t=this;this.element.addEventListener("click",function(){t.status.animating||(t.status.animating=!0,window.requestAnimationFrame(t.triggerAnimation.bind(t)))})},e.prototype.triggerAnimation=function(t){var i=this.getProgress(t),e=this.status.interacted?this.time.total-i:i;this.animateIcon(e),this.checkProgress(i)},e.prototype.getProgress=function(t){return this.time.start||(this.time.start=t),t-this.time.start},e.prototype.checkProgress=function(t){var i=this;this.time.total>t?window.requestAnimationFrame(i.triggerAnimation.bind(i)):(this.status={interacted:!this.status.interacted,animating:!1},this.time.start=null)},e.prototype.animateIcon=function(t){if(t>this.time.total)(t=this.time.total);if(0>t)(t=0);var e=i(Math.min(t,this.time.total/2),0,7,this.time.total/2).toFixed(2),n=i(Math.max(t-this.time.total/2,0),0,45,this.time.total/2).toFixed(2);this.topLine.setAttribute("transform","translate(0 "+e+") rotate("+n+" 16 9)"),this.bottomLine.setAttribute("transform","translate(0 "+-e+") rotate("+-n+" 16 23)")};var a=document.getElementsByClassName("nc-interact_menu-close-o-32");if(a)for(var s=0;a.length>s;s++)new e(t(a[s]))}();</script>
               </g>
             </svg></span>
-          <div class="jd-menu__items"><a class="jd-menu__item" href="/">Agentur</a><a class="jd-menu__item" href="/work/">Portfolio</a><a class="jd-menu__item" href="/contact/">Kontakt</a></div>
+          <div class="jd-menu__items"><a class="jd-menu__item" href="/">Portfolio</a><a class="jd-menu__item" href="/agency/">Agentur</a><a class="jd-menu__item" href="/contact/">Kontakt</a></div>
         </nav>
       </header>
       <main class="jd-container" id="barba-wrapper">
@@ -63,6 +63,7 @@
           </svg>
           <header class="jd-block jd-block--intro">
             <h1 class="jd-heading jd-heading--page">Verbindung<br>herstellen</h1>
+            <h2 class="jd-heading jd-heading--high-level">Wir freuen uns über jede Nachricht. Einfach schreiben oder anrufen.</h2>
           </header>
           <div class="jd-block jd-block--solid jd-block--color-1">
             <section class="jd-section jd-contact" id="email">
@@ -71,9 +72,10 @@
             </section>
             <section class="jd-section jd-contact" id="phone">
               <h3 class="jd-heading jd-heading--section jd-section__title jd-section__title--followed-by-heading"><span class="jd-section__title-index"><span class="jd-section__title-number">02</span><span class="jd-section__title-line"></span></span><span class="jd-section__title-text">Telefon</span></h3>
-              <h3 class="jd-heading jd-heading--section jd-heading--standalone jd-contact__heading"><a href="tel:+491753490778">+49 (0)175 349 07 78</a></h3>
+              <h3 class="jd-heading jd-heading--section jd-heading--standalone jd-contact__heading"><a href="tel:+4923158694870">+49 (0)231 586 948 70</a></h3>
             </section>
           </div>
+          <div class="jd-block jd-block--outro"><a class="jd-heading jd-heading--page jd-heading--inverted" href="/"><span class="jd-heading__text">Portfolio</span><span class="jd-arrow"></span></a></div>
         </div>
       </main>
       <footer class="jd-footer" id="jd-footer">

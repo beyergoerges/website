@@ -5,15 +5,80 @@
     gap: spacing(1);
     grid-template-columns: spacing(2) 1fr spacing(2);
     margin-bottom: spacing(1);
-    padding-top: spacing(16);
+    padding-top: spacing(12);
     padding-bottom: spacing(3);
 
-    .jd-heading--page {
+    .jd-heading--page,
+    .jd-heading--high-level {
       grid-column: 2;
 
       @include break(desktop-s) {
-        max-width: 61.8vw;
+        max-width: 54vw;
       }
+    }
+
+    .jd-heading--high-level {
+      padding-top: spacing(1);
+    }
+  }
+
+  &--outro {
+    gap: spacing(1);
+    grid-template-columns: spacing(2) 1fr spacing(2);
+    margin-bottom: spacing(1);
+    padding-top: spacing(8);
+    //padding-bottom: spacing(3);
+
+    .jd-heading--page {
+      display: flex;
+      align-items: center;
+      grid-column: 2;
+    }
+
+    .jd-heading__text,
+    .jd-arrow,
+    .jd-arrow:before,
+    .jd-arrow:after {
+      @include transition($duration-faster);
+    }
+
+    .jd-heading--page:hover .jd-heading__text {
+      color: $grayscale--darkest;
+    }
+
+    .jd-heading--page:hover .jd-arrow,
+    .jd-heading--page:hover .jd-arrow:before,
+    .jd-heading--page:hover .jd-arrow:after {
+      background-color: $grayscale--darkest;
+    }
+
+    .jd-arrow {
+      flex: 1;
+      position: relative;
+      height: 2px;
+      margin-left: spacing(2);
+      background-color: $grayscale--white;
+    }
+
+    .jd-arrow:before,
+    .jd-arrow:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: spacing(2);
+      height: 2px;
+      background-color: $grayscale--white;
+    }
+
+    .jd-arrow:before {
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    .jd-arrow:after {
+      transform: rotate(-45deg);
+      transform-origin: 100% 0%;
     }
   }
 
