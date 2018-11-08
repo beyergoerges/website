@@ -37,9 +37,9 @@
     left: 0;
     height: 1px;
 
-    @include break(desktop-s) {
-      height: 2px;
-    }
+    // @include break(desktop-s) {
+    //   height: 2px;
+    // }
   }
 
   &__line-y {
@@ -48,9 +48,9 @@
     left: 0;
     width: 1px;
 
-    @include break(desktop-s) {
-      width: 2px;
-    }
+    // @include break(desktop-s) {
+    //   width: 2px;
+    // }
   }
 
   &:nth-child(even) .jd-client__line-y {

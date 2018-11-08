@@ -1,11 +1,19 @@
 extends default.pug
 
+block vars
+  - var bodyClass = "jd-portfolio";
+
+block svg 
+  include includes/svg/clients.pug
+  include includes/svg/press.pug
+
 block content
   header.jd-block.jd-block--intro
-    h1.jd-heading.jd-heading--page Werte in einer digitalen Welt.
+    h1.jd-heading.jd-heading--page Werte in einer digitalen Welt
+    h2.jd-heading.jd-heading--high-level Wir sind eine multidisziplinäre Digital-Agentur. Gegründet 2018.
   .jd-block.jd-block--solid.jd-block--color-1
-    section.jd-section.jd-craft#strategy
-      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading
+    section.jd-section#projects
+      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-text
         span.jd-section__title-index
           span.jd-section__title-number 01
           span.jd-section__title-line
@@ -26,52 +34,51 @@ block content
         span.jd-section__title-index
           span.jd-section__title-number 02
           span.jd-section__title-line
-        span.jd-section__title-text Design
-      .jd-craft__text
-        h2.jd-heading.jd-heading--high-level.jd-craft__heading.--color-1 Interaktive Erlebnisse
-        p.jd-paragraph.jd-craft__description
-          | Die Interaktion zwischen Menschen und digitalen Produkten findet auf vielen verschiedenen Ebenen gleichzeitig statt. Im Design-Prozess setzen wir diese zu einem schönen und schlüssigen Gesamterlebnis zusammen.
-      ul.jd-data-list.jd-craft__list
-        li.jd-data-list__item User Experience (UX)
-        li.jd-data-list__item Visuelles Design
-        li.jd-data-list__item Design-Systeme
-        li.jd-data-list__item Videoproduktion
-        li.jd-data-list__item Animation/VFX
-    section.jd-section.jd-craft#technology
-      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading
+        span.jd-section__title-text Presse
+      .jd-press__items
+        a.jd-press__item(href="https://www.sueddeutsche.de/sport/bayern-gegen-dortmund-im-netz-die-fussgaengerzone-der-welt-1.2200876" target="_blank")
+          svg.jd-press__logo.jd-press__logo--sz
+            use(href="#logo-sz" xlink:href="#logo-sz")
+        a.jd-press__item(href="https://www.wired.com/2011/01/cinema-out-of-your-backpack/" target="_blank")
+          svg.jd-press__logo.jd-press__logo--wired
+            use(href="#logo-wired" xlink:href="#logo-wired")
+        //- a.jd-press__item(href="" target="_blank")
+        //-   svg.jd-press__logo.jd-press__logo--sponsors
+        //-     use(href="#logo-sponsors" xlink:href="#logo-sponsors")
+        a.jd-press__item(href="http://www.faz.net/aktuell/sport/mehr-sport/woran-die-bundesliga-beim-thema-e-sport-noch-scheitert-15749191.html" target="_blank")
+          svg.jd-press__logo.jd-press__logo--faz
+            use(href="#logo-faz" xlink:href="#logo-faz")
+        a.jd-press__item(href="https://www.11freunde.de/interview/ein-film-zur-meisterfeier-des-bvb" target="_blank")
+          svg.jd-press__logo.jd-press__logo--11freunde
+            use(href="#logo-11freunde" xlink:href="#logo-11freunde")
+        a.jd-press__item(href="https://www.ruhrnachrichten.de/Nachrichten/Dortmund/Intensives-Jubeln-intensives-Leiden-der-BVB-im-Social-Web-17689.html" target="_blank")
+          svg.jd-press__logo.jd-press__logo--rn
+            use(href="#logo-rn" xlink:href="#logo-rn")
+        a.jd-press__item(href="https://www.handelsblatt.com/sport/fussball/digitalisierung-im-fussball-mit-einem-bein-im-show-geschaeft/20019142-all.html?ticket=ST-6016452-WHYa02HeLakYO0DBHcSj-ap3" target="_blank")
+          svg.jd-press__logo.jd-press__logo--handelsblatt
+            use(href="#logo-handelsblatt" xlink:href="#logo-handelsblatt")
+        a.jd-press__item(href="https://techcrunch.com/2011/01/02/fancy-yourself-a-dslr-filmmaker-heres-your-change-to-prove-it/" target="_blank")
+          svg.jd-press__logo.jd-press__logo--techcrunch
+            use(href="#logo-techcrunch" xlink:href="#logo-techcrunch")
+    section.jd-section.jd-press#speaker
+      h3.jd-heading.jd-heading--section.jd-section__title
         span.jd-section__title-index
           span.jd-section__title-number 03
           span.jd-section__title-line
-        span.jd-section__title-text Technologie
-      .jd-craft__text
-        h2.jd-heading.jd-heading--high-level.jd-craft__heading.--color-1 Für die Zukunft
-        p.jd-paragraph.jd-craft__description
-          | Die Qualität der Umsetzung entscheidet darüber, ob aus Anspruch Wirklichkeit wird. Deshalb legen wir hier den gleichen hohen Maßstab an wie in der Kreation und setzen auf moderne, zukunftsfähige Technologien.
-      ul.jd-data-list.jd-craft__list
-        li.jd-data-list__item Prototyping
-        li.jd-data-list__item Web & Mobile Apps
-        li.jd-data-list__item eCommerce
-        li.jd-data-list__item CRM-Systeme
-        li.jd-data-list__item Technische Beratung
-        li.jd-data-list__item Pflege & Support
-  .jd-block.jd-block--hollow
-    section.jd-section.jd-joda
-      .jd-media.jd-joda__photo#joda-photo
-        //img.jd-media__item(src="../images/joda/joda.jpg" alt="")
-        video.jd-media__item(width="1920" height="1080" autoplay loop muted poster="../images/joda/joda.jpg")
-          source(data-src="../videos/joda/joda.webm" type="video/webm")
-          source(data-src="../videos/joda/joda.mp4" type="video/mp4")
-        span.jd-media__revealer
-      h2.jd-heading.jd-heading--high-level.jd-joda__heading David & Joshua
-      .jd-joda__text.jd-joda__text--part1
-        p.jd-paragraph
-          | David Görges und Joshua Beyer haben ihre Wurzeln im Ruhrgebiet. Sie wollen die digitale Zukunft der Region mitgestalten und sich dabei auf die hier gelebten Werte besinnen.
-        p.jd-paragraph
-          | Zuvor erlebten sie Digital-Branche aus zwei sehr unterschiedlichen Perspektiven: David als Digital-Chef beim BVB auf der Unternehmensseite und Joshua als Freelancer mit dem Blick von außen. Diese Erfahrungen bringen sie nun in einer gemeinsamen Agentur zusammen.
-        p.jd-paragraph
-          | Ihre Wege kreuzten sich erstmals 2011. Es entstand eine langjährige Zusammenarbeit in allen digitalen Bereichen. Ob Web, App, Video oder Animation – viele BVB-Produkte wurden gemeinsam erstellt. Darüber hinaus entstanden zahlreiche Kooperationen mit BVB-Partnern wie LichtBlick oder Eventim, die bis heute fortbestehen.
-      .jd-joda__text.jd-joda__text--part2
-        p.jd-paragraph
-          | Im Jahr 2018 erwuchs die Idee einer eigenen Agentur. David und Joshua glauben an das Schöne und Sinnstiftende im Digitalen und sehen in der auf vielen Ebenen stattfindenden Liberalisierung von Themen eine große Chance.
-        p.jd-paragraph
-          | Dazu gehört ein verantwortungsvoller Umgang mit der Digitalisierung, sowie ein tiefes Verständnis für diese Themen. Hierbei wollen sie Unternehmen unterstützen und gemeinsam nachhaltige und großartige Projekte realisieren.
+        span.jd-section__title-text Vorträge
+      .jd-press__items
+        a.jd-press__item(href="https://re-publica.com/en/member/9132" target="_blank")
+          svg.jd-press__logo.jd-press__logo--republica
+            use(href="#logo-republica" xlink:href="#logo-republica")
+        a.jd-press__item(href="https://www.campus-symposium.com" target="_blank")
+          img.jd-press__logo.jd-press__logo--campus(src="images/press/campus.png" alt="Campus Symposium")
+        //- a.jd-press__item(href="" target="_blank")
+        //-   img.jd-press__logo.jd-press__logo--faz-forum(src="images/press/faz-forum.png" alt="Frankfurter Allgemeine Forum")
+        a.jd-press__item(href="https://www.omk2018.de/speaker/david-goerges/" target="_blank")
+          img.jd-press__logo.jd-press__logo--omk(src="images/press/omk.png" alt="OMK")
+        a.jd-press__item(href="https://www.netandwork.de/speaker" target="_blank")
+          img.jd-press__logo.jd-press__logo--netandwork(src="images/press/netandwork.png" alt="Net&Work")
+  .jd-block.jd-block--outro
+    a.jd-heading.jd-heading--page.jd-heading--inverted(href="/agency")
+      span.jd-heading__text Agentur
+      span.jd-arrow

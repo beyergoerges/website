@@ -1,10 +1,14 @@
 extends ../default.pug
 
+block vars
+  - var bodyClass = "jd-contact";
+
 block content
   header.jd-block.jd-block--intro
     h1.jd-heading.jd-heading--page Verbindung
       br
       | herstellen
+    h2.jd-heading.jd-heading--high-level Wir freuen uns über jede Nachricht. Einfach schreiben oder anrufen.
   .jd-block.jd-block--solid.jd-block--color-1
     section.jd-section.jd-contact#email
       h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading
@@ -22,3 +26,7 @@ block content
         span.jd-section__title-text Telefon
       h3.jd-heading.jd-heading--section.jd-heading--standalone.jd-contact__heading
         a(href="tel:+4923158694870") +49 (0)231 586 948 70
+  .jd-block.jd-block--outro
+    a.jd-heading.jd-heading--page.jd-heading--inverted(href="/")
+      span.jd-heading__text Portfolio
+      span.jd-arrow

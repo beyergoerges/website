@@ -1,6 +1,7 @@
 .jd-data-list {
 
   &__item {
+    //font-family: "aktiv-grotesk-extended";
     padding-top: .75em;
     padding-bottom: .75em;
     text-transform: uppercase;
@@ -10,9 +11,9 @@
     &:not(:last-child) {
       border-bottom: 1px solid white;
 
-      @include break(desktop-s) {
-        border-width: 2px;
-      }
+      // @include break(desktop-s) {
+      //   border-width: 2px;
+      // }
     }
   }
 }
