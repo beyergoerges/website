@@ -5,6 +5,7 @@
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  padding: spacing(1);
   background-color: whitesmoke;
   background: url("images/xmas/10-Flamingo.png") no-repeat center;
   background-size: cover;
@@ -16,12 +17,12 @@
     position: relative;
     width: 100%;
     max-width: rem(480);
-    height: 100vh;
+    height: 150vw;
     padding: spacing(1);
     background-color: $color--xmas-red;
     border: spacing(1) solid $grayscale--white;
 
-    @media (max-width: 1023px) and (orientation: landscape) {
+    @media (min-width: 480px) and (max-width: 1023px) and (orientation: landscape) {
       height: rem(681);
     }
 
