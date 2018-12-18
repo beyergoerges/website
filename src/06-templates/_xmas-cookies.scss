@@ -6,7 +6,7 @@
   min-height: 100vh;
   padding: spacing(1);
   background-color: whitesmoke;
-  background: url("images/xmas/10-Flamingo.png") no-repeat center;
+  background: url("images/xmas/bg.jpg") no-repeat center;
   background-size: cover;
 
   @include break(phablet) {
