@@ -1,0 +1,230 @@
+.jd-xmas-cookies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: spacing(1);
+  background-color: whitesmoke;
+  background: url("images/xmas/10-Flamingo.png") no-repeat center;
+  background-size: cover;
+
+  &__card {
+    position: relative;
+    width: 100%;
+    max-width: rem(480);
+    height: 150vw;
+    perspective: 1000px;
+
+    @media (min-width: 480px) and (max-width: 1023px) and (orientation: landscape) {
+      height: rem(681);
+    }
+
+    @include break(phablet) {
+      height: rem(681);
+    }
+
+    @include break(desktop-xl) {
+      max-width: 33.333333vw;
+    }
+
+    // &:hover .jd-xmas-cookies__card-flip {
+    //   transform: rotateY(-180deg);
+    // }
+  }
+
+  &__card-shadow,
+  &__card-flip {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  &__card-shadow {
+    z-index: -1;
+    box-shadow: rgba(0, 0, 0, 0.34) 0 0 rem(142) 0;
+
+    @include position(absolute, spacing(4), spacing(2), spacing(0), spacing(2));
+  }
+
+  &__card-flip {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.jd-xmas,
+.jd-cookies {
+  padding: spacing(1);
+  border: spacing(1) solid $grayscale--white;
+  backface-visibility: hidden;
+
+  @include fill;
+}
+
+.jd-xmas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  background-color: $color--xmas-red;
+  transform: rotateY(0deg);
+
+  &__text {
+    color: $grayscale--white;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-size: 12vw;
+    line-height: .94;
+    font-weight: 600;
+    letter-spacing: -.015em;
+
+    @include break(phablet) {
+      font-size: rem(60);
+    }
+  }
+
+  &__icons {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &__icon {
+    width: 100%;
+    color: $grayscale--white;
+  }
+
+  &__logo-triangle {
+    //opacity: 0;
+  }
+}
+
+.jd-cookies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: #087462;
+  transform: rotateY(-180deg);
+
+  &__accept,
+  &__cracked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__accept {
+
+    &:hover .jd-cookie--1 {
+      animation: cookie-shake 1.4s $ease-out-quart forwards;
+    }
+
+    &.--is-hidden {
+      display: none;
+    }
+  }
+
+  &__cracked {
+    display: none;
+
+    &.--is-visible {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__button {
+    color: $grayscale--white;
+    font-weight: 600;
+    text-align: center;
+    //text-decoration: underline;
+
+    @include font-scale(l);
+  }
+
+  &__message {
+    display: inline-block;
+    margin-right: spacing(1);
+    margin-left: spacing(1);
+    padding: spacing(1) spacing(2);
+    background-color: $grayscale--white;
+    //color: $color--xmas-red;
+    //font-weight: 600;
+    text-align: center;
+    transform: scaleX(0);
+
+    @include font-scale(xs);
+    @include transition;
+
+    line-height: 1.3;
+
+    .jd-cookies__cracked.--is-visible & {
+      animation: cookie-msg .7s $ease-out-back .9s forwards;
+    }
+  }
+}
+
+.jd-cookie {
+
+  &--1 {
+    padding-right: spacing(3);
+    padding-bottom: spacing(1);
+    padding-left: spacing(3);
+  }
+
+  &--2 {
+    padding-bottom: spacing(1);
+
+    .jd-cookies__cracked.--is-visible & {
+      animation: cookie-shake-2 .7s $ease-out-quart forwards;
+    }
+  }
+}
+
+@keyframes cookie-shake {
+  0% {
+    transform: rotate(0deg);
+  } 16% {
+    transform: rotate(-7deg);
+  } 37% {
+    transform: rotate(4deg);
+  } 54% {
+    transform: rotate(-6deg);
+  } 71% {
+    transform: rotate(5deg);
+  } 86% {
+    transform: rotate(-3deg);
+  } 100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes cookie-shake-2 {
+  0% {
+    transform: rotate(0deg);
+  } 34% {
+    transform: rotate(-3deg);
+  } 72% {
+    transform: rotate(4deg);
+  } 100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes cookie-msg {
+  0% {
+    opacity: 0;
+    transform: translateY(-32px);
+  } 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
