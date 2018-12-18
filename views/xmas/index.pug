@@ -1,0 +1,48 @@
+doctype html
+html(lang="de" dir="ltr")
+  head
+    // Global site tag (gtag.js) - Google Analytics
+    script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-126828707-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-126828707-1');
+    meta(charset="utf-8")
+    title Beyer Görges – Digital-Agentur
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
+    link(rel="icon" href="../favicon.ico?v=1.1")
+    link(rel="stylesheet" href="../vendor.min.css")
+    link(rel="stylesheet" href="../main.min.css")
+  body(class="jd-theme--xmas")
+    main#barba-wrapper
+      .barba-container
+        svg(xmlns="http://www.w3.org/2000/svg" style="display: none;")
+          include ../includes/svg/logo.pug
+          include ../includes/svg/icons.pug
+        .jd-xmas
+          .jd-xmas__card
+            .jd-xmas__card-text.jd-xmas__card-text--top Lieber {Name},
+            .jd-xmas__card-illustrations
+              svg.jd-xmas__card-illustration.jd-xmas__card-illustration--1
+                use(href="#jd-logo-xmas" xlink:href="#jd-logo-xmas")
+              svg.jd-xmas__card-illustration.jd-xmas__card-illustration--2
+                use(href="#jd-logo-xmas" xlink:href="#jd-logo-xmas")
+              svg.jd-xmas__card-illustration.jd-xmas__card-illustration--3
+                use(href="#jd-logo-xmas" xlink:href="#jd-logo-xmas")
+              svg.jd-xmas__card-illustration.jd-xmas__card-illustration--4
+                use(href="#jd-logo-xmas" xlink:href="#jd-logo-xmas")
+              svg.jd-xmas__card-illustration.jd-xmas__card-illustration--5
+                use(href="#jd-logo-xmas" xlink:href="#jd-logo-xmas")
+              svg.jd-xmas__card-illustration.jd-xmas__card-illustration--6
+                use(href="#jd-logo-xmas" xlink:href="#jd-logo-xmas")
+              svg.jd-xmas__card-illustration.jd-xmas__card-illustration--7
+                use(href="#jd-logo-xmas" xlink:href="#jd-logo-xmas")
+            .jd-xmas__card-text.jd-xmas__card-text--bottom wir wünschen Ihnen schöne, analoge Festtage.
+        script(src="../vendor.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineLite.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/ScrollToPlugin.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js")
+        script(src="../main.js")

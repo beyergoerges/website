@@ -1,0 +1,76 @@
+.jd-xmas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  background-color: whitesmoke;
+  background: url("images/xmas/10-Flamingo.png") no-repeat center;
+  background-size: cover;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    max-width: rem(480);
+    height: 100vh;
+    padding: spacing(1);
+    background-color: $color--xmas-red;
+    border: spacing(1) solid $grayscale--white;
+
+    @media (max-width: 1023px) and (orientation: landscape) {
+      height: rem(681);
+    }
+
+    @include break(phablet) {
+      height: rem(681);
+    }
+
+    @include break(desktop-xl) {
+      max-width: 33.333333vw;
+    }
+
+    &:before {
+      content: "";
+      z-index: -1;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 0 rem(114) 0;;
+
+      @include position(absolute, spacing(1.5), spacing(1.5), spacing(-1), spacing(1.5));
+    }
+  }
+
+  &__card-text {
+    color: $grayscale--white;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-size: 12vw;
+    line-height: .94;
+    font-weight: 600;
+    letter-spacing: -.015em;
+
+    @include break(phablet) {
+      font-size: rem(60);
+    }
+  }
+
+  &__card-illustrations {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &__card-illustration {
+    width: 100%;
+    color: $grayscale--white;
+  }
+
+  &__logo-triangle {
+    //opacity: 0;
+  }
+}

@@ -13,6 +13,7 @@
 //@prepros-append 06-templates/_project.js
 //@prepros-append 06-templates/_press.js
 //@prepros-append 06-templates/_contact.js
+//@prepros-append 06-templates/_xmas.js
 //@prepros-append 07-themes/_themes.js
 //@prepros-append 01-basics/_js-wrapper-end.js
 
@@ -432,6 +433,33 @@ let jd_contactScene = trigger => {
 jd_contactScene("#email");
 jd_contactScene("#phone");
 
+let jd_xmas = (name, top, bottom) => {
+
+  if (window.location.href.indexOf(name) != -1) {
+    document.querySelector(".jd-xmas__card-text--top").innerHTML = top;
+    document.querySelector(".jd-xmas__card-text--bottom").innerHTML = bottom;
+  }
+
+}
+
+jd_xmas("athletia", "Liebe Britta, lieber Lukas,", "wir wünschen Euch schöne, analoge Festtage.");
+
+// jd_scene(".jd-xmas").reverse(false).on("enter", event => {
+//
+//   let jd_tl = new TimelineLite();
+//
+//   // jd_tl.fromTo(
+//   //   ".jd-xmas__card-illustration--4 .jd-xmas__logo-triangle--2",
+//   //   2, {opacity: 0}, {opacity: 1, ease: Elastic.easeOut}
+//   // );
+//
+//   jd_tl.staggerFromTo(
+//     ".jd-xmas__logo-triangle",
+//     .9, {opacity: 0}, {opacity: 1, ease: Expo.easeOut}, .2
+//   );
+//
+// });
+
 const jd_location = {
   latitude: 51.5055232,
   longitude: 7.4686858
@@ -447,13 +475,13 @@ let jd_sunsetTime = jd_sunset.getTime();
 
 const jd_body = document.body;
 
-if (jd_currentDate >= jd_sunrise && jd_currentDate < jd_sunset) {
-  jd_body.classList.remove("jd-theme--night");
-  jd_body.classList.add("jd-theme--day");
-} else {
-  jd_body.classList.remove("jd-theme--day");
-  jd_body.classList.add("jd-theme--night");
-}
+// if (jd_currentDate >= jd_sunrise && jd_currentDate < jd_sunset) {
+//   jd_body.classList.remove("jd-theme--night");
+//   jd_body.classList.add("jd-theme--day");
+// } else {
+//   jd_body.classList.remove("jd-theme--day");
+//   jd_body.classList.add("jd-theme--night");
+// }
 
 };
 

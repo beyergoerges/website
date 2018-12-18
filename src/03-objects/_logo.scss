@@ -1,3 +1,27 @@
+.jd-logo--xmas {
+  grid-column: 2 / auto;
+
+  // svg {
+  //   width: 22px;
+  //   height: 34px;
+  //
+  //   @include break(tablet) {
+  //     width: 33px;
+  //     height: 51px;
+  //   }
+  //
+  //   @include break(desktop-s) {
+  //     width: 44px;
+  //     height: 68px;
+  //   }
+  //
+  //   @include break(desktop-xl) {
+  //     width: 7.5vw;
+  //     height: 1.1979vw;
+  //   }
+  // }
+}
+
 .jd-logo {
   grid-column: 2 / auto;
 
