@@ -144,6 +144,8 @@
   }
 
   &__button {
+    padding-right: spacing(1);
+    padding-left: spacing(1);
     color: $grayscale--white;
     font-weight: 600;
     text-align: center;
