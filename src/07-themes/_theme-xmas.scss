@@ -1,5 +1,10 @@
 .jd-theme--xmas {
 
+  ::selection {
+    background-color: #087462;
+    color: $grayscale--white;
+  }
+
   .jd-wrapper {
     background-color: $color--xmas-red;
     color: rgba(white, 1);
