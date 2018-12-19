@@ -619,12 +619,12 @@ const jd_fortuneCookie = event => {
 
   jd_tl.fromTo(
     ".jd-cookies__reload",
-    .4, {opacity: 0}, {opacity: 1, ease:Power1.easeOut}, 3.4
+    .4, {opacity: 0}, {opacity: 1, ease:Power1.easeOut}, 3
   );
 
   jd_tl.fromTo(
     ".jd-cookies__reload",
-    .6, {scale: .8}, {scale: 1, ease:Bounce.easeOut}, 3.4
+    .6, {scale: .8}, {scale: 1, ease:Bounce.easeOut}, 3
   );
 }
 
