@@ -22,7 +22,6 @@ html(lang="de" dir="ltr")
           include ../includes/svg/icons.pug
         .jd-xmas-cookies
           .jd-xmas-cookies__card
-            .jd-xmas-cookies__card-shadow
             .jd-xmas-cookies__card-flip
               .jd-xmas
                 .jd-xmas__text.jd-xmas__text--top
@@ -43,15 +42,24 @@ html(lang="de" dir="ltr")
                     use(href="#jd-logo-xmas" xlink:href="#jd-logo-xmas")
                 .jd-xmas__text.jd-xmas__text--bottom
               .jd-cookies
-                .jd-cookies__accept
+                .jd-cookies__open
+                  .jd-cookies__text
+                    span Dein persönlicher 
+                    span.jd-cookies__text--nowrap Glücks-Cookie
+                    span &nbsp;für 2019
                   .jd-cookie.jd-cookie--1
                     img(src="../images/xmas/cookie1.png")
-                  .jd-cookies__button Deinen persönlichen Glücks-Coookie für 2019 akzeptieren?
-                    span.jd-cookies__button-submit Ja
+                  .jd-cookies__button Jetzt öffnen!
                 .jd-cookies__cracked
                   .jd-cookie.jd-cookie--2
                     img(src="../images/xmas/cookie2.png")
-                  .jd-cookies__message "Es ist schon das siebente Mal, dass meine Schwiegermutter Weihnachten zu Besuch kommt. Diesmal werden wir sie wohl hereinlassen." — Woody Allen
+                  .jd-cookies__message
+                    span.jd-cookies__message-name
+                    span.jd-cookies__message-text
+          .jd-xmas-cookies__overlay
+            .jd-xmas-cookies__modal
+              .jd-xmas-cookies__modal-text Diese Seite verwendet Glücks-Cookies.
+              .jd-xmas-cookies__modal-button Akzeptieren
         script(src="../vendor.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineLite.min.js")
