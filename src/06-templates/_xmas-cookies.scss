@@ -205,10 +205,14 @@
   }
 
   &__message {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    height: rem(104);
     margin-right: spacing(1);
+    margin-bottom: spacing(2);
     margin-left: spacing(1);
-    padding: spacing(1) spacing(2);
+    padding-right: spacing(2);
+    padding-left: spacing(2);
     background-color: $grayscale--white;
     //color: $color--xmas-red;
     //font-weight: 600;
@@ -224,6 +228,29 @@
       animation: cookie-msg .7s $ease-out-back .9s forwards;
     }
   }
+
+  &__reload {
+    display: flex;
+    align-items: center;
+    padding-right: spacing(1);
+    padding-left: spacing(1);
+    opacity: 0;
+    color: $grayscale--white;
+    font-weight: 600;
+    text-align: center;
+    transform: scale(.8);
+
+    @include font-scale(s);
+  }
+
+  &__reload-icon {
+    margin-right: rem(4);
+    margin-left: rem(4);
+  }
+
+  &__reload-button {
+    text-decoration: underline;
+  }
 }
 
 .jd-cookie {
@@ -237,7 +264,7 @@
   &--2 {
     padding-bottom: spacing(1);
 
-    .jd-cookies__cracked.--is-visible & {
+    &.--is-shaking {
       animation: cookie-shake-2 .7s $ease-out-quart forwards;
     }
   }

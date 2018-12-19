@@ -492,7 +492,7 @@ const jd_cookieModal = event => {
 
 document.addEventListener("click", jd_cookieModal, false);
 
-let jd_fortuneA = Math.random()*112;
+let jd_fortuneA = Math.random()*102;
 let jd_fortuneB = Math.floor(jd_fortuneA);
 
 let jd_fortunes = [
@@ -506,11 +506,9 @@ let jd_fortunes = [
   'Glück ist das einzige, was sich verdoppelt, wenn man es teilt.',
   'fürchte Dich nicht, langsam zu gehen, fürchte Dich nur, stehen zu bleiben.',
   'das Schicksal mischt die Karten, aber wir spielen.',
-  'ein Augenblick der Geduld kann vor großem Unheil bewahren, ein Augenblick der Ungeduld ein ganzes Leben zerstören.',
   'wer im Leben Kein Ziel hat, verläuft sich.',
   'über Vergangenes mache Dir keine Sorge, dem Kommenden wende Dich zu.',
   'wer sich darauf versteht, das Leben zu genießen, braucht keine Reichtümer.',
-  'der zufriedene Mensch, wenn auch arm, ist glücklich; der unzufriedene Mensch, wenn auch reich, ist traurig.',
   'jede Minute, die man lacht, verlängert das Leben um eine Stunde.',
   'was uns den Weg verlegt, bringt uns voran.',
   'wer lächelt statt zu toben, ist immer der Stärkere.',
@@ -527,9 +525,7 @@ let jd_fortunes = [
   'bevor Du dich daran machst, die Welt zu verändern, gehe dreimal durch Dein eigenes Haus.',
   'die Stärke an einem Gefühl erkennt man an den Opfern, die man bereit ist dafür zu geben.',
   'Glück ist wie ein Vogel, wer es nicht ergreift, dem fliegt es davon.',
-  'ein Augenblick der Geduld kann vor großem Unheil bewahren, ein Augenblick der Ungeduld ein ganzes Leben zerstören.',
   'ich höre und vergesse. Ich sehe und erinnere. Ich tue und verstehe.',
-  'gehe mit den Menschen wie mit Holz um, um eines wurmstichigen Stückchens würdest Du nie den ganzen Stamm wegwerfen.',
   'lieber eine Kerze anzünden, als über die Finsternis klagen.',
   'nur die Allerklügsten und die Allerdümmsten ändern sich nie.',
   'dem anderen sein Anderssein zu vergeben, ist der Anfang von Weisheit.',
@@ -540,14 +536,11 @@ let jd_fortunes = [
   'auch eine Reise von 1000 Meilen fängt mit dem ersten Schritt an.',
   'wer einen Fehler gemacht hat und ihn nicht verbessert, begeht schon den zweiten.',
   'es führen viele Wege zum Gipfel eines Berges, doch die Aussicht bleibt die gleiche.',
-  'der zufriedene Mensch, wenn auch arm, ist glücklich; der unzufriedene Mensch, wenn auch reich, ist traurig.',
   'der Edle verlangt alles von sich selbst, der Primitive stellt nur Forderungen an andere.',
-  'mach Dir keine Sorgen darüber, dass die Menschen Dich nicht kennen, sondern darüber, dass Du sie nicht kennst.',
   'achte auf Deine Gedanken, sie sind der Anfang Deiner Taten.',
   'ist eine Sache geschehen, dann rede nicht darüber; es ist schwer, verschüttetes Wasser wieder zu sammeln.',
   'bist Du geduldig im Augenblick des Zorns, so wirst Du Dir hundert Tage Kummer ersparen.',
   'was Du Deinen Eltern schuldig bist, weißt Du erst, wenn Du ein Kind hast.',
-  'Güte in den Worten erzeugt Vertrauen; Güte beim Denken erzeugt Tiefe; Güte beim Verschenken erzeugt Liebe.',
   'Verzeihen ist keine Narrheit, nur der Narr kann nicht verzeihen.',
   'das Glück tritt gern in ein Haus, wo gute Laune herrscht.',
   'der wahre Gelehrte schämt sich nicht, auch solche zu fragen, die unter ihm stehen.',
@@ -566,17 +559,13 @@ let jd_fortunes = [
   'nichts ist besser verkauft, als was man einem echten Freund, der es bedarf, schenkt.',
   'der Weise hat keine unumstößlichen Grundsätze. Er passt sich anderen an.',
   'Hoffnung ist wie der Zucker im Tee: Auch wenn sie klein ist, versüßt sie alles.',
-  'der edle Mensch folgt dem Weg des Himmels und besänftigt das Schicksal, indem er Böses und Gutes verbreitet.',
   'Eheleute, die sich lieben, sagen sich tausend Dinge, ohne zu sprechen.',
   'die sicherste Tür ist die, die man offen lassen kann.',
-  'betrachte denjenigen, der Deine Fehler aufdeckt, als jemanden, der Dir etwas von einem verborgenen Schatz zeigt.',
   'durch Leichtfertigkeit verliert man die Wurzeln, durch Unruhe die Übersicht.',
   'das Leben meistert man lächelnd oder überhaupt nicht.',
-  'es genügt nicht, an den Fluss zu gehen mit dem Wunsch, Fische zu fangen. Man muss auch ein Netz mitbringen.',
   'verantwortlich ist man nicht nur für das, was man tut, sondern auch für das, was man unterlässt.',
   'je mehr Bekannte man hat, um so weniger kennt man die Leute.',
   'Dinge wahrzunehmen ist der Keim der Intelligenz.',
-  'betrachte den Fluss Deines Lebens und erkenne, wie viele Ströme in ihn münden, die Dich nähren und unterstützen.',
   'in einer friedlichen Familie kommt das Glück von selber.',
   'Lernen ist wie Rudern gegen den Strom. Hört man damit auf, treibt man zurück.',
   'welche Kraft der Ursache und Wirkung entfaltet sich in heilenden und liebevollen Worten.',
@@ -604,7 +593,6 @@ let jd_fortunes = [
   'unsere wahre Heimat ist der gegenwärtige Augenblick.',
   'fürchte Dich nicht, langsam zu gehen, fürchte Dich nur, stehen zu bleiben.',
   'die Liebe ist das Gewürz des Lebens. Sie kann es versüßen, aber auch versalzen.',
-  'der Mensch kann nicht tausend Tage ununterbrochen gute Zeit haben, so wie die Blume nicht hundert Tage blühen kann',
   'jeder hat Recht auf seine eigene Meinung, aber er hat keinen Anspruch darauf, dass andere sie teilen.',
   'indem man über andere schlecht redet, macht man sich selber nicht besser.',
   'ein Weg wird erst dann ein Weg, wenn einer ihn geht.',
@@ -619,17 +607,53 @@ const jd_fortuneCookie = event => {
 
   const jd_cookies1 = document.querySelector(".jd-cookies__open");
   const jd_cookies2 = document.querySelector(".jd-cookies__cracked");
+  const jd_cookie2 = document.querySelector(".jd-cookie--2");
 
   // If the clicked element doesn't have the right selector, bail
   if (!event.target.matches(".jd-cookies__open, .jd-cookies__open *")) return;
 
   jd_cookies1.classList.add("--is-hidden");
   jd_cookies2.classList.add("--is-visible");
+  jd_cookie2.classList.add("--is-shaking");
 
   document.querySelector(".jd-cookies__message-text").innerHTML = jd_randomFortune;
+
+  let jd_tl = new TimelineLite();
+
+  jd_tl.fromTo(
+    ".jd-cookies__reload",
+    .4, {opacity: 0}, {opacity: 1, ease:Power1.easeOut}, 3.4
+  );
+
+  jd_tl.fromTo(
+    ".jd-cookies__reload",
+    .6, {scale: .8}, {scale: 1, ease:Bounce.easeOut}, 3.4
+  );
 }
 
 document.addEventListener("click", jd_fortuneCookie, false);
+
+// Reload cookie
+const jd_reloadCookie = event => {
+
+  let jd_fortuneA = Math.random()*102;
+  let jd_fortuneB = Math.floor(jd_fortuneA);
+  let jd_newFortune = jd_fortunes[jd_fortuneB];
+
+  const jd_cookie = document.querySelector(".jd-cookie--2");
+
+  // If the clicked element doesn't have the right selector, bail
+  if (!event.target.matches(".jd-cookies__cracked, .jd-cookies__cracked *")) return;
+  console.log("Woo");
+
+  jd_cookie.classList.remove("--is-shaking");
+  void jd_cookie.offsetWidth;
+  jd_cookie.classList.add("--is-shaking");
+
+  document.querySelector(".jd-cookies__message-text").innerHTML = jd_newFortune;
+}
+
+document.addEventListener("click", jd_reloadCookie, false);
 
 const jd_location = {
   latitude: 51.5055232,
