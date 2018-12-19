@@ -31,10 +31,6 @@
     @include break(desktop-xl) {
       max-width: 33.333333vw;
     }
-
-    // &:hover .jd-xmas-cookies__card-flip {
-    //   transform: rotateY(-180deg);
-    // }
   }
 
   &__card-shadow,
@@ -43,12 +39,12 @@
     transform-style: preserve-3d;
   }
 
-  &__card-shadow {
-    z-index: -1;
-    box-shadow: rgba(0, 0, 0, 0.34) 0 0 rem(142) 0;
-
-    @include position(absolute, spacing(4), spacing(2), spacing(0), spacing(2));
-  }
+  // &__card-shadow {
+  //   z-index: -1;
+  //   box-shadow: rgba(0, 0, 0, 0.34) 0 0 rem(142) 0;
+  //
+  //   @include position(absolute, spacing(4), spacing(2), spacing(0), spacing(2));
+  // }
 
   &__card-flip {
     position: relative;
