@@ -492,7 +492,7 @@ const jd_cookieModal = event => {
 
 document.addEventListener("click", jd_cookieModal, false);
 
-let jd_fortuneA = Math.random()*102;
+let jd_fortuneA = Math.random()*99;
 let jd_fortuneB = Math.floor(jd_fortuneA);
 
 let jd_fortunes = [
@@ -531,14 +531,12 @@ let jd_fortunes = [
   'dem anderen sein Anderssein zu vergeben, ist der Anfang von Weisheit.',
   'fordere viel von Dir selbst und erwarte wenig von anderen. So wird Dir viel Ärger erspart bleiben.',
   'ein einfacher Zweig ist dem Vogel lieber, als ein goldener Käfig.',
-  'unsere Wünsche sind wie kleine Kinder: Je mehr man ihnen nachgibt, umso anspruchsvoller werden sie.',
   'Lächeln ist die charmanteste Art dem Gegner die Zähne zu zeigen.',
   'auch eine Reise von 1000 Meilen fängt mit dem ersten Schritt an.',
   'wer einen Fehler gemacht hat und ihn nicht verbessert, begeht schon den zweiten.',
   'es führen viele Wege zum Gipfel eines Berges, doch die Aussicht bleibt die gleiche.',
   'der Edle verlangt alles von sich selbst, der Primitive stellt nur Forderungen an andere.',
   'achte auf Deine Gedanken, sie sind der Anfang Deiner Taten.',
-  'ist eine Sache geschehen, dann rede nicht darüber; es ist schwer, verschüttetes Wasser wieder zu sammeln.',
   'bist Du geduldig im Augenblick des Zorns, so wirst Du Dir hundert Tage Kummer ersparen.',
   'was Du Deinen Eltern schuldig bist, weißt Du erst, wenn Du ein Kind hast.',
   'Verzeihen ist keine Narrheit, nur der Narr kann nicht verzeihen.',
@@ -593,7 +591,6 @@ let jd_fortunes = [
   'unsere wahre Heimat ist der gegenwärtige Augenblick.',
   'fürchte Dich nicht, langsam zu gehen, fürchte Dich nur, stehen zu bleiben.',
   'die Liebe ist das Gewürz des Lebens. Sie kann es versüßen, aber auch versalzen.',
-  'jeder hat Recht auf seine eigene Meinung, aber er hat keinen Anspruch darauf, dass andere sie teilen.',
   'indem man über andere schlecht redet, macht man sich selber nicht besser.',
   'ein Weg wird erst dann ein Weg, wenn einer ihn geht.',
   'wenn Du die Absicht hast, Dich zu erneuern, tu es jeden Tag.',
@@ -636,7 +633,7 @@ document.addEventListener("click", jd_fortuneCookie, false);
 // Reload cookie
 const jd_reloadCookie = event => {
 
-  let jd_fortuneA = Math.random()*102;
+  let jd_fortuneA = Math.random()*99;
   let jd_fortuneB = Math.floor(jd_fortuneA);
   let jd_newFortune = jd_fortunes[jd_fortuneB];
 
