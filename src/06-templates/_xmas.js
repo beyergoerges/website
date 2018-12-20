@@ -1,6 +1,6 @@
 let jd_xmas = (url, top, bottom, salutation, name) => {
 
-  if (window.location.href.indexOf(url) != -1) {
+  if (window.location.href.endsWith("#" + url)) {
 
     document.querySelector(".jd-cookies__text-salutation").innerHTML = salutation;
     document.querySelector(".jd-cookies__message-name").innerHTML = name + ", ";
@@ -84,7 +84,7 @@ jd_xmas("elisa", "Liebe Elisa,", "wir wünschen Dir schöne, analoge Festtage.",
 jd_xmas("arndt", "Lieber Arndt,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Arndt");
 jd_xmas("bent", "Lieber Bent,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Bent");
 
-jd_xmas("bluhm", "Lieber Herr Bluhm,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Andreas Bluhm");
+jd_xmas("andreasbluhm", "Lieber Herr Bluhm,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Andreas Bluhm");
 jd_xmas("peterheming", "Lieber Herr Heming,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Peter Heming");
 jd_xmas("kaineuvians", "Lieber Herr Neuvians,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Kai Neuvians");
 jd_xmas("britta", "Liebe Britta,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Britta");
