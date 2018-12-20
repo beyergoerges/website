@@ -107,17 +107,19 @@
     top: 107vh;
     right: 0;
     left: 0;
-    height: 100vh;
+    height: 19vh;
     padding: spacing(3);
     background-color: $grayscale--white;
     animation: snow-cap 300s linear forwards;
 
     @media (max-width: 1023px) and (orientation: portrait) {
       top: 100vh;
+      height: 200vh;
     }
 
     @include break(desktop-s) {
       top: 107vh;
+      height: 193vh;
     }
   }
 
