@@ -138,10 +138,34 @@
   &__icon {
     width: 100%;
     color: $grayscale--white;
+
+    &--4 .jd-xmas__logo-triangle--2 {
+      opacity: 1;
+    }
   }
 
   &__logo-triangle {
-    //opacity: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes arrow-fade-in {
+  0% {
+    opacity: 0;
+  } 16% {
+    opacity: .6;
+  } 37% {
+    opacity: 0;
+  } 54% {
+    opacity: 1;
+  } 71% {
+    opacity: 0;
+  } 86% {
+    opacity: .9;
+  } 100% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
   }
 }
 
@@ -194,10 +218,10 @@
 
   &__text {
     margin-bottom: spacing(2);
+  }
 
-    &--nowrap {
-      white-space: nowrap;
-    }
+  &__text-nowrap {
+    white-space: nowrap;
   }
 
   &__button {
@@ -213,6 +237,7 @@
     margin-left: spacing(1);
     padding-right: spacing(2);
     padding-left: spacing(2);
+    box-shadow: $drop-shadow--heavy;
     background-color: $grayscale--white;
     //color: $color--xmas-red;
     //font-weight: 600;

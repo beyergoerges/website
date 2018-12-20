@@ -1,38 +1,91 @@
-let jd_xmas = (url, top, bottom, name) => {
+let jd_xmas = (url, top, bottom, salutation, name) => {
 
   if (window.location.href.indexOf(url) != -1) {
-    document.querySelector(".jd-xmas__text--top").innerHTML = top;
-    document.querySelector(".jd-xmas__text--bottom").innerHTML = bottom;
+
+    //document.querySelector(".jd-xmas__text--top").innerHTML = top;
+    //document.querySelector(".jd-xmas__text--bottom").innerHTML = bottom;
+    document.querySelector(".jd-cookies__text-salutation").innerHTML = salutation;
     document.querySelector(".jd-cookies__message-name").innerHTML = name + ", ";
+
+    setTimeout(() => {
+      let typeTop = new Typed(".jd-xmas__text--top", {
+       strings: [top],
+       typeSpeed: 30,
+       showCursor: false,
+       autoInsertCss: false
+      });
+    }, 5000);
+
+    setTimeout(() => {
+      let typeBottom = new Typed(".jd-xmas__text--bottom", {
+       strings: [bottom],
+       typeSpeed: 30,
+       showCursor: false,
+       autoInsertCss: false
+      });
+    }, 6000);
   }
 
 }
 
-jd_xmas("britta", "Liebe Britta,", "wir wünschen Dir schöne, analoge Festtage.", "Britta");
-jd_xmas("lukas", "Lieber Lukas,", "wir wünschen Dir schöne, analoge Festtage.", "Lukas");
+jd_xmas("carstenjaeger", "Lieber Herr Jäger,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Carsten Jäger");
+jd_xmas("jasmin", "Liebe Jasmin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jasmin");
+jd_xmas("britta", "Liebe Britta,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Britta");
+jd_xmas("lukas", "Lieber Lukas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Lukas");
 
 jd_scene(".jd-xmas").reverse(false).on("enter", event => {
 
   let jd_tl = new TimelineLite();
 
-  // jd_tl.fromTo(
-  //   ".jd-xmas__card-illustration--4 .jd-xmas__logo-triangle--2",
-  //   2, {opacity: 0}, {opacity: 1, ease: Elastic.easeOut}
-  // );
-  //
-  // jd_tl.staggerFromTo(
-  //   ".jd-xmas__logo-triangle",
-  //   .9, {opacity: 0}, {opacity: 1, ease: Expo.easeOut}, .2
-  // );
+  jd_tl.fromTo(
+    ".jd-xmas__icon--4 .jd-xmas__logo-triangle--2",
+    2, {opacity: 0}, {opacity: 1, ease: RoughEase.ease.config({points:50, strength:2, clamp:true})}
+  );
+
+  jd_tl.staggerTo(
+    [".jd-xmas__icon--4 .jd-xmas__logo-triangle--1",
+    ".jd-xmas__icon--4 .jd-xmas__logo-triangle--3"],
+    .4, {opacity: 1, ease: Expo.easeOut}, .2, 3
+  );
+
+  jd_tl.staggerTo(
+    ".jd-xmas__icon--3 .jd-xmas__logo-triangle",
+    .4, {opacity: 1, ease: Expo.easeOut}, .2, 3.8
+  );
+
+  jd_tl.staggerTo(
+    ".jd-xmas__icon--5 .jd-xmas__logo-triangle",
+    .4, {opacity: 1, ease: Expo.easeOut}, .2, 3.8
+  );
+
+  jd_tl.staggerTo(
+    ".jd-xmas__icon--2 .jd-xmas__logo-triangle",
+    .4, {opacity: 1, ease: Expo.easeOut}, .2, 4.2
+  );
+
+  jd_tl.staggerTo(
+    ".jd-xmas__icon--6 .jd-xmas__logo-triangle",
+    .4, {opacity: 1, ease: Expo.easeOut}, .2, 4.2
+  );
+
+  jd_tl.staggerTo(
+    ".jd-xmas__icon--1 .jd-xmas__logo-triangle",
+    .4, {opacity: 1, ease: Expo.easeOut}, .2, 4.4
+  );
+
+  jd_tl.staggerTo(
+    ".jd-xmas__icon--7 .jd-xmas__logo-triangle",
+    .4, {opacity: 1, ease: Expo.easeOut}, .2, 4.4
+  );
 
   jd_tl.fromTo(
     ".jd-xmas-cookies__overlay",
-    .6, {opacity: 0, pointerEvents: "none"}, {opacity: 1, pointerEvents: "auto", ease:Power1.easeOut}, 3
+    .6, {opacity: 0, pointerEvents: "none"}, {opacity: 1, pointerEvents: "auto", ease:Power1.easeOut}, 10
   );
 
   jd_tl.fromTo(
     ".jd-xmas-cookies__modal",
-    .6, {scale: .8}, {scale: 1, ease:Bounce.easeOut}, 3
+    .6, {scale: .8}, {scale: 1, ease:Bounce.easeOut}, 10
   );
 
 });
@@ -57,11 +110,10 @@ const jd_cookieModal = event => {
 
 document.addEventListener("click", jd_cookieModal, false);
 
-let jd_fortuneA = Math.random()*99;
+let jd_fortuneA = Math.random()*98;
 let jd_fortuneB = Math.floor(jd_fortuneA);
 
 let jd_fortunes = [
-  'der beste Weg, sich selbst eine Freude zu machen, ist: zu versuchen, einem andern eine Freude zu bereiten.',
   'für den Optimisten ist das Leben kein Problem, sondern bereits die Lösung.',
   'gib jedem Tag die Chance, der schönste Deines Lebens zu werden.',
   'wenn Du siebenmal hinfällst, musst Du achtmal aufstehen.',
@@ -81,7 +133,6 @@ let jd_fortunes = [
   'lerne zu schweigen und Du merkst, dass Du viel zu viel geredet hast.',
   'wer nur an die Bequemlichkeiten des Lebens denkt, kann nicht wahrhaft gebildet sein.',
   'wer sich darauf versteht, das Leben zu genießen, braucht keine Reichtümer.',
-  'die Wahrheiten, die wir am wenigsten gern hören, sind diejenigen, die wir am nötigsten kennen sollten.',
   'es ist besser, ein einziges kleines Licht anzuzünden, als die Dunkelheit zu verfluchen.',
   'gedenke der Quelle, wenn Du trinkst.',
   'wenn jemand sagt, er habe keine Zeit, bedeutet das nur, dass ihm andere Dinge wichtiger sind.',
@@ -198,7 +249,7 @@ document.addEventListener("click", jd_fortuneCookie, false);
 // Reload cookie
 const jd_reloadCookie = event => {
 
-  let jd_fortuneA = Math.random()*99;
+  let jd_fortuneA = Math.random()*98;
   let jd_fortuneB = Math.floor(jd_fortuneA);
   let jd_newFortune = jd_fortunes[jd_fortuneB];
 

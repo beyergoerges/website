@@ -52,7 +52,8 @@
     "enquire.js": "^2.1.6",
     "jquery": "^3.3.1",
     "jquery-easing": "0.0.1",
-    "reset-css": "^4.0.1"
+    "reset-css": "^4.0.1",
+    "typed.js": "^2.0.9"
   },
   "eslintConfig": {
     "parserOptions": {
