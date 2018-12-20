@@ -83,7 +83,7 @@
   &__modal-button {
     display: inline-block;
     padding: spacing(1) spacing(2);
-    background-color: $color--xmas-red;
+    background-color: tint(#087462, 19%);
     cursor: pointer;
     color: $grayscale--white;
 
@@ -91,7 +91,7 @@
     @include transition($property: background-color);
 
     &:hover {
-      background-color: tint($color--xmas-red, 10%);
+      background-color: tint(#087462, 7%);
     }
   }
 }
@@ -177,11 +177,86 @@
   z-index: 1;
   transform: rotateY(-180deg);
 
-  &__logo {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
     top: spacing(1);
+    right: spacing(1);
     left: spacing(1);
+  }
+
+  &__logo,
+  &__info {
     color: $grayscale--white !important;
+  }
+
+  &__info {
+    cursor: pointer;
+    transform: scale(1);
+
+    @include transition($property: transform);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__info-icon {
+
+    &.--is-hidden {
+      display: none;
+    }
+  }
+
+  &__info-close {
+    display: none;
+
+    &.--is-visible {
+      display: block;
+    }
+  }
+
+  &__info-layer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: spacing(3);
+    opacity: 0;
+    background-color: #087462;
+    pointer-events: none;
+
+    @include fill;
+    @include transition($property: opacity);
+
+    &.--is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &__info-layer-heading,
+  &__info-layer-text {
+    color: $grayscale--white;
+    text-align: center;
+  }
+
+  &__info-layer-heading {
+    margin-bottom: spacing(1);
+    font-weight: 700;
+
+    @include font-scale(m);
+  }
+
+  &__info-layer-text {
+
+    @include font-scale(s);
+
+    &:not(:last-child) {
+      margin-bottom: spacing(1);
+    }
   }
 
   &__open,

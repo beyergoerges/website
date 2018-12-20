@@ -2,8 +2,6 @@ let jd_xmas = (url, top, bottom, salutation, name) => {
 
   if (window.location.href.indexOf(url) != -1) {
 
-    //document.querySelector(".jd-xmas__text--top").innerHTML = top;
-    //document.querySelector(".jd-xmas__text--bottom").innerHTML = bottom;
     document.querySelector(".jd-cookies__text-salutation").innerHTML = salutation;
     document.querySelector(".jd-cookies__message-name").innerHTML = name + ", ";
 
@@ -28,8 +26,24 @@ let jd_xmas = (url, top, bottom, salutation, name) => {
 
 }
 
-jd_xmas("carstenjaeger", "Lieber Herr Jäger,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Carsten Jäger");
+jd_xmas("justus", "Lieber Justus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Justus");
+jd_xmas("kathi", "Liebe Kathi,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Kathi");
+jd_xmas("bea", "Liebe Bea,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Bea");
+jd_xmas("richi", "Lieber Richi,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Richi");
+jd_xmas("uwe", "Lieber Uwe,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Uwe");
+jd_xmas("klaus", "Lieber Klaus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Klaus");
+jd_xmas("martin", "Lieber Martin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Martin");
+
+jd_xmas("felix", "Lieber Felix,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Felix");
 jd_xmas("jasmin", "Liebe Jasmin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jasmin");
+jd_xmas("sebastian", "Lieber Sebastian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Sebastian");
+jd_xmas("inga", "Liebe Inga,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Inga");
+jd_xmas("andreas", "Lieber Andreas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Andreas");
+jd_xmas("alicia", "Liebe Alicia,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Alicia");
+
+jd_xmas("peterheming", "Lieber Herr Heming,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Peter Heming");
+jd_xmas("andreasbluhm", "Lieber Herr Bluhm,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Andreas Bluhm");
+jd_xmas("carstenjaeger", "Lieber Herr Jäger,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Carsten Jäger");
 jd_xmas("britta", "Liebe Britta,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Britta");
 jd_xmas("lukas", "Lieber Lukas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Lukas");
 
@@ -267,3 +281,34 @@ const jd_reloadCookie = event => {
 }
 
 document.addEventListener("click", jd_reloadCookie, false);
+
+// Info layer
+const jd_infoIcon = document.querySelector(".jd-cookies__info-icon");
+const jd_infoClose = document.querySelector(".jd-cookies__info-close");
+const jd_infoLayer = document.querySelector(".jd-cookies__info-layer");
+
+// Open info layer
+const jd_openCookieInfo = event => {
+
+  // If the clicked element doesn't have the right selector, bail
+  if (!event.target.matches(".jd-cookies__info-icon, .jd-cookies__info-icon *")) return;
+
+  jd_infoIcon.classList.add("--is-hidden");
+  jd_infoClose.classList.add("--is-visible");
+  jd_infoLayer.classList.add("--is-open");
+}
+
+document.addEventListener("click", jd_openCookieInfo, false);
+
+// Close info layer
+const jd_closeCookieInfo = event => {
+
+  // If the clicked element doesn't have the right selector, bail
+  if (!event.target.matches(".jd-cookies__info-close, .jd-cookies__info-close *")) return;
+
+  jd_infoIcon.classList.remove("--is-hidden");
+  jd_infoClose.classList.remove("--is-visible");
+  jd_infoLayer.classList.remove("--is-open");
+}
+
+document.addEventListener("click", jd_closeCookieInfo, false);
