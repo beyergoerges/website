@@ -1,5 +1,6 @@
 .jd-xmas-cookies {
   display: flex;
+  //flex-direction: column;
   justify-content: center;
   position: relative;
   z-index: 1;
@@ -175,6 +176,13 @@
   align-items: center;
   z-index: 1;
   transform: rotateY(-180deg);
+
+  &__logo {
+    position: absolute;
+    top: spacing(1);
+    left: spacing(1);
+    color: $grayscale--white !important;
+  }
 
   &__open,
   &__cracked {
