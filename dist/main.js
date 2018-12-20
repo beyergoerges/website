@@ -471,14 +471,26 @@ jd_xmas("martin", "Lieber Martin,", "wir wünschen Dir schöne, analoge Festtage
 
 jd_xmas("felix", "Lieber Felix,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Felix");
 jd_xmas("jasmin", "Liebe Jasmin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jasmin");
+jd_xmas("johannes", "Lieber Jo,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jo");
+jd_xmas("alejandra", "Liebe Alejandra,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Alejandra");
+jd_xmas("melanie", "Liebe Melanie,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Melanie");
+jd_xmas("peter", "Lieber Peter,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Peter");
+jd_xmas("dennis", "Lieber Dennis,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Dennis");
+jd_xmas("johannes", "Lieber Traian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Traian");
+jd_xmas("johannes", "Lieber Claas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Claas");
 jd_xmas("sebastian", "Lieber Sebastian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Sebastian");
 jd_xmas("inga", "Liebe Inga,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Inga");
+jd_xmas("sylvia", "Liebe Sylvia,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Sylvia");
 jd_xmas("andreas", "Lieber Andreas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Andreas");
 jd_xmas("alicia", "Liebe Alicia,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Alicia");
 
-jd_xmas("peterheming", "Lieber Herr Heming,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Peter Heming");
-jd_xmas("andreasbluhm", "Lieber Herr Bluhm,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Andreas Bluhm");
+jd_xmas("cristienczech", "Liebe Frau Czech,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Cristien Czech");
+jd_xmas("larsgroehnke", "Lieber Herr Gröhnke,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Lars Gröhnke");
 jd_xmas("carstenjaeger", "Lieber Herr Jäger,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Carsten Jäger");
+jd_xmas("patrickpaetzel", "Lieber Herr Paetzel,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Patrick Paetzel");
+jd_xmas("bluhm", "Lieber Herr Bluhm,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Andreas Bluhm");
+jd_xmas("peterheming", "Lieber Herr Heming,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Peter Heming");
+jd_xmas("kaineuvians", "Lieber Herr Neuvians,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Kai Neuvians");
 jd_xmas("britta", "Liebe Britta,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Britta");
 jd_xmas("lukas", "Lieber Lukas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Lukas");
 
