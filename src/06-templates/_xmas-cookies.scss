@@ -111,6 +111,14 @@
     padding: spacing(3);
     background-color: $grayscale--white;
     animation: snow-cap 300s linear forwards;
+
+    @media (max-width: 1023px) and (orientation: portrait) {
+      top: 100vh;
+    }
+
+    @include break(desktop-s) {
+      top: 107vh;
+    }
   }
 
   &__snow-cap-text {
