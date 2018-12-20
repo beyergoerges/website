@@ -271,10 +271,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
   }
 
   &__open {
-    cursor: pointer;
 
     &:hover .jd-cookie--1 {
       animation: cookie-shake 1.4s $ease-out-quart forwards;
@@ -352,14 +352,12 @@
     }
   }
 
-  &__reload,
-  &__finish {
+  &__reload {
     display: flex;
     align-items: center;
     padding-right: spacing(1);
     padding-left: spacing(1);
     opacity: 0;
-    cursor: pointer;
     color: $grayscale--white;
     font-weight: 600;
     text-align: center;
@@ -368,16 +366,12 @@
     @include font-scale(s);
   }
 
-  &__reload {
-    margin-bottom: spacing(.4);
-  }
-
-  &__submit-icon {
+  &__reload-icon {
     margin-right: rem(4);
     margin-left: rem(4);
   }
 
-  &__submit-button {
+  &__reload-button {
     text-decoration: underline;
   }
 }

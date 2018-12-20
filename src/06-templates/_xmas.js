@@ -429,16 +429,6 @@ const jd_fortuneCookie = event => {
     ".jd-cookies__reload",
     .6, {scale: .8}, {scale: 1, ease:Bounce.easeOut}, 3
   );
-
-  jd_tl.fromTo(
-    ".jd-cookies__finish",
-    .4, {opacity: 0}, {opacity: 1, ease:Power1.easeOut}, 3.4
-  );
-
-  jd_tl.fromTo(
-    ".jd-cookies__finish",
-    .6, {scale: .8}, {scale: 1, ease:Bounce.easeOut}, 3.4
-  );
 }
 
 document.addEventListener("click", jd_fortuneCookie, false);
@@ -453,7 +443,8 @@ const jd_reloadCookie = event => {
   const jd_cookie = document.querySelector(".jd-cookie--2");
 
   // If the clicked element doesn't have the right selector, bail
-  if (!event.target.matches(".jd-cookies__reload, .jd-cookies__reload *")) return;
+  if (!event.target.matches(".jd-cookies__cracked, .jd-cookies__cracked *")) return;
+  console.log("Woo");
 
   jd_cookie.classList.remove("--is-shaking");
   void jd_cookie.offsetWidth;
@@ -463,23 +454,6 @@ const jd_reloadCookie = event => {
 }
 
 document.addEventListener("click", jd_reloadCookie, false);
-
-// Accept fortune
-const jd_finishCookie = event => {
-
-  // If the clicked element doesn't have the right selector, bail
-  if (!event.target.matches(".jd-cookies__finish, .jd-cookies__finish *")) return;
-  console.log("Done");
-
-  let jd_tl = new TimelineLite();
-
-  jd_tl.fromTo(
-    ".jd-xmas-cookies__card-flip",
-    .4, {transform: "rotateY(-180deg)"}, {transform: "rotateY(0deg)", ease:SlowMo.easeOut}
-  );
-}
-
-document.addEventListener("click", jd_finishCookie, false);
 
 // Info layer
 const jd_infoIcon = document.querySelector(".jd-cookies__info-icon");
