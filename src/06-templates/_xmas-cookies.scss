@@ -101,6 +101,41 @@
       background-color: tint(#087462, 7%);
     }
   }
+
+  &__snow-cap {
+    position: fixed;
+    top: 107vh;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    padding: spacing(3);
+    background-color: $grayscale--white;
+    animation: snow-cap 300s linear forwards;
+  }
+
+  &__snow-cap-text {
+    color: #EBE3E0;
+    font-weight: 600;
+    text-align: center;
+
+    @include font-scale(l);
+  }
+
+  &__snow-cap-shape {
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    color: $grayscale--white
+  }
+}
+
+@keyframes snow-cap {
+  0% {
+    transform: translateY(0);
+  } 100% {
+    transform: translateY(-200vh);
+  }
 }
 
 .jd-xmas,

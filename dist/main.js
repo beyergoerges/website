@@ -513,6 +513,9 @@ jd_xmas("larsgroehnke", "Lieber Herr Gröhnke,", "wir wünschen Ihnen schöne, a
 jd_xmas("carstenjaeger", "Lieber Herr Jäger,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Carsten Jäger");
 jd_xmas("patrickpaetzel", "Lieber Herr Paetzel,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Patrick Paetzel");
 
+jd_xmas("tobias", "Lieber Tobias,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Tobias");
+jd_xmas("kevin", "Lieber Kevin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Kevin");
+
 jd_xmas("moritz", "Lieber Moritz,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Moritz");
 
 jd_xmas("elisa", "Liebe Elisa,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Elisa");
