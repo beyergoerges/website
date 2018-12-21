@@ -461,6 +461,7 @@ let jd_xmas = (url, top, bottom, salutation, name) => {
 
 }
 
+jd_xmas("pipa", "Liebe Pipa,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Pipa");
 jd_xmas("justus", "Lieber Justus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Justus");
 jd_xmas("kathi", "Liebe Kathi,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Kathi");
 jd_xmas("bea", "Liebe Bea,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Bea");
