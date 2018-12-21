@@ -110,7 +110,7 @@
     height: 19vh;
     padding: spacing(3);
     background-color: $grayscale--white;
-    animation: snow-cap 300s linear forwards;
+    animation: snow-cap 420s linear forwards;
 
     @media (max-width: 1023px) and (orientation: portrait) {
       top: 100vh;
