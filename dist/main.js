@@ -487,6 +487,8 @@ jd_xmas("julian", "Lieber Julian,", "wir wünschen Dir schöne, analoge Festtage
 jd_xmas("stefan", "Lieber Stefan,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Stefan");
 jd_xmas("inga", "Liebe Inga,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Inga");
 
+jd_xmas("dg2312", "Alles Gute zum Geburtstag, lieber David!", "Lass Dich feiern und genieß Deinen Tag!", "<style>.jd-xmas-cookies{background-image:none;background-color:black;}.jd-xmas-cookies__modal-button{background-color:#141414;}.jd-xmas-cookies__modal-button:hover{background-color:black;}.jd-xmas{background-image:url(../images/dg.gif);}.jd-xmas__icon{visibility:hidden;}.jd-cookies{background-color:#EBE3E0;}.jd-cookies *{color:#272727!important;}.jd-cookies__info-layer{background-color:white;}</style>Dein ganz", "David");
+
 jd_xmas("alejandra", "Liebe Alejandra,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Alejandra");
 jd_xmas("melanie", "Liebe Melanie,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Melanie");
 jd_xmas("peter", "Lieber Peter,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Peter");

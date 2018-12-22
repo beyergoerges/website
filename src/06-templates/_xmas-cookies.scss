@@ -153,6 +153,9 @@
   padding: spacing(1);
   border: spacing(1) solid $grayscale--white;
   background-color: $color--xmas-red;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   backface-visibility: hidden;
 
   @include fill;
