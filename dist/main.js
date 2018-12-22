@@ -473,6 +473,11 @@ jd_xmas("signe", "Liebe Signe,", "wir wünschen Dir schöne, analoge Festtage.",
 jd_xmas("uwe", "Lieber Uwe,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Uwe");
 jd_xmas("klaus", "Lieber Klaus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Klaus");
 jd_xmas("martin", "Lieber Martin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Martin");
+jd_xmas("omaursel", "Liebe Oma Ursel,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Oma Ursel");
+jd_xmas("marie", "Liebe Marie,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Marie");
+jd_xmas("johanna", "Liebe Johanna,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Johanna");
+jd_xmas("barbara", "Liebe Barbara,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Barbara");
+jd_xmas("joachim", "Lieber Joachim,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Joachim");
 
 jd_xmas("jasmin", "Liebe Jasmin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jasmin");
 jd_xmas("felix", "Lieber Felix,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Felix");
