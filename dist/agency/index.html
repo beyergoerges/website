@@ -16,11 +16,11 @@
     <link rel="stylesheet" href="../vendor.min.css">
     <link rel="stylesheet" href="../main.min.css">
   </head>
-  <body class="jd-theme--xmas">
+  <body class="jd-about">
     <div class="jd-wrapper">
-      <header class="jd-header"><a class="jd-logo--xmas" href="/">
-          <svg width="27" height="42">
-            <use href="#jd-logo-xmas" xlink:href="#jd-logo-xmas"></use>
+      <header class="jd-header"><a class="jd-logo" href="/">
+          <svg width="144" height="23">
+            <use href="#jd-logo" xlink:href="#jd-logo"></use>
           </svg></a>
         <nav class="jd-menu"><span class="jd-menu__trigger">
             <svg class="jd-menu__trigger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 32 32" xml:space="preserve">
@@ -38,14 +38,6 @@
       <main class="jd-container" id="barba-wrapper">
         <div class="barba-container">
           <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-            <symbol id="jd-logo-xmas" viewbox="0 0 200 307.21">
-              <title>Beyer Görges</title>
-              <g>
-                <polygon fill="currentColor" points="100 134 200 307.2 0 307.2 100 134"></polygon>
-                <polygon fill="currentColor" points="100 67 200 240.21 0 240.21 100 67"></polygon>
-                <polygon fill="currentColor" points="100 0 200 173.21 0 173.21 100 0"></polygon>
-              </g>
-            </symbol>
             <symbol id="jd-logo" viewbox="0 0 448.47 72.32">
               <title>Beyer Görges</title>
               <g>
@@ -269,126 +261,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
     <script src="../main.js"></script>
-    <script>
-      var canvas = document.querySelector('.jd-snow'),
-      ctx = canvas.getContext('2d'),
-      windowW = window.innerWidth,
-      windowH = window.innerHeight,
-      numFlakes = 200,
-      flakes = [];
-      
-      function Flake(x, y) {
-      var maxWeight = 5,
-          maxSpeed = 3;
-      
-      this.x = x;
-      this.y = y;
-      this.r = randomBetween(0, 1);
-      this.a = randomBetween(0, Math.PI);
-      this.aStep = 0.01;
-      
-      
-      this.weight = randomBetween(2, maxWeight);
-      this.alpha = (this.weight / maxWeight);
-      this.speed = (this.weight / maxWeight) * maxSpeed;
-      
-      this.update = function() {
-        this.x += Math.cos(this.a) * this.r;
-        this.a += this.aStep;
-        
-        this.y += this.speed;
-      }
-      
-      }
-      
-      function init() {
-      var i = numFlakes,
-          flake,
-          x,
-          y;
-      
-      while (i--) {
-        x = randomBetween(0, windowW, true);
-        y = randomBetween(0, windowH, true);
-        
-        
-        flake = new Flake(x, y);
-        flakes.push(flake);
-      }
-      
-      scaleCanvas();
-      loop();  
-      }
-      
-      function scaleCanvas() {
-      canvas.width = windowW;
-      canvas.height = windowH;
-      }
-      
-      function loop() {
-      var i = flakes.length,
-          z,
-          dist,
-          flakeA,
-          flakeB;
-      
-      // clear canvas
-      ctx.save();
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.clearRect(0, 0, windowW, windowH);
-      ctx.restore();
-      
-      // loop of hell
-      while (i--) {
-        
-        flakeA = flakes[i];
-        flakeA.update();
-        
-      
-        /*for (z = 0; z < flakes.length; z++) {
-          flakeB = flakes[z];
-          if (flakeA !== flakeB && distanceBetween(flakeA, flakeB) < 150) {          
-            ctx.beginPath();
-            ctx.moveTo(flakeA.x, flakeA.y);
-            ctx.lineTo(flakeB.x, flakeB.y);
-            ctx.strokeStyle = '#444444';
-            ctx.stroke();
-            ctx.closePath();
-          }
-        }*/
-      
-        
-        ctx.beginPath();
-        ctx.arc(flakeA.x, flakeA.y, flakeA.weight, 0, 2 * Math.PI, false);
-        ctx.fillStyle = 'rgba(255, 255, 255, ' + flakeA.alpha + ')';
-        ctx.fill();
-        
-        if (flakeA.y >= windowH) {
-          flakeA.y = -flakeA.weight;
-        }  
-      }
-      
-      requestAnimationFrame(loop);
-      }
-      
-      function randomBetween(min, max, round) {
-      var num = Math.random() * (max - min + 1) + min;
-      
-      if (round) {
-        return Math.floor(num);
-      } else {
-        return num;
-      }
-      }
-      
-      function distanceBetween(vector1, vector2) {
-      var dx = vector2.x - vector1.x,
-          dy = vector2.y - vector1.y;
-      
-      return Math.sqrt(dx*dx + dy*dy);
-      }
-      
-      init();
-    </script>
   </body>
 </html>
