@@ -1,7 +1,7 @@
 .jd-theme--night {
 
   .jd-wrapper {
-    background-color: #24262C;
+    background-color: #141517;
     color: rgba(white, 1);
   }
 
@@ -20,7 +20,7 @@
   .jd-media {
 
     &__revealer {
-      background-color: #24262C;
+      background-color: #141517;
     }
   }
 
@@ -87,13 +87,13 @@
 
     &--legal-notice:after,
     &--privacy:after {
-      background-color: rgba(34, 34, 34, 1);
+      background-color: #0F0F0F;
     }
   }
 
   .jd-meta,
   .jd-meta:before {
-    background-color: rgba(34, 34, 34, 1);
+    background-color: #0F0F0F;
   }
 
   // .jd-container {
