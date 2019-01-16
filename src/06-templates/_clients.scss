@@ -110,5 +110,9 @@
     height: auto;
     opacity: 0;
     transform: scale(.8);
+
+    &--night {
+      display: none;
+    }
   }
 }

@@ -51,7 +51,7 @@
   }
 
   &__logo {
-    opacity: .4;
+    opacity: .5;
     color: black;
 
     @include transition($property: opacity);
@@ -72,5 +72,9 @@
     @include press-logo(omk, 72, 28.5);
     @include press-logo(netandwork, 131, 32);
     @include press-logo(spielmacher, 134, 45.1);
+
+    &--night {
+      display: none;
+    }
   }
 }
