@@ -24,6 +24,7 @@ html(lang="de" dir="ltr")
           svg(xmlns="http://www.w3.org/2000/svg" style="display: none;")
             include includes/svg/logo.pug
             include includes/svg/icons.pug
+            include includes/svg/browsers.pug
             block svg
           block content
       include includes/footer.pug
@@ -33,6 +34,7 @@ html(lang="de" dir="ltr")
             use(href="#jd-icon-x" xlink:href="#jd-icon-x")
         include includes/meta/legal-notice.pug
         include includes/meta/privacy.pug
+      include includes/browser-fallback.pug
       canvas(class="jd-snow")
     style.
       .jd-snow {

@@ -1,5 +1,24 @@
 .jd-theme--night {
 
+  .jd-browser-fallback {
+    background-color: #141517;
+  }
+
+  .jd-browser {
+
+    &:hover {
+      background-color: black;
+
+      .jd-browser__button {
+        border-color: white;
+      }
+    }
+
+    &__button {
+      border-color: black;
+    }
+  }
+
   .jd-wrapper {
     background-color: #141517;
     color: rgba(white, 1);

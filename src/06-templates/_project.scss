@@ -19,11 +19,11 @@
       grid-column: span 7;
 
       &:nth-child(even) {
-        grid-template-columns: spacing(2) repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr) spacing(2);
       }
 
       &:nth-child(odd) {
-        grid-template-columns: repeat(6, 1fr) spacing(2);
+        grid-template-columns: spacing(2) repeat(6, 1fr);
       }
     }
   }
@@ -50,7 +50,7 @@
       grid-column: 2 / 6;
     }
 
-    .jd-project--standard:nth-child(odd) & {
+    .jd-project--standard:nth-child(even) & {
 
       @include break(desktop-s) {
         grid-column: 1 / 6;
@@ -61,7 +61,7 @@
       }
     }
 
-    .jd-project--standard:nth-child(odd) & {
+    .jd-project--standard:nth-child(even) & {
 
       @include break(desktop-s) {
         grid-column: 1 / 6;
