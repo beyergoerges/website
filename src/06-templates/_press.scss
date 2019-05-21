@@ -1,16 +1,16 @@
 @mixin press-logo($name, $width, $height) {
   &--#{$name} {
-    width: $width * 1px * .7;
-    height: $height * 1px * .7;
+    width: $width * 1px * .6;
+    height: $height * 1px * .6;
 
     @include break(tablet) {
-      width: $width * 1px * .8;
-      height: $height * 1px * .8;
+      width: $width * 1px * .7;
+      height: $height * 1px * .7;
     }
 
-    @include break(desktop-s) {
-      width: $width * 1px * .9;
-      height: $height * 1px * .9;
+    @include break(desktop-m) {
+      width: $width * 1px * .8;
+      height: $height * 1px * .8;
     }
 
     @include break(desktop-xl) {

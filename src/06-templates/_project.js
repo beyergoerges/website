@@ -13,7 +13,7 @@ let jd_projectScene = (trigger, hook = .8) => {
 
 jd_projectScene("#eventim-shop");
 jd_projectScene("#tsukuyumi");
-jd_projectScene("#day-in-may", .6);
+jd_projectScene("#day-in-may");
 jd_projectScene("#kidsclub");
-jd_projectScene("#dfa", .6);
+jd_projectScene("#dfa");
 jd_projectScene("#heimat");

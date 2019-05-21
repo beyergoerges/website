@@ -10,18 +10,28 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  @include break(desktop-s) {
-    grid-template-columns: repeat(6, 1fr);
+  &--6 {
+
+    @include break(desktop-s) {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 }
 
 .jd-client {
   position: relative;
-  padding: 15%;
+  padding: 5% 15%;
   overflow: hidden;
 
   @include break(desktop-s) {
-    padding: 20%;
+    padding: 10% 30%;
+  }
+
+  &--6 {
+
+    @include break(desktop-s) {
+      padding: 20%;
+    }
   }
 
   &__line-x,
@@ -57,51 +67,52 @@
     display: block;
   }
 
-  &:nth-child(n+1):nth-child(-n+10) .jd-client__line-x {
+  &:nth-last-child(n+3) .jd-client__line-x {
     display: block;
   }
 
   @include break(tablet) {
 
-    &:nth-child(n+1):nth-child(-n+12) {
+    &:nth-child(n+1) {
       .jd-client__line-x,
       .jd-client__line-y {
         display: none;
       }
     }
 
-    &:nth-child(n+2):nth-child(-n+4) .jd-client__line-y,
-    &:nth-child(n+6):nth-child(-n+8) .jd-client__line-y,
-    &:nth-child(n+10):nth-child(-n+12) .jd-client__line-y {
+    &:not(:nth-child(4n+5)) .jd-client__line-y {
       display: block;
     }
 
-    &:nth-child(n+1):nth-child(-n+8) .jd-client__line-x {
+    &:nth-last-child(n+5) .jd-client__line-x {
       display: block;
     }
   }
 
-  @include break(desktop-s) {
+  &--6 {
 
-    &:nth-child(n+1):nth-child(-n+12) {
-      .jd-client__line-x,
-      .jd-client__line-y {
-        display: none;
+    @include break(desktop-s) {
+
+      &:nth-child(n+1):nth-child(-n+12) {
+        .jd-client__line-x,
+        .jd-client__line-y {
+          display: none;
+        }
       }
-    }
 
-    &:nth-child(n+2):nth-child(-n+6) .jd-client__line-y {
-      display: block;
-      top: 100%;
-      bottom: 0;
-    }
+      &:nth-child(n+2):nth-child(-n+6) .jd-client__line-y {
+        display: block;
+        top: 100%;
+        bottom: 0;
+      }
 
-    &:nth-child(n+8):nth-child(-n+12) .jd-client__line-y {
-      display: block;
-    }
+      &:nth-child(n+8):nth-child(-n+12) .jd-client__line-y {
+        display: block;
+      }
 
-    &:nth-child(n+1):nth-child(-n+6) .jd-client__line-x {
-      display: block;
+      &:nth-child(n+1):nth-child(-n+6) .jd-client__line-x {
+        display: block;
+      }
     }
   }
 
