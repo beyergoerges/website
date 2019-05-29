@@ -78,11 +78,11 @@ let jd_mediaScene = (trigger, hook = .8) => {
 jd_mediaScene("#joda-photo");
 
 jd_mediaScene("#eventim-shop");
-jd_mediaScene("#tsukuyumi");
-jd_mediaScene("#day-in-may", .6);
-jd_mediaScene("#kidsclub");
-jd_mediaScene("#dfa", .6);
-jd_mediaScene("#heimat");
+jd_mediaScene("#tsukuyumi", .6);
+jd_mediaScene("#day-in-may");
+jd_mediaScene("#kidsclub", .6);
+jd_mediaScene("#dfa");
+jd_mediaScene("#heimat", .6);
 
 const jd_menuItems = document.querySelectorAll(".jd-menu__items")[0];
 
@@ -405,11 +405,11 @@ let jd_projectScene = (trigger, hook = .8) => {
 }
 
 jd_projectScene("#eventim-shop");
-jd_projectScene("#tsukuyumi");
+jd_projectScene("#tsukuyumi", .6);
 jd_projectScene("#day-in-may");
-jd_projectScene("#kidsclub");
+jd_projectScene("#kidsclub", .6);
 jd_projectScene("#dfa");
-jd_projectScene("#heimat");
+jd_projectScene("#heimat", .6);
 
 let jd_pressScene = trigger => {
   jd_scene(trigger).reverse(false).on("enter", event => {

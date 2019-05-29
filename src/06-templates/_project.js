@@ -12,8 +12,8 @@ let jd_projectScene = (trigger, hook = .8) => {
 }
 
 jd_projectScene("#eventim-shop");
-jd_projectScene("#tsukuyumi");
+jd_projectScene("#tsukuyumi", .6);
 jd_projectScene("#day-in-may");
-jd_projectScene("#kidsclub");
+jd_projectScene("#kidsclub", .6);
 jd_projectScene("#dfa");
-jd_projectScene("#heimat");
+jd_projectScene("#heimat", .6);

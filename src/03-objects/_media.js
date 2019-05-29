@@ -13,8 +13,8 @@ let jd_mediaScene = (trigger, hook = .8) => {
 jd_mediaScene("#joda-photo");
 
 jd_mediaScene("#eventim-shop");
-jd_mediaScene("#tsukuyumi");
-jd_mediaScene("#day-in-may", .6);
-jd_mediaScene("#kidsclub");
-jd_mediaScene("#dfa", .6);
-jd_mediaScene("#heimat");
+jd_mediaScene("#tsukuyumi", .6);
+jd_mediaScene("#day-in-may");
+jd_mediaScene("#kidsclub", .6);
+jd_mediaScene("#dfa");
+jd_mediaScene("#heimat", .6);
