@@ -27,6 +27,8 @@ jd_sectionTitleScene("#projects");
 jd_sectionTitleScene("#press");
 jd_sectionTitleScene("#speaker");
 
+jd_sectionTitleScene("#visual-designer");
+
 jd_sectionTitleScene("#email");
 jd_sectionTitleScene("#phone");
 

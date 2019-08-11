@@ -1,0 +1,65 @@
+.jd-job {
+  align-items: baseline;
+  margin-bottom: spacing(8);
+
+  &__heading {
+    grid-column: 2 / 6;
+    margin-bottom: spacing(4);
+
+    @include break(tablet) {
+      grid-column: 2 / 6;
+      grid-row: span 2;
+    }
+
+    // @include break(desktop-s) {
+    //   grid-column: 2 / 9;
+    // }
+    //
+    // @include break(desktop-m) {
+    //   grid-column: 2 / 8;
+    // }
+  }
+
+  &__subheading {
+
+    @include break(desktop-s) {
+      grid-column: 6 / 12;
+    }
+  }
+
+  &__description {
+    grid-column: 2 / 6;
+    margin-bottom: spacing(4);
+
+    @include break(tablet) {
+      grid-column: 3 / 6;
+    }
+
+    @include break(desktop-s) {
+      grid-column: 8 / 13;
+    }
+
+    @include break(desktop-m) {
+      grid-column: 8 / 13;
+    }
+  }
+
+  &__heading,
+  &__description {
+    opacity: 0;
+  }
+
+  &__list {
+    grid-column: 2 / 6;
+    grid-row: 4;
+
+    @include break(tablet) {
+      grid-column: 3 / 6;
+    }
+
+    @include break(desktop-s) {
+      grid-column: 11 / 14;
+      grid-row: 1 / 3;
+    }
+  }
+}

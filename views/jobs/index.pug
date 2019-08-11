@@ -1,0 +1,53 @@
+extends ../default.pug
+
+block vars
+  - var bodyClass = "jd-jobs";
+
+block content
+  header.jd-block.jd-block--intro
+    h1.jd-heading.jd-heading--page Bist du eine* von uns?
+    h2.jd-heading.jd-heading--high-level Wir suchen Verstärkung. Werde Teil unseres Teams.
+  .jd-block.jd-block--solid.jd-block--color-1
+    section.jd-section.jd-job#visual-designer
+      h2.jd-heading.jd-heading--high-level.jd-job__heading.--color-1 Visual Designer (m/w/d)
+      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading.jd-job__subheading
+        span.jd-section__title-index
+          span.jd-section__title-number 01
+          span.jd-section__title-line
+        span.jd-section__title-text Aufgaben
+      .jd-job__description
+        ul.jd-list.jd-list--bulleted
+          li.jd-list__item Entwicklung kreativer und anwendbarer Design-Konzepte
+          li.jd-list__item Interface Design, Print Design, Grafik, Illustration, Motion Design, Animation
+          li.jd-list__item Frontend-Entwicklung
+          li.jd-list__item Beratung und Entwicklung von Kunden
+      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading.jd-job__subheading
+        span.jd-section__title-index
+          span.jd-section__title-number 02
+          span.jd-section__title-line
+        span.jd-section__title-text Du
+      .jd-job__description
+        ul.jd-list.jd-list--bulleted
+          li.jd-list__item abgeschlossenes Design-Studium (und/oder exzellente Fähigkeiten)
+          li.jd-list__item konzeptionelles Denken
+          li.jd-list__item Qualitätsbewusstsein und strukturierte Arbeitsweise
+          li.jd-list__item sicher in allen gängigen Design-Tools (Sketch, Adobe CC etc.)
+          li.jd-list__item fortgeschrittene Kenntnisse in HTML, CSS und JavaScript
+      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading.jd-job__subheading
+        span.jd-section__title-index
+          span.jd-section__title-number 03
+          span.jd-section__title-line
+        span.jd-section__title-text Wir
+      .jd-job__description
+        ul.jd-list.jd-list--bulleted
+          li.jd-list__item erstklassige Kunden und spannende Projekte
+          li.jd-list__item Entfaltungs- und Gestaltungsmöglichkeiten in einer jungen Design-Agentur
+          li.jd-list__item attraktive, leistungsgerechte Vergütung und eigener Mac
+          li.jd-list__item Büro mit Dachterrasse und freien Getränken*
+      .jd-job__description
+        h4.jd-heading--section--low-level *Prost? Lebenslauf und Arbeitsproben: 
+          a(href="mailto:jobs@beyergoerges.com") jobs@beyergoerges.com
+  .jd-block.jd-block--outro
+    a.jd-heading.jd-heading--page.jd-heading--inverted(href="/contact")
+      span.jd-heading__text Kontakt
+      span.jd-arrow

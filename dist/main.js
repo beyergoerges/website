@@ -12,6 +12,7 @@
 //@prepros-append 06-templates/_clients.js
 //@prepros-append 06-templates/_project.js
 //@prepros-append 06-templates/_press.js
+//@prepros-append 06-templates/_job.js
 //@prepros-append 06-templates/_contact.js
 //@prepros-append 06-templates/_xmas.js
 //@prepros-append 07-themes/_themes.js
@@ -141,6 +142,8 @@ jd_sectionTitleScene("#technology");
 jd_sectionTitleScene("#projects");
 jd_sectionTitleScene("#press");
 jd_sectionTitleScene("#speaker");
+
+jd_sectionTitleScene("#visual-designer");
 
 jd_sectionTitleScene("#email");
 jd_sectionTitleScene("#phone");
@@ -422,6 +425,22 @@ let jd_pressScene = trigger => {
 
 jd_pressScene("#press");
 jd_pressScene("#speaker");
+
+let jd_jobScene = trigger => {
+  jd_scene(trigger).reverse(false).on("enter", event => {
+    let jd_tl = new TimelineLite();
+
+    jd_tl.staggerFromTo(
+      [
+        trigger + " .jd-job__heading",
+        trigger + " .jd-job__description"
+      ],
+      .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .7, 0
+    );
+  });
+}
+
+jd_jobScene("#visual-designer");
 
 let jd_contactScene = trigger => {
   jd_scene(trigger).reverse(false).on("enter", event => {
