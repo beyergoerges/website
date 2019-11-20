@@ -1,5 +1,22 @@
 .jd-theme--night {
 
+  .jd-cookie-banner {
+    background-color: white;
+
+    .jd-paragraph {
+      color: #141517;
+    }
+
+    .jd-button {
+      background-color: #141517;
+      color: white;
+
+      &:hover {
+        background-color: $grayscale--darker;
+      }
+    }
+  }
+
   .jd-browser-fallback {
     background-color: #141517;
   }

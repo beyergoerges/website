@@ -1,0 +1,51 @@
+.jd-cookie-banner {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #141517;
+  padding: spacing(2) spacing(3);
+
+  @include break(tablet) {
+    padding: spacing(1) spacing(3);
+  }
+
+  &__info {
+
+    @include break(tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  &__text {
+    margin-bottom: spacing(1) !important;
+
+    @include break(tablet) {
+      margin-right: spacing(2);
+      margin-bottom: 0;
+    }
+  }
+
+  .jd-paragraph {
+    color: $grayscale--white;
+
+    @include font-scale(xs);
+  }
+
+  .jd-button {
+    display: inline-block;
+    padding: spacing(.75) spacing(1.5);
+    background-color: $grayscale--white;
+    font-weight: 600;
+
+    @include font-scale(xs);
+    @include transition($duration-faster, $property: background-color);
+
+    &:hover {
+      background-color: $grayscale--lightest;
+    }
+  }
+}
