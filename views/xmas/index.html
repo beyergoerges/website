@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beyer Görges wünscht frohe Weihnachten und ein frohes neues Jahr!</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="preloader">
+        <img src="img/tree.png">
+        <div class="preloader__text"><h2>Diese Weihnachtskarte verwendet Glückscookies und Retro-Sounds.</h2> Also besser nicht im Meeting starten 😉<br/><br/>Kann es losgehen?</div>
+        <div class="preloader__button">LOS</div>
+    </div>
+    <div class="bodyWrapper"></div>
+    <div class="phoneWrapper" id="phoneWrapper">
+
+        <!-- PHONE DISPLAY -->
+
+        <div class="phoneDisplay phoneDisplay--meta">
+            <div class="phoneDisplay__provider">Beyer Görges</div>
+            <div class="phoneDisplay__time" id="time"></div>
+        </div>
+
+        <!-- LOGO ANFANG -->
+        <div class="phoneDisplay phoneDisplay--intro">
+            <div class="phoneDisplay__logo"><img src="img/logo.png" /></div>
+        </div>
+
+        <!-- SANTA RUN ANFANG -->
+        <div class="phoneDisplay phoneDisplay--santaRun">
+
+            <div class="phoneDisplay__content phoneDisplay__content--santa">
+                <div class="runWrapper runWrapper--1">
+                    <span class="dynamicText--sex"></span>
+                    <span class="dynamicText--salutation"></span>
+                    <span class="dynamicText--name"></span>
+                    <span>,</span>
+                    <img src="img/santa.gif" />
+                </div>
+                <div class="runWrapper runWrapper--2">
+                    <span>Wir wünschen frohe Weihnachten!</span>
+                    <img src="img/santa.gif" />
+                </div>
+                <div class="runWrapper runWrapper--3">
+                    <span>Und ein frohes neues Jahr 2020!</span>
+                    <img src="img/santa.gif" />
+                </div>
+            </div>
+        </div>
+
+        <!-- SMS NOTIFICATION START -->
+        <div class="phoneDisplay phoneDisplay--newMessage">
+            <div class="phoneDisplay__content phoneDisplay__content--sms">
+                <img src="img/msg.gif" />
+                <div>1 neue Nachricht</div>
+            </div>
+            <div class="phoneDisplay__content phoneDisplay__content--noSms">
+                <img src="img/005.gif" />
+            </div>
+            <div class="phoneDisplay__menu phoneDisplay__menu--open"><a href="#">Menu</a><img class="menuArrow" src="img/menuArrow.gif"/></div>
+        </div>
+
+        <!-- MENU START -->
+        <div class="phoneDisplay phoneDisplay--menu">
+            <div class="phoneDisplay__content phoneDisplay__content--menu">
+                <ul>
+                    <li><a class="menuLink--songs" href="#">•Weihnachtslieder</a></li>
+                    <li><a class="menuLink--cookies" href="#">•Glücks-Cookies</a></li>
+                    <li><a class="menuLink--snake playSnake">•Snake</a></li>
+                    <li><a class="menuLink--sms" href="#">•SMS <span class="smsNotification">(1)</a></span></li>
+                </ul>
+            </div>
+            <div class="phoneDisplay__menu phoneDisplay__menu--close"><a href="#">Home</a></div>
+        </div>
+
+        <!-- WEIHNACHTSLIEDER START -->
+        <div class="phoneDisplay phoneDisplay--songs">
+            <div class="phoneDisplay__content phoneDisplay__content--menu">
+                <ul>
+                    <li><a href="#" id="play-merrychristmas">•Merry Christmas</a></li>
+                    <li><a href="#" id="play-jinglebells">•Jingle Bells</a></li>
+                    <li><a href="#" id="play-auldlangsyne">•Auld Lang Syne</a></li>
+                </ul>
+            </div>
+            <div class="phoneDisplay__menu phoneDisplay__menu--open"><a href="#">Menu</a></div>
+            <div class="phoneDisplay__stop" id="phoneDisplay__stop"><a href="#">Stop</a></div>
+        </div>
+
+        <audio controls id="audio-sms">
+            <source src="audio/audio-smsincoming.mp3" type="audio/mpeg">
+            <source src="audio/audio-smsicoming.ogg" type="audio/ogg">
+        </audio>
+
+        <audio controls id="audio-jinglebells">
+            <source src="audio/audio-jinglebells.mp3" type="audio/mpeg">
+            <source src="audio/audio-jinglebells.ogg" type="audio/ogg">
+        </audio>
+
+        <audio controls id="audio-auldlangsyne">
+            <source src="audio/audio-auldlangsyne.mp3" type="audio/mpeg">
+            <source src="audio/audio-auldlangsyne.ogg" type="audio/ogg">
+        </audio>
+
+        <audio controls id="audio-merrychristmas">
+            <source src="audio/audio-merrychristmas.mp3" type="audio/mpeg">
+            <source src="audio/audio-merrychristmas.ogg" type="audio/ogg">
+        </audio>
+
+        <!-- COOKIES START -->
+        <div class="phoneDisplay phoneDisplay--cookies">
+            <div class="phoneDisplay__content phoneDisplay__content--cookiePre">
+                <img class="cookieOpen" src="img/cookie.png"/>
+            </div>
+            <div class="phoneDisplay__content phoneDisplay__content--cookies scrollbar">
+              <span class="dynamicText--salutation"></span>
+              <span class="dynamicText--name"></span>,&nbsp;
+              <span class="dynamicText--cookies"></span>
+            </div>
+            <div class="phoneDisplay__menu phoneDisplay__menu--open"><a href="#">Menu</a></div>
+            <div class="phoneDisplay__refresh" id="phoneDisplay__refresh"><a href="#"><img src="img/refresh.png" /></a>
+            </div>
+        </div>
+
+        <!-- SNAKE START -->
+        <div class="phoneDisplay phoneDisplay--snake">
+            <div class="phoneDisplay__content phoneDisplay__content--snake">
+                <section class="game">
+                            <div class="SplashScreen">
+                                <div class="StartButton"><a href="#">Start</a></div>
+                                <span class="smallFont">(Desktop: Pfeiltasten, Mobile: 4,2,6,8)</span>
+
+                            </div>
+                            <div class="FinishScreen" style="display:none">
+                                <div class="score"><span id="score"></span> Punkte</div>
+                                <div class="StartButton NeustartButton"><a href="#">Neustart</a></div>
+                            </div>
+                            <div class="SnakeScreen">
+                                <canvas class="snakeCanvas" id="canvasArea" height="100" width="160" ></canvas>
+                            </div>
+                </section>
+            </div>
+            <div class="phoneDisplay__menu phoneDisplay__menu--open"><a href="#">Menu</a></div>
+        </div>
+
+        <!-- PHONE NAVIGATION START -->
+        <div class="phoneNavigation">
+            <div class="phoneNavigation__number phoneNavigation__number--2 button"></div>
+            <div class="phoneNavigation__number phoneNavigation__number--4 button"></div>
+            <div class="phoneNavigation__number phoneNavigation__number--6 button"></div>
+            <div class="phoneNavigation__number phoneNavigation__number--8 button"></div>
+        </div>
+
+    </div>
+    <canvas class="sowCanvas jd-snow"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.0.2/dist/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/snow.js"></script>
+    <script src="js/snake.js"></script>
+
+    <script>
+
+      document.addEventListener("DOMContentLoaded", event => {
+
+        // Retrieve URL parameters
+        function getUrlVars() {
+          var vars = {};
+          var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+              vars[key] = value;
+          });
+          return vars;
+        }
+
+        let name = getUrlVars()["n"];
+        let sex = getUrlVars()["s"];
+        let formal = getUrlVars()["f"];
+        let textName = decodeURI(name);
+
+        // Remove hashtag from name
+        let regexp = new RegExp("#([^\\s]*)","g");
+        textName = textName.replace(regexp, "");
+
+        const elSex = document.querySelector(".dynamicText--sex");
+        const elSalutation = document.querySelectorAll(".dynamicText--salutation");
+        const elName = document.querySelectorAll(".dynamicText--name");
+
+        for (let i=0; i < elName.length; i++) {
+          elName[i].innerHTML=textName;
+        }
+
+        if (sex == "w" && formal == 1) {
+          elSex.innerHTML="Liebe&nbsp;";
+          for (let i=0; i < elSalutation.length; i++) {
+            elSalutation[i].innerHTML="Frau&nbsp;";
+          }
+        } else if (sex == "w" && formal == 0) {
+          elSex.innerHTML="Liebe&nbsp;";
+        } else if (sex == "m" && formal == 0) {
+          elSex.innerHTML="Lieber&nbsp;";
+        } else if (sex == "m" && formal == 1) {
+          elSex.innerHTML="Lieber&nbsp;";
+          for (let i=0; i < elSalutation.length; i++) {
+            elSalutation[i].innerHTML="Herr&nbsp;";
+          }
+        }
+
+        // Fotune cookies
+        let fortunes = [
+          'für den Optimisten ist das Leben kein Problem, sondern bereits die Lösung.',
+          'wer Liebe sucht, findet sie nicht, sie überfällt uns, wenn wir sie am wenigsten erwarten.',
+          'man verliert die meiste Zeit damit, dass man Zeit gewinnen will.',
+          'Glück ist das einzige, was sich verdoppelt, wenn man es teilt.',
+          'das Schicksal mischt die Karten, aber wir spielen.',
+          'wer im Leben kein Ziel hat, verläuft sich.',
+          'wer sich darauf versteht, das Leben zu genießen, braucht keine Reichtümer.',
+          'jede Minute, die man lacht, verlängert das Leben um eine Stunde.',
+          'was uns den Weg verlegt, bringt uns voran.',
+          'wer lächelt statt zu toben, ist immer der Stärkere.',
+          'ein großer Mensch ist, wer sein Kinderherz nicht verliert.',
+          'wer nur an die Bequemlichkeiten des Lebens denkt, kann nicht wahrhaft gebildet sein.',
+          'wer sich darauf versteht, das Leben zu genießen, braucht keine Reichtümer.',
+          'es ist besser, ein einziges kleines Licht anzuzünden, als die Dunkelheit zu verfluchen.',
+          'wenn jemand sagt, er habe keine Zeit, bedeutet das nur, dass ihm andere Dinge wichtiger sind.',
+          'handele an andere Menschen so, wie Du selbst gerne behandelt werden möchtest.',
+          'die Wissenden reden nicht viel, die Redenden wissen nicht viel.',
+          'die Stärke an einem Gefühl erkennt man an den Opfern, die man bereit ist dafür zu geben.',
+          'Glück ist wie ein Vogel, wer es nicht ergreift, dem fliegt es davon.',
+          'ich höre und vergesse. Ich sehe und erinnere. Ich tue und verstehe.',
+          'lieber eine Kerze anzünden, als über die Finsternis klagen.',
+          'nur die Allerklügsten und die Allerdümmsten ändern sich nie.',
+          'dem anderen sein Anderssein zu vergeben, ist der Anfang von Weisheit.',
+          'ein einfacher Zweig ist dem Vogel lieber, als ein goldener Käfig.',
+          'Lächeln ist die charmanteste Art dem Gegner die Zähne zu zeigen.',
+          'auch eine Reise von 1000 Meilen fängt mit dem ersten Schritt an.',
+          'wer einen Fehler gemacht hat und ihn nicht verbessert, begeht schon den zweiten.',
+          'es führen viele Wege zum Gipfel eines Berges, doch die Aussicht bleibt die gleiche.',
+          'der Edle verlangt alles von sich selbst, der Primitive stellt nur Forderungen an andere.',
+          'Verzeihen ist keine Narrheit, nur der Narr kann nicht verzeihen.',
+          'das Glück tritt gern in ein Haus, wo gute Laune herrscht.',
+          'der wahre Gelehrte schämt sich nicht, auch solche zu fragen, die unter ihm stehen.',
+          'wenn Güte von uns ausgeht, werden wir auch Güte erfahren.',
+          'das Glück tritt gern in ein Haus, wo gute Laune herrscht.',
+          'einmal selbst sehen ist mehr wert als hundert Neuigkeiten hören.',
+          'wer den Himmel im Wasser sieht, sieht die Fische auf den Bäumen.',
+          'was uns den Weg verlegt, bringt uns voran.',
+          'im Haus, in dem gelacht wird, kommt das Glück.',
+          'wer viele Schätze anhäuft, hat viel zu verlieren.',
+          'wer nicht auf den hohen Berg steigt, kennt die Ebene nicht.',
+          'wahre Worte sind nicht angenehm, angenehme Worte sind nicht wahr.',
+          'nichts ist besser verkauft, als was man einem echten Freund, der es bedarf, schenkt.',
+          'der Weise hat keine unumstößlichen Grundsätze. Er passt sich anderen an.',
+          'Hoffnung ist wie der Zucker im Tee: Auch wenn sie klein ist, versüßt sie alles.',
+          'Eheleute, die sich lieben, sagen sich tausend Dinge, ohne zu sprechen.',
+          'die sicherste Tür ist die, die man offen lassen kann.',
+          'durch Leichtfertigkeit verliert man die Wurzeln, durch Unruhe die Übersicht.',
+          'das Leben meistert man lächelnd oder überhaupt nicht.',
+          'verantwortlich ist man nicht nur für das, was man tut, sondern auch für das, was man unterlässt.',
+          'je mehr Bekannte man hat, um so weniger kennt man die Leute.',
+          'Dinge wahrzunehmen ist der Keim der Intelligenz.',
+          'in einer friedlichen Familie kommt das Glück von selber.',
+          'Lernen ist wie Rudern gegen den Strom. Hört man damit auf, treibt man zurück.',
+          'welche Kraft der Ursache und Wirkung entfaltet sich in heilenden und liebevollen Worten.',
+          'der Edle verneigt sich, aber beugt sich nicht.',
+          'reich ist, wer keine Schulden hat, glücklich, wer ohne Krankheit lebt.',
+          'friedvoll soll unsere Lebensmelodie erklingen.',
+          'wer seinen Weg kennt, muss sich nicht an jeder Kreuzung neu entscheiden.',
+          'nur mit den Augen der Anderen kann man seine Fehler gut sehen.',
+          'die Übung der Achtsamkeit ist nichts anderes als die Übung liebevoller Zuneigung.',
+          'der Mensch ist dazu geboren, Großes zu leisten, wenn er versteht, sich selbst zu besiegen.',
+          'Menschen kennen nicht ihre Fehler, Ochsen nicht ihre Stärke.',
+          'Fehler sind immer zu verzeihen, wenn man den Mut hat diese auch zuzugeben.',
+          'die Vorstellungen sind die Quelle der Irrtümer, weil sie nicht die Wirklichkeit sind.',
+          'einen Tag lang ungestört in Muße zu verleben, heißt einen Tag lang ein Unsterblicher zu sein.',
+          'kein Weg als Weg, keine Grenze als Grenze.',
+          'alles Geld der Welt ist nicht so viel wert wie zur rechten Stunde ein Becher besten Weines.',
+          'Wissen ist nicht genug, wir müssen es anwenden. Wollen ist nicht genug, wir müssen es tun.',
+          'tatsächlich ist Liebe ein anderer Name für Verstehen.',
+          'eine Fähigkeit, die nicht täglich zunimmt, geht täglich ein Stück zurück.',
+          'man kann nur helfen, wenn man selbst über dem Konflikt steht.',
+          'der Wille gestaltet den Menschen, zum Erfolg braucht er jedoch Mut und Ausdauer.',
+          'sind wir wütend, sind wir die Wut. Lieben wir, sind wir die Liebe.',
+          'Verstehen und Liebe sind nicht zwei Dinge, sondern eins.',
+          'die Welt ist voll von kleinen Freuden – die Kunst besteht nur darin, sie zu sehen.',
+          'unsere wahre Heimat ist der gegenwärtige Augenblick.',
+          'die Liebe ist das Gewürz des Lebens. Sie kann es versüßen, aber auch versalzen.',
+          'indem man über andere schlecht redet, macht man sich selber nicht besser.',
+          'ein Weg wird erst dann ein Weg, wenn einer ihn geht.',
+          'der Geist, der allen Dingen Leben verleiht, ist die Liebe.',
+          'wir leben nicht, um zu glauben, sondern um zu lernen.'
+        ];
+
+        const cookieDiv = document.querySelector(".dynamicText--cookies");
+
+        function generateCookieText() {
+          // Generate random number for cookies
+          let fortuneA = Math.random()*80;
+          let fortuneB = Math.floor(fortuneA);
+          let randomFortune = fortunes[fortuneB];
+
+          cookieDiv.innerHTML=randomFortune;
+        }
+
+        generateCookieText();
+
+        // Refresh cookie
+        const refreshCookie = document.querySelector(".phoneDisplay__refresh")
+        refreshCookie.addEventListener("click", () => {
+          cookieDiv.innerHTML="";
+          setTimeout(() => {
+            generateCookieText();
+          }, 100);
+        });
+      });
+
+    </script>
+</body>
+
+</html>
