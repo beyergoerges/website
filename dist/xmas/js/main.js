@@ -105,7 +105,6 @@ $(".cookieOpen").click(function(){
 $(".phoneDisplay__menu--open").click(function(){
     $(".phoneDisplay--menu").show();
     $(".menuArrow").hide();
-    $( ".StartButton" ).removeClass( "noClick" );
     $(".phoneDisplay--newMessage, .phoneDisplay--songs, .phoneDisplay--sms, .phoneDisplay--cookies, .phoneDisplay--snake").hide();
 });
 
