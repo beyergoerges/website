@@ -80,6 +80,9 @@ $(".menuLink--sms").click(function(){
     tl.from(".runWrapper--3", {x: -180, duration: 3, ease: Power0.easeNone,});
     tl.to(".phoneDisplay--santaRun", {delay: 3, opacity:0, duration: 0});
     tl.set(".phoneDisplay--menu",{autoAlpha:1,display:"block"});
+    tl.to(".runWrapper--1", {x: 0, duration: 0.1, display:"flex",ease: Power0.easeNone,});
+    tl.to(".runWrapper--2", {x: 0, duration: 0.1, display:"flex",ease: Power0.easeNone,});
+    tl.to(".runWrapper--3", {x: 0, duration: 0.1, display:"flex",ease: Power0.easeNone,});
 });
 
 $(".playSnake").click(function(){
@@ -104,7 +107,6 @@ $(".phoneDisplay__menu--open").click(function(){
     $(".menuArrow").hide();
     $( ".StartButton" ).removeClass( "noClick" );
     $(".phoneDisplay--newMessage, .phoneDisplay--songs, .phoneDisplay--sms, .phoneDisplay--cookies, .phoneDisplay--snake").hide();
-
 });
 
 $(".phoneNavigation__menu").click(function(){
@@ -134,8 +136,15 @@ document.getElementById("phoneDisplay__stop").addEventListener("click", function
 
 // CURRENT TIME 
 
+function minutes_with_leading_zeros(dt) 
+{ 
+  return (dt.getMinutes() < 10 ? '0' : '') + dt.getMinutes();
+}
+
+dt = new Date(); 
+
 var today = new Date();
-var time = today.getHours() + ":" + today.getMinutes();
+var time = today.getHours() + ":" + (minutes_with_leading_zeros(dt));
 
 document.getElementById("time").innerHTML = time;
 

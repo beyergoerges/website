@@ -524,6 +524,10 @@ a:hover {
 /**************************************************
 	GAME
 **************************************************/
+.clickable {
+  pointer-events: auto;
+}
+
 .SplashScreen, .FinishScreen {
   position: absolute;
   width: 100%;
@@ -556,6 +560,7 @@ a:hover {
   color: #292d26;
   background: #679f55;
   border: 2px solid #292d26;
+  pointer-events: none;
 }
 
 .StartButton:hover {
