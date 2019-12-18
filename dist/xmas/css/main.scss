@@ -37,8 +37,11 @@ $darkgreen: #292d26;
 
 *::-webkit-scrollbar {
     width: 0 !important;
-    -ms-overflow-style: none;
-     scrollbar-width: none;
+    scrollbar-width: none;
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+    scrollbar-color: transparent transparent;
   }
 
 .preloader {
