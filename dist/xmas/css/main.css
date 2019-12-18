@@ -9,13 +9,6 @@
 
 *::-webkit-scrollbar {
   width: 0 !important;
-  scrollbar-width: none;
-  overflow: auto;
-  -ms-overflow-style: none;
-  /* IE 11 */
-  scrollbar-width: none;
-  /* Firefox 64 */
-  scrollbar-color: transparent transparent;
 }
 
 .preloader {
@@ -218,7 +211,17 @@ a:hover {
   left: 0;
   top: 30px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  scrollbar-width: none;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  /* IE 11 */
+  scrollbar-width: none;
+  /* Firefox 64 */
+  scrollbar-color: transparent transparent;
+}
+
+.phoneDisplay__content::-webkit-scrollbar {
+  width: 0 !important;
 }
 
 .phoneDisplay__content--sms {
