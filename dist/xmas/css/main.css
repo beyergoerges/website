@@ -1,25 +1,14 @@
+@charset "UTF-8";
 /* width */
 .scrollbar::-webkit-scrollbar {
-  width: 5px;
+  width: 0 !important;
+  -ms-overflow-style: none;
+   scrollbar-width: none;
 }
 
 /* Track */
-.scrollbar::-webkit-scrollbar-track {
-  background: #8cae81;
-  border-radius: 10px;
-}
-
 /* Handle */
-.scrollbar::-webkit-scrollbar-thumb {
-  background: #292d26;
-  border-radius: 10px;
-}
-
 /* Handle on hover */
-.scrollbar::-webkit-scrollbar-thumb:hover {
-  border: 1px solid #292d26;
-}
-
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

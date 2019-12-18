@@ -10,25 +10,27 @@ $darkgreen: #292d26;
 
 /* width */
 .scrollbar::-webkit-scrollbar {
-    width: 5px;
+    width: 0 !important;
+    -ms-overflow-style: none;
+     scrollbar-width: none;
   }
   
   /* Track */
-  .scrollbar::-webkit-scrollbar-track {
-    background: #8cae81;
-    border-radius: 10px;
-  }
+//   .scrollbar::-webkit-scrollbar-track {
+//     background: #8cae81;
+//     border-radius: 10px;
+//   }
    
   /* Handle */
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: $darkgreen; 
-    border-radius: 10px;
-  }
+//   .scrollbar::-webkit-scrollbar-thumb {
+//     background: $darkgreen; 
+//     border-radius: 10px;
+//   }
   
   /* Handle on hover */
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    border: 1px solid $darkgreen; 
-  }
+//   .scrollbar::-webkit-scrollbar-thumb:hover {
+//     border: 1px solid $darkgreen; 
+//   }
 
 // BASICS
 
