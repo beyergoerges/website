@@ -10,6 +10,7 @@
 
     .jd-heading--page,
     .jd-heading--high-level {
+      opacity: 0;
       grid-column: 2;
 
       @include break(desktop-s) {
@@ -109,6 +110,11 @@
 
       @include fill;
     }
+  }
+
+  &--no-spacing {
+    margin-bottom: 0;
+    padding-top: 0;
   }
 }
 

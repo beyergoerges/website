@@ -4,6 +4,7 @@
 //@prepros-append 01-basics/_animation.js
 //@prepros-append 03-objects/_media.js
 //@prepros-append 04-components/_menu.js
+//@prepros-append 05-layout/_block.js
 //@prepros-append 05-layout/_page-transitions.js
 //@prepros-append 05-layout/_section.js
 //@prepros-append 05-layout/_meta.js
@@ -78,6 +79,7 @@ let jd_mediaScene = (trigger, hook = .8) => {
 
 jd_mediaScene("#joda-photo");
 
+jd_mediaScene("#eintrachtde");
 jd_mediaScene("#eventim-shop");
 jd_mediaScene("#tsukuyumi", .6);
 jd_mediaScene("#day-in-may");
@@ -112,6 +114,22 @@ const jd_toggleMenu = event => {
 }
 
 document.addEventListener("click", jd_toggleMenu, false);
+
+jd_scene(".jd-block--intro .jd-heading--page").reverse(false).on("enter", event => {
+  let jd_tl = new TimelineLite();
+  jd_tl.fromTo(
+    ".jd-block--intro .jd-heading--page",
+    1.3, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}
+  );
+});
+
+jd_scene(".jd-block--intro .jd-heading--high-level").reverse(false).on("enter", event => {
+  let jd_tl = new TimelineLite();
+  jd_tl.fromTo(
+    ".jd-block--intro .jd-heading--high-level",
+    1.3, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}
+  );
+});
 
 
 let jd_sectionTitleScene = trigger => {
@@ -407,6 +425,7 @@ let jd_projectScene = (trigger, hook = .8) => {
   });
 }
 
+jd_projectScene("#eintrachtde");
 jd_projectScene("#eventim-shop");
 jd_projectScene("#tsukuyumi", .6);
 jd_projectScene("#day-in-may");

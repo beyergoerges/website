@@ -11,6 +11,7 @@ let jd_projectScene = (trigger, hook = .8) => {
   });
 }
 
+jd_projectScene("#eintrachtde");
 jd_projectScene("#eventim-shop");
 jd_projectScene("#tsukuyumi", .6);
 jd_projectScene("#day-in-may");

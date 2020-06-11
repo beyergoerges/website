@@ -12,6 +12,7 @@ let jd_mediaScene = (trigger, hook = .8) => {
 
 jd_mediaScene("#joda-photo");
 
+jd_mediaScene("#eintrachtde");
 jd_mediaScene("#eventim-shop");
 jd_mediaScene("#tsukuyumi", .6);
 jd_mediaScene("#day-in-may");

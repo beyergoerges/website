@@ -4,6 +4,7 @@
 //@prepros-append 01-basics/_animation.js
 //@prepros-append 03-objects/_media.js
 //@prepros-append 04-components/_menu.js
+//@prepros-append 05-layout/_block.js
 //@prepros-append 05-layout/_page-transitions.js
 //@prepros-append 05-layout/_section.js
 //@prepros-append 05-layout/_meta.js
