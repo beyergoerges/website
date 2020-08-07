@@ -79,6 +79,7 @@ let jd_mediaScene = (trigger, hook = .8) => {
 
 jd_mediaScene("#joda-photo");
 
+jd_mediaScene("#vfl");
 jd_mediaScene("#eintrachtde");
 jd_mediaScene("#eventim-shop");
 jd_mediaScene("#tsukuyumi", .6);
@@ -425,6 +426,7 @@ let jd_projectScene = (trigger, hook = .8) => {
   });
 }
 
+jd_projectScene("#vfl");
 jd_projectScene("#eintrachtde");
 jd_projectScene("#eventim-shop");
 jd_projectScene("#tsukuyumi", .6);

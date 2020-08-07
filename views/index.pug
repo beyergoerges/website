@@ -10,6 +10,21 @@ block svg
 block content
   .jd-block.jd-block--solid.jd-block--no-spacing.jd-block--color-1
     section.jd-section.jd-projects
+      article.jd-project.jd-project--featured#vfl
+        .jd-media.jd-project__thumbnail
+          //img.jd-media__item(src="images/projects/eventim-sports_ticketshop.jpg" alt="")
+          video.jd-media__item(width="1920" height="1080" autoplay loop muted poster="../images/projects/vfl.jpg")
+            source(data-src="../videos/projects/vfl.mp4" type="video/webm")
+            source(data-src="../videos/projects/vfl.mp4" type="video/mp4")
+          span.jd-media__revealer
+        h3.jd-heading.jd-heading--high-level.jd-project__title VfL Bochum 1848 – Trikot-Kampagne
+        .jd-project__description
+          p.jd-paragraph 
+            strong „Flutlichtblau“
+            | : Entwicklung einer Omnichannel-Kampagne (Web, Social Media, Fotografie, Video, Print, Out of Home) in Zusammenarbeit mit dem VfL Bochum 1848.
+          .jd-project__links
+            a.jd-project__link.jd-project__link--web(href="https://trikot.vfl-bochum.de/index.html" target="_blank") Zur Landingpage
+            a.jd-project__link.jd-project__link--video(href="https://www.youtube.com/watch?v=D0JB9YrfuA4" target="_blank") Film ansehen
       article.jd-project.jd-project--featured#eintrachtde
         .jd-media.jd-project__thumbnail
           //img.jd-media__item(src="images/projects/eventim-sports_ticketshop.jpg" alt="")
@@ -67,12 +82,12 @@ block content
           span.jd-client__line-x
           span.jd-client__line-y
           svg.jd-client__logo(width="160" height="160")
-            use(href="#logo-ist" xlink:href="#logo-ist")
+            use(href="#logo-vfl" xlink:href="#logo-vfl")
         li.jd-client
           span.jd-client__line-x
           span.jd-client__line-y
-          img.jd-client__logo.jd-client__logo--day(width="160" height="160" src="images/clients/lagardere.png" alt="Lagardère Sports")
-          img.jd-client__logo.jd-client__logo--night(width="160" height="160" src="images/clients/lagardere_white.png" alt="Lagardère Sports")
+          svg.jd-client__logo(width="160" height="160")
+            use(href="#logo-eset" xlink:href="#logo-eset")
         li.jd-client
           span.jd-client__line-x
           span.jd-client__line-y
@@ -82,42 +97,22 @@ block content
           span.jd-client__line-x
           span.jd-client__line-y
           svg.jd-client__logo(width="160" height="160")
-            use(href="#logo-montblanc" xlink:href="#logo-montblanc")
+            use(href="#logo-sportfive" xlink:href="#logo-sportfive")
         li.jd-client
           span.jd-client__line-x
           span.jd-client__line-y
           svg.jd-client__logo(width="160" height="160")
-            use(href="#logo-dfa" xlink:href="#logo-dfa")
+            use(href="#logo-schmiede-zollverein" xlink:href="#logo-schmiede-zollverein")
         li.jd-client
           span.jd-client__line-x
           span.jd-client__line-y
           svg.jd-client__logo(width="160" height="160")
-            use(href="#logo-sgf" xlink:href="#logo-sgf")
-        li.jd-client
-          span.jd-client__line-x
-          span.jd-client__line-y
-          img.jd-client__logo.jd-client__logo--day(width="160" height="160" src="images/clients/tsukuyumi.png" alt="Tsukuyumi – Full Moon Down")
-          img.jd-client__logo.jd-client__logo--night(width="160" height="160" src="images/clients/tsukuyumi_white.png" alt="Tsukuyumi – Full Moon Down")
+            use(href="#logo-king-racoon" xlink:href="#logo-king-racoon")
         li.jd-client
           span.jd-client__line-x
           span.jd-client__line-y
           svg.jd-client__logo(width="160" height="160")
-            use(href="#logo-rosenthal" xlink:href="#logo-rosenthal")
-        li.jd-client
-          span.jd-client__line-x
-          span.jd-client__line-y
-          img.jd-client__logo.jd-client__logo--day(width="160" height="160" src="images/clients/lichtblick.png" alt="Lichtblick")
-          img.jd-client__logo.jd-client__logo--night(width="160" height="160" src="images/clients/lichtblick_white.png" alt="Lichtblick")
-        li.jd-client
-          span.jd-client__line-x
-          span.jd-client__line-y
-          svg.jd-client__logo(width="160" height="160")
-            use(href="#logo-konami" xlink:href="#logo-konami")
-        li.jd-client
-          span.jd-client__line-x
-          span.jd-client__line-y
-          svg.jd-client__logo(width="160" height="160")
-            use(href="#logo-hertha" xlink:href="#logo-hertha")
+            use(href="#logo-ist" xlink:href="#logo-ist")
   .jd-block.jd-block--hollow
     section.jd-section.jd-projects
       article.jd-project.jd-project--standard#eventim-shop
@@ -160,30 +155,30 @@ block content
           p.jd-paragraph 28. Mai 2017. Tausende BVB-Fans tauchen die Straßen von Dortmund in Schwarz und Gelb, als sie mit der Mannschaft den Pokalsieg feiern. Filmische Portraits von Menschen im Freundentaumel.
           .jd-project__links
             a.jd-project__link.jd-project__link--video(href="https://vimeo.com/219945141" target="_blank") Film ansehen
-      article.jd-project.jd-project--standard#kidsclub
-        .jd-media.jd-project__thumbnail
-          //img.jd-media__item(src="images/projects/bvb-kidsclub.jpg" alt="")
-          video.jd-media__item(width="960" height="540" autoplay loop muted poster="../images/projects/bvb-kidsclub.jpg")
-            source(data-src="../videos/projects/bvb-kidsclub.webm" type="video/webm")
-            source(data-src="../videos/projects/bvb-kidsclub.mp4" type="video/mp4")
-          span.jd-media__revealer
-        h3.jd-heading.jd-heading--high-level.jd-project__title BVB-KidsClub
-        .jd-project__description
-          p.jd-paragraph Konzept/UX, Design und Entwicklung der neuen KidsClub-Website. Hier finden die kleinen Fans ein digitales Zuhause und lernen an der Seite von Maskottchen Emma spielerisch die BVB-Welt kennen.
-          .jd-project__links
-            a.jd-project__link.jd-project__link--web(href="https://kidsclub.bvb.de/" target="_blank") Zur Website
-      article.jd-project.jd-project--standard#dfa
-        .jd-media.jd-project__thumbnail
-          //img.jd-media__item(src="images/projects/24.jpg" alt="")
-          video.jd-media__item(width="960" height="540" autoplay loop muted poster="../images/projects/24.jpg")
-            source(data-src="../videos/projects/24.webm" type="video/webm")
-            source(data-src="../videos/projects/24.mp4" type="video/mp4")
-          span.jd-media__revealer
-        h3.jd-heading.jd-heading--high-level.jd-project__title Vierundzwanzig.de
-        .jd-project__description
-          p.jd-paragraph Das Wissensportal der Deutschen Filmakademie verbindet einen multimedialen Blick hinter die Kulissen der Profis mit einem interaktiven Lehrangebot. Konzeption und User Experience Design.
-          .jd-project__links
-            a.jd-project__link.jd-project__link--web(href="https://vierundzwanzig.de" target="_blank") Zur Website
+      //- article.jd-project.jd-project--standard#kidsclub
+      //-   .jd-media.jd-project__thumbnail
+      //-     //img.jd-media__item(src="images/projects/bvb-kidsclub.jpg" alt="")
+      //-     video.jd-media__item(width="960" height="540" autoplay loop muted poster="../images/projects/bvb-kidsclub.jpg")
+      //-       source(data-src="../videos/projects/bvb-kidsclub.webm" type="video/webm")
+      //-       source(data-src="../videos/projects/bvb-kidsclub.mp4" type="video/mp4")
+      //-     span.jd-media__revealer
+      //-   h3.jd-heading.jd-heading--high-level.jd-project__title BVB-KidsClub
+      //-   .jd-project__description
+      //-     p.jd-paragraph Konzept/UX, Design und Entwicklung der neuen KidsClub-Website. Hier finden die kleinen Fans ein digitales Zuhause und lernen an der Seite von Maskottchen Emma spielerisch die BVB-Welt kennen.
+      //-     .jd-project__links
+      //-       a.jd-project__link.jd-project__link--web(href="https://kidsclub.bvb.de/" target="_blank") Zur Website
+      //- article.jd-project.jd-project--standard#dfa
+      //-   .jd-media.jd-project__thumbnail
+      //-     //img.jd-media__item(src="images/projects/24.jpg" alt="")
+      //-     video.jd-media__item(width="960" height="540" autoplay loop muted poster="../images/projects/24.jpg")
+      //-       source(data-src="../videos/projects/24.webm" type="video/webm")
+      //-       source(data-src="../videos/projects/24.mp4" type="video/mp4")
+      //-     span.jd-media__revealer
+      //-   h3.jd-heading.jd-heading--high-level.jd-project__title Vierundzwanzig.de
+      //-   .jd-project__description
+      //-     p.jd-paragraph Das Wissensportal der Deutschen Filmakademie verbindet einen multimedialen Blick hinter die Kulissen der Profis mit einem interaktiven Lehrangebot. Konzeption und User Experience Design.
+      //-     .jd-project__links
+      //-       a.jd-project__link.jd-project__link--web(href="https://vierundzwanzig.de" target="_blank") Zur Website
       article.jd-project.jd-project--standard#heimat
         .jd-media.jd-project__thumbnail
           //img.jd-media__item(src="images/projects/40-jahre-heimat.jpg" alt="")
