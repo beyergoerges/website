@@ -103,11 +103,15 @@
   }
 
   &__links-text {
-    display: block;
+    display: inline-block;
+    margin-right: spacing(1);
 
-    @include break(tablet) {
-      display: inline-block;
-      margin-right: spacing(1);
+    &--break {
+      display: block;
+
+      @include break(tablet) {
+        display: inline-block;
+      }
     }
   }
 
