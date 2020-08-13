@@ -135,6 +135,14 @@
       background-size: 16px;
     }
 
+    &--label {
+      pointer-events: none;
+    }
+
+    &--no-icon {
+      padding-left: 0 !important;
+    }
+
     + .jd-project__link {
       margin-left: spacing(1);
     }
