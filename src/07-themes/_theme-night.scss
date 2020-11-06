@@ -1,5 +1,15 @@
 .jd-theme--night {
 
+  .jd-heading--page:hover .jd-heading__text {
+    color: #424242;
+  }
+
+  .jd-heading--page:hover .jd-arrow,
+  .jd-heading--page:hover .jd-arrow:before,
+  .jd-heading--page:hover .jd-arrow:after {
+    background-color: #424242;
+  }
+
   .jd-cookie-banner {
     background-color: white;
 
