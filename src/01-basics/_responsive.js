@@ -17,6 +17,13 @@ const jd_breakMax = name => {
   return "(max-width: " + value + "px)";
 }
 
+// Breakpoints
+let mq_tablet = window.matchMedia("(min-width: 600px)");
+let mq_desktopS = window.matchMedia("(min-width: 990px)");
+let mq_desktopM = window.matchMedia("(min-width: 1440px)");
+let mq_desktopL = window.matchMedia("(min-width: 1680px)");
+let mq_desktopXl = window.matchMedia("(min-width: 1921px)");
+
 // enquire.register(jd_breakMin("desktop-s"), {
 //
 //     match: () => { console.log("matched!") },

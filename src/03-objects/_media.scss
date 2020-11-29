@@ -6,6 +6,21 @@
     width: 100%;
     height: auto;
     opacity: 0;
+
+    &--phone-only {
+
+      @include break(tablet) {
+        display: none;
+      }
+    }
+
+    &--from-tablet {
+      display: none;
+
+      @include break(tablet) {
+        display: block;
+      }
+    }
   }
 
   &__revealer {

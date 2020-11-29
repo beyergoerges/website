@@ -40,6 +40,13 @@ const jd_breakMax = name => {
   return "(max-width: " + value + "px)";
 }
 
+// Breakpoints
+let mq_tablet = window.matchMedia("(min-width: 600px)");
+let mq_desktopS = window.matchMedia("(min-width: 990px)");
+let mq_desktopM = window.matchMedia("(min-width: 1440px)");
+let mq_desktopL = window.matchMedia("(min-width: 1680px)");
+let mq_desktopXl = window.matchMedia("(min-width: 1921px)");
+
 // enquire.register(jd_breakMin("desktop-s"), {
 //
 //     match: () => { console.log("matched!") },
@@ -54,7 +61,7 @@ const jd_breakMax = name => {
 // });
 
 let bLazy = new Blazy({
-  selector: ".jd-media__item"
+  selector: ".jd-media__item:not(.jd-media__item--from-tablet)"
 });
 
 let jd_scrollController = new ScrollMagic.Controller();
@@ -87,6 +94,16 @@ jd_mediaScene("#day-in-may");
 jd_mediaScene("#kidsclub", .6);
 jd_mediaScene("#dfa");
 jd_mediaScene("#heimat", .6);
+
+// Prevent video from loading mobile
+const jd_videoSources = document.querySelectorAll(".jd-media__item--from-tablet source");
+
+if (mq_tablet.matches) {
+  for(let i = 0; i < jd_videoSources.length; i++) {
+    jd_videoSources[i].setAttribute("src", jd_videoSources[i].getAttribute("data-src"));
+    jd_videoSources[i].parentNode.load();
+  }
+}
 
 const jd_menuItems = document.querySelectorAll(".jd-menu__items")[0];
 

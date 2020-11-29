@@ -20,3 +20,13 @@ jd_mediaScene("#day-in-may");
 jd_mediaScene("#kidsclub", .6);
 jd_mediaScene("#dfa");
 jd_mediaScene("#heimat", .6);
+
+// Prevent video from loading mobile
+const jd_videoSources = document.querySelectorAll(".jd-media__item--from-tablet source");
+
+if (mq_tablet.matches) {
+  for(let i = 0; i < jd_videoSources.length; i++) {
+    jd_videoSources[i].setAttribute("src", jd_videoSources[i].getAttribute("data-src"));
+    jd_videoSources[i].parentNode.load();
+  }
+}
