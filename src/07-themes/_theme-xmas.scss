@@ -40,6 +40,7 @@ $color--red: #FE0000;
   display: none;
   flex-direction: column;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   max-width: 960px;
   margin: 0 auto;
   padding: 20px;
