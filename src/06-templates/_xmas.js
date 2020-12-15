@@ -31,6 +31,36 @@
     tt_videotext.addClass("--is-active");
   });
 
+  // URL parameters
+
+  const tt_urlEnd = window.location.search;
+  console.log(tt_urlEnd);
+
+  const tt_urlParams = new URLSearchParams(tt_urlEnd);
+
+  const tt_sex = tt_urlParams.get("s")
+  console.log("Sex: " + tt_sex);
+
+  const tt_formal = tt_urlParams.get("f")
+  console.log("Formal: " + tt_formal);
+
+  const tt_name = tt_urlParams.get("n")
+  console.log("Name: " + tt_name);
+
+  if (tt_sex == "w" && tt_formal == "0") {
+    document.querySelector(".teletext-salutation").innerHTML = "Liebe ";
+  } else if (tt_sex == "w" && tt_formal == "1") {
+    document.querySelector(".teletext-salutation").innerHTML = "Liebe Frau ";
+  } else if (tt_sex == "m" && tt_formal == "0") {
+    document.querySelector(".teletext-salutation").innerHTML = "Lieber ";
+  } else if (tt_sex == "m" && tt_formal == "1") {
+    document.querySelector(".teletext-salutation").innerHTML = "Lieber Herr ";
+  } 
+
+  document.querySelector(".teletext-name").innerHTML = tt_name;
+
+  // Cookies
+
   let tt_fortuneA = Math.random()*97;
   let tt_fortuneB = Math.floor(tt_fortuneA);
 
