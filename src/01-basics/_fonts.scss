@@ -52,7 +52,17 @@ $font__types: (
 //   "fallback": ($font__fallback--serif)
 // );
 
+// Teletext font stack
+$font--teletext: (
+  "family": "EuropeanTeletextNuevo", // IMPORTANT: No spaces if font-face
+  "fallback": ($font__fallback--monospace),
+  "types": (
+    "regular"
+  ) // Only required for font-face
+);
+
 // Generate font-face for primary font stack
+@include font-face($font--teletext);
 
 // Import Google or Typekit fonts here
 @import url("https://use.typekit.net/ukk2uqe.css");

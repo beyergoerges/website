@@ -1,505 +1,274 @@
-let jd_xmas = (url, top, bottom, salutation, name) => {
+(function($) {
 
-  if (window.location.href.endsWith("#" + url)) {
+  setTimeout(() => {
+    $(".teletext-spinner__start").show();
+  }, 4000);
 
-    document.querySelector(".jd-cookies__text-salutation").innerHTML = salutation;
-    document.querySelector(".jd-cookies__message-name").innerHTML = name + ", ";
+  const tt_page = $(".teletext-page");
+  const tt_intro = $(".teletext-page--intro");
+  const tt_start = $(".teletext-page--start");
+  const tt_cookies = $(".teletext-page--cookies");
+  const tt_soccerQuotes = $(".teletext-page--quotes");
+  const tt_videotext = $(".teletext-page--videotext");
 
-    setTimeout(() => {
-      let typeTop = new Typed(".jd-xmas__text--top", {
-       strings: [top],
-       typeSpeed: 30,
-       showCursor: false,
-       autoInsertCss: false
-      });
-    }, 5000);
+  $(".js-startLink").click(function(){
+    tt_page.removeClass("--is-active");
+    tt_start.addClass("--is-active");
+  });
 
-    setTimeout(() => {
-      let typeBottom = new Typed(".jd-xmas__text--bottom", {
-       strings: [bottom],
-       typeSpeed: 30,
-       showCursor: false,
-       autoInsertCss: false
-      });
-    }, 6000);
+  $(".js-cookiesLink").click(function(){
+    tt_page.removeClass("--is-active");
+    tt_cookies.addClass("--is-active");
+  });
+
+  $(".js-quotesLink").click(function(){
+    tt_page.removeClass("--is-active");
+    tt_soccerQuotes.addClass("--is-active");
+  });
+
+  $(".js-videotextLink").click(function(){
+    tt_page.removeClass("--is-active");
+    tt_videotext.addClass("--is-active");
+  });
+
+  let tt_fortuneA = Math.random()*97;
+  let tt_fortuneB = Math.floor(tt_fortuneA);
+
+  let tt_fortunes = [
+    'für den Optimisten ist das Leben kein Problem, sondern bereits die Lösung.',
+    'gib jedem Tag die Chance, der schönste Deines Lebens zu werden.',
+    'wenn Du siebenmal hinfällst, musst Du achtmal aufstehen.',
+    'wer Liebe sucht, findet sie nicht, sie überfällt uns, wenn wir sie am wenigsten erwarten.',
+    'man verliert die meiste Zeit damit, dass man Zeit gewinnen will.',
+    'wende Dein Gesicht der Sonne zu, dann fallen die Schatten hinter Dich.',
+    'Glück ist das einzige, was sich verdoppelt, wenn man es teilt.',
+    'fürchte Dich nicht, langsam zu gehen, fürchte Dich nur, stehen zu bleiben.',
+    'das Schicksal mischt die Karten, aber wir spielen.',
+    'wer im Leben Kein Ziel hat, verläuft sich.',
+    'über Vergangenes mache Dir keine Sorge, dem Kommenden wende Dich zu.',
+    'wer sich darauf versteht, das Leben zu genießen, braucht keine Reichtümer.',
+    'jede Minute, die man lacht, verlängert das Leben um eine Stunde.',
+    'was uns den Weg verlegt, bringt uns voran.',
+    'wer lächelt statt zu toben, ist immer der Stärkere.',
+    'ein großer Mensch ist, wer sein Kinderherz nicht verliert.',
+    'lerne zu schweigen und Du merkst, dass Du viel zu viel geredet hast.',
+    'wer nur an die Bequemlichkeiten des Lebens denkt, kann nicht wahrhaft gebildet sein.',
+    'wer sich darauf versteht, das Leben zu genießen, braucht keine Reichtümer.',
+    'es ist besser, ein einziges kleines Licht anzuzünden, als die Dunkelheit zu verfluchen.',
+    'gedenke der Quelle, wenn Du trinkst.',
+    'wenn jemand sagt, er habe keine Zeit, bedeutet das nur, dass ihm andere Dinge wichtiger sind.',
+    'handele an andere Menschen so, wie Du selbst gerne behandelt werden möchtest.',
+    'die Wissenden reden nicht viel, die Redenden wissen nicht viel.',
+    'bevor Du dich daran machst, die Welt zu verändern, gehe dreimal durch Dein eigenes Haus.',
+    'die Stärke an einem Gefühl erkennt man an den Opfern, die man bereit ist dafür zu geben.',
+    'Glück ist wie ein Vogel, wer es nicht ergreift, dem fliegt es davon.',
+    'ich höre und vergesse. Ich sehe und erinnere. Ich tue und verstehe.',
+    'lieber eine Kerze anzünden, als über die Finsternis klagen.',
+    'nur die Allerklügsten und die Allerdümmsten ändern sich nie.',
+    'dem anderen sein Anderssein zu vergeben, ist der Anfang von Weisheit.',
+    'fordere viel von Dir selbst und erwarte wenig von anderen. So wird Dir viel Ärger erspart bleiben.',
+    'ein einfacher Zweig ist dem Vogel lieber, als ein goldener Käfig.',
+    'Lächeln ist die charmanteste Art dem Gegner die Zähne zu zeigen.',
+    'auch eine Reise von 1000 Meilen fängt mit dem ersten Schritt an.',
+    'wer einen Fehler gemacht hat und ihn nicht verbessert, begeht schon den zweiten.',
+    'es führen viele Wege zum Gipfel eines Berges, doch die Aussicht bleibt die gleiche.',
+    'der Edle verlangt alles von sich selbst, der Primitive stellt nur Forderungen an andere.',
+    'achte auf Deine Gedanken, sie sind der Anfang Deiner Taten.',
+    'bist Du geduldig im Augenblick des Zorns, so wirst Du Dir hundert Tage Kummer ersparen.',
+    'was Du Deinen Eltern schuldig bist, weißt Du erst, wenn Du ein Kind hast.',
+    'Verzeihen ist keine Narrheit, nur der Narr kann nicht verzeihen.',
+    'das Glück tritt gern in ein Haus, wo gute Laune herrscht.',
+    'der wahre Gelehrte schämt sich nicht, auch solche zu fragen, die unter ihm stehen.',
+    'wenn Güte von uns ausgeht, werden wir auch Güte erfahren.',
+    'das Glück tritt gern in ein Haus, wo gute Laune herrscht.',
+    'einmal selbst sehen ist mehr wert als hundert Neuigkeiten hören.',
+    'wer den Himmel im Wasser sieht, sieht die Fische auf den Bäumen.',
+    'folge der Arbeit und lasse Dich nicht von ihr verfolgen.',
+    'leg Dir jeden Tag für Deine Sorgen eine halbe Stunde zurück. Und in dieser Zeit mache ein Schläfchen!',
+    'was uns den Weg verlegt, bringt uns voran.',
+    'im Haus, in dem gelacht wird, kommt das Glück.',
+    'wer viele Schätze anhäuft, hat viel zu verlieren.',
+    'wer nicht auf den hohen Berg steigt, kennt die Ebene nicht.',
+    'wahre Worte sind nicht angenehm, angenehme Worte sind nicht wahr.',
+    'urteile nicht über Dinge, von denen du nur Echo und Schatten kennst.',
+    'nichts ist besser verkauft, als was man einem echten Freund, der es bedarf, schenkt.',
+    'der Weise hat keine unumstößlichen Grundsätze. Er passt sich anderen an.',
+    'Hoffnung ist wie der Zucker im Tee: Auch wenn sie klein ist, versüßt sie alles.',
+    'Eheleute, die sich lieben, sagen sich tausend Dinge, ohne zu sprechen.',
+    'die sicherste Tür ist die, die man offen lassen kann.',
+    'durch Leichtfertigkeit verliert man die Wurzeln, durch Unruhe die Übersicht.',
+    'das Leben meistert man lächelnd oder überhaupt nicht.',
+    'verantwortlich ist man nicht nur für das, was man tut, sondern auch für das, was man unterlässt.',
+    'je mehr Bekannte man hat, um so weniger kennt man die Leute.',
+    'Dinge wahrzunehmen ist der Keim der Intelligenz.',
+    'in einer friedlichen Familie kommt das Glück von selber.',
+    'Lernen ist wie Rudern gegen den Strom. Hört man damit auf, treibt man zurück.',
+    'welche Kraft der Ursache und Wirkung entfaltet sich in heilenden und liebevollen Worten.',
+    'der Edle verneigt sich, aber beugt sich nicht.',
+    'reich ist, wer keine Schulden hat, glücklich, wer ohne Krankheit lebt.',
+    'friedvoll soll unsere Lebensmelodie erklingen.',
+    'wer seinen Weg kennt, muss sich nicht an jeder Kreuzung neu entscheiden.',
+    'nur mit den Augen der Anderen kann man seine Fehler gut sehen.',
+    'die Übung der Achtsamkeit ist nichts anderes als die Übung liebevoller Zuneigung.',
+    'der Mensch ist dazu geboren, Großes zu leisten, wenn er versteht, sich selbst zu besiegen.',
+    'Menschen kennen nicht ihre Fehler, Ochsen nicht ihre Stärke.',
+    'Fehler sind immer zu verzeihen, wenn man den Mut hat diese auch zuzugeben.',
+    'die Vorstellungen sind die Quelle der Irrtümer, weil sie nicht die Wirklichkeit sind.',
+    'einen Tag lang ungestört in Muße zu verleben, heißt einen Tag lang ein Unsterblicher zu sein.',
+    'kein Weg als Weg, keine Grenze als Grenze.',
+    'alles Geld der Welt ist nicht so viel wert wie zur rechten Stunde ein Becher besten Weines.',
+    'Wissen ist nicht genug, wir müssen es anwenden. Wollen ist nicht genug, wir müssen es tun.',
+    'tatsächlich ist Liebe ein anderer Name für Verstehen.',
+    'eine Fähigkeit, die nicht täglich zunimmt, geht täglich ein Stück zurück.',
+    'man kann nur helfen, wenn man selbst über dem Konflikt steht.',
+    'der Wille gestaltet den Menschen, zum Erfolg braucht er jedoch Mut und Ausdauer.',
+    'sind wir wütend, sind wir die Wut. Lieben wir, sind wir die Liebe.',
+    'Verstehen und Liebe sind nicht zwei Dinge, sondern eins.',
+    'die Welt ist voll von kleinen Freuden – die Kunst besteht nur darin, sie zu sehen.',
+    'unsere wahre Heimat ist der gegenwärtige Augenblick.',
+    'fürchte Dich nicht, langsam zu gehen, fürchte Dich nur, stehen zu bleiben.',
+    'die Liebe ist das Gewürz des Lebens. Sie kann es versüßen, aber auch versalzen.',
+    'indem man über andere schlecht redet, macht man sich selber nicht besser.',
+    'ein Weg wird erst dann ein Weg, wenn einer ihn geht.',
+    'wenn Du die Absicht hast, Dich zu erneuern, tu es jeden Tag.',
+    'der Geist, der allen Dingen Leben verleiht, ist die Liebe.',
+    'wir leben nicht, um zu glauben, sondern um zu lernen.'
+  ];
+
+  let tt_randomFortune = tt_fortunes[tt_fortuneB];
+
+  document.querySelector(".teletext-cookie").innerHTML = tt_randomFortune;
+
+  // Reload cookie
+  const tt_reloadCookie = event => {
+
+    let tt_fortuneA = Math.random()*98;
+    let tt_fortuneB = Math.floor(tt_fortuneA);
+    let tt_newFortune = tt_fortunes[tt_fortuneB];
+
+    // If the clicked element doesn't have the right selector, bail
+    if (!event.target.matches(".js-cookiesLink, .js-cookiesLink *, .js-reloadCookies, .js-reloadCookies *")) return;
+
+    document.querySelector(".teletext-cookie").innerHTML = tt_newFortune;
   }
 
-}
+  document.addEventListener("click", tt_reloadCookie, false);
 
-jd_xmas("pipa", "Liebe Pipa,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Pipa");
-jd_xmas("justus", "Lieber Justus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Justus");
-jd_xmas("kathi", "Liebe Kathi,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Kathi");
-jd_xmas("bea", "Liebe Bea,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Bea");
-jd_xmas("richi", "Lieber Richi,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Richi");
-jd_xmas("estelle", "Liebe Estelle,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Estelle");
-jd_xmas("tom", "Lieber Tom,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Tom");
-jd_xmas("gudrun", "Liebe Gudrun,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Gudrun");
-jd_xmas("signe", "Liebe Signe,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Signe");
-jd_xmas("uwe", "Lieber Uwe,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Uwe");
-jd_xmas("klaus", "Lieber Klaus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Klaus");
-jd_xmas("martin", "Lieber Martin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Martin");
-jd_xmas("omaursel", "Liebe Oma Ursel,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Oma Ursel");
-jd_xmas("marie", "Liebe Marie,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Marie");
-jd_xmas("johanna", "Liebe Johanna,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Johanna");
-jd_xmas("barbara", "Liebe Barbara,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Barbara");
-jd_xmas("joachim", "Lieber Joachim,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Joachim");
+  // Soccer quotes
 
-jd_xmas("jasmin", "Liebe Jasmin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jasmin");
-jd_xmas("felix", "Lieber Felix,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Felix");
-jd_xmas("johannes", "Lieber Jo,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jo");
+  let tt_quoteA = Math.random()*89;
+  let tt_quoteB = Math.floor(tt_quoteA);
 
-jd_xmas("julian", "Lieber Julian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Julian");
-jd_xmas("stefan", "Lieber Stefan,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Stefan");
-jd_xmas("inga", "Liebe Inga,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Inga");
+  let tt_quotes = [
+    '„Wäre, wäre, Fahrradkette.“ —Lothar Matthäus',
+    '„Ich mache nie Voraussagen und werde dies auch niemals tun.“ —Paul Gascoigne',
+    '„Ich bin körperlich und physisch topfit.“ —Thomas Häßler',
+    '„Wir wollten in Bremen kein Gegentor kassieren. Das hat auch bis zum Gegentor ganz gut geklappt.“ —Thomas Häßler',
+    '„Ich hatte vom Feeling her ein gutes Gefühl.“ —Andreas Möller',
+    '„Wir müssen gewinnen, alles andere ist primär.“ —Hans Krankl',
+    '„Es ist mir völlig egal, was es wird. Hauptsache, er ist gesund.“ —Mehmet Scholl (als werdender Vater)',
+    '„Ich habe ihn nur ganz leicht retuschiert.“ —Olaf Thon',
+    '„Die Ghanaer kochen – wenn überhaupt – auch nur mit Wasser.“ —Olaf Thon',
+    '„Es ist wichtig, daß man neunzig Minuten mit voller Konzentration an das nächste Spiel denkt.“ —Lothar Matthäus',
+    '„Die Kroaten sollen auf alles treten, was sich bewegt – da hat unser Mittelfeld ja nichts zu befürchten.“ —Berti Vogts (vor dem WM-Spiel gegen Kroatien)',
+    '„Ich wage mal eine Prognose: Es könnte so oder so ausgehen.“ —Ron Atkinson',
+    '„Fußball ist Ding, Dang, Dong. Es gibt nicht nur Ding.“ —Giovanni Trappatoni',
+    '„Ihr Fünf spielt jetzt vier gegen drei.“ —Fritz Langner',
+    '„Würden wir jede Woche so spielen, wären unsere Leistungen nicht so schwankend.“ —Bryan Robson',
+    '„Wenn der Ball am Torwart vorbei geht, ist es meist ein Tor.“ —Mario Basler',
+    '„Am Ergebnis wird sich nicht mehr viel ändern. Es sei denn, es schießt einer ein Tor.“ —Franz Beckenbauer',
+    '„Die schönsten Tore sind diejenigen, bei denen der Ball schön flach oben rein geht.“ —Mehmet Scholl',
+    '„Wir sind eine gut intrigierte Truppe.“ —Lothar Matthäus',
+    '„Man sollte die Tür nie zu- oder aufmachen.“ —Hasan Salihamidzic',
+    '„Das habe ich ihm dann auch verbal gesagt.“ —Mario Basler',
+    '„Ich hab gleich gemerkt, das ist ein Druckschmerz, wenn man drauf drückt.“ —Lothar Matthäus',
+    '„Zuerst hatten wir kein Glück, und dann kam auch noch Pech dazu.“ —Jürgen Wegmann',
+    '„Ich habe viel von meinem Geld für Alkohol, Weiber und schnelle Autos ausgegeben. Den Rest habe ich einfach verprasst.“ —George Best',
+    '„Ich bin immer sehr selbstkritisch, auch mir selbst gegenüber.“ —Andreas Möller',
+    '„Der Jürgen Klinsmann und ich, wir sind ein gutes Trio. Ich meinte Quartett.“ —Fritz Walter jun.',
+    '„Mailand oder Madrid – Hauptsache Italien!“ —Andreas Möller',
+    '„Die Mannschaft erinnerte mich so ein bisschen an die SPD. Sie haben den Teamgeist heraufbeschworen, sich Mut zugesprochen und am Ende fehlten irgendwie 20 Prozent.“ —Thomas Hitzlsperger',
+    '„Zwei Chancen, ein Tor – das nenne ich hundertprozentige Chancenauswertung.“ —Roland Wohlfahrt',
+    '„Da geht er, ein großer Spieler. Ein Mann wie Steffi Graf.“ —Jörg Dahlmann',
+    '„Sollten Sie dieses Spiel atemberaubend finden, dann haben Sie es an den Bronchien.“ —Marcel Reif',
+    '„Man darf jetzt nicht alles so schlecht reden, wie es war.“ —Fredi Bobic',
+    '„In letzter Konsequenz waren wir nicht konsequent genug.“ —Karl-Heinz Rummenigge',
+    '„Ich glaube, dass der Tabellenerste jederzeit den Spitzenreiter schlagen kann.“ —Berti Vogts',
+    '„Das wird alles von den Medien hochsterilisiert.“ —Bruno Labbadia',
+    '„Jetzt müssen wir die Köpfe hochkrempeln. Und die Ärmel natürlich auch.“ —Lukas Podolski',
+    '„Fußball ist einfach: Rein das Ding und ab nach Hause.“ —Lukas Podolski',
+    '„Das interessiert mich wie eine geplatzte Currywurst im ostfriesischen Wattenmeer.“ —Dieter Eilts',
+    '„Es muss eine Kehrtwende geben. Und die muss 360 Grad sein.“ —Eduard Geyer',
+    '„Fußball ist ein Spiel von 22 Leuten, die rumlaufen, und am Ende gewinnt immer Deutschland.“ —Gary Lineker',
+    '„Die Achillesferse von Bobic ist die rechte Schulter.“ —Gerd Rubenbauer',
+    '„Wir können so was nicht trainieren, sondern nur üben.“ —Michael Ballack',
+    '„Es steht im Augenblick 1:1, aber es hätte auch umgekehrt lauten können.“ —Heribert Faßbender',
+    '„Die Polen darf man nicht unterschätzen. Diese Balkan-Kicker sind unberechenbar!“ —Heribert Faßbender',
+    '„Wenn wir alle schlagen, können wir es schaffen.“ —Horst Hrubesch',
+    '„Halten Sie die Luft an, und vergessen Sie das Atmen nicht.“ —Johannes B. Kerner',
+    '„Die Spieler von Ghana erkennen Sie an den gelben Stutzen.“ —Marcel Reif (beim Länderspiel Deutschland-Ghana)',
+    '„Zu 50 Prozent stehen wir im Viertelfinale, aber die halbe Miete ist das noch lange nicht!“ —Rudi Völler',
+    '„Wenn man ein 0:2 kassiert, dann ist ein 1:1 nicht mehr möglich.“ —Aleksander Ristic',
+    '„Nichts ist scheißer als Platz zwei.“ —Eric Meijer',
+    '„Ich hatte noch nie Streit mit meiner Frau. Bis auf das eine Mal, als sie mit auf´s Hochzeitsfoto wollte.“ —Mehmet Scholl',
+    '„Wir dürfen nicht mehr Tore kassieren, als der Gegner schießt.“ —Friedhelm Funkel',
+    '„Meine Spieler könne 50-Meter-Pässe spielen, 5 m weit und 45 m hoch.“ —Uwe Klimaschewski',
+    '„Man muss nicht immer die absolute Mehrheit hinter sich haben, manchmal reichen auch 51 Prozent.“ —Christph Daum',
+    '„Mal verliert man und mal gewinnen die anderen.“ —Otto Rehagel',
+    '„Ich sage nur ein Wort: Herzlichen Dank!“ —Horst Hrubesch',
+    '„Ich habe es mir sehr genau überlegt und dann spontan zugesagt.“ —Toni Polster',
+    '„Jede Seite hat zwei Medaillen!“ —Mario Basler',
+    '„Da gehe ich mit Ihnen ganz chloroform.“ —Helmut Schön',
+    '„Ob Felix Magath die Titanic gerettet hätte, weiß ich nicht. Aber die Überlebenden wären topfit gewesen.“ —Jan-Aage Fjörtoft',
+    '„Der Trainer hatte nach den ganzen Ausfällen im Angriff nur noch die Wahl zwischen mir und dem Busfahrer. Da der Busfahrer seine Schuhe nicht dabei hatte, habe ich gespielt.“ —Jan-Aage Fjörtoft',
+    '„Ich habe nie an unserer Chancenlosigkeit gezweifelt.“ —Richard Golz',
+    '„Die Sanitäter haben mir sofort eine Invasion gelegt.“ —Fritz Walter jun.',
+    '„Ich kann nicht mehr als schießen. Außerdem standen da 40 Leute auf der Linie.“ —Toni Polster (über eine vergebene Torchance)',
+    '„In der ersten Halbzeit haben wir ganz gut gespielt, in der zweiten fehlte uns die Kontinu…, äh Kontuni…, ach scheiß Fremdwörter: Wir waren nicht beständig genug!“ —Pierre Littbarski',
+    '„Das Chancenplus war ausgeglichen.“ —Lothar Matthäus',
+    '„Wir müssen die Pferde im Dorf lassen.“ —Maximilian Arnold',
+    '„Alles andere als die Nicht-Meisterschaft wäre eine Katastrophe gewesen.“ —Thomas Strunz',
+    '„Alles hat gestimmt: Das Wetter war gut, die Stimmung war gut, der Platz war gut – nur wir waren schlecht.“ —Dariusz Wosz',
+    '„Auswärts sind die Greuther stärker als in der Fremde.“ —Carsten Fuss',
+    '„Bei manchen Spielern fehlt etwas, deshalb spielen sie auch bei mir und nicht in Barcelona.“ —Aleksander Ristic',
+    '„Druck habe ich eigentlich nur morgens nach dem Aufstehen.“ —Horst Heldt',
+    '„Bei so einem Spiel muß man die Hosen runterlassen und sein wahres Gesicht zeigen.“ —Alexander Strehmel',
+    '„Bundesligaspiele sind keine russischen Wahlen, bei denen immer gewonnen wird.“ —Gyula Lorant',
+    '„Das Gegentor fiel zum psychologisch ungünstigsten Zeitpunkt. Aber man muss an dieser Stelle auch einmal die Frage stellen, ob es Gegentore gibt, die zu einem psychologisch günstigen Zeitpunkt fallen.“ —Christoph Daum',
+    '„Das ist eine Deprimierung.“ —Andreas Möller',
+    '„Das Runde muß ins Eckige.“ —Helmut Schulte',
+    '„Das Schönste an Stuttgart ist die Autobahn nach München.“ —Thomas Strunz',
+    '„Das war europäische Weltklasse!“ —Felix Magath',
+    '„Ich habe keine Rituale, bloß die Dinge, die man immer gleich macht.“ —Michael Ballack',
+    '„Viele sehen es negativ, dass wir schlecht gespielt haben.“ —Kevin Kuranyi',
+    '„Da mach‘ ich mir vom Kopf her keine Gedanken.“ —Jens Keller',
+    '„Man muss nicht immer das Salz in der Suppe suchen.“ —Philipp Lahm',
+    '„Ich habe das Gefühl, England ist nicht mehr das Mutterland des Fußballs, sondern eher das Großmutterland.“ —Toni Schumacher',
+    '„Lucio ist kein Brasilianer, er ist ein Athlet.“ —Berti Vogts',
+    '„In Spanien gibt es für eine Niederlage drei Gründe: Entweder war der Wind zu stark, die Sonne zu heiß oder die gestifteten Kerzen in der Kirche waren zu kurz.“ —Max Merkel',
+    '„Fußball ist eigentlich ganz einfach. Man muss nur seine Kollegen verstehen.“ —Victor Agali',
+    '„Man trifft immer nur dann ein Tor, wenn man auf die Bude schießt.“ —Werner Altegoer',
+    '„Fußball auf der Bank ist Leidensgeschäft. Ich bin leidender Angestellter hier in Nürnberg.“ —Klaus Augenthaler',
+    '„Wenn die Eckfahne Nutella-Fahne heißt, höre ich auf.“ —Manfred Breuckmann'
+  ];
 
-jd_xmas("peter40", "Alles Gute zum Geburtstag, lieber Peter!", "Lass Dich feiern und genieß Deinen Tag!", "<style>.jd-snow,.jd-xmas-cookies__snow-cap{display:none;}.jd-xmas-cookies{background-image:none;background-color:black;}.jd-xmas-cookies__modal-button{background-color:#141414;}.jd-xmas-cookies__modal-button:hover{background-color:black;}.jd-xmas{background-image:url(../images/dg.gif);}.jd-xmas__icon{visibility:hidden;}.jd-cookies{background-color:#EBE3E0;}.jd-cookies *{color:#272727!important;}.jd-cookies__info-layer{background-color:white;}.jd-cookies__text-nowrap:after{content:' zum 40.';}.jd-cookies__text-nowrap + span{display:none;}</style>Dein ganz", "Peter");
+  let tt_randomQuote = tt_quotes[tt_quoteB];
 
-jd_xmas("dg2312", "Alles Gute zum Geburtstag, lieber David!", "Lass Dich feiern und genieß Deinen Tag!", "<style>.jd-xmas-cookies{background-image:none;background-color:black;}.jd-xmas-cookies__modal-button{background-color:#141414;}.jd-xmas-cookies__modal-button:hover{background-color:black;}.jd-xmas{background-image:url(../images/dg.gif);}.jd-xmas__icon{visibility:hidden;}.jd-cookies{background-color:#EBE3E0;}.jd-cookies *{color:#272727!important;}.jd-cookies__info-layer{background-color:white;}</style>Dein ganz", "David");
+  document.querySelector(".teletext-quote").innerHTML = tt_randomQuote;
 
-jd_xmas("alejandra", "Liebe Alejandra,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Alejandra");
-jd_xmas("melanie", "Liebe Melanie,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Melanie");
-jd_xmas("peter", "Lieber Peter,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Peter");
-jd_xmas("dennis", "Lieber Dennis,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Dennis");
-jd_xmas("traian", "Lieber Traian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Traian");
-jd_xmas("claas", "Lieber Claas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Claas");
-jd_xmas("torsten", "Lieber Torsten,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Torsten");
+  // Reload cookie
+  const tt_reloadQuote = event => {
 
-jd_xmas("sebastian", "Lieber Sebastian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Sebastian");
-jd_xmas("sylvia", "Liebe Sylvia,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Sylvia");
-jd_xmas("andreas", "Lieber Andreas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Andreas");
-jd_xmas("kristian", "Lieber Kristian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Kristian");
+    let tt_quoteA = Math.random()*98;
+    let tt_quoteB = Math.floor(tt_quoteA);
+    let tt_newQuote = tt_quotes[tt_quoteB];
 
-jd_xmas("meike", "Liebe Meike,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Meike");
-jd_xmas("markus", "Lieber Markus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Markus");
-jd_xmas("michael", "Lieber Michael,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Michael");
-jd_xmas("daniel", "Lieber Daniel,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Daniel");
-jd_xmas("philipp", "Lieber Philipp,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Philipp");
-jd_xmas("jonathan", "Lieber Jonathan,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jonathan");
-jd_xmas("dominic", "Lieber Dominic,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Dominic");
-jd_xmas("patrick", "Lieber Patrick,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Patrick");
+    // If the clicked element doesn't have the right selector, bail
+    if (!event.target.matches(".js-quotesLink, .js-quotesLink *, .js-reloadQuotes, .js-reloadQuotes *")) return;
 
-jd_xmas("timm", "Lieber Timm,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Timm");
+    document.querySelector(".teletext-quote").innerHTML = tt_newQuote;
+  }
 
-jd_xmas("katja", "Liebe Katja,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Katja");
-jd_xmas("claudia", "Liebe Claudia,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Claudia");
+  document.addEventListener("click", tt_reloadQuote, false);
 
-jd_xmas("cristienczech", "Liebe Frau Czech,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Cristien Czech");
-jd_xmas("larsgroehnke", "Lieber Herr Gröhnke,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Lars Gröhnke");
-jd_xmas("carstenjaeger", "Lieber Herr Jäger,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Carsten Jäger");
-jd_xmas("patrickpaetzel", "Lieber Herr Paetzel,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Patrick Paetzel");
-
-jd_xmas("tobias", "Lieber Tobias,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Tobias");
-jd_xmas("kevin", "Lieber Kevin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Kevin");
-
-jd_xmas("moritz", "Lieber Moritz,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Moritz");
-
-jd_xmas("elisa", "Liebe Elisa,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Elisa");
-jd_xmas("arndt", "Lieber Arndt,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Arndt");
-jd_xmas("bent", "Lieber Bent,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Bent");
-
-jd_xmas("andreasbluhm", "Lieber Herr Bluhm,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Andreas Bluhm");
-jd_xmas("peterheming", "Lieber Herr Heming,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Peter Heming");
-jd_xmas("kaineuvians", "Lieber Herr Neuvians,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Kai Neuvians");
-jd_xmas("britta", "Liebe Britta,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Britta");
-jd_xmas("lukas", "Lieber Lukas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Lukas");
-
-jd_xmas("dicky", "Lieber Dicky,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Dicky");
-jd_xmas("heiner", "Lieber Heiner,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Heiner");
-jd_xmas("david", "Lieber David,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "David");
-jd_xmas("bene", "Lieber Bene,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Bene");
-jd_xmas("anke", "Liebe Anke,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Anke");
-jd_xmas("alexandra", "Liebe Alex,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Alex");
-jd_xmas("andreejosef", "Lieber Herr Josef,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Andree Josef");
-jd_xmas("sebastian", "Lieber Sebastian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Sebastian");
-jd_xmas("uweschedlbauer", "Lieber Uwe,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Uwe");
-jd_xmas("marioleo", "Lieber Mario,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Mario");
-jd_xmas("svenmislintat", "Lieber Sven,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Sven");
-jd_xmas("stefanmennerich", "Lieber Stefan,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Stefan");
-jd_xmas("lorenzberinger", "Lieber Lorenz,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Lorenz");
-jd_xmas("peter", "Lieber Peter,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Peter");
-jd_xmas("tobias", "Lieber Tobias,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Tobias");
-jd_xmas("andreas", "Lieber Andreas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Andreas");
-jd_xmas("markus", "Lieber Markus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Markus");
-jd_xmas("annika", "Liebe Annika,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Annika");
-jd_xmas("simon", "Lieber Simon,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Simon");
-jd_xmas("svenja", "Liebe Svenja,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Svenja");
-jd_xmas("marc", "Lieber Marc,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Marc");
-jd_xmas("reinhard", "Lieber Reinhard,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Reinhard");
-jd_xmas("jens", "Lieber Jens,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jens");
-jd_xmas("stefan", "Lieber Stefan,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Stefan");
-jd_xmas("philipp", "Lieber Philipp,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Philipp");
-jd_xmas("henning", "Lieber Henning,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Henning");
-jd_xmas("christopher", "Lieber Christopher,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Christopher");
-jd_xmas("christoph", "Lieber Christoph,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Christoph");
-jd_xmas("henrik", "Lieber Henrik,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Henrik");
-jd_xmas("carmelo", "Lieber Carmelo,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Carmelo");
-jd_xmas("helge", "Lieber Helge,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Helge");
-jd_xmas("maria", "Liebe Maria,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Maria");
-jd_xmas("kristian", "Lieber Kristian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Kristian");
-jd_xmas("thomas", "Lieber Thomas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Thomas");
-jd_xmas("batta", "Lieber Batta,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Batta");
-jd_xmas("jonas", "Lieber Jonas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jonas");
-jd_xmas("karl", "Lieber Karl,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Karl");
-jd_xmas("daniel", "Lieber Daniel,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Daniel");
-jd_xmas("maurus", "Lieber Maurus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Maurus");
-jd_xmas("frank", "Lieber Frank,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Frank");
-jd_xmas("hanno", "Lieber Hanno,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Hanno");
-jd_xmas("maurice", "Lieber Maurice,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Maurice");
-jd_xmas("dominik", "Lieber Dominik,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Dominik");
-jd_xmas("josip", "Lieber Josip,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Josip");
-jd_xmas("florian", "Lieber Florian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Florian");
-jd_xmas("alex", "Lieber Alex,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Alex");
-jd_xmas("michael", "Lieber Michael,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Michael");
-jd_xmas("felix", "Lieber Felix,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Felix");
-jd_xmas("florian", "Lieber Florian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Florian");
-jd_xmas("martin", "Lieber Martin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Martin");
-jd_xmas("mirco", "Lieber Mirco,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Mirco");
-jd_xmas("matthias", "Lieber Matthias,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Matthias");
-jd_xmas("gisbert", "Lieber Gisbert,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Gisbert");
-jd_xmas("annkathrin", "Liebe Ann-Kathrin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Ann-Kathrin");
-jd_xmas("janni", "Lieber Janni,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Janni");
-jd_xmas("gerhardnowak", "Lieber Herr Nowak,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Gerhard Nowak");
-jd_xmas("christian", "Lieber Christian,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Christian");
-jd_xmas("eike", "Lieber Eike,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Eike");
-jd_xmas("dirk", "Lieber Dirk,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Dirk");
-jd_xmas("norbert", "Lieber Norbert,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Norbert");
-jd_xmas("denis", "Lieber Denis,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Denis");
-jd_xmas("holger", "Lieber Holger,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Holger");
-jd_xmas("kai", "Lieber Kai,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Kai");
-jd_xmas("pit", "Lieber Pit,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Pit");
-jd_xmas("micky", "Lieber Micky,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Micky");
-jd_xmas("lucas", "Lieber Lucas,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Lucas");
-jd_xmas("maik", "Lieber Maik,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Maik");
-jd_xmas("nobby", "Lieber Nobby,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Nobby");
-jd_xmas("peer", "Lieber Peer,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Peer");
-jd_xmas("steffen", "Lieber Steffen,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Steffen");
-jd_xmas("marcoklewenhagen", "Lieber Herr Klewenhagen,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Marco Klewenhagen");
-jd_xmas("heiko", "Lieber Heiko,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Heiko");
-jd_xmas("mircoschepp", "Lieber Herr Schepp,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Mirco Schepp");
-jd_xmas("heiko", "Lieber Heiko,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Heiko");
-jd_xmas("ibi", "Liebe Ibi,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Ibi");
-jd_xmas("larse", "Lieber Larse,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Larse");
-jd_xmas("kiwit", "Lieber Herr Kiwit,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Wolfram Kiwit");
-jd_xmas("larse", "Lieber Larse,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Larse");
-jd_xmas("burkhard", "Lieber Burkhard,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Burkhard");
-jd_xmas("pascal", "Lieber Pascal,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Pascal");
-jd_xmas("heiko", "Lieber Heiko,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Heiko");
-jd_xmas("fraenze", "Liebe Fränze,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Fränze");
-jd_xmas("daniela", "Liebe Daniela,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Daniela");
-jd_xmas("finn", "Lieber Finn,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Finn");
-jd_xmas("marvin", "Lieber Marvin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Marvin");
-jd_xmas("torsten", "Lieber Torsten,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Torsten");
-jd_xmas("knud", "Lieber Knud,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Knud");
-jd_xmas("alicia", "Liebe Alicia,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Alicia");
-jd_xmas("heina", "Lieber Heina,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Heina");
-jd_xmas("annchristin", "Liebe Ann-Christin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Ann-Christin");
-jd_xmas("guido", "Lieber Guido,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Guido");
-jd_xmas("terence", "Lieber Terence,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Terence");
-jd_xmas("raphael", "Lieber Raphael,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Raphael");
-jd_xmas("jana", "Liebe Jana,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jana");
-jd_xmas("patrick", "Lieber Patrick,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Patrick");
-jd_xmas("raphael", "Lieber Raphael,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Raphael");
-jd_xmas("carsten", "Lieber Carsten,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Carsten");
-jd_xmas("britta", "Liebe Britta,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Britta");
-jd_xmas("janjerosch", "Lieber Herr Jerosch,", "wir wünschen Ihnen schöne, analoge Festtage.", "Dein", "Jan Jerosch");
-jd_xmas("arne", "Lieber Arne,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Carsten");
-jd_xmas("ralf", "Lieber Ralf,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Ralf");
-jd_xmas("benjamin", "Lieber Benjamin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Benjamin");
-jd_xmas("robert", "Lieber Robert,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Robert");
-jd_xmas("hendrik", "Lieber Hendrik,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Hendrik");
-jd_xmas("klaus", "Lieber Klaus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Klaus");
-jd_xmas("josef", "Lieber Josef,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Josef");
-jd_xmas("lina", "Liebe Lina,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Lina");
-jd_xmas("joerg", "Lieber Jörg,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jörg");
-jd_xmas("felix", "Lieber Felix,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Felix");
-jd_xmas("corinna", "Liebe Corinna,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Corinna");
-jd_xmas("sarah", "Liebe Sarah,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Sarah");
-jd_xmas("sandra", "Liebe Sandra,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Sandra");
-jd_xmas("boris", "Lieber Boris,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Boris");
-jd_xmas("axel", "Lieber Axel,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Axel");
-jd_xmas("marieke", "Liebe Marieke,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Marieke");
-jd_xmas("max", "Lieber Max,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Max");
-jd_xmas("lars", "Lieber Lars,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Lars");
-jd_xmas("priska", "Liebe Priska,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Priska");
-jd_xmas("sylvia", "Liebe Sylvia,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Sylvia");
-jd_xmas("christianhockenjos", "Lieber Herr Hockenjos,", "wir wünschen Ihnen schöne, analoge Festtage.", "Ihr", "Christian Hockenjos");
-jd_xmas("robin", "Lieber Robin,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Robin");
-jd_xmas("marco", "Lieber Marco,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Marco");
-jd_xmas("melanie", "Liebe Melanie,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Melanie");
-jd_xmas("jennifer", "Liebe Jennifer,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jennifer");
-jd_xmas("dennis", "Lieber Dennis,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Dennis");
-jd_xmas("tim", "Lieber Tim,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Tim");
-jd_xmas("philip", "Lieber Philip,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Philip");
-jd_xmas("ariane", "Liebe Ariane,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Ariane");
-jd_xmas("marcus", "Lieber Marcus,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Marcus");
-jd_xmas("julia", "Liebe Julia,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Julia");
-jd_xmas("selina", "Liebe Selina,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Selina");
-jd_xmas("janphilip", "Lieber Jan-Philip,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Jan-Philip");
-jd_xmas("volker", "Lieber Volker,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Volker");
-jd_xmas("amelie", "Liebe Amelie,", "wir wünschen Dir schöne, analoge Festtage.", "Dein", "Amelie");
-
-jd_scene(".jd-xmas").reverse(false).on("enter", event => {
-
-  let jd_tl = new TimelineLite();
-
-  jd_tl.fromTo(
-    ".jd-xmas__icon--4 .jd-xmas__logo-triangle--2",
-    2, {opacity: 0}, {opacity: 1, ease: RoughEase.ease.config({points:50, strength:2, clamp:true})}
-  );
-
-  jd_tl.staggerTo(
-    [".jd-xmas__icon--4 .jd-xmas__logo-triangle--1",
-    ".jd-xmas__icon--4 .jd-xmas__logo-triangle--3"],
-    .4, {opacity: 1, ease: Expo.easeOut}, .2, 3
-  );
-
-  jd_tl.staggerTo(
-    ".jd-xmas__icon--3 .jd-xmas__logo-triangle",
-    .4, {opacity: 1, ease: Expo.easeOut}, .2, 3.8
-  );
-
-  jd_tl.staggerTo(
-    ".jd-xmas__icon--5 .jd-xmas__logo-triangle",
-    .4, {opacity: 1, ease: Expo.easeOut}, .2, 3.8
-  );
-
-  jd_tl.staggerTo(
-    ".jd-xmas__icon--2 .jd-xmas__logo-triangle",
-    .4, {opacity: 1, ease: Expo.easeOut}, .2, 4.2
-  );
-
-  jd_tl.staggerTo(
-    ".jd-xmas__icon--6 .jd-xmas__logo-triangle",
-    .4, {opacity: 1, ease: Expo.easeOut}, .2, 4.2
-  );
-
-  jd_tl.staggerTo(
-    ".jd-xmas__icon--1 .jd-xmas__logo-triangle",
-    .4, {opacity: 1, ease: Expo.easeOut}, .2, 4.4
-  );
-
-  jd_tl.staggerTo(
-    ".jd-xmas__icon--7 .jd-xmas__logo-triangle",
-    .4, {opacity: 1, ease: Expo.easeOut}, .2, 4.4
-  );
-
-  jd_tl.fromTo(
-    ".jd-xmas-cookies__overlay",
-    .6, {opacity: 0, pointerEvents: "none"}, {opacity: 1, pointerEvents: "auto", ease:Power1.easeOut}, 10
-  );
-
-  jd_tl.fromTo(
-    ".jd-xmas-cookies__modal",
-    .6, {scale: .8}, {scale: 1, ease:Bounce.easeOut}, 10
-  );
-
-});
-
-const jd_cookieModal = event => {
-
-  // If the clicked element doesn't have the right selector, bail
-  if (!event.target.matches(".jd-xmas-cookies__modal-button, .jd-xmas-cookies__modal-button *")) return;
-
-  let jd_tl = new TimelineLite();
-
-  jd_tl.fromTo(
-    ".jd-xmas-cookies__overlay",
-    .4, {opacity: 1, pointerEvents: "auto"}, {opacity: 0, pointerEvents: "none", ease:Power1.easeOut}
-  );
-
-  jd_tl.fromTo(
-    ".jd-xmas-cookies__card-flip",
-    .4, {transform: "rotateY(0deg)"}, {transform: "rotateY(-180deg)", ease:SlowMo.easeOut}, .3
-  );
-}
-
-document.addEventListener("click", jd_cookieModal, false);
-
-let jd_fortuneA = Math.random()*98;
-let jd_fortuneB = Math.floor(jd_fortuneA);
-
-let jd_fortunes = [
-  'für den Optimisten ist das Leben kein Problem, sondern bereits die Lösung.',
-  'gib jedem Tag die Chance, der schönste Deines Lebens zu werden.',
-  'wenn Du siebenmal hinfällst, musst Du achtmal aufstehen.',
-  'wer Liebe sucht, findet sie nicht, sie überfällt uns, wenn wir sie am wenigsten erwarten.',
-  'man verliert die meiste Zeit damit, dass man Zeit gewinnen will.',
-  'wende Dein Gesicht der Sonne zu, dann fallen die Schatten hinter Dich.',
-  'Glück ist das einzige, was sich verdoppelt, wenn man es teilt.',
-  'fürchte Dich nicht, langsam zu gehen, fürchte Dich nur, stehen zu bleiben.',
-  'das Schicksal mischt die Karten, aber wir spielen.',
-  'wer im Leben Kein Ziel hat, verläuft sich.',
-  'über Vergangenes mache Dir keine Sorge, dem Kommenden wende Dich zu.',
-  'wer sich darauf versteht, das Leben zu genießen, braucht keine Reichtümer.',
-  'jede Minute, die man lacht, verlängert das Leben um eine Stunde.',
-  'was uns den Weg verlegt, bringt uns voran.',
-  'wer lächelt statt zu toben, ist immer der Stärkere.',
-  'ein großer Mensch ist, wer sein Kinderherz nicht verliert.',
-  'lerne zu schweigen und Du merkst, dass Du viel zu viel geredet hast.',
-  'wer nur an die Bequemlichkeiten des Lebens denkt, kann nicht wahrhaft gebildet sein.',
-  'wer sich darauf versteht, das Leben zu genießen, braucht keine Reichtümer.',
-  'es ist besser, ein einziges kleines Licht anzuzünden, als die Dunkelheit zu verfluchen.',
-  'gedenke der Quelle, wenn Du trinkst.',
-  'wenn jemand sagt, er habe keine Zeit, bedeutet das nur, dass ihm andere Dinge wichtiger sind.',
-  'handele an andere Menschen so, wie Du selbst gerne behandelt werden möchtest.',
-  'die Wissenden reden nicht viel, die Redenden wissen nicht viel.',
-  'bevor Du dich daran machst, die Welt zu verändern, gehe dreimal durch Dein eigenes Haus.',
-  'die Stärke an einem Gefühl erkennt man an den Opfern, die man bereit ist dafür zu geben.',
-  'Glück ist wie ein Vogel, wer es nicht ergreift, dem fliegt es davon.',
-  'ich höre und vergesse. Ich sehe und erinnere. Ich tue und verstehe.',
-  'lieber eine Kerze anzünden, als über die Finsternis klagen.',
-  'nur die Allerklügsten und die Allerdümmsten ändern sich nie.',
-  'dem anderen sein Anderssein zu vergeben, ist der Anfang von Weisheit.',
-  'fordere viel von Dir selbst und erwarte wenig von anderen. So wird Dir viel Ärger erspart bleiben.',
-  'ein einfacher Zweig ist dem Vogel lieber, als ein goldener Käfig.',
-  'Lächeln ist die charmanteste Art dem Gegner die Zähne zu zeigen.',
-  'auch eine Reise von 1000 Meilen fängt mit dem ersten Schritt an.',
-  'wer einen Fehler gemacht hat und ihn nicht verbessert, begeht schon den zweiten.',
-  'es führen viele Wege zum Gipfel eines Berges, doch die Aussicht bleibt die gleiche.',
-  'der Edle verlangt alles von sich selbst, der Primitive stellt nur Forderungen an andere.',
-  'achte auf Deine Gedanken, sie sind der Anfang Deiner Taten.',
-  'bist Du geduldig im Augenblick des Zorns, so wirst Du Dir hundert Tage Kummer ersparen.',
-  'was Du Deinen Eltern schuldig bist, weißt Du erst, wenn Du ein Kind hast.',
-  'Verzeihen ist keine Narrheit, nur der Narr kann nicht verzeihen.',
-  'das Glück tritt gern in ein Haus, wo gute Laune herrscht.',
-  'der wahre Gelehrte schämt sich nicht, auch solche zu fragen, die unter ihm stehen.',
-  'wenn Güte von uns ausgeht, werden wir auch Güte erfahren.',
-  'das Glück tritt gern in ein Haus, wo gute Laune herrscht.',
-  'einmal selbst sehen ist mehr wert als hundert Neuigkeiten hören.',
-  'wer den Himmel im Wasser sieht, sieht die Fische auf den Bäumen.',
-  'folge der Arbeit und lasse Dich nicht von ihr verfolgen.',
-  'leg Dir jeden Tag für Deine Sorgen eine halbe Stunde zurück. Und in dieser Zeit mache ein Schläfchen!',
-  'was uns den Weg verlegt, bringt uns voran.',
-  'im Haus, in dem gelacht wird, kommt das Glück.',
-  'wer viele Schätze anhäuft, hat viel zu verlieren.',
-  'wer nicht auf den hohen Berg steigt, kennt die Ebene nicht.',
-  'wahre Worte sind nicht angenehm, angenehme Worte sind nicht wahr.',
-  'urteile nicht über Dinge, von denen du nur Echo und Schatten kennst.',
-  'nichts ist besser verkauft, als was man einem echten Freund, der es bedarf, schenkt.',
-  'der Weise hat keine unumstößlichen Grundsätze. Er passt sich anderen an.',
-  'Hoffnung ist wie der Zucker im Tee: Auch wenn sie klein ist, versüßt sie alles.',
-  'Eheleute, die sich lieben, sagen sich tausend Dinge, ohne zu sprechen.',
-  'die sicherste Tür ist die, die man offen lassen kann.',
-  'durch Leichtfertigkeit verliert man die Wurzeln, durch Unruhe die Übersicht.',
-  'das Leben meistert man lächelnd oder überhaupt nicht.',
-  'verantwortlich ist man nicht nur für das, was man tut, sondern auch für das, was man unterlässt.',
-  'je mehr Bekannte man hat, um so weniger kennt man die Leute.',
-  'Dinge wahrzunehmen ist der Keim der Intelligenz.',
-  'in einer friedlichen Familie kommt das Glück von selber.',
-  'Lernen ist wie Rudern gegen den Strom. Hört man damit auf, treibt man zurück.',
-  'welche Kraft der Ursache und Wirkung entfaltet sich in heilenden und liebevollen Worten.',
-  'der Edle verneigt sich, aber beugt sich nicht.',
-  'reich ist, wer keine Schulden hat, glücklich, wer ohne Krankheit lebt.',
-  'friedvoll soll unsere Lebensmelodie erklingen.',
-  'wer seinen Weg kennt, muss sich nicht an jeder Kreuzung neu entscheiden.',
-  'nur mit den Augen der Anderen kann man seine Fehler gut sehen.',
-  'die Übung der Achtsamkeit ist nichts anderes als die Übung liebevoller Zuneigung.',
-  'der Mensch ist dazu geboren, Großes zu leisten, wenn er versteht, sich selbst zu besiegen.',
-  'Menschen kennen nicht ihre Fehler, Ochsen nicht ihre Stärke.',
-  'Fehler sind immer zu verzeihen, wenn man den Mut hat diese auch zuzugeben.',
-  'die Vorstellungen sind die Quelle der Irrtümer, weil sie nicht die Wirklichkeit sind.',
-  'einen Tag lang ungestört in Muße zu verleben, heißt einen Tag lang ein Unsterblicher zu sein.',
-  'kein Weg als Weg, keine Grenze als Grenze.',
-  'alles Geld der Welt ist nicht so viel wert wie zur rechten Stunde ein Becher besten Weines.',
-  'Wissen ist nicht genug, wir müssen es anwenden. Wollen ist nicht genug, wir müssen es tun.',
-  'tatsächlich ist Liebe ein anderer Name für Verstehen.',
-  'eine Fähigkeit, die nicht täglich zunimmt, geht täglich ein Stück zurück.',
-  'man kann nur helfen, wenn man selbst über dem Konflikt steht.',
-  'der Wille gestaltet den Menschen, zum Erfolg braucht er jedoch Mut und Ausdauer.',
-  'sind wir wütend, sind wir die Wut. Lieben wir, sind wir die Liebe.',
-  'Verstehen und Liebe sind nicht zwei Dinge, sondern eins.',
-  'die Welt ist voll von kleinen Freuden – die Kunst besteht nur darin, sie zu sehen.',
-  'unsere wahre Heimat ist der gegenwärtige Augenblick.',
-  'fürchte Dich nicht, langsam zu gehen, fürchte Dich nur, stehen zu bleiben.',
-  'die Liebe ist das Gewürz des Lebens. Sie kann es versüßen, aber auch versalzen.',
-  'indem man über andere schlecht redet, macht man sich selber nicht besser.',
-  'ein Weg wird erst dann ein Weg, wenn einer ihn geht.',
-  'wenn Du die Absicht hast, Dich zu erneuern, tu es jeden Tag.',
-  'der Geist, der allen Dingen Leben verleiht, ist die Liebe.',
-  'wir leben nicht, um zu glauben, sondern um zu lernen.'
-];
-
-let jd_randomFortune = jd_fortunes[jd_fortuneB];
-
-const jd_fortuneCookie = event => {
-
-  const jd_cookies1 = document.querySelector(".jd-cookies__open");
-  const jd_cookies2 = document.querySelector(".jd-cookies__cracked");
-  const jd_cookie2 = document.querySelector(".jd-cookie--2");
-
-  // If the clicked element doesn't have the right selector, bail
-  if (!event.target.matches(".jd-cookies__open, .jd-cookies__open *")) return;
-
-  jd_cookies1.classList.add("--is-hidden");
-  jd_cookies2.classList.add("--is-visible");
-  jd_cookie2.classList.add("--is-shaking");
-
-  document.querySelector(".jd-cookies__message-text").innerHTML = jd_randomFortune;
-
-  let jd_tl = new TimelineLite();
-
-  jd_tl.fromTo(
-    ".jd-cookies__reload",
-    .4, {opacity: 0}, {opacity: 1, ease:Power1.easeOut}, 3
-  );
-
-  jd_tl.fromTo(
-    ".jd-cookies__reload",
-    .6, {scale: .8}, {scale: 1, ease:Bounce.easeOut}, 3
-  );
-}
-
-document.addEventListener("click", jd_fortuneCookie, false);
-
-// Reload cookie
-const jd_reloadCookie = event => {
-
-  let jd_fortuneA = Math.random()*98;
-  let jd_fortuneB = Math.floor(jd_fortuneA);
-  let jd_newFortune = jd_fortunes[jd_fortuneB];
-
-  const jd_cookie = document.querySelector(".jd-cookie--2");
-
-  // If the clicked element doesn't have the right selector, bail
-  if (!event.target.matches(".jd-cookies__cracked, .jd-cookies__cracked *")) return;
-  console.log("Woo");
-
-  jd_cookie.classList.remove("--is-shaking");
-  void jd_cookie.offsetWidth;
-  jd_cookie.classList.add("--is-shaking");
-
-  document.querySelector(".jd-cookies__message-text").innerHTML = jd_newFortune;
-}
-
-document.addEventListener("click", jd_reloadCookie, false);
-
-// Info layer
-const jd_infoIcon = document.querySelector(".jd-cookies__info-icon");
-const jd_infoClose = document.querySelector(".jd-cookies__info-close");
-const jd_infoLayer = document.querySelector(".jd-cookies__info-layer");
-
-// Open info layer
-const jd_openCookieInfo = event => {
-
-  // If the clicked element doesn't have the right selector, bail
-  if (!event.target.matches(".jd-cookies__info-icon, .jd-cookies__info-icon *")) return;
-
-  jd_infoIcon.classList.add("--is-hidden");
-  jd_infoClose.classList.add("--is-visible");
-  jd_infoLayer.classList.add("--is-open");
-}
-
-document.addEventListener("click", jd_openCookieInfo, false);
-
-// Close info layer
-const jd_closeCookieInfo = event => {
-
-  // If the clicked element doesn't have the right selector, bail
-  if (!event.target.matches(".jd-cookies__info-close, .jd-cookies__info-close *")) return;
-
-  jd_infoIcon.classList.remove("--is-hidden");
-  jd_infoClose.classList.remove("--is-visible");
-  jd_infoLayer.classList.remove("--is-open");
-}
-
-document.addEventListener("click", jd_closeCookieInfo, false);
+})(jQuery);
