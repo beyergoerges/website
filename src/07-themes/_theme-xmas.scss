@@ -4,6 +4,10 @@ $color--yellow: #FFFE0D;
 $color--navy: #0000FF;
 $color--red: #FE0000;
 
+img {
+  vertical-align: bottom;
+}
+
 @mixin teletext-mb {
   margin-bottom: 20px;
 
@@ -118,6 +122,27 @@ $color--red: #FE0000;
       max-width: 50%;
       height: auto;
     }
+  }
+
+  &__image--start-bottom {
+    vertical-align: top;
+  }
+
+  &__personalized {
+    margin-top: -1px;
+    margin-bottom: -1px;
+    background: white;
+    text-transform: uppercase;
+  }
+
+  &__salutation,
+  &__name, {
+    color: $color--navy !important;
+    line-height: .8;
+  }
+
+  &__salutation {
+    font-size: 90px;
   }
 }
 

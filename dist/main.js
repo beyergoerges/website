@@ -493,6 +493,8 @@ let jd_contactScene = trigger => {
 jd_contactScene("#email");
 jd_contactScene("#phone");
 
+// Xmas scripts
+
 (function($) {
 
   setTimeout(() => {
@@ -545,14 +547,22 @@ jd_contactScene("#phone");
   if (tt_sex == "w" && tt_formal == "0") {
     document.querySelector(".teletext-salutation").innerHTML = "Liebe ";
   } else if (tt_sex == "w" && tt_formal == "1") {
+    document.querySelector(".teletext-hero__salutation").innerHTML = "Frau ";
     document.querySelector(".teletext-salutation").innerHTML = "Liebe Frau ";
   } else if (tt_sex == "m" && tt_formal == "0") {
     document.querySelector(".teletext-salutation").innerHTML = "Lieber ";
   } else if (tt_sex == "m" && tt_formal == "1") {
+    document.querySelector(".teletext-hero__salutation").innerHTML = "Herr ";
     document.querySelector(".teletext-salutation").innerHTML = "Lieber Herr ";
-  } 
+  }
 
+  document.querySelector(".teletext-hero__name").innerHTML = tt_name;
   document.querySelector(".teletext-name").innerHTML = tt_name;
+
+  let tt_nameLength = tt_name.length;
+  console.log(tt_nameLength);
+
+  $(".teletext-hero__name").css("font-size", 360 / tt_nameLength + "px");
 
   // Cookies
 
