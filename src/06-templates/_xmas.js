@@ -62,6 +62,8 @@
   }
 
   if (tt_formal == "1") {
+    document.querySelector(".teletext-list__label-salutation").innerHTML = "Ihr ";
+    document.querySelector(".teletext-title__salutation").innerHTML = "Ihr ";
     document.querySelector(".teletext-cta__label-salutation").innerHTML = "Ihnen ";
   }
 

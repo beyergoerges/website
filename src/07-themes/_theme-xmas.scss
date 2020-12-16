@@ -87,6 +87,10 @@ img {
 .teletext-title {
   @include teletext-mb;
   color: $color--cyan;
+
+  span {
+    color: $color--cyan;
+  }
 }
 
 .teletext-content {
