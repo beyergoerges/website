@@ -65,6 +65,10 @@
     document.querySelector(".teletext-salutation").innerHTML = "Lieber Herr ";
   }
 
+  if (tt_formal == "1") {
+    document.querySelector(".teletext-cta__label-salutation").innerHTML = "Ihnen ";
+  }
+
   document.querySelector(".teletext-hero__name").innerHTML = tt_name;
   document.querySelector(".teletext-name").innerHTML = tt_name;
 
@@ -87,7 +91,7 @@
   // Reload cookie
   var tt_reloadCookie = function tt_reloadCookie(event) {
 
-    var tt_fortuneA = Math.random() * 98;
+    var tt_fortuneA = Math.random() * 97;
     var tt_fortuneB = Math.floor(tt_fortuneA);
     var tt_newFortune = tt_fortunes[tt_fortuneB];
 
@@ -113,7 +117,7 @@
   // Reload cookie
   var tt_reloadQuote = function tt_reloadQuote(event) {
 
-    var tt_quoteA = Math.random() * 98;
+    var tt_quoteA = Math.random() * 89;
     var tt_quoteB = Math.floor(tt_quoteA);
     var tt_newQuote = tt_quotes[tt_quoteB];
 

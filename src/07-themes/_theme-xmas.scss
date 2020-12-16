@@ -264,7 +264,7 @@ img {
 
 .teletext-copy {
   @include teletext-mb;
-  padding: 0 2ch 20px 2ch;
+  padding: 20px 2ch;
   background: white;
   color: black;
 
@@ -273,17 +273,18 @@ img {
   }
 
   @include break(tablet) {
-    padding-bottom: 30px;
+    padding: 30px 2ch;
   }
 
   @include break(desktop-s) {
-    padding-bottom: 36px;
+    padding: 36px 2ch;
   }
 }
 
 .teletext-cta {
 
-  &__label {
+  &__label,
+  &__label span {
     color: $color--cyan;
   }
 
