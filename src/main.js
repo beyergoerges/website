@@ -15,6 +15,5 @@
 //@prepros-append 06-templates/_press.js
 //@prepros-append 06-templates/_job.js
 //@prepros-append 06-templates/_contact.js
-//@prepros-append 06-templates/_xmas.js
 //@prepros-append 07-themes/_themes.js
 //@prepros-append 01-basics/_js-wrapper-end.js
