@@ -1,0 +1,152 @@
+/*-----------------------------------------------------------
+
+  Template Name: Droow - Ajax Portfolio Showcase HTML Template
+  Template URI: http://theme.dsngrid.com/droow
+  Description: Droow Ajax Portfolio Showcase HTML Template
+  Author: design_grid
+  Author URI: https://themeforest.net/user/design_grid
+  Version: 1.0.0
+
+-------------------------------------------------------------*/
+/*-----------------------------------------------------------
+
+    1.  Variables
+    2.  Mixins
+      - Mixins Master
+      - Utilities
+    3.  Normalize
+    4.  Helpers
+    5. Typography
+      - Copy
+    - Headings
+  6. Core
+    7. Navigation
+      - Links
+      - Menus
+    - Next & Previous
+    8. Content
+      - pages
+      - Comments
+      - Archives
+      - Footer
+    9.Forms
+      - Button
+      - Fields
+    10.Blocks
+    11.Media
+      - captions
+    12.Version Light
+
+-------------------------------------------------------------*/
+// elements
+@import "variables-site/_variables-site.scss";
+@import "mixins/_mixins-master.scss";
+@import "mixins/_utilities.scss";
+@import "_normalize.scss";
+@import "_helpers.scss";
+@import "typography/_typography.scss";
+// Content
+@import "_core.scss";
+@import "forms/_forms.scss";
+@import "navigation/_navigation.scss";
+@import "blocks/blocks";
+@import "site/_site.scss";
+@import "media/_dsn-captions.scss";
+
+// .site-header .extend-container .inner-header {
+//   margin-left: 0;
+// }
+
+// .header-top .header-container .menu-icon {
+//   top: 25px;
+//   margin-right: 0;
+// }
+
+.vb-home-link-mobile {
+  position: relative;
+  z-index: 999;
+  float: right;
+  top: 25px;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+}
+
+.headefr-fexid .justify-content-center.align-items-center {
+  justify-content: flex-start !important;
+  align-items: flex-end !important;
+}
+
+.headefr-fexid-onepage .project-title {
+  padding: 0 15px;
+  padding-bottom: 80px;
+  text-align: left;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+}
+
+.headefr-fexid .project-title .sub-text-header h5 {
+  font-size: $font-size-h6;
+}
+
+[data-overlay="4"]:before {
+
+  @media (min-width: 1024px) {
+    opacity: 0;
+  }
+}
+
+// Soares
+@media only screen and (max-width: 991px) {
+  .box-gallery-vertical [data-dsn-grid="moveUp"] {
+    height: 61.8vh;
+  }
+}
+
+// Profis
+[data-dsn-grid="move-up"].dsn-parallax-full, [data-dsn-grid="moveUp"].dsn-parallax-full {
+  max-height: 67vw !important;
+}
+
+.YouTubePopUp-Content iframe {
+  height: 387px !important;
+}
+
+.client-see .slick-dots {
+  display: none;
+}
+
+.client-see .inner .items .quote p {
+  font-style: normal;
+}
+
+.client-see .inner .items .bottom .label {
+  line-height: 1.5;
+}
+
+.client-see .inner .bg:after {
+  font-family: "Georgia", serif;
+}
+
+// Profis + Legenden
+
+.box-seat .inner-img {
+  max-height: 67vw !important;
+}
+
+.vb-sticky-button {
+  position: fixed;
+  z-index: 999999;
+  right: 0;
+  bottom: 0;
+  padding: 15px 20px;
+  background: white;
+  color: #375ca9;
+  font-family: $heading-font;
+  font-size: $font-size-h6;
+  text-align: center;
+  text-transform: uppercase;
+}
