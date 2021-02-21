@@ -11,11 +11,14 @@ let jd_projectScene = (trigger, hook = .8) => {
   });
 }
 
+jd_projectScene("#stores");
+jd_projectScene("#eintrachtde", .6);
 jd_projectScene("#vfl");
-jd_projectScene("#eintrachtde");
+jd_projectScene("#ihk", .6);
+jd_projectScene("#lungmuss");
+jd_projectScene("#sks", .6);
+jd_projectScene("#dovoba");
+jd_projectScene("#eset", .6);
+jd_projectScene("#wntt");
+jd_projectScene("#racoon", .6);
 jd_projectScene("#eventim-shop");
-jd_projectScene("#tsukuyumi", .6);
-jd_projectScene("#day-in-may");
-jd_projectScene("#kidsclub", .6);
-jd_projectScene("#dfa");
-jd_projectScene("#heimat", .6);

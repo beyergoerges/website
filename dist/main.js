@@ -85,14 +85,17 @@ let jd_mediaScene = (trigger, hook = .8) => {
 
 jd_mediaScene("#joda-photo");
 
+jd_mediaScene("#stores");
+jd_mediaScene("#eintrachtde", .6);
 jd_mediaScene("#vfl");
-jd_mediaScene("#eintrachtde");
+jd_mediaScene("#ihk", .6);
+jd_mediaScene("#lungmuss");
+jd_mediaScene("#sks", .6);
+jd_mediaScene("#dovoba");
+jd_mediaScene("#eset", .6);
+jd_mediaScene("#wntt");
+jd_mediaScene("#racoon", .6);
 jd_mediaScene("#eventim-shop");
-jd_mediaScene("#tsukuyumi", .6);
-jd_mediaScene("#day-in-may");
-jd_mediaScene("#kidsclub", .6);
-jd_mediaScene("#dfa");
-jd_mediaScene("#heimat", .6);
 
 // Prevent video from loading mobile
 const jd_videoSources = document.querySelectorAll(".jd-media__item--from-tablet source");
@@ -385,17 +388,17 @@ jd_scene(".jd-clients").reverse(false).on("enter", event => {
         );
         jd_tl.staggerTo([
           ".jd-client:nth-child(2) .jd-client__line-y",
-          ".jd-client:nth-child(6) .jd-client__line-y",
-          ".jd-client:nth-child(10) .jd-client__line-y",
-          ".jd-client:nth-child(14) .jd-client__line-y",
-          ".jd-client:nth-child(3) .jd-client__line-y",
-          ".jd-client:nth-child(7) .jd-client__line-y",
-          ".jd-client:nth-child(11) .jd-client__line-y",
-          ".jd-client:nth-child(15) .jd-client__line-y",
-          ".jd-client:nth-child(4) .jd-client__line-y",
+          ".jd-client:nth-child(5) .jd-client__line-y",
           ".jd-client:nth-child(8) .jd-client__line-y",
+          ".jd-client:nth-child(11) .jd-client__line-y",
+          ".jd-client:nth-child(14) .jd-client__line-y",
+          ".jd-client:nth-child(17) .jd-client__line-y",
+          ".jd-client:nth-child(3) .jd-client__line-y",
+          ".jd-client:nth-child(6) .jd-client__line-y",
+          ".jd-client:nth-child(9) .jd-client__line-y",
           ".jd-client:nth-child(12) .jd-client__line-y",
-          ".jd-client:nth-child(16) .jd-client__line-y"
+          ".jd-client:nth-child(15) .jd-client__line-y",
+          ".jd-client:nth-child(18) .jd-client__line-y"
         ], .1, {bottom: 0}, .1, .8
         );
         jd_tl.staggerTo(
@@ -406,27 +409,39 @@ jd_scene(".jd-clients").reverse(false).on("enter", event => {
       deferSetup: true
   });
 
-  // enquire.register(jd_breakMin("desktop-s"), {
-  //
-  //     match: () => {
-  //
-  //       let jd_tl = new TimelineLite();
-  //       jd_tl.staggerTo(
-  //         ".jd-client__line-x", .1, {right: 0}, .1, .4
-  //       );
-  //       jd_tl.staggerTo(
-  //         ".jd-client:nth-child(n+2):nth-child(-n+6) .jd-client__line-y", .1, {top: 0}, .1, .8
-  //       );
-  //       jd_tl.staggerTo(
-  //         ".jd-client:nth-child(n+8):nth-child(-n+12) .jd-client__line-y", .1, {bottom: 0}, .1, .8
-  //       );
-  //       jd_tl.staggerTo(
-  //         ".jd-client__logo", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .6
-  //       );
-  //     },
-  //
-  //     deferSetup: true
-  // });
+  enquire.register(jd_breakMin("desktop-s"), {
+
+      match: () => {
+
+        let jd_tl = new TimelineLite();
+        jd_tl.staggerTo(
+          ".jd-client__line-x", .1, {right: 0}, .1, .4
+        );
+        jd_tl.staggerTo([
+          ".jd-client:nth-child(14) .jd-client__line-y",
+          ".jd-client:nth-child(8) .jd-client__line-y",
+          ".jd-client:nth-child(2) .jd-client__line-y",
+          ".jd-client:nth-child(15) .jd-client__line-y",
+          ".jd-client:nth-child(9) .jd-client__line-y",
+          ".jd-client:nth-child(3) .jd-client__line-y",
+          ".jd-client:nth-child(16) .jd-client__line-y",
+          ".jd-client:nth-child(10) .jd-client__line-y",
+          ".jd-client:nth-child(4) .jd-client__line-y",
+          ".jd-client:nth-child(17) .jd-client__line-y",
+          ".jd-client:nth-child(11) .jd-client__line-y",
+          ".jd-client:nth-child(5) .jd-client__line-y",
+          ".jd-client:nth-child(18) .jd-client__line-y",
+          ".jd-client:nth-child(12) .jd-client__line-y",
+          ".jd-client:nth-child(6) .jd-client__line-y"
+        ], .1, {top: 0}, .1, .8
+        );
+        // jd_tl.staggerTo(
+        //   ".jd-client__logo", .4, {opacity: 1, scale: 1, ease:Back.easeOut}, .1, .6
+        // );
+      },
+
+      deferSetup: true
+  });
 });
 
 let jd_projectScene = (trigger, hook = .8) => {
@@ -442,14 +457,17 @@ let jd_projectScene = (trigger, hook = .8) => {
   });
 }
 
+jd_projectScene("#stores");
+jd_projectScene("#eintrachtde", .6);
 jd_projectScene("#vfl");
-jd_projectScene("#eintrachtde");
+jd_projectScene("#ihk", .6);
+jd_projectScene("#lungmuss");
+jd_projectScene("#sks", .6);
+jd_projectScene("#dovoba");
+jd_projectScene("#eset", .6);
+jd_projectScene("#wntt");
+jd_projectScene("#racoon", .6);
 jd_projectScene("#eventim-shop");
-jd_projectScene("#tsukuyumi", .6);
-jd_projectScene("#day-in-may");
-jd_projectScene("#kidsclub", .6);
-jd_projectScene("#dfa");
-jd_projectScene("#heimat", .6);
 
 let jd_pressScene = trigger => {
   jd_scene(trigger).reverse(false).on("enter", event => {

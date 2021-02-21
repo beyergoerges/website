@@ -7,7 +7,7 @@
   padding-left: spacing(2.5);
 
   @include break(tablet) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   &--6 {
@@ -30,7 +30,7 @@
   &--6 {
 
     @include break(desktop-s) {
-      padding: 20%;
+      padding: 15%;
     }
   }
 
@@ -80,11 +80,11 @@
       }
     }
 
-    &:not(:nth-child(4n+5)) .jd-client__line-y {
+    &:not(:nth-child(3n+4)) .jd-client__line-y {
       display: block;
     }
 
-    &:nth-last-child(n+5) .jd-client__line-x {
+    &:nth-last-child(n+4) .jd-client__line-x {
       display: block;
     }
   }
@@ -93,24 +93,30 @@
 
     @include break(desktop-s) {
 
-      &:nth-child(n+1):nth-child(-n+12) {
+      &:nth-child(n+1):nth-child(-n+18) {
         .jd-client__line-x,
         .jd-client__line-y {
           display: none;
         }
       }
 
-      &:nth-child(n+2):nth-child(-n+6) .jd-client__line-y {
+      // &:nth-child(n+2):nth-child(-n+6) .jd-client__line-y {
+      //   display: block;
+      //   top: 100%;
+      //   bottom: 0;
+      // }
+      //
+      // &:nth-child(n+8):nth-child(-n+18) .jd-client__line-y {
+      //   display: block;
+      // }
+
+      &:not(:nth-child(1)):not(:nth-child(7)):not(:nth-child(13)) .jd-client__line-y {
         display: block;
         top: 100%;
         bottom: 0;
       }
 
-      &:nth-child(n+8):nth-child(-n+12) .jd-client__line-y {
-        display: block;
-      }
-
-      &:nth-child(n+1):nth-child(-n+6) .jd-client__line-x {
+      &:nth-child(n+1):nth-child(-n+12) .jd-client__line-x {
         display: block;
       }
     }
