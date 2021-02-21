@@ -12,17 +12,24 @@ let jd_mediaScene = (trigger, hook = .8) => {
 
 jd_mediaScene("#joda-photo");
 
-jd_mediaScene("#stores");
-jd_mediaScene("#eintrachtde", .6);
 jd_mediaScene("#vfl");
-jd_mediaScene("#ihk", .6);
-jd_mediaScene("#lungmuss");
-jd_mediaScene("#sks", .6);
-jd_mediaScene("#dovoba");
-jd_mediaScene("#eset", .6);
-jd_mediaScene("#wntt");
-jd_mediaScene("#racoon", .6);
+jd_mediaScene("#eintrachtde", .6);
 jd_mediaScene("#eventim-shop");
+jd_mediaScene("#tsukuyumi", .6);
+jd_mediaScene("#day-in-may");
+jd_mediaScene("#heimat", .6);
+
+// jd_mediaScene("#stores");
+// jd_mediaScene("#eintrachtde", .6);
+// jd_mediaScene("#vfl");
+// jd_mediaScene("#ihk", .6);
+// jd_mediaScene("#lungmuss");
+// jd_mediaScene("#sks", .6);
+// jd_mediaScene("#dovoba");
+// jd_mediaScene("#eset", .6);
+// jd_mediaScene("#wntt");
+// jd_mediaScene("#racoon", .6);
+// jd_mediaScene("#eventim-shop");
 
 // Prevent video from loading mobile
 const jd_videoSources = document.querySelectorAll(".jd-media__item--from-tablet source");
