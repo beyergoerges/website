@@ -71,7 +71,7 @@ let jd_scene = (trigger, hook = .8) => new ScrollMagic.Scene({
 })
 .addTo(jd_scrollController);
 
-let jd_mediaScene = (trigger, hook = .8) => {
+let jd_mediaScene = (trigger, hook = .9) => {
   jd_scene(trigger, hook).reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     jd_tl.to(
@@ -85,24 +85,25 @@ let jd_mediaScene = (trigger, hook = .8) => {
 
 jd_mediaScene("#joda-photo");
 
-jd_mediaScene("#vfl");
-jd_mediaScene("#eintrachtde", .6);
-jd_mediaScene("#eventim-shop");
-jd_mediaScene("#tsukuyumi", .6);
-jd_mediaScene("#day-in-may");
-jd_mediaScene("#heimat", .6);
-
-// jd_mediaScene("#stores");
-// jd_mediaScene("#eintrachtde", .6);
 // jd_mediaScene("#vfl");
-// jd_mediaScene("#ihk", .6);
-// jd_mediaScene("#lungmuss");
-// jd_mediaScene("#sks", .6);
-// jd_mediaScene("#dovoba");
-// jd_mediaScene("#eset", .6);
-// jd_mediaScene("#wntt");
-// jd_mediaScene("#racoon", .6);
+// jd_mediaScene("#eintrachtde", .6);
 // jd_mediaScene("#eventim-shop");
+// jd_mediaScene("#tsukuyumi", .6);
+// jd_mediaScene("#day-in-may");
+// jd_mediaScene("#heimat", .6);
+
+jd_mediaScene("#stores");
+jd_mediaScene("#eintrachtde", .7);
+jd_mediaScene("#vfl");
+jd_mediaScene("#lungmuss", .7);
+jd_mediaScene("#sks");
+jd_mediaScene("#ihk", .7);
+jd_mediaScene("#dovoba");
+jd_mediaScene("#eset", .7);
+jd_mediaScene("#wntt");
+jd_mediaScene("#racoon", .7);
+jd_mediaScene("#digitalexpert");
+jd_mediaScene("#eventim-shop", .7);
 
 // Prevent video from loading mobile
 const jd_videoSources = document.querySelectorAll(".jd-media__item--from-tablet source");
@@ -451,7 +452,7 @@ jd_scene(".jd-clients").reverse(false).on("enter", event => {
   });
 });
 
-let jd_projectScene = (trigger, hook = .8) => {
+let jd_projectScene = (trigger, hook = 1) => {
   jd_scene(trigger + " .jd-project__title", hook).reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
     jd_tl.staggerFromTo(
@@ -464,24 +465,25 @@ let jd_projectScene = (trigger, hook = .8) => {
   });
 }
 
-jd_projectScene("#vfl");
-jd_projectScene("#eintrachtde", .6);
-jd_projectScene("#eventim-shop");
-jd_projectScene("#tsukuyumi", .6);
-jd_projectScene("#day-in-may");
-jd_projectScene("#heimat", .6);
-
-// jd_projectScene("#stores");
-// jd_projectScene("#eintrachtde", .6);
 // jd_projectScene("#vfl");
-// jd_projectScene("#ihk", .6);
-// jd_projectScene("#lungmuss");
-// jd_projectScene("#sks", .6);
-// jd_projectScene("#dovoba");
-// jd_projectScene("#eset", .6);
-// jd_projectScene("#wntt");
-// jd_projectScene("#racoon", .6);
+// jd_projectScene("#eintrachtde", .6);
 // jd_projectScene("#eventim-shop");
+// jd_projectScene("#tsukuyumi", .6);
+// jd_projectScene("#day-in-may");
+// jd_projectScene("#heimat", .6);
+
+jd_projectScene("#stores");
+jd_projectScene("#eintrachtde", .8);
+jd_projectScene("#vfl");
+jd_projectScene("#lungmuss", .8);
+jd_projectScene("#sks");
+jd_projectScene("#ihk", .8);
+jd_projectScene("#dovoba");
+jd_projectScene("#eset", .8);
+jd_projectScene("#wntt");
+jd_projectScene("#racoon", .8);
+jd_projectScene("#digitalexpert");
+jd_projectScene("#eventim-shop", .8);
 
 let jd_pressScene = trigger => {
   jd_scene(trigger).reverse(false).on("enter", event => {
