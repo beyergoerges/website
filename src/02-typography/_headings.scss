@@ -55,6 +55,11 @@ h4,
 
 .jd-heading {
 
+  &--sub {
+    font-weight: 400;
+    letter-spacing: normal;
+  }
+
   &--inverted {
     color: $grayscale--white;
   }

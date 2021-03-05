@@ -8,18 +8,28 @@
     padding-top: spacing(12);
     padding-bottom: spacing(3);
 
+    @include break(desktop-s) {
+      grid-template-columns: spacing(2) 1fr 1fr spacing(2);
+      align-items: flex-end;
+    }
+
     .jd-heading--page,
-    .jd-heading--high-level {
-      opacity: 0;
+    .jd-heading--section {
       grid-column: 2;
+      opacity: 0;
 
       @include break(desktop-s) {
         max-width: 54vw;
       }
     }
 
-    .jd-heading--high-level {
+    .jd-heading--section {
       padding-top: spacing(1);
+
+      @include break(desktop-s) {
+        grid-column: 3;
+        padding-bottom: .36vw;
+      }
     }
   }
 

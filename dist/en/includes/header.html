@@ -1,0 +1,20 @@
+
+<header class="jd-header"><a class="jd-logo" href="/">
+    <svg width="144" height="23">
+      <use href="#jd-logo" xlink:href="#jd-logo"></use>
+    </svg></a>
+  <nav class="jd-menu"><span class="jd-menu__trigger">
+      <svg class="jd-menu__trigger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 32 32" xml:space="preserve">
+        <g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" fill="currentColor" stroke="currentColor">
+          <g class="nc-interact_menu-close-o-32">
+            <path data-color="color-2" fill="none" stroke-miterlimit="10" d="M2 9h28" transform="translate(0 0.00) rotate(0.00 16 9)"></path>
+            <path fill="none" stroke="currentColor" stroke-miterlimit="10" d="M2 23h28" transform="translate(0 0) rotate(0 16 23)"></path>
+          </g>
+          <script>!function(){function t(i){var e=i.parentNode;if("svg"!==e.tagName)e=t(e);return e;}function i(t,i,e,n){return 1>(t/=n/2)?e/2*t*t*t*t+i:-e/2*((t-=2)*t*t*t-2)+i}function e(t){this.element=t,this.topLine=this.element.getElementsByTagName("path")[0],this.bottomLine=this.element.getElementsByTagName("path")[1],this.time={start:null,total:250},this.status={interacted:!1,animating:!1},this.init()}if(!window.requestAnimationFrame){var n=null;window.requestAnimationFrame=function(t,i){var e=(new Date).getTime();n||(n=e);var a=Math.max(0,16-(e-n)),s=window.setTimeout(function(){t(e+a)},a);return n=e+a,s}}e.prototype.init=function(){var t=this;this.element.addEventListener("click",function(){t.status.animating||(t.status.animating=!0,window.requestAnimationFrame(t.triggerAnimation.bind(t)))})},e.prototype.triggerAnimation=function(t){var i=this.getProgress(t),e=this.status.interacted?this.time.total-i:i;this.animateIcon(e),this.checkProgress(i)},e.prototype.getProgress=function(t){return this.time.start||(this.time.start=t),t-this.time.start},e.prototype.checkProgress=function(t){var i=this;this.time.total>t?window.requestAnimationFrame(i.triggerAnimation.bind(i)):(this.status={interacted:!this.status.interacted,animating:!1},this.time.start=null)},e.prototype.animateIcon=function(t){if(t>this.time.total)(t=this.time.total);if(0>t)(t=0);var e=i(Math.min(t,this.time.total/2),0,7,this.time.total/2).toFixed(2),n=i(Math.max(t-this.time.total/2,0),0,45,this.time.total/2).toFixed(2);this.topLine.setAttribute("transform","translate(0 "+e+") rotate("+n+" 16 9)"),this.bottomLine.setAttribute("transform","translate(0 "+-e+") rotate("+-n+" 16 23)")};var a=document.getElementsByClassName("nc-interact_menu-close-o-32");if(a)for(var s=0;a.length>s;s++)new e(t(a[s]))}();</script>
+        </g>
+      </svg></span>
+    <div class="jd-menu__items"><a class="jd-menu__item" href="/en">Portfolio</a><a class="jd-menu__item" href="/en/agency/">Agency</a>
+      <!--a.jd-menu__item(href="/jobs/") Jobs--><a class="jd-menu__item" href="/en/contact/">Contact</a>
+    </div>
+  </nav>
+</header>

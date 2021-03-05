@@ -1,0 +1,123 @@
+block vars
+
+doctype html
+html(lang="de" dir="ltr")
+  head
+    // Global site tag (gtag.js) - Google Analytics
+    script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-126828707-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-126828707-1');
+    meta(charset="utf-8")
+    // Primary Meta Tags
+    title Beyer Görges – Digital design agency
+    meta(name="title", content="Beyer Görges – Digital design agency")
+    meta(name="description", content="We develop aesthetically sophisticated and technologically beautiful solutions for renowned customers from a wide variety of areas. We want to understand what our customers really stand for, what drives them and how to stage and convey this in the best possible way—always with the focus on the people who make up the stakeholder group.")
+    // Open Graph / Facebook
+    meta(property="og:type", content="website")
+    meta(property="og:url", content="https://www.beyergoerges.com/")
+    meta(property="og:title", content="Beyer Görges – Digital design agency")
+    meta(property="og:description", content="We develop aesthetically sophisticated and technologically beautiful solutions for renowned customers from a wide variety of areas. We want to understand what our customers really stand for, what drives them and how to stage and convey this in the best possible way—always with the focus on the people who make up the stakeholder group.")
+    meta(property="og:image", content="https://www.beyergoerges.com/images/logo_web_preview.png")
+    // Twitter
+    meta(property="twitter:card", content="summary_large_image")
+    meta(property="twitter:url", content="https://www.beyergoerges.com/")
+    meta(property="twitter:title", content="Beyer Görges – Digital design agency")
+    meta(property="twitter:description", content="We develop aesthetically sophisticated and technologically beautiful solutions for renowned customers from a wide variety of areas. We want to understand what our customers really stand for, what drives them and how to stage and convey this in the best possible way—always with the focus on the people who make up the stakeholder group.")
+    meta(property="twitter:image", content="https://www.beyergoerges.com/images/logo_web_preview.png")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
+    link(rel="icon" href="../favicon.ico?v=1.1")
+    link(rel="stylesheet" href="../../vendor.min.css")
+    link(rel="stylesheet" href="../../main.min.css")
+  body(class=bodyClass)
+    .jd-wrapper
+      include includes/header.pug
+      main.jd-container#barba-wrapper
+        .barba-container
+          svg(xmlns="http://www.w3.org/2000/svg" style="display: none;")
+            include ../includes/svg/logo.pug
+            include ../includes/svg/icons.pug
+            include ../includes/svg/browsers.pug
+            block svg
+          block content
+      include includes/footer.pug
+      .jd-meta
+        .jd-meta__close
+          svg.jd-meta__close-icon(width="24" height="24")
+            use(href="#jd-icon-x" xlink:href="#jd-icon-x")
+        include ../includes/meta/legal-notice.pug
+        include ../includes/meta/privacy.pug
+      include ../includes/browser-fallback.pug
+    script(src="../../vendor.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineLite.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/ScrollToPlugin.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js")
+    script(src="../../main.js")
+    script.
+      // Creare's 'Implied Consent' EU Cookie Law Banner v:2.4
+      // Conceived by Robert Kent, James Bavington & Tom Foyster
+
+      var dropCookie = true;                      // false disables the Cookie, allowing you to style the banner
+      var cookieDuration = 14;                    // Number of days before the cookie expires, and the banner reappears
+      var cookieName = 'complianceCookie';        // Name of our cookie
+      var cookieValue = 'on';                     // Value of cookie
+
+      function createDiv(){
+        var bodytag = document.getElementsByTagName('body')[0];
+        var div = document.createElement('div');
+        div.setAttribute('id','cookie-law');
+        div.className = "jd-cookie-banner";
+        // div.innerHTML = '<p>Our website uses cookies. By continuing we assume your permission to deploy cookies, as detailed in our <a href="/privacy-cookies-policy/" rel="nofollow" title="Privacy &amp; Cookies Policy">privacy and cookies policy</a>. <a class="close-cookie-banner" href="javascript:void(0);" onclick="removeMe();"><span>X</span></a></p>';
+        div.innerHTML = '<div class="jd-container"><div class="jd-cookie-banner__info"> <div class="jd-text-block jd-cookie-banner__text"><p class="jd-paragraph">Diese Website verwendet Cookies, um den bestmöglichen Service zu gewährleisten.</p></div><a class="jd-close-cookie-banner jd-button jd-button--small jd-cookie-banner__button" href="javascript:void(0);" onclick="removeMe();" title="Ich stimme zu">Ich stimme zu</a></div></div>';
+      // Be advised the Close Banner 'X' link requires jQuery
+
+        bodytag.appendChild(div); // Adds the Cookie Law Banner just before the closing </body> tag
+        // or
+        //- bodytag.insertBefore(div,bodytag.firstChild); // Adds the Cookie Law Banner just after the opening <body> tag
+
+        document.getElementsByTagName('body')[0].className+=' cookiebanner'; //Adds a class to the <body> tag when the banner is visible
+
+        createCookie(window.cookieName,window.cookieValue, window.cookieDuration); // Create the cookie
+      }
+
+      function createCookie(name,value,days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        if(window.dropCookie) {
+            document.cookie = name+"="+value+expires+"; path=/";
+        }
+      }
+
+      function checkCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+      }
+      
+      function eraseCookie(name) {
+        createCookie(name,"",-1);
+      }
+      
+      window.onload = function(){
+        if(checkCookie(window.cookieName) != window.cookieValue){
+            createDiv();
+        }
+      }
+      
+      function removeMe(){
+        var element = document.getElementById('cookie-law');
+        element.parentNode.removeChild(element);
+      }
