@@ -7,6 +7,14 @@
   font-family: "neue-haas-grotesk-text", sans-serif;
 }
 
+.osano-cm-dialog:before {
+  @extend .jd-paragraph;
+  content: "Auf dieser Website werden Cookies gespeichert um eine optimale Funktionalität zu gewährleisten.";
+  display: block;
+  padding-bottom: 1em;
+  color: #141517 !important;
+}
+
 .osano-cm-dialog--type_box {
   width: auto;
   max-width: none;
@@ -16,7 +24,7 @@
   font-family: "neue-haas-grotesk-text", sans-serif;
 
   @include break(tablet) {
-    max-width: spacing(42);
+    max-width: spacing(34);
   }
 }
 
@@ -33,6 +41,7 @@
 }
 
 .osano-cm-content__message {
+  display: none;
   @extend .jd-paragraph;
   color: #141517 !important;
 }
@@ -56,7 +65,7 @@
 }
 
 .osano-cm-dialog__list .osano-cm-label {
-  @include font-scale(xs);
+  @include font-scale(s);
   margin: 0 0 0 spacing(.5);
   color: #141517;
 }
@@ -70,7 +79,7 @@
 }
 
 .osano-cm-dialog--type_box .osano-cm-dialog__buttons {
-  @include font-scale(xs);
+  @include font-scale(s);
   margin-top: 1em;
 }
 
