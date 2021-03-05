@@ -18,6 +18,11 @@ h1,
   @include font-scale(xl);
 
   letter-spacing: normal;
+
+  .jd-heading__text {
+    color: transparent;
+    -webkit-text-stroke: 1px $grayscale--darkest;
+  }
 }
 
 h2,

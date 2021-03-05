@@ -54,13 +54,14 @@
     }
 
     .jd-heading--page:hover .jd-heading__text {
-      color: $grayscale--darkest;
+      color: rgba(black, .2);
+      -webkit-text-stroke: 1px transparent;
     }
 
     .jd-heading--page:hover .jd-arrow,
     .jd-heading--page:hover .jd-arrow:before,
     .jd-heading--page:hover .jd-arrow:after {
-      background-color: $grayscale--darkest;
+      background-color: rgba(black, .2);
     }
 
     .jd-arrow {
@@ -68,7 +69,7 @@
       position: relative;
       height: 2px;
       margin-left: spacing(2);
-      background-color: $grayscale--white;
+      background-color: $grayscale--darkest;
     }
 
     .jd-arrow:before,
@@ -79,7 +80,7 @@
       right: 0;
       width: spacing(2);
       height: 2px;
-      background-color: $grayscale--white;
+      background-color: $grayscale--darkest;
     }
 
     .jd-arrow:before {

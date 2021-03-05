@@ -1,17 +1,27 @@
 .jd-theme--night {
 
+  .jd-heading--page .jd-heading__text {
+    -webkit-text-stroke: 1px $color--bon-jour;
+  }
+
   .jd-heading--page:hover .jd-heading__text {
-    color: #424242;
+    color: rgba($color--bon-jour, .4);
+  }
+
+  .jd-heading--page .jd-arrow,
+  .jd-heading--page .jd-arrow:before,
+  .jd-heading--page .jd-arrow:after {
+    background-color: $color--bon-jour;
   }
 
   .jd-heading--page:hover .jd-arrow,
   .jd-heading--page:hover .jd-arrow:before,
   .jd-heading--page:hover .jd-arrow:after {
-    background-color: #424242;
+    background-color: rgba($color--bon-jour, .4);
   }
 
   .jd-cookie-banner {
-    background-color: white;
+    background-color: $color--bon-jour;
 
     .jd-paragraph {
       color: #141517;
@@ -19,7 +29,7 @@
 
     .jd-button {
       background-color: #141517;
-      color: white;
+      color: $color--bon-jour;
 
       &:hover {
         background-color: $grayscale--darker;
@@ -37,7 +47,7 @@
       background-color: black;
 
       .jd-browser__button {
-        border-color: white;
+        border-color: $color--bon-jour;
       }
     }
 
@@ -48,19 +58,19 @@
 
   .jd-wrapper {
     background-color: #141517;
-    color: rgba(white, 1);
+    color: rgba($color--bon-jour, 2);
   }
 
   h1, h2, h3,
   .jd-heading--page
   .jd-heading--high-level,
   .jd-heading--section {
-    color: white;
+    color: $color--bon-jour;
   }
 
   p,
   .jd-paragraph {
-    color: rgba(white, .7);
+    color: rgba($color--bon-jour, .7);
   }
 
   .jd-media {
@@ -73,7 +83,7 @@
   .jd-menu {
 
     &__item:after {
-      background-color: white;
+      background-color: $color--bon-jour;
     }
   }
 
@@ -86,26 +96,26 @@
     h2, h3,
     .jd-heading--high-level,
     .jd-heading--section {
-      color: white;
+      color: $color--bon-jour;
     }
 
     .jd-section__title-line {
-      background-color: white;
+      background-color: $color--bon-jour;
     }
 
     .jd-contact__heading {
-      color: white;
+      color: $color--bon-jour;
     }
 
     p,
     .jd-paragraph,
     .jd-data-list {
-      color: rgba(white, .7);
+      color: rgba($color--bon-jour, .7);
     }
 
     .jd-data-list__item {
       border-width: 1px !important;
-      border-color: rgba(white, .1);
+      border-color: rgba($color--bon-jour, .2);
     }
   }
 
@@ -113,7 +123,7 @@
 
     &__line-x,
     &__line-y {
-      background-color: rgba(white, .1);
+      background-color: rgba($color--bon-jour, .2);
     }
 
     &__line-x {
@@ -125,7 +135,7 @@
     }
 
     &__logo {
-      color: white;
+      color: $color--bon-jour;
 
       &--day {
         display: none;
@@ -148,7 +158,7 @@
   .jd-press {
 
     &__logo {
-      color: white;
+      color: $color--bon-jour;
 
       &--day {
         display: none;
@@ -164,12 +174,12 @@
     background-color: #0F0F0F;
 
     &__heading {
-      color: white;
+      color: $color--bon-jour;
     }
 
     p,
     .jd-paragraph {
-      color: rgba(white, .7);
+      color: rgba($color--bon-jour, .7);
     }
   }
 
@@ -189,15 +199,15 @@
   .jd-project__link {
 
     &:after {
-      background-color: white;
+      background-color: $color--bon-jour;
     }
 
     &--web {
-      background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' width='16' height='16' xmlns='http://www.w3.org/2000/svg'><g fill='white'><path d='M9,7H1C0.4,7,0,7.4,0,8v0c0,0.6,0.4,1,1,1h8v5l7-6L9,2V7z'></path></g></svg>");
+      background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' width='16' height='16' xmlns='http://www.w3.org/2000/svg'><g fill='#{url-encoded-color($color--bon-jour)}'><path d='M9,7H1C0.4,7,0,7.4,0,8v0c0,0.6,0.4,1,1,1h8v5l7-6L9,2V7z'></path></g></svg>");
     }
 
     &--video {
-      background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' width='16' height='16' xmlns='http://www.w3.org/2000/svg'><g fill='white'><path d='M15,1H1C0.4,1,0,1.4,0,2v12c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1V2C16,1.4,15.6,1,15,1z M14,13H2V3h12V13z'></path><polygon points='6,5 6,11 10,8'></polygon></g></svg>");
+      background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' width='16' height='16' xmlns='http://www.w3.org/2000/svg'><g fill='#{url-encoded-color($color--bon-jour)}'><path d='M15,1H1C0.4,1,0,1.4,0,2v12c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1V2C16,1.4,15.6,1,15,1z M14,13H2V3h12V13z'></path><polygon points='6,5 6,11 10,8'></polygon></g></svg>");
     }
   }
 }
