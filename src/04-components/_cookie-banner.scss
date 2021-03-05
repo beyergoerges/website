@@ -1,3 +1,110 @@
+.osano-cm-dialog,
+.osano-cm-dialog * {
+  font-family: "neue-haas-grotesk-text", sans-serif;
+}
+
+.osano-cm-dialog--type_box {
+  width: auto;
+  max-width: none;
+  background: #AEAEAF;
+  padding: spacing(3);
+  color: white;
+  font-family: "neue-haas-grotesk-text", sans-serif;
+
+  @include break(tablet) {
+    max-width: spacing(42);
+  }
+}
+
+.osano-cm-dialog--type_box.osano-cm-dialog--position_bottom-right {
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  @include break(tablet) {
+    right: spacing(1);
+    bottom: spacing(1);
+    left: auto;
+  }
+}
+
+.osano-cm-content__message {
+  @extend .jd-paragraph;
+  color: #141517 !important;
+}
+
+.osano-cm-dialog__list {
+  margin-top: 0;
+}
+
+.osano-cm-toggle {
+  margin: 0;
+}
+
+.osano-cm-toggle__switch {
+  border: none;
+}
+
+.osano-cm-toggle__switch,
+.osano-cm-toggle__input:focus + .osano-cm-toggle__switch,
+.osano-cm-toggle__input:hover + .osano-cm-toggle__switch {
+  background-color: rgba(#141517, .2);
+}
+
+.osano-cm-dialog__list .osano-cm-label {
+  @include font-scale(xs);
+  margin: 0 0 0 spacing(.5);
+  color: #141517;
+}
+
+.osano-cm-content__link {
+  display: none;
+}
+
+.osano-cm-list__list-item:not(:last-child) {
+  display: none;
+}
+
+.osano-cm-dialog--type_box .osano-cm-dialog__buttons {
+  @include font-scale(xs);
+  margin-top: 1em;
+}
+
+.osano-cm-buttons__button {
+  display: inline-block;
+  margin: 0;
+  padding: spacing(.75) spacing(1.5);
+  border: none;
+  border-radius: 0;
+  font-weight: 600;
+
+  @include font-scale(xs);
+  @include transition($duration-faster);
+}
+
+.osano-cm-accept-all {
+  margin-left: spacing(.5);
+  background-color: #141517;
+
+  &:hover,
+  &:focus {
+    background-color: $grayscale--darker;
+  }
+}
+
+.osano-cm-save {
+  margin-right: spacing(.5);
+  border: 1px solid #141517;
+  background-color: transparent;
+  color: #141517;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: $grayscale--darker;
+  }
+}
+
 .jd-cookie-banner {
   position: fixed;
   right: 0;
