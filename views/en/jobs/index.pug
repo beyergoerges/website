@@ -1,0 +1,108 @@
+extends ../default.pug
+
+block vars
+  - var bodyClass = "jd-theme--day jd-jobs";
+
+block content
+  header.jd-block.jd-block--intro
+    h1.jd-heading.jd-heading--page Are You
+      br
+      | In?
+    h3.jd-heading.jd-heading--section Let's create beautiful
+      br
+      | projects together. 
+  .jd-block.jd-block--hollow#office
+    .jd-office.jd-media__item
+      .jd-office__media.jd-office__media--1
+        img.jd-office__image.jd-office__image--mobile(src="../../images/office/office1_mobile.jpg")
+        img.jd-office__image.jd-office__image--desktop(src="../../images/office/office1_desktop.jpg")
+      .jd-office__media.jd-office__media--2
+        img.jd-office__image.jd-office__image--mobile(src="../../images/office/office2_mobile.jpg")
+        img.jd-office__image.jd-office__image--desktop(src="../../images/office/office2_desktop.jpg")
+      .jd-office__media.jd-office__media--3
+        img.jd-office__image(src="../../images/office/office3.jpg")
+      .jd-office__media.jd-office__media--4
+        img.jd-office__image(src="../../images/office/office4.jpg")
+      span.jd-media__revealer
+  .jd-block.jd-block--hollow
+    section.jd-section.jd-employer
+      .jd-employer__description
+        h3.jd-heading.jd-heading--section We offer you the opportunity to creatively develop renowned brands and companies from various industries – soccer clubs, banks, industrial companies, innovative startups.
+  .jd-block.jd-block--solid.jd-block--color-1
+    section.jd-section.jd-job#developer
+      h2.jd-heading.jd-heading--high-level.jd-job__heading.--color-1 Developer 
+        br 
+        | (f/m/d)
+      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading.jd-job__subheading
+        span.jd-section__title-index
+          span.jd-section__title-number 01
+          span.jd-section__title-line
+        span.jd-section__title-text Your Tasks
+      .jd-job__description
+        ul.jd-list.jd-list--bulleted.jd-paragraph
+          li.jd-list__item Development of modular, scalable web and mobile apps
+          li.jd-list__item Frontend development
+          li.jd-list__item Technical project management
+          li.jd-list__item Technical consulting
+      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading.jd-job__subheading
+        span.jd-section__title-index
+          span.jd-section__title-number 02
+          span.jd-section__title-line
+        span.jd-section__title-text Your Skills
+      .jd-job__description
+        ul.jd-list.jd-list--bulleted.jd-paragraph
+          li.jd-list__item Good to excellent knowledge of modern web and app technologies—ideally: JavaScript (including frameworks like React, Vue.js or Angular), PHP, databases, Swift, Java, HTML, CSS
+          li.jd-list__item CMS experience (e.g. WordPress, Typo3, eCommerce systems)
+          li.jd-list__item Open-minded towards new technologies
+          li.jd-list__item Conceptual thinking
+          li.jd-list__item Quality awareness and a structured way of working
+      .jd-job__description
+        h3.jd-heading.jd-heading--section CV and work samples
+          br 
+          a(href="mailto:jobs@beyergoerges.com") ➝ jobs@beyergoerges.com
+    section.jd-section.jd-job#junior-designer
+      h2.jd-heading.jd-heading--high-level.jd-job__heading.--color-1 Junior 
+        br
+        | Designer 
+        br
+        | (f/m/d)
+      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading.jd-job__subheading
+        span.jd-section__title-index
+          span.jd-section__title-number 01
+          span.jd-section__title-line
+        span.jd-section__title-text Your Tasks
+      .jd-job__description
+        ul.jd-list.jd-list--bulleted.jd-paragraph
+          li.jd-list__item Development of creative and applicable design concepts
+          li.jd-list__item UX & UI design, Graphic Design, Print Design, Illustration, Motion Design, Animation
+          li.jd-list__item Regular exchange with clients and partners
+      h3.jd-heading.jd-heading--section.jd-section__title.jd-section__title--followed-by-heading.jd-job__subheading
+        span.jd-section__title-index
+          span.jd-section__title-number 02
+          span.jd-section__title-line
+        span.jd-section__title-text Your Skills
+      .jd-job__description
+        ul.jd-list.jd-list--bulleted.jd-paragraph
+          li.jd-list__item Good design skills and some experience with personal or professional projects
+          li.jd-list__item Experience with various design tools (Figma, Photoshop, Illustrator, InDesign etc.)
+          li.jd-list__item Ready to learn and open-minded towards new developments and tools
+          li.jd-list__item Conceptual thinking
+          li.jd-list__item Quality awareness and a structured way of working
+      .jd-job__description
+        h3.jd-heading.jd-heading--section CV and work samples
+          br 
+          a(href="mailto:jobs@beyergoerges.com") ➝ jobs@beyergoerges.com
+    section.jd-section.jd-job#initiativ
+      h2.jd-heading.jd-heading--high-level.jd-job__heading.--color-1 General 
+        br
+        | Application 
+      .jd-job__description
+        p.jd-paragraph You want to join our team and create beautiful projects together—either on a freelance basis or in a full-time position? We look forward to your application!
+      .jd-job__description
+        h3.jd-heading.jd-heading--section CV and work samples
+          br 
+          a(href="mailto:jobs@beyergoerges.com") ➝ jobs@beyergoerges.com
+  .jd-block.jd-block--outro
+    a.jd-heading.jd-heading--page.jd-heading--inverted(href="/en/contact")
+      span.jd-heading__text Contact
+      span.jd-arrow
