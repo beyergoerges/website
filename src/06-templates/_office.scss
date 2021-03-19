@@ -1,0 +1,29 @@
+.jd-office {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: spacing(1);
+  margin-bottom: spacing(4);
+
+  @include break(tablet) {
+    grid-template-columns: 1fr 1.806fr 1fr 1fr;
+  }
+
+  &__image {
+    display: block;
+  }
+
+  &__image--mobile {
+
+    @include break(tablet) {
+      display: none;
+    }
+  }
+
+  &__image--desktop {
+    display: none;
+
+    @include break(tablet) {
+      display: block;
+    }
+  }
+}

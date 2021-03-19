@@ -50,6 +50,11 @@ html(lang="de" dir="ltr")
             use(href="#jd-icon-x" xlink:href="#jd-icon-x")
         include includes/meta/legal-notice.pug
         include includes/meta/privacy.pug
+      .jd-theme-switch
+        svg.jd-theme-switch__day(width="24" height="24")
+          use(href="#jd-icon-sun" xlink:href="#jd-icon-sun")
+        svg.jd-theme-switch__night(width="24" height="24")
+          use(href="#jd-icon-moon" xlink:href="#jd-icon-moon")
       include includes/browser-fallback.pug
       canvas(class="jd-snow")
     style.

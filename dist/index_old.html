@@ -48,9 +48,7 @@
                 <script>!function(){function t(i){var e=i.parentNode;if("svg"!==e.tagName)e=t(e);return e;}function i(t,i,e,n){return 1>(t/=n/2)?e/2*t*t*t*t+i:-e/2*((t-=2)*t*t*t-2)+i}function e(t){this.element=t,this.topLine=this.element.getElementsByTagName("path")[0],this.bottomLine=this.element.getElementsByTagName("path")[1],this.time={start:null,total:250},this.status={interacted:!1,animating:!1},this.init()}if(!window.requestAnimationFrame){var n=null;window.requestAnimationFrame=function(t,i){var e=(new Date).getTime();n||(n=e);var a=Math.max(0,16-(e-n)),s=window.setTimeout(function(){t(e+a)},a);return n=e+a,s}}e.prototype.init=function(){var t=this;this.element.addEventListener("click",function(){t.status.animating||(t.status.animating=!0,window.requestAnimationFrame(t.triggerAnimation.bind(t)))})},e.prototype.triggerAnimation=function(t){var i=this.getProgress(t),e=this.status.interacted?this.time.total-i:i;this.animateIcon(e),this.checkProgress(i)},e.prototype.getProgress=function(t){return this.time.start||(this.time.start=t),t-this.time.start},e.prototype.checkProgress=function(t){var i=this;this.time.total>t?window.requestAnimationFrame(i.triggerAnimation.bind(i)):(this.status={interacted:!this.status.interacted,animating:!1},this.time.start=null)},e.prototype.animateIcon=function(t){if(t>this.time.total)(t=this.time.total);if(0>t)(t=0);var e=i(Math.min(t,this.time.total/2),0,7,this.time.total/2).toFixed(2),n=i(Math.max(t-this.time.total/2,0),0,45,this.time.total/2).toFixed(2);this.topLine.setAttribute("transform","translate(0 "+e+") rotate("+n+" 16 9)"),this.bottomLine.setAttribute("transform","translate(0 "+-e+") rotate("+-n+" 16 23)")};var a=document.getElementsByClassName("nc-interact_menu-close-o-32");if(a)for(var s=0;a.length>s;s++)new e(t(a[s]))}();</script>
               </g>
             </svg></span>
-          <div class="jd-menu__items"><a class="jd-menu__item" href="/">Portfolio</a><a class="jd-menu__item" href="/agency/">Agentur</a>
-            <!--a.jd-menu__item(href="/jobs/") Jobs--><a class="jd-menu__item" href="/contact/">Kontakt</a>
-          </div>
+          <div class="jd-menu__items"><a class="jd-menu__item" href="/">Portfolio</a><a class="jd-menu__item" href="/agency/">Agentur</a><a class="jd-menu__item" href="/jobs/">Jobs</a><a class="jd-menu__item" href="/contact/">Kontakt</a></div>
         </nav>
       </header>
       <main class="jd-container" id="barba-wrapper">
@@ -76,6 +74,26 @@
               <title>Close</title>
               <g fill="currentColor">
                 <path fill="currentColor" d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"></path>
+              </g>
+            </symbol>
+            <symbol id="jd-icon-sun" viewBox="0 0 24 24" width="24" height="24">
+              <title>Sun</title>
+              <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" fill="currentColor" stroke="currentColor">
+                <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="1" y1="12" x2="2" y2="12"></line>
+                <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="4.2" y1="4.2" x2="4.9" y2="4.9"></line>
+                <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="12" y1="1" x2="12" y2="2"></line>
+                <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="19.8" y1="4.2" x2="19.1" y2="4.9"></line>
+                <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="23" y1="12" x2="22" y2="12"></line>
+                <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="19.8" y1="19.8" x2="19.1" y2="19.1"></line>
+                <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="12" y1="23" x2="12" y2="22"></line>
+                <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="4.2" y1="19.8" x2="4.9" y2="19.1"></line>
+                <circle fill="none" stroke="currentColor" stroke-miterlimit="10" cx="12" cy="12" r="6"></circle>
+              </g>
+            </symbol>
+            <symbol id="jd-icon-moon" viewBox="0 0 24 24" width="24" height="24">
+              <title>Moon</title>
+              <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" fill="currentColor" stroke="currentColor">
+                <path fill="none" stroke="currentColor" stroke-miterlimit="10" d="M19,15C13.5,15,9,10.5,9,5 c0-0.9,0.1-1.8,0.4-2.6C5.1,3.5,2,7.4,2,12c0,5.5,4.5,10,10,10c4.6,0,8.5-3.1,9.6-7.4C20.8,14.9,19.9,15,19,15z"></path>
               </g>
             </symbol>
             <symbol id="logo-chrome" viewbox="0 0 64 64">
@@ -928,6 +946,14 @@
                Ihnen stehen die unten genannten Rechte zu. Diese können Sie uns gegenüber geltend machen. Zur Geltendmachung nutzen Sie bitte die oben genannten Daten oder per E-Mail an: <a href="mailto:datenschutz@gdi-mbh.eu">datenschutz@gdi-mbh.eu</a>.<br><br><strong>Auskunftsrecht</strong><br>Ihnen steht ein Recht auf Auskunft darüber zu, ob wir personenbezogene Daten über Sie verarbeiten, zu welchen Zwecken wir die Daten verarbeiten, welche Kategorien von personenbezogenen Daten über Sie wir verarbeiten, an wen den die Daten ggf. weitergeleitet wurden, wie lange die Daten ggf. gespeichert werden sollen und welche Rechte Ihnen zustehen.<br><br><strong>Recht zur Berichtigung von Daten</strong><br>Sie haben das Recht unzutreffende, Sie betreffende Personenbezogene Daten, die bei uns gespeichert werden berichtigen zu lassen. Ebenso haben Sie das Recht einen bei uns gespeicherten unvollständigen Datensatz von uns ergänzen zu lassen.<br><br><strong>Löschung</strong><br>Sie können von uns Löschung der Sie betreffenden personenbezogenen Daten verlangen, sofern (1) die Daten unrechtmäßig verarbeitet wurden, (2) der Zweck, für den die Daten erhoben wurden, erreicht ist, (3) Sie Ihre Einwilligung zur Datenverarbeitung widerrufen haben und keine andere Rechtsgrundlage für die Verarbeitung besteht, (4) wir einer rechtlichen Pflicht zu Löschung der Daten unterliegen (5) sie unter 16 Jahre alt sind oder (6) Sie der Verarbeitung Widersprochen haben und auf unserer Seite kein vorrangigen berechtigten Gründe für die Verarbeitung bestehen.<br><br><strong>Recht auf Einschränkung der Verarbeitung</strong><br>Sie können von uns die Einschränkung der Verarbeitung in folgenden Fällen verlangen. Wir werden die Daten in diesen Fällen mit einem Sperrvermerk versehen und nicht weiterverarbeiten. (1) Sofern Sie die Richtigkeit der personenbezogenen Daten bestreiten für die Dauer unserer Prüfung. (2) Sofern Sie Löschung verlangt haben und wir eine Löschung nicht durchführen können oder dürfen. (3) Sofern Sie die Daten für die Geltendmachung von Ansprüchen benötigen, wir aber zur Löschung verpflichtet wären, weil der Zweck der Verarbeitung erreicht ist. (4) Sofern Sie Widerspruch gegen die Verarbeitung erhoben haben und noch keine endgültige Entscheidung erfolgt ist. <br><br><strong>Widerspruch gegen die Verarbeitung</strong><br>Sofern sich die Verarbeitung Sie betreffender personenbezogener Daten auf berechtigte Interessen unsererseits stützt, können Sie aus Gründen, die sich aus Ihrer besonderen Situation ergeben, der Verarbeitung widersprechen.<br><br><strong>Recht auf Datenübertragbarkeit</strong><br>Sie haben das Recht Daten, die Sie selbst im Rahmen eines Vertrags oder auf Grundlage einer Einwilligung zur Verfügung gestellt haben und die automatisiert verarbeitet werden, bei uns als gängiges maschinenlesbares Format (Datensatz) anzufordern.<br><br><strong>Widerruf einer erteilten Einwilligung</strong><br>Sofern Sie uns gegenüber in die Verarbeitung von personenbezogenen Daten eingewilligt haben, können Sie die Einwilligung jederzeit widerrufen. Bitte richten Sie ihren Widerruf an die oben angegebenen Daten oder per Mail an: <a href="mailto:ping@beyergoerges.com">ping@beyergoerges.com</a>.<br><br><strong>Beschwerderecht zu Datenschutzaufsicht</strong><br>Sie haben das Recht sich mit einer datenschutzrechtlichen Beschwerde an die Aufsichtsbehörden zu wenden. Die für uns zuständige Aufsichtsbehörde ist der Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen. Die Beschwerde kann unabhängig von der Zuständigkeit bei jeder Aufsichtsbehörde erhoben werden.</p>
           </section>
         </article>
+      </div>
+      <div class="jd-theme-switch">
+        <svg class="jd-theme-switch__day" width="24" height="24">
+          <use href="#jd-icon-sun" xlink:href="#jd-icon-sun"></use>
+        </svg>
+        <svg class="jd-theme-switch__night" width="24" height="24">
+          <use href="#jd-icon-moon" xlink:href="#jd-icon-moon"></use>
+        </svg>
       </div>
       <section class="jd-browser-fallback">
         <div class="jd-browser-fallback__notice jd-browser-fallback__notice--top">Zeit für einen neuen Browser! Diese Website unterstützt alle modernen und sicheren Browser.</div>

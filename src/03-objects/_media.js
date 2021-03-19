@@ -11,6 +11,7 @@ let jd_mediaScene = (trigger, hook = .9) => {
 }
 
 jd_mediaScene("#joda-photo");
+jd_mediaScene("#office");
 
 // jd_mediaScene("#vfl");
 // jd_mediaScene("#eintrachtde", .6);

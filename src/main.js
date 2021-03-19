@@ -13,6 +13,7 @@
 //@prepros-append 06-templates/_clients.js
 //@prepros-append 06-templates/_project.js
 //@prepros-append 06-templates/_press.js
+//@prepros-append 06-templates/_employer.js
 //@prepros-append 06-templates/_job.js
 //@prepros-append 06-templates/_contact.js
 //@prepros-append 07-themes/_themes.js

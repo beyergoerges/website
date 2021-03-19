@@ -13,6 +13,7 @@
 //@prepros-append 06-templates/_clients.js
 //@prepros-append 06-templates/_project.js
 //@prepros-append 06-templates/_press.js
+//@prepros-append 06-templates/_employer.js
 //@prepros-append 06-templates/_job.js
 //@prepros-append 06-templates/_contact.js
 //@prepros-append 07-themes/_themes.js
@@ -84,6 +85,7 @@ let jd_mediaScene = (trigger, hook = .9) => {
 }
 
 jd_mediaScene("#joda-photo");
+jd_mediaScene("#office");
 
 // jd_mediaScene("#vfl");
 // jd_mediaScene("#eintrachtde", .6);
@@ -189,7 +191,9 @@ jd_sectionTitleScene("#projects");
 jd_sectionTitleScene("#press");
 jd_sectionTitleScene("#speaker");
 
-jd_sectionTitleScene("#visual-designer");
+jd_sectionTitleScene("#developer");
+jd_sectionTitleScene("#junior-designer");
+jd_sectionTitleScene("#initiativ");
 
 jd_sectionTitleScene("#email");
 jd_sectionTitleScene("#phone");
@@ -497,6 +501,17 @@ let jd_pressScene = trigger => {
 jd_pressScene("#press");
 jd_pressScene("#speaker");
 
+jd_scene(".jd-employer").reverse(false).on("enter", event => {
+
+  let jd_tl = new TimelineLite();
+
+  jd_tl.staggerFromTo(
+    ".jd-employer__description .jd-paragraph",
+    .4, {x: "-16px", opacity: 0}, {x: 0, opacity: 1}, .2
+  );
+
+});
+
 let jd_jobScene = trigger => {
   jd_scene(trigger).reverse(false).on("enter", event => {
     let jd_tl = new TimelineLite();
@@ -511,7 +526,9 @@ let jd_jobScene = trigger => {
   });
 }
 
-jd_jobScene("#visual-designer");
+jd_jobScene("#developer");
+jd_jobScene("#junior-designer");
+jd_jobScene("#initiativ");
 
 let jd_contactScene = trigger => {
   jd_scene(trigger).reverse(false).on("enter", event => {
@@ -541,13 +558,41 @@ let jd_sunsetTime = jd_sunset.getTime();
 
 const jd_body = document.body;
 
-if (jd_currentDate >= jd_sunrise && jd_currentDate < jd_sunset) {
-  jd_body.classList.remove("jd-theme--night");
-  jd_body.classList.add("jd-theme--day");
-} else {
+if (sessionStorage.getItem("theme")) {
+  let theme = sessionStorage.getItem("theme");
   jd_body.classList.remove("jd-theme--day");
-  jd_body.classList.add("jd-theme--night");
+  jd_body.classList.remove("jd-theme--night");
+  jd_body.classList.add("jd-theme--" + theme);
+} else {
+  if (jd_currentDate >= jd_sunrise && jd_currentDate < jd_sunset) {
+    jd_body.classList.remove("jd-theme--night");
+    jd_body.classList.add("jd-theme--day");
+  } else {
+    jd_body.classList.remove("jd-theme--day");
+    jd_body.classList.add("jd-theme--night");
+  }
 }
+
+// Theme switch
+const jd_themeSwitch = document.querySelector(".jd-theme-switch");
+
+const jd_toggleTheme = event => {
+
+  // If the clicked element doesn't have the right selector, bail
+  if (!event.target.matches(".jd-theme-switch, .jd-theme-switch *")) return;
+
+  if (jd_body.classList.contains("jd-theme--day")) {
+    jd_body.classList.remove("jd-theme--day");
+    jd_body.classList.add("jd-theme--night");
+    sessionStorage.setItem("theme", "night");
+  } else {
+    jd_body.classList.remove("jd-theme--night");
+    jd_body.classList.add("jd-theme--day");
+    sessionStorage.setItem("theme", "day");
+  }
+}
+
+document.addEventListener("click", jd_toggleTheme, false);
 
 };
 

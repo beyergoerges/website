@@ -1,0 +1,23 @@
+.jd-employer {
+  padding-bottom: spacing(8);
+
+  &__description {
+    grid-column: 2 / 6;
+
+    @include break(tablet) {
+      grid-column: 2 / 5;
+    }
+
+    @include break(desktop-s) {
+      grid-column: 8 / 13;
+    }
+
+    @include break(desktop-m) {
+      grid-column: 8 / 13;
+    }
+
+    .jd-paragraph {
+      opacity: 0;
+    }
+  }
+}

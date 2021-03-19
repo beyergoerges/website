@@ -1,5 +1,6 @@
 .jd-block {
   display: grid;
+  position: relative;
 
   &--intro {
     gap: spacing(1);

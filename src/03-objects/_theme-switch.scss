@@ -1,0 +1,47 @@
+.jd-theme-switch {
+  @include transition;
+  position: fixed;
+  right: spacing(2);
+  bottom: spacing(2);
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: $grayscale--darkest;
+  color: $color--bon-jour;
+
+  .jd-theme--night & {
+    background-color: $color--bon-jour;
+    color: $grayscale--darkest;
+  }
+
+  &:hover {
+
+    @include break(desktop-s) {
+      transform: scale(1.1);
+    }
+  }
+
+  &__day,
+  &__night {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
+
+  &__day {
+    opacity: 0;
+
+    .jd-theme--night & {
+      opacity: 1;
+    }
+  }
+
+  &__night {
+
+    .jd-theme--night & {
+      opacity: 0;
+    }
+  }
+}
