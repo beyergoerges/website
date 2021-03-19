@@ -4,11 +4,16 @@
   grid-template-columns: spacing(2) 2fr 1fr spacing(2);
   align-items: baseline;
   padding-top: spacing(2);
+  padding-bottom: spacing(2);
   transform: translateY(64px);
 
   @include break(tablet) {
     margin-right: spacing(1);
     margin-left: spacing(1);
+  }
+
+  @include break(desktop-s) {
+    padding-right: calc(48px + #{spacing(1)});
   }
 
   &__items {
@@ -22,7 +27,7 @@
     &--start {
       grid-column: 2 / 4;
 
-      @include break(tablet) {
+      @include break(desktop-s) {
         grid-column: 2;
       }
     }
@@ -30,7 +35,7 @@
     &--end {
       grid-column: 2 / 4;
 
-      @include break(tablet) {
+      @include break(desktop-s) {
         grid-column: 3;
         justify-self: end;
       }
@@ -55,8 +60,10 @@
     }
 
     &--email {
+      display: block;
 
       @include break(tablet) {
+        display: inline;
         margin-left: spacing(2);
       }
     }
