@@ -4,16 +4,17 @@
   &__description {
     grid-column: 2 / 6;
 
-    @include break(tablet) {
-      grid-column: 2 / 5;
-    }
-
     @include break(desktop-s) {
-      grid-column: 8 / 13;
+      grid-column: 2 / 10;
     }
 
-    @include break(desktop-m) {
-      grid-column: 8 / 13;
+    // @include break(desktop-m) {
+    //   grid-column: 8 / 13;
+    // }
+
+    .jd-heading--high-level {
+      margin-bottom: 0;
+      opacity: 0;
     }
 
     .jd-paragraph {
