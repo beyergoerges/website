@@ -43,6 +43,14 @@ h3,
   @include font-scale(m);
 
   letter-spacing: normal;
+
+  br {
+    display: none;
+
+    @include break(tablet) {
+      display: block;
+    }
+  }
 }
 
 h4,

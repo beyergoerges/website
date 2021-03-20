@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: spacing(1);
-  margin-bottom: spacing(4);
+  margin-bottom: spacing(1);
 
   @include break(tablet) {
     grid-template-columns: 1fr 1.806fr 1fr 1fr;
