@@ -12,6 +12,7 @@ let jd_jobScene = trigger => {
   });
 }
 
+jd_jobScene("#senior-designer");
 jd_jobScene("#developer");
 jd_jobScene("#junior-designer");
 jd_jobScene("#initiativ");

@@ -27,6 +27,7 @@ jd_sectionTitleScene("#projects");
 jd_sectionTitleScene("#press");
 jd_sectionTitleScene("#speaker");
 
+jd_sectionTitleScene("#senior-designer");
 jd_sectionTitleScene("#developer");
 jd_sectionTitleScene("#junior-designer");
 jd_sectionTitleScene("#initiativ");
