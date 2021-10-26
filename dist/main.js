@@ -94,9 +94,11 @@ jd_mediaScene("#office");
 // jd_mediaScene("#day-in-may");
 // jd_mediaScene("#heimat", .6);
 
-jd_mediaScene("#stores");
-jd_mediaScene("#eintrachtde", .7);
 jd_mediaScene("#vfl");
+jd_mediaScene("#supreme", .7);
+jd_mediaScene("#staige");
+jd_mediaScene("#stores", .7);
+jd_mediaScene("#eintrachtde");
 jd_mediaScene("#lungmuss", .7);
 jd_mediaScene("#sks");
 jd_mediaScene("#ihk", .7);
@@ -477,9 +479,11 @@ let jd_projectScene = (trigger, hook = 1) => {
 // jd_projectScene("#day-in-may");
 // jd_projectScene("#heimat", .6);
 
-jd_projectScene("#stores");
-jd_projectScene("#eintrachtde", .8);
 jd_projectScene("#vfl");
+jd_projectScene("#supreme", .8);
+jd_projectScene("#staige");
+jd_projectScene("#stores", .8);
+jd_projectScene("#eintrachtde");
 jd_projectScene("#lungmuss", .8);
 jd_projectScene("#sks");
 jd_projectScene("#ihk", .8);
@@ -528,7 +532,7 @@ let jd_jobScene = trigger => {
 }
 
 jd_jobScene("#senior-designer");
-jd_jobScene("#developer");
+//jd_jobScene("#developer");
 jd_jobScene("#junior-designer");
 jd_jobScene("#initiativ");
 

@@ -20,9 +20,11 @@ jd_mediaScene("#office");
 // jd_mediaScene("#day-in-may");
 // jd_mediaScene("#heimat", .6);
 
-jd_mediaScene("#stores");
-jd_mediaScene("#eintrachtde", .7);
 jd_mediaScene("#vfl");
+jd_mediaScene("#supreme", .7);
+jd_mediaScene("#staige");
+jd_mediaScene("#stores", .7);
+jd_mediaScene("#eintrachtde");
 jd_mediaScene("#lungmuss", .7);
 jd_mediaScene("#sks");
 jd_mediaScene("#ihk", .7);

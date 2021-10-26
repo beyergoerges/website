@@ -18,9 +18,11 @@ let jd_projectScene = (trigger, hook = 1) => {
 // jd_projectScene("#day-in-may");
 // jd_projectScene("#heimat", .6);
 
-jd_projectScene("#stores");
-jd_projectScene("#eintrachtde", .8);
 jd_projectScene("#vfl");
+jd_projectScene("#supreme", .8);
+jd_projectScene("#staige");
+jd_projectScene("#stores", .8);
+jd_projectScene("#eintrachtde");
 jd_projectScene("#lungmuss", .8);
 jd_projectScene("#sks");
 jd_projectScene("#ihk", .8);
