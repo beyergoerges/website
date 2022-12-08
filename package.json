@@ -28,7 +28,7 @@
     "babel-preset-stage-2": "^6.5.0",
     "browser-sync": "^2.26.7",
     "del": "^2.2.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^7.0.1",
